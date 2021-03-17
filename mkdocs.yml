@@ -9,40 +9,40 @@ docs_dir: docs
 
 # Navigation
 nav:
-  - Welcome: index.md
+  - Welcome: doc/index.md
   - RISKEN:
-    - Overview: index.md
-    - Project:  risken/project.md
-    - Finding:  risken/finding.md
-    - Score:    risken/score.md
-    - Alert:    risken/alert.md
-    - User:     risken/user.md
-    - Report:   risken/report.md
+    - Overview: doc/index.md
+    - Project:  doc/risken/project.md
+    - Finding:  doc/risken/finding.md
+    - Score:    doc/risken/score.md
+    - Alert:    doc/risken/alert.md
+    - User:     doc/risken/user.md
+    - Report:   doc/risken/report.md
   - AWS:
-    - Overview:       aws/index.md
-    - AccessAnalyzer: aws/accessanalyzer.md
-    - AdminChecker:   aws/adminchecker.md
-    - CloudSploit:    aws/cloudsploit.md
-    - GuardDuty:      aws/guardduty.md
-    - PortScan:       aws/portscan.md
+    - Overview:       doc/aws/index.md
+    - AccessAnalyzer: doc/aws/accessanalyzer.md
+    - AdminChecker:   doc/aws/adminchecker.md
+    - CloudSploit:    doc/aws/cloudsploit.md
+    - GuardDuty:      doc/aws/guardduty.md
+    - PortScan:       doc/aws/portscan.md
   - Google:
-    - Overview:              google/index.md
-    - Asset:                 google/asset.md
-    - SecurityCommandCenter: google/scc.md
-    - CloudSploit:           google/cloudsploit.md
+    - Overview:              doc/google/index.md
+    - Asset:                 doc/google/asset.md
+    - SecurityCommandCenter: doc/google/scc.md
+    - CloudSploit:           doc/google/cloudsploit.md
   - Diagnosis:
-    - Overview: diagnosis/index.md
-    - JIRA:     diagnosis/jira.md
-    - WPScan:   diagnosis/wpscan.md
+    - Overview: doc/diagnosis/index.md
+    - JIRA:     doc/diagnosis/jira.md
+    - WPScan:   doc/diagnosis/wpscan.md
   - OSINT:
-    - Overview: osint/index.md
-    - Domain:   osint/domain.md
+    - Overview: doc/osint/index.md
+    - Domain:   doc/osint/domain.md
   - Code:
-    - Overview: code/index.md
-    - Gitleaks: code/gitleaks.md
+    - Overview: doc/code/index.md
+    - Gitleaks: doc/code/gitleaks.md
   - Contact us:
-    - FAQ:     contact/index.md
-    - Contact: contact/contact.md
+    - FAQ:     doc/contact/index.md
+    - Contact: doc/contact/contact.md
 
 # Theme
 theme:
@@ -55,10 +55,10 @@ theme:
     # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     # scheme: slate # dark
     scheme: default
-    primary: blue grey
-    accent: blue grey
+    primary: white
+    accent: white
   language: ja
-  logo: img/logo.png
+  logo: doc/img/logo.png
   favicon: img/favicon.ico
   icon:
     logo: material/library
@@ -81,10 +81,10 @@ theme:
 extra:
   alternate:
     - name: 日本語
-      link: /
+      link: /doc/risken/
       lang: ja
     - name: English
-      link: /en/
+      link: /doc/en/
       lang: en
   # version:
   #   provider: mike
@@ -97,7 +97,7 @@ extra:
 plugins:
   - search:
       lang:
-        - en
+        # - en
         - ja
 
 # Extensions
