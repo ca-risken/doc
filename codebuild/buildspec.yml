@@ -1,5 +1,4 @@
 version: 0.2
-
 env:
   variables:
     IMAGE: "gateway/doc"
@@ -26,17 +25,13 @@ phases:
       - $(aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION})
 
       - echo "Tagging the images..."
-      # tag the specific version
       - docker tag ${IMAGE}:${TAG} ${REGISTORY}/${IMAGE}:${TAG}
-      # update latest version 
       - docker tag ${IMAGE}:${TAG} ${REGISTORY}/${IMAGE}:latest
 
   post_build:
     commands:
       - echo "Pushing the Docker image..."
-      # specific version
       - docker push ${REGISTORY}/${IMAGE}:${TAG}
-      # latest version
       - docker push ${REGISTORY}/${IMAGE}:latest
 
       - echo "Build completed on `date`"
