@@ -1,0 +1,140 @@
+site_name: RISKEN
+site_url: https://console.security-hub.jp/
+site_author: RISKEN
+
+# Repository
+repo_name: RISKEN
+repo_url: https://github.com/CyberAgent/mimosa-doc
+docs_dir: docs
+
+# Navigation
+nav:
+  - Welcome: index.md
+  - RISKEN:
+    - Overview: index.md
+    - Project:  risken/project.md
+    - Finding:  risken/finding.md
+    - Score:    risken/score.md
+    - Alert:    risken/alert.md
+    - User:     risken/user.md
+    - Report:   risken/report.md
+  - AWS:
+    - Overview:       aws/index.md
+    - AccessAnalyzer: aws/accessanalyzer.md
+    - AdminChecker:   aws/adminchecker.md
+    - CloudSploit:    aws/cloudsploit.md
+    - GuardDuty:      aws/guardduty.md
+    - PortScan:       aws/portscan.md
+  - Google:
+    - Overview:              google/index.md
+    - Asset:                 google/asset.md
+    - SecurityCommandCenter: google/scc.md
+    - CloudSploit:           google/cloudsploit.md
+  - Diagnosis:
+    - Overview: diagnosis/index.md
+    - JIRA:     diagnosis/jira.md
+    - WPScan:   diagnosis/wpscan.md
+  - OSINT:
+    - Overview: osint/index.md
+    - Domain:   osint/domain.md
+  - Code:
+    - Overview: code/index.md
+    - Gitleaks: code/gitleaks.md
+  - Contact us:
+    - FAQ:     contact/index.md
+    - Contact: contact/contact.md
+
+# Theme
+theme:
+  #name: readthedoc
+  name: material
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    # scheme: slate # dark
+    scheme: default
+    primary: blue grey
+    accent: blue grey
+  language: ja
+  logo: img/logo.png
+  favicon: img/favicon.ico
+  icon:
+    logo: material/library
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    # - navigation.expand
+    - navigation.tracking
+    # - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.share
+
+# i18n
+extra:
+  alternate:
+    - name: 日本語
+      link: /
+      lang: ja
+    - name: English
+      link: /en/
+      lang: en
+  # version:
+  #   provider: mike
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<risken@cyberagent.co.jp>
+      name: RISKEN
+
+# Plugins
+plugins:
+  - search:
+      lang:
+        - en
+        - ja
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+copyright: 　&copy; 2020 - 2021 RISKEN
