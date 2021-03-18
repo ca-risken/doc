@@ -1,17 +1,36 @@
-# RISKEN
+# プロジェクト
+RISKEN上のすべてのデータはプロジェクト単位で区別・保存されます。ここではプロジェクトの作成フローを説明します。
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## プロジェクト新規作成
 
-## Commands
+1. 画面上メニューの `P` ボタンをクリックします
+    - ![プロジェクトボタン](/img/risken/project_btn.png){: style="width:300px"}
+2. プロジェクトダイアログで `CREATE NEW PROJECT` ボタンをクリックします
+    - ![プロジェクトダイアログ](/img/risken/project_dialog.png){: style="width:350px"}
+3. プロジェクト作成画面でプロジェクト名を入力して `CREATE` をクリックします
+4.  作成が完了すると上メニューの `P` 部分にプロジェクト名が表示され、プロジェクトのダッシュボード画面に遷移します
+    - ![RISKENトップ](/img/risken/top.png){: style="width:400px"}
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## プロジェクトの編集
 
-## Project layout
+1. 画面上メニューの `P` ボタンをクリックします
+    - ![プロジェクトボタン](/img/risken/project_btn.png){: style="width:300px"}
+2. プロジェクトダイアログで `EDIT PROJECT` ボタンをクリックします
+3. プロジェクトの編集画面が表示されます
+    - ![プロジェクト編集](/img/risken/project_edit.png){: style="width:400px"}
+    - プロジェクト名の変更をする場合は、 `Name` を編集し、 `EDIT` ボタンをクリックしてください
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## プロジェクトタグ
+
+プロジェクトタグを設定することで、プロジェクトの切り替え時にキーワード検索（タグ検索）ができるようになります。
+プロジェクトタグはデータソースの追加などで自動で設定されるものもありますが、任意のタグを設定することが可能です。
+
+1. 画面上メニューの `P` ボタンをクリックします
+    - ![プロジェクトボタン](/img/risken/project_btn.png){: style="width:300px"}
+2. プロジェクトダイアログで `EDIT PROJECT` ボタンをクリックします
+3. プロジェクトの編集画面が表示されます
+    - ![プロジェクト編集](/img/risken/project_edit.png){: style="width:400px"}
+4. 新しくタグを設定する場合は `NEW TAG` ボタンからタグ付けを行うことが可能です
+5. 設定済みタグを編集する場合は、編集したいタグをクリックしてください
+6. タグには色が設定できます（検索時に色分けをして整理することができます）
+   - ![プロジェクトタグ](/img/risken/project_tag.png){: style="width:350px"}

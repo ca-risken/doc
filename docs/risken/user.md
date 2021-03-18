@@ -1,17 +1,39 @@
-# RISKEN
+# ユーザ
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+RISKENにログインすると自動でユーザ登録されます。
+しかし、登録されたばかりのユーザはプロジェクトに参加していないため何も表示されません。
 
-## Commands
+[新たにプロジェクトを作成](/risken/project/#_2)するか、すでに存在するプロジェクトに招待->参加する必要があります。
+ここではRISKEN上でログイン済みのユーザを既存プロジェクトに招待するフローを説明します。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## ユーザ追加
+1. 画面上メニューの`P`ボタンより対象のプロジェクトを選択します
+2. 左メニューより`IAM > User`をクリックします
+    - ![ユーザリスト](/img/risken/user_list.png){: style="width:300px"}
+3. 画面右側にある`NEW`ボタンをクリックします
+4. ユーザダイアログが開かれるので右上の`INVITE NEW USER`をクリックします
+    - ![ユーザ招待](/img/risken/user_invite.png){: style="width:300px"}
+5. 招待したい人を検索・クリックします
+6. ユーザダイアログに戻ったら、付与したいロールにチェックをして`EDIT`ボタンをクリックします
+    - ![ユーザダイアログ](/img/risken/user_dialog.png){: style="width:300px"}
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## ロール設定
+1. ロールを作成する前にロールに設定したい**ポリシー**を作成します
+    - **ポリシー**とはデータ（リソース）に対して、どんな操作（アクション）を許可するかを定義したものです
+    - １つのロールに対して複数のポリシーを設定することが可能です
+2. 左メニューより`IAM > Policy`をクリックします
+3. 画面右側にある`NEW`をクリックします
+    - ![ポリシー](/img/risken/user_policy.png){: style="width:350px"}
+4. ポリシーダイアログで以下を入力し`REGIST`をクリックします
+    - **Name**: ポリシー名
+    - **Action Pattern**: Action名のパターン
+        -   例えばReadOnly用のActionは`(get|list|describe|show)`を設定します
+    - **Resource Pattern**: Resource名のパターン
+        - ※ 現在細かいResourceパターンでの制御は未サポートです。そのため、Resource欄は`.*`で指定してください。（一律プロジェクト単位での制御となります）
+5. 左メニューより`IAM > Role`をクリックします
+6. 画面右側の`NEW`をクリックします
+7. ロールダイアログで以下を入力し`REGIST`をクリックします
+    - **Name**: ロール名
+    - **Policy**: ロールに紐付けたいポリシーを選択します
+    - ![ロールダイアログ](/img/risken/user_role_dialog.png){: style="width:350px"}
+8. ロールを作成したら、`IAM > User`画面で付与したいユーザを選択し、対象のロールを設定してください

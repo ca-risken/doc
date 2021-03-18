@@ -11,10 +11,9 @@ docs_dir: docs
 nav:
   - Welcome: index.md
   - RISKEN:
-    - Overview: index.md
+    - Concept: index.md
     - Project:  risken/project.md
     - Finding:  risken/finding.md
-    - Score:    risken/score.md
     - Alert:    risken/alert.md
     - User:     risken/user.md
     - Report:   risken/report.md
@@ -70,7 +69,7 @@ theme:
     # - navigation.expand
     - navigation.tracking
     # - navigation.sections
-    - navigation.indexes
+    # - navigation.indexes
     - navigation.top
     - toc.integrate
     - search.suggest
