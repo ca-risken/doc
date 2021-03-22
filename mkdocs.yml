@@ -41,8 +41,8 @@ nav:
     - Overview: code/index.md
     - Gitleaks: code/gitleaks.md
   - Contact us:
-    - FAQ:     contact/index.md
     - Contact: contact/contact.md
+    - FAQ:     contact/faq.md
 
 # Theme
 theme:
@@ -131,10 +131,14 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+# https://mermaid-js.github.io/mermaid/#/README
+extra_javascript:
+  - https://unpkg.com/mermaid@8.9.2/dist/mermaid.min.js
 
 copyright: 　&copy; 2020 - 2021 RISKEN
