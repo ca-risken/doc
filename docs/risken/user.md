@@ -6,21 +6,25 @@ RISKENにログインすると自動でユーザ登録されます。
 [新たにプロジェクトを作成](/risken/project/#_2)するか、すでに存在するプロジェクトに招待->参加する必要があります。
 ここではRISKEN上でログイン済みのユーザを既存プロジェクトに招待するフローを説明します。
 
+---
+
 ## ユーザをプロジェクトに招待する
 
 1. 画面上メニューの`P`ボタンより対象のプロジェクトを選択します
 2. 左メニューより`IAM > User`をクリックします
-    - ![ユーザリスト](/img/risken/user_list.png){: style="width:300px"}
+    - ![ユーザリスト](/img/risken/user_list.png){style="width:300px"}
 3. 画面右側にある`NEW`ボタンをクリックします
 4. ユーザダイアログが開かれるので右上の`INVITE NEW USER`をクリックします
-    - ![ユーザ招待](/img/risken/user_invite.png){: style="width:300px"}
+    - ![ユーザ招待](/img/risken/user_invite.png){style="width:300px"}
 5. 招待したい人を検索・クリックします
 6. ユーザダイアログに戻ったら、付与したいロールにチェックをして`EDIT`ボタンをクリックします
-    - ![ユーザダイアログ](/img/risken/user_dialog.png){: style="width:300px"}
+    - ![ユーザダイアログ](/img/risken/user_dialog.png){style="width:300px"}
 
 ???+ note
     招待したいユーザが存在しない場合は、対象のユーザがまだログインしていないかもしれません。
     ログインをしてもらってからユーザダイアログで再度検索してください。
+
+---
 
 ## ユーザにロールを付与する
 
@@ -29,11 +33,13 @@ RISKENにログインすると自動でユーザ登録されます。
     - ロールを付与したいユーザを選択してください
     - 対象のユーザが存在しない場合は、[ユーザ追加](/risken/user/#_2)で招待してください
 3. 作成済みのロールが表示されるので、付与したいロールを設定してください
-    - ![ユーザダイアログ](/img/risken/user_dialog.png){: style="width:350px"}
+    - ![ユーザダイアログ](/img/risken/user_dialog.png){style="width:350px"}
 
 ???+ note
     プロジェクト作成時にデフォルトで `project_admin` 用のロール／ポリシーが作成されます
     ReadOnly権限や部分的な機能を細かく許可／制御したい場合は次の[きめ細かなロールの設定](/risken/user/#_4)ステップを確認してください
+
+---
 
 ## きめ細かなロールの設定
 
@@ -47,7 +53,7 @@ RISKENにログインすると自動でユーザ登録されます。
 
 1. 左メニューより`IAM > Policy`をクリックします
 2. 画面右側にある`NEW`をクリックします
-    - ![ポリシー](/img/risken/user_policy.png){: style="width:350px"}
+    - ![ポリシー](/img/risken/user_policy.png){style="width:350px"}
 3. ポリシーダイアログで以下を入力し`REGIST`をクリックします
     - **Name**: ポリシー名
     - **Action Pattern**: Action名のパターン
@@ -61,5 +67,5 @@ RISKENにログインすると自動でユーザ登録されます。
 3. ロールダイアログで以下を入力し`REGIST`をクリックします
     - **Name**: ロール名
     - **Policy**: ロールに紐付けたいポリシーを選択します
-    - ![ロールダイアログ](/img/risken/user_role_dialog.png){: style="width:350px"}
+    - ![ロールダイアログ](/img/risken/user_role_dialog.png){style="width:350px"}
 

@@ -2,14 +2,16 @@
 RISKENではあらゆるセキュリティリスクデータをFindingという形式で保存・利用します。
 ここではFindingデータに関する操作方法を説明します。
 
+---
+
 ## 検索
 
 1. 左メニューより`Finding > Finding`をクリックしてください
 2. 現在収集済みのFinding（各種スキャナで収集済みのデータ）が一覧表示されます
-    - ![Findingリスト](/img/risken/finding_list.png){: style="width:400px"}
+    - ![Findingリスト](/img/risken/finding_list.png){style="width:400px"}
     - Findingにはリスク値に応じたスコアやデータソース情報、リソース名、タグ情報などが表示されます
 3. 詳細を確認するには一覧の行をクリックしてください
-    - ![Findingリスト](/img/risken/finding_detail.png){: style="width:400px"}
+    - ![Findingリスト](/img/risken/finding_detail.png){style="width:400px"}
 4. Findingの一覧画面では以下の検索フィルターをサポートしています
     - **ResourceName**: リソース名（部分一致）
     - **Tag**: タグ（例えばAWS関連のデータでフィルタしたい場合には `aws` タグを指定します）
@@ -17,13 +19,16 @@ RISKENではあらゆるセキュリティリスクデータをFindingという�
     - **Score**: スコア（0.0 ~ 1.0）
 5. またResource画面（`Finding > Resource`）では、Resource名のレベルで検索することも可能です
     - 上記フィルタの他にリソースの登録日でフィルタすることができます（カレンダーのFrom-To指定）
-    - ![Findingリスト](/img/risken/finding_resource.png){: style="width:400px"}
+    - ![Findingリスト](/img/risken/finding_resource.png){style="width:400px"}
+
+---
 
 ## スコアリング
 
 Findingには必ず `スコア`が設定されます。
 全てのデータソースで評価されるスコアはバラツキがありますが、RISKENに登録される際には必ず `0.0 ~ 1.0` の間の数値に標準化されます。
 スコアによってリスクの高いデータをフィルタしたり優先順位設定のための意思決定を支援します。
+
 
 ### スコア帯域
 
@@ -38,6 +43,7 @@ RISKENでは以下の帯域によってSeverity（重大度）や色分けにて
 ???+ note
     データソースごとの詳細なスコア判定については、各データソースのページを参照してください。
 
+---
 
 ## 削除／ペンディング
 
@@ -55,7 +61,7 @@ Findingで検出された問題を修復した場合は、以下のいずれか�
     - Findingを確認した結果、 `対応しない` という判断をする場合はペンディング状態にしておく必要があります（リスク受容）
     - ペンディング中のFindingは[アラート](/risken/alert/)の評価から外れます
 
-![Findingアクション](/img/risken/finding_action.png){: style="width:400px"}
+![Findingアクション](/img/risken/finding_action.png){style="width:400px"}
 
 ???+ note
     `削除`や`ペンディング` はFinding一覧の右側のメニューから実行できます
@@ -69,12 +75,16 @@ Findingを一括で更新する場合は以下の手順で実施します
     - 一括削除
     - 一括ペンディング
 
-![Finding選択](/img/risken/finding_selected.png){: style="width:400px"}
+![Finding選択](/img/risken/finding_selected.png){style="width:400px"}
+
+---
 
 ## タグ
 
 Findingの詳細ダイアログより `NEW TAG`ボタンからFinidngにタグ設定することができます。
 タグはフィルタリングやアラート条件に設定することが可能です。
+
+---
 
 
 ## 設定
@@ -92,4 +102,4 @@ Findingの詳細ダイアログより `NEW TAG`ボタンからFinidngにタグ�
 - 対象のリソース名（完全一致）とスコア係数を設定します
     - `1.0` より大きい係数を設定した場合は実際のスコアはベーススコアよりも大きくなります
     - `1.0` より小さい係数を設定した場合は実際のスコアはベーススコアよりも小さくなります
-![Finding設定](/img/risken/finding_setting.png){: style="width:400px"}
+![Finding設定](/img/risken/finding_setting.png){style="width:400px"}

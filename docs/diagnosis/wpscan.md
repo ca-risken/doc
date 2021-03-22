@@ -1,2 +1,2 @@
-# 診断
+# Wordpress
 

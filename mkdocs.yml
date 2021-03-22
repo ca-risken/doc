@@ -12,11 +12,12 @@ nav:
   - Welcome: index.md
   - RISKEN:
     - Concept: index.md
-    - Project:  risken/project.md
-    - Finding:  risken/finding.md
-    - Alert:    risken/alert.md
-    - User:     risken/user.md
-    - Report:   risken/report.md
+    - Quick Start: risken/quick_start.md
+    - Project:     risken/project.md
+    - Finding:     risken/finding.md
+    - Alert:       risken/alert.md
+    - User:        risken/user.md
+    - Report:      risken/report.md
   - AWS:
     - Overview:       aws/index.md
     - AccessAnalyzer: aws/accessanalyzer.md

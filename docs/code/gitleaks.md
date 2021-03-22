@@ -1,2 +1,2 @@
-# Code
+# Gitleaks
 
