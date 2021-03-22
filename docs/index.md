@@ -2,8 +2,6 @@
 
 ## RISKENとは
 
-![RISKENトップ](/img/risken/top.png "top"){: align=right style="width:400px"}
-
 システム環境に潜む **リスク情報** を自動収集し継続的にモニタリングすることを目的とした _セキュリティ オペレーション プラットフォーム_ です
 
 1. RISKENを利用することにでセキュリティの問題を早期発見することができます
@@ -11,12 +9,34 @@
 3. また、開発チーム、クラウド管理者、セキュリティ担当者の成果を可視化し、プロダクトオーナーとのコミュニケーションにも役立ちます
     - [RISKENにログインする](https://console.security-hub.jp/)
 
+=== "Dashboard"
+
+    ![RISKENトップ](/img/risken/top.png "top"){style="width:600px"}
+
+=== "Finding"
+
+    ![Finding](/img/risken/finding_detail.png){style="width:600px"}
+
+=== "Alert"
+
+    ![Alert](/img/risken/alert_dialog.png){style="width:600px"}
+
+=== "Project"
+
+    ![プロジェクト](/img/risken/project_edit.png){style="width:600px"}
+
+=== "Report"
+
+    ![レポート](/img/risken/report_finding.png){style="width:600px"}
+
+
+---
 
 ## コンセプト
 
 ### 継続的にデータ収集／評価
 
-![RISKENコンセプト1](/img/risken/concept1.png){: align=right style="width:400px"}
+![RISKENコンセプト1](/img/risken/concept1.png){align=right style="width:400px"}
 
 RISKENは日々変化するシステム環境のデータを継続的に収集し評価します。
 
@@ -31,9 +51,11 @@ RISKENは日々変化するシステム環境のデータを継続的に収集�
     - 本番データなのか、それ以外なのか?
     - ストレージにアクセスするために必要なキー情報の保存場所（例えばソースコードのリポジトリ）は安全なのか？
 
+---
+
 ### 統一的なスコアリングで優先度を判断可能
 
-![RISKENコンセプト2](/img/risken/concept2.png){: align=right style="width:400px"}
+![RISKENコンセプト2](/img/risken/concept2.png){align=right style="width:400px"}
 
 RISKENが収集したリスク情報にはすべてスコアが付きます。
 これにより優先度の意思決定を助けることが目的です。
@@ -45,6 +67,8 @@ RISKENが収集したリスク情報にはすべてスコアが付きます。
     - 例えば、セキュリティ上重要なクラウドストレージのリソースがあったとします（個人情報が保存されているなど）
     - そのリソースには通常のスコア x {係数} を設定することで、通常の判定よりもリスク値を高く調整することが可能です（あるいはスコアを下げることもできます）
 
+---
+
 ### オープンソースやセキュリティサービスの活用
 
 RISKENはセキュリティ関連のオープンソースや、CSP（クラウドサービスプロバイダー）が提供しているセキュリティサービスを積極的に活用します。
@@ -54,13 +78,18 @@ RISKENはセキュリティ関連のオープンソースや、CSP（クラウ�
 - また、不足していると思われる観点はRISKENチームが独自にスキャンツールを開発しています
 - 収集したデータを統一的なフォーマットに変換し、RISKENチーム側でスコアリングします
 
+---
+
 ### 複数のプロジェクトを管理
 
-![RISKENコンセプト3](/img/risken/concept3.png){: align=right style="width:300px"}
+![RISKENコンセプト3](/img/risken/concept3.png){align=right style="width:300px"}
 
-- RISKENのユーザは自由にプロジェクトを作成することができます。また複数のプロジェクトに参加することもできます
+- RISKENのユーザは自由にプロジェクトを作成することができます
+- また複数のプロジェクトに参加することもできます
 - ユーザの権限の範囲内でプロジェクトを切り替え、プロジェクトをまたいだ管理が可能です
+- 多くのシステムを見る必要がある開発者／管理者のセキュリティ管理をサポートします
 
+---
 
 ## 監視対象
 
