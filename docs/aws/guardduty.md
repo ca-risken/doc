@@ -3,7 +3,7 @@
 
 GuardDutyデータソースを有効にすると、AWSの[GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)で分析された結果を収集保存されます
 
-- AWS GuardDutyは、驚異検知に有効なセキュリティサービスです
+- AWS GuardDutyは、AWSが提供する驚異検知のためのセキュリティサービスです
 - GuardDutyでサポートされているサービス等については[公式ドキュメント](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html)を参照してください
 
 ---
@@ -16,7 +16,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | -------------- | ---------------------------------------- |
 | `DataSource`   | aws:guard-duty (固定)                      |
 | `ResourceName` | GuardDutyのFinding ARN                    |
-| `Description`  | GuardDutyのDescription                     |
+| `Description`  | 説明                                       |
 | `Score`        | [スコアリング](/aws/guardduty/#_2)参照       |
 | `Tag`          | `aws` `admin-checker` `{タイプ}`           |
 
@@ -25,8 +25,9 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 
 ## スコアリング
 
-- GuarDutyは[Severity（1.0 ~ 10.0）によるスコアリング](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)が元から設定されています。
-- なので、その値をRISKENのスコア範囲 `0.0 ~ 1.0` に標準化し取り込みます
+GuarDutyは[Severity（1.0 ~ 10.0）によるスコアリング](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)が元から設定されています
+
+なので、その値をRISKENのスコア範囲 `0.0 ~ 1.0` に標準化し取り込みます
 
 ```mermaid
 graph TD

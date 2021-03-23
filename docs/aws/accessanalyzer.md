@@ -15,7 +15,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | -------------- | ---------------------------------------- |
 | `DataSource`   | aws:access-analyzer (固定)                |
 | `ResourceName` | AccessAnalyzerで検知したリソースのARN        |
-| `Description`  | リソース情報とパブリック可否                  |
+| `Description`  | 説明                                      |
 | `Score`        | [スコアリング](/aws/accessanalyzer/#_2)参照 |
 | `Tag`          | `aws` `access-analyzer` `{タイプ}`         |
 
@@ -23,8 +23,9 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 
 ## スコアリング
 
-AWSのAccessAnalyzerはスコア情報を持っていません。
-なので、RISKENに取り込む際に、以下のロジックによって危険度を判定しスコアリングしています。
+AWSのAccessAnalyzerはスコア情報を持っていません
+
+なので、RISKENに取り込む際に、以下のロジックによって危険度を判定しスコアリングしています
 
 ```mermaid
 graph TD

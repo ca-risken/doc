@@ -28,7 +28,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | -------------- | ---------------------------------------- |
 | `DataSource`   | aws:admin-checker (固定)                  |
 | `ResourceName` | IAMユーザーのARN                           |
-| `Description`  | 特権ユーザかどうか                          |
+| `Description`  | 説明                                      |
 | `Score`        | [スコアリング](/aws/adminchecker/#_2)参照   |
 | `Tag`          | `aws` `admin-checker`                     |
 
@@ -36,7 +36,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 
 ## スコアリング
 
-RISKENに取り込む際に、以下のロジックによって危険度を判定しスコアリングしています。
+RISKENに取り込む際に、以下のロジックによって危険度を判定しスコアリングしています
 
 ```mermaid
 graph TD
