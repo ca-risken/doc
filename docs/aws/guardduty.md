@@ -3,8 +3,9 @@
 
 GuardDutyデータソースを有効にすると、AWSの[GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)で分析された結果を収集保存されます
 
-- AWS GuardDutyは、AWSが提供する驚異検知のためのセキュリティサービスです
-- GuardDutyでサポートされているサービス等については[公式ドキュメント](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html)を参照してください
+???+ tip "GuardDutyとは？"
+    - AWS GuardDutyは、AWSが提供する驚異検知のためのセキュリティサービスです
+    - GuardDutyでサポートされているサービス等については[公式ドキュメント](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html)を参照してください
 
 ---
 
