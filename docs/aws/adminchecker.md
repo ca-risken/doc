@@ -2,12 +2,13 @@
 
 AdminCheckerデータソースを有効にすると、AWSの特権IAMユーザを抽出します
 
-- AdminCheckerはRISKENチームが開発したチェックツールです（AWSのサービスではありません）
-- `特権ユーザ`の判定はユーザまたはグループに対して以下を有する場合に `true` となります
-    - AdministratorAccess（マネージドポリシー）が付与されている
-    - IAMFullAccess（マネージドポリシー）が付与されている
-    - インラインポリシーにてAdministratorAccess相当が付与されている
-    - インラインポリシーにてIAMFullAccess相当が付与されている
+???+ tip "AdminCheckerとは？"
+    - AdminCheckerはRISKENチームが開発したチェックツールです（AWSのサービスではありません）
+    - `特権ユーザ`の判定はユーザまたはグループに対して以下を有する場合に `true` となります
+        - AdministratorAccess（マネージドポリシー）が付与されている
+        - IAMFullAccess（マネージドポリシー）が付与されている
+        - インラインポリシーにてAdministratorAccess相当が付与されている
+        - インラインポリシーにてIAMFullAccess相当が付与されている
 
 ???+ Warning "以下は考慮していません"
     - Denyルール

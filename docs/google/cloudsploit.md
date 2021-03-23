@@ -3,8 +3,9 @@
 
 CloudSploitデータソースを有効にすると、オープンソースの[CloudSploit](https://github.com/aquasecurity/cloudsploit)で解析された結果が収集されます
 
-- CloudSploitは、AquaSecurityが公開しているオープンソースの[CSPM](https://www.checkpoint.com/cyber-hub/cloud-security/what-is-cspm-cloud-security-posture-management/)ツールです
--CloudSploitでどのような項目が検知されるかは[GitHub](https://github.com/aquasecurity/cloudsploit/tree/master/plugins/google)を参照してください
+???+ tip "CloudSploitとは？"
+    - CloudSploitは[AquaSecurity](https://www.aquasec.com/) が公開しているオープンソースの[CSPM](https://www.checkpoint.com/cyber-hub/cloud-security/what-is-cspm-cloud-security-posture-management/)ツールです
+    - CloudSploitでどのような項目が検知されるかは[GitHub](https://github.com/aquasecurity/cloudsploit/tree/master/plugins/google)を参照してください
 
 ---
 
