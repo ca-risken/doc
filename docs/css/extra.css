@@ -1,0 +1,9 @@
+.risken-btn {
+  display: inline-block;
+  padding: .625em 2em;
+  /* color: #263238; */
+  font-weight: 700;
+  border: .1rem solid;
+  border-radius: .1rem;
+  transition: color 125ms,background-color 125ms,border-color 125ms;
+}

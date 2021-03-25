@@ -1,11 +1,11 @@
 # GuardDuty
 
 
-GuardDutyデータソースを有効にすると、AWSの[GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)で分析された結果を収集します
+GuardDutyデータソースを有効にすると、AWSの[GuardDuty :octicons-link-external-24:](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html){ target="_blank" } で分析された結果を収集します
 
 ???+ tip "GuardDutyとは？"
     - AWS GuardDutyは、AWSが提供する驚異検知のためのセキュリティサービスです
-    - GuardDutyでサポートされているサービス等については[公式ドキュメント](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html)を参照してください
+    - GuardDutyでサポートされているサービス等については[公式ドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-active.html){ target="_blank" } を参照してください
 
 ---
 
@@ -26,7 +26,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 
 ## スコアリング
 
-GuarDutyは[Severity（1.0 ~ 10.0）によるスコアリング](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)が元から設定されています
+GuarDutyは[Severity（1.0 ~ 10.0）によるスコアリング :octicons-link-external-24:](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html){ target="_blank" }が元から設定されています
 
 なので、その値をRISKENのスコア範囲 `0.0 ~ 1.0` に標準化し取り込みます
 

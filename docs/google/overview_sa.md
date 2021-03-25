@@ -1,28 +1,4 @@
-# Google
-
-RISKEN上にあなたのGoogle情報を登録することで、Google関連のセキュリティデータを収集することができます
-
-???+ inline end info "補足"
-    RISKENでは現在GCP関連のみサポートしています
-
-
-- Googleの各種データソースを有効にすると自動収集プログラムがスケジュールされます
-- どのようなデータが収集されるかは、データソースごとのドキュメントを参照してください
-- 全てのデータソースを有効にすることを推奨しますが、一部のデータソースのみを有効化することもできます
-
-ここではGCP向けの各種データソース設定に関する説明をします。
-
----
-
-## 事前準備
-
-GCPのデータソース設定には以下の2つの作業が必要です
-
-1. RISKENのサービスアカウントをアクセス許可する
-2. GCPの各種データソースを有効にする
-
----
-## サービスアカウントを許可
+# サービスアカウントを許可
 
 RISKENからスキャン対象のGoogleリソースを参照できるようにするために事前にRISKENのサービスアカウントにアクセス権を付与する必要があります
 
@@ -50,42 +26,6 @@ GCPのマネージメントコンソールでサービスアカウントを追�
         [GCPカスタムロールを作成](/google/#gcp_1)しRISKENサービスアカウントに付与してください。
 
         （プロジェクト内にセンシティブなデータが保存されており許可できない場合など）
-
----
-## データソース
-
-**※ GCPの新規プロジェクト登録（以下のStep3）は現状管理者のみ操作可能となっています。**
-
-設定が必要な方は[お問い合わせ](/contact/contact)までご連絡ください
-
-1. メニューより`Google > GCP`をクリックしGCPの設定画面に遷移します
-2. 画面右側の`NEW`をクリックします
-3. 新規追加ダイアログで以下の項目を入力し`REGIST`をクリックします
-    - **Name ＊**: GCP名（任意のもの）
-    - **GCP Organization ID**: GCP 組織IDです（SecurityCommandCenterのスキャン時に必要になります）
-        - 組織IDの確認方法は [Googleのドキュメント](https://cloud.google.com/resource-manager/docs/creating-managing-organization)を参照してください
-    - **GCP Project ID ＊**: GCP プロジェクト
-        - プロジェクトの確認方法は [Googleのドキュメント](https://cloud.google.com/resource-manager/docs/creating-managing-projects?hl=ja#identifying_projects) を参照してください
-    - ![GCP登録](/img/google/gcp_regist.png){style="width:350px"}
-4. GCPプロジェクト登録後、一覧クリックしGoogleのGCP DataSource画面を開きます
-5. 各種スキャナーの一覧右側のアクションより`SETUP ALL`をクリックします
-    - ![SETUP ALL](/img/google/gcp_setup_all.png){style="width:150px"}
-6. DataSourceダイアログで`ATTACH`をクリックします
-    - ![ATTACH ALL](/img/google/gcp_attach_all.png){style="width:300px"}
-
-
----
-
-## スキャン
-
-GCPのデータソース設定が完了したら、実際にスキャンを実行し問題なく疎通するかを確認します。
-
-1. 各種スキャナーの一覧をクリックし左下にある`SCAN`をクリックします
-2. Status欄が`OK`になれば連携成功です（※エラー表示時はダイアログにエラーメッセージが表示されます）
-    - ![scan](/img/google/gcp_scan.png){style="width:400px"}
-    - データソースが収集したFindingデータは`Finding > Finding`画面で確認することができます
-3. 上記のように手動スキャンの他に連携済みのDataSourceは定期的にスケジュール実行されます
-
 
 
 ---
