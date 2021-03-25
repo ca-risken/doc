@@ -2,7 +2,7 @@
 
 Assetデータソースを有効にすると、GCPの[Cloud Asset Inventoryサービス](https://cloud.google.com/asset-inventory/docs/overview)で分析された結果が収集されます
 
-???+ tip "Cloud Asset Inventoryとは？"
+???+ help "Cloud Asset Inventoryとは？"
     - Cloud Asset Inventoryは、自身のGCPプロジェクトで保有しているアセット情報を把握するのに便利なサービスです
         - 利用中のアセットはRISKENのリソース情報に保存されます
     - 特にGCPで利用しているIAMポリシーの解析結果により、特権サービスアカウントを検出します

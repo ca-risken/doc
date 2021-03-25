@@ -10,9 +10,9 @@ AdminCheckerデータソースを有効にすると、AWSの特権IAMユーザ�
         - インラインポリシーにてAdministratorAccess相当が付与されている
         - インラインポリシーにてIAMFullAccess相当が付与されている
 
-???+ Warning "以下は考慮していません"
+??? Warning "いくつかの設定項目は無視されます"
     - Denyルール
-        - DenyルールはIAMの評価上最も優先されれますがAdminCheckerでは無視しています
+        - Denyルールは[IAMのポリシー評価ロジック](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html)上、最も優先されますがAdminCheckerでは無視しています
         - なのでDenyルールによって実際は特権を持っていなかったとしても特権ユーザと判定される可能性があります
     - Conditionsルール
         - Conditionsにより漏洩リスク等の低いユーザでもスコアが高い状態（特権ユーザ）で取り込まれる可能性があります

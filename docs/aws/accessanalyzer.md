@@ -1,6 +1,6 @@
 # AccessAnalyzer
 
-AccessAnalyzerデータソースを有効にすると、AWSの[AccessAnalyzerサービス](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)で分析された結果を収集保存されます
+AccessAnalyzerデータソースを有効にすると、AWSの[AccessAnalyzerサービス](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)で分析された結果を収集します
 
 ???+ tip "AccessAnalyzerとは？"
     - AWS AccessAnalyzerとは、自身のAWSアカウント外へ共有しているリソースを発見するのに便利なサービスです

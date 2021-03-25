@@ -28,7 +28,7 @@ nav:
   - Google:
     - Overview:              google/index.md
     - Asset:                 google/asset.md
-    - SecurityCommandCenter: google/scc.md
+    - Security Command Center: google/scc.md
     - CloudSploit:           google/cloudsploit.md
   - Diagnosis:
     - Overview: diagnosis/index.md
