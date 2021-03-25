@@ -1,5 +1,5 @@
 site_name: RISKEN
-site_url: https://console.security-hub.jp/
+site_url: https://docs.security-hub.jp/
 site_author: RISKEN
 
 # Repository
@@ -9,37 +9,65 @@ docs_dir: docs
 
 # Navigation
 nav:
-  - Welcome: index.md
   - RISKEN:
-    - Concept: index.md
+    - Overview:
+      - RISKEN:    index.md
+      - Concept:   risken/overview_concept.md
+      - Coverage:  risken/overview_coverage.md
     - Quick Start: risken/quick_start.md
     - Project:     risken/project.md
     - Finding:     risken/finding.md
     - Alert:       risken/alert.md
     - User:        risken/user.md
     - Report:      risken/report.md
+
   - AWS:
-    - Overview:       aws/index.md
+    - Overview:
+      - Concept:      aws/overview_aws.md
+      - DataSource:   aws/overview_datasource.md
+      - IAM Role:     aws/overview_iam.md
+      - Scan:         aws/overview_scan.md
     - AccessAnalyzer: aws/accessanalyzer.md
     - AdminChecker:   aws/adminchecker.md
     - CloudSploit:    aws/cloudsploit.md
     - GuardDuty:      aws/guardduty.md
     - PortScan:       aws/portscan.md
+
   - Google:
-    - Overview:              google/index.md
-    - Asset:                 google/asset.md
+    - Overview:
+      - Concept:               google/overview_google.md
+      - ServiceAccount:        google/overview_sa.md
+      - DataSource:            google/overview_datasource.md
+      - Scan:                  google/overview_scan.md
+    - Asset:                   google/asset.md
     - Security Command Center: google/scc.md
-    - CloudSploit:           google/cloudsploit.md
+    - CloudSploit:             google/cloudsploit.md
+
   - Diagnosis:
-    - Overview: diagnosis/index.md
-    - WPScan:   diagnosis/wpscan.md
-    - JIRA:     diagnosis/jira.md
+    - Overview:     diagnosis/index.md
+    - WPScan:
+      - Concept:    diagnosis/wpscan_concept.md
+      - DataSource: diagnosis/wpscan_datasource.md
+      - Scan:       diagnosis/wpscan_scan.md
+    - JIRA:
+      - Concept:    diagnosis/jira_concept.md
+      - DataSource: diagnosis/jira_datasource.md
+      - Scan:       diagnosis/jira_scan.md
+
   - OSINT:
-    - Overview: osint/index.md
-    - Domain:   osint/domain.md
+    - Overview:     osint/index.md
+    - Domain:
+      - Concept:    osint/domain_concept.md
+      - DataSource: osint/domain_datasource.md
+      - Scan:       osint/domain_scan.md
+
   - Code:
-    - Overview: code/index.md
-    - Gitleaks: code/gitleaks.md
+    - Overview:     code/index.md
+    - Gitleaks:
+      - Concept:    code/gitleaks_concept.md
+      - DataSource: code/gitleaks_datasource.md
+      - Scan:       code/gitleaks_scan.md
+
   - Contact us:
     - Contact: contact/contact.md
     - FAQ:     contact/faq.md
@@ -67,10 +95,10 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.instant
-    # - navigation.expand
+    - navigation.indexes
     - navigation.tracking
+    # - navigation.expand
     # - navigation.sections
-    # - navigation.indexes
     - navigation.top
     - toc.integrate
     - search.suggest
@@ -92,6 +120,7 @@ extra:
     - icon: fontawesome/solid/paper-plane
       link: mailto:<risken@cyberagent.co.jp>
       name: RISKEN
+
 
 # Plugins
 plugins:
@@ -141,4 +170,7 @@ markdown_extensions:
 extra_javascript:
   - https://unpkg.com/mermaid@8.9.2/dist/mermaid.min.js
 
-copyright: 　&copy; 2020 - 2021 RISKEN
+extra_css:
+  - css/extra.css
+
+copyright: 　&copy; 2021 - 2021 RISKEN

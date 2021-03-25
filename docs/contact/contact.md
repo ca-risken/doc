@@ -7,7 +7,7 @@
 
 ## Slack
 
-:material-slack: : [#ca-risken](https://cyberagent.slack.com/archives/C01J27AJLQ6)
+:material-slack: : [#ca-risken :octicons-link-external-24:](https://cyberagent.slack.com/archives/C01J27AJLQ6){ target="_blank" }
 
 マルチワークスペースチャンネルです。CAのGridに属するワークスペースからであれば参加できます。
 
