@@ -32,8 +32,8 @@ nav:
     - CloudSploit:           google/cloudsploit.md
   - Diagnosis:
     - Overview: diagnosis/index.md
-    - JIRA:     diagnosis/jira.md
     - WPScan:   diagnosis/wpscan.md
+    - JIRA:     diagnosis/jira.md
   - OSINT:
     - Overview: osint/index.md
     - Domain:   osint/domain.md
