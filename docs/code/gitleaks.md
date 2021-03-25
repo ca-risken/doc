@@ -35,11 +35,13 @@ Gitleaksのデータソース設定について説明します
     - ![Gitleask設定](/img/code/gitleaks_setting.png){style="width:500px"}
 
 ???+ warning "Limitation"
-    以下の条件に該当するリポジトリはスキャンできません
+    以下の条件に該当するリポジトリはスキャン対象外になります
 
     - リポジトリのステータスが以下のもの
         - `Archived`
         - `Disabled`
+        - `Forkリポジトリ`
+            - ＊[Forkリポジトリ](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)とは一般的にはオリジナルリポジトリへの貢献（修正の提案）のために作成されるリポジトリです
     - リポジトリのサイズが350MB以上のもの
     - RISKEN環境からcloneできないもの
 
@@ -74,7 +76,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 
 Gitleaksで解析された結果データにはスコアに相当するデータを持っていません
 
-なので、RISKENでは[キータイプ](/code/gitleaks#_5)ごとにリスク判定を加味してスコアリングを行います
+なので、RISKENでは[キータイプ](/code/gitleaks#_5)ごとのリスクを加味してスコアリングしています
 
 ???+ help "Gitleaksのルールセット"
     - Gitleaksはオープンソースなので、[ルールセット](https://github.com/zricethezav/gitleaks/blob/master/config/default.go)も公開されています
