@@ -2,8 +2,10 @@
 
 SCCデータソースを有効にすると、GCPの[Security Command Centerサービス（SCC）](https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview)で分析された結果が収集されます
 
-- SCCは、Googleが提供する驚異検知のためのセキュリティサービスです
-- SCCでどのような項目が検知されるかは[公式ドキュメント](https://cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings)を参照してください
+???+ help "Security Command Centerとは？"
+    - SCCは、Googleが提供する驚異検知のためのセキュリティサービスです
+    - SCCでどのような項目が検知されるかは[公式ドキュメント](https://cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings)を参照してください
+
 
 ???+ Warning "SCCは組織向けのソリューションです"
     SCCは[組織](https://cloud.google.com/resource-manager/docs/creating-managing-organization)向けのセキュリティサービスです
