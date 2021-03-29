@@ -39,7 +39,7 @@ Gitleaksで解析された結果データにはスコアに相当するデータ
 graph TD
     A[Start] --> B{{Exists credentials?}};
     B -->|NO| C[Score: 0.1]:::low;
-    B -->|YES| D{{Citical `Key Type`?}};
+    B -->|YES| D{{Critical `Key Type`?}};
     D -->|NO| E[Score: 0.6]:::mid;
     D -->|YES| F[Score: 0.8]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
