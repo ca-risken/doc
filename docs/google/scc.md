@@ -44,7 +44,7 @@ graph TD
     F -->|YES| G[Score: 0.3]:::low;
     F -->|YES| H{{Severity = HIGH?}};
     H -->|YES| I[Score: 0.6]:::mid;
-    H -->|NO| J{{Severity = CITICAL?}};
+    H -->|NO| J{{Severity = CRITICAL?}};
     J -->|YES| K[Score: 0.9]:::high;
     J -->|NO| L[Score: 0.0]:::unknown;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
