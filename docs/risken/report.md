@@ -59,7 +59,6 @@ Findingの登録状況や、現在発生しているアラートの重大度ご�
 - `Report > ReportFinding` 画面に遷移します
 - DataSource, Score, 期間, ファイル形式を選択してください
 - **DOWNLOAD REPORT(PROJECT)** をクリックすると現在選択中のプロジェクトの統計データがダウンロードできます
-- **DOWNLOAD REPORT(ALL)** をクリックすると自信が参加しているプロジェクト全体の統計データがダウンロードできます
 
 ### 可視化のカスタマイズ
 
