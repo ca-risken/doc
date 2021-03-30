@@ -42,17 +42,17 @@ graph TD
 
 ### サブドメインテイクオーバーの可能性のあるドメイン
 
-サブドメインがCNameレコードを持っているか、サーバーがダウンしているかによってスコアを算出します
+サブドメインがCNAMEレコードを持っているか、サーバーがダウンしているかによってスコアを算出します
 
 サーバーがダウンしていて、かつ後述のサブドメインていくオーバーのリスクが高いドメインの場合にはさらにスコアが高くなります
 
 ```mermaid
 graph TD
-    A[Start] --> B{{Does subdomain has CName record?}};
+    A[Start] --> B{{Does subdomain has CNAME record?}};
     B -->|NO| C[Finding isn't registered.]:::low;
     B -->|YES| D{{Is subdomain seemed down?}};
     D -->|NO| E[Score: 0.1]:::low;
-    D -->|YES| F[Does CName match high lisk list?];
+    D -->|YES| F[Does CNAME match high lisk list?];
     F -->|NO| G[Score: 0.6]:::mid;
     F -->|YES| H[Score: 0.8]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
@@ -60,11 +60,11 @@ graph TD
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
 ```
 
-## サブドメインていくオーバーのリスクが高いドメイン
+## サブドメインテイクオーバーのリスクが高いドメイン
 
-下記のリストは第三者がCNameを容易に取得できることが考えられるリストです
+下記のリストは第三者がCNAMEを容易に取得できることが考えられるリストです
 
-設定されているCNameがリストに該当する場合、サブドメインにアクセスした結果サーバーがダウンしている場合にはスコアが高くなります
+設定されているCNAMEがリストに該当する場合、サブドメインにアクセスした結果サーバーがダウンしている場合にはスコアが高くなります
 
 - herokuapp.com
 - herokussl.com
