@@ -1,7 +1,10 @@
 # データソース
 
 ???+ warning "現在、JIRAデータソース設定は管理者のみ可能となっています"
-    設定が必要な方は[Contact us](/contact/contact)までご連絡ください
+    設定が必要な方は以下の情報を添えて[Contact us](/contact/contact/)までご連絡ください
+
+    1. RISKENのプロジェクト
+    2. JIRAのプロジェクト情報
 
 
 1. メニューより`Diagnosis > JIRA`をクリックします
