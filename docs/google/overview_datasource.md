@@ -1,7 +1,15 @@
 # データソース
 
-???+ warning "現在、GCPの新規プロジェクト登録は管理者のみ操作可能となっています"
-    設定が必要な方は[Contact us](/contact/contact)までご連絡ください
+??? warning "現在、GCPの新規プロジェクト登録は管理者のみ操作可能となっています"
+    設定が必要な方は以下の情報を添えて[Contact us](/contact/contact/)までご連絡ください
+
+    1. RISKENのプロジェクト
+    2. GCPのプロジェクトID
+    3. GCPの組織IDの
+        - 組織IDの確認方法は [Googleのドキュメント :octicons-link-external-24:](https://cloud.google.com/resource-manager/docs/creating-managing-organization){ target="_blank" } を参照してください
+    4. 申請者の方がそのGCPのプロジェクト（または、組織）の所有者だと分かる情報
+        - セキュリティ上の理由により、プロジェクトの所有確認をさせて頂く必要があります
+        - [マネージメントコンソールのIAM画面 :octicons-link-external-24:](https://console.cloud.google.com/iam-admin/iam){ target="_blank" } のキャプチャなどをご提示ください
 
 
 
