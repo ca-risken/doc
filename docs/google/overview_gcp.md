@@ -32,6 +32,7 @@
 4. 新たに以下のラベルを追加してください
     - キー: `risken`
     - 値: `{RISKENで設定した検証コード}`
+    - ![GCPプロジェクトラベル](/img/google/gcp_project_label.png){style="width:580px"}
 
 ??? warning "ラベル設定にはプロジェクト権限が必要です"
     - ラベル設定にはプロジェクトの[ResourceManager API :octicons-link-external-24:](https://cloud.google.com/resource-manager/docs/creating-managing-labels)の権限が必要です。
