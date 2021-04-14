@@ -13,14 +13,13 @@ RISKEN上にあなたのGoogle情報を登録することで、Google関連の�
 
 ![GCPデータソース](/img/google/gcp_datasource_list.png)
 
-ここではGCP向けの各種データソース設定に関する説明をします。
-
 ---
 
-## 事前準備
+## GCPプロジェクトの登録フロー
 
-GCPのデータソース設定には以下の2つの作業が必要です
+GCPのデータソース設定には以下の作業が必要です
 
-1. RISKENのサービスアカウントをアクセス許可する
-2. GCPの各種データソースを有効にする
+1. RISKENに[GCPプロジェクトを登録](/google/overview_gcp/)する
+2. RISKENの[サービスアカウントにアクセス許可](/google/overview_sa/)を設定するする
+3. GCPの[各種データソースを有効](/google/overview_datasource/)にする
 
