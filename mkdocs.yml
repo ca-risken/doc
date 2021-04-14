@@ -36,6 +36,7 @@ nav:
   - Google:
     - Overview:
       - Concept:               google/overview_google.md
+      - GCP:                   google/overview_gcp.md
       - ServiceAccount:        google/overview_sa.md
       - DataSource:            google/overview_datasource.md
       - Scan:                  google/overview_scan.md
