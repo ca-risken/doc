@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+<script src="https://unpkg.com/mermaid@8.9.2/dist/mermaid.min.js"></script>
+<script type='text/javascript'>
+document.addEventListener("DOMContentLoaded", function(event) {
+  if ( !window.localStorage.getItem('firstLoad') ){
+    window.localStorage['firstLoad'] = true;
+    window.location.reload(true);
+  }  else {
+    window.localStorage.removeItem('firstLoad');
+  }
+});
+</script>
+{% endblock %}
