@@ -71,9 +71,7 @@ nav:
 
 # Theme
 theme:
-  #name: readthedoc
   name: material
-  custom_dir: overrides
   font:
     text: Roboto
     code: Roboto Mono
@@ -92,7 +90,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.instant
+    # - navigation.instant
     - navigation.indexes
     - navigation.tracking
     # - navigation.expand
@@ -165,9 +163,9 @@ markdown_extensions:
   - pymdownx.tilde
 
 # Extra
-# extra_javascript:
-#   # https://mermaid-js.github.io/mermaid/#/README
-#   - https://unpkg.com/mermaid@8.9.4/dist/mermaid.min.js
+extra_javascript:
+  # https://mermaid-js.github.io/mermaid/#/README
+  - https://unpkg.com/mermaid@8.9.2/dist/mermaid.min.js
 
 extra_css:
   - css/extra.css
