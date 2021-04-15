@@ -2,11 +2,6 @@ site_name: RISKEN
 site_url: https://docs.security-hub.jp/
 site_author: RISKEN
 
-# Repository
-repo_name: RISKEN
-repo_url: https://github.com/CyberAgent/mimosa-doc
-docs_dir: docs
-
 # Navigation
 nav:
   - RISKEN:
@@ -77,6 +72,7 @@ nav:
 theme:
   #name: readthedoc
   name: material
+  custom_dir: overrides
   font:
     text: Roboto
     code: Roboto Mono
@@ -167,9 +163,10 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-# https://mermaid-js.github.io/mermaid/#/README
-extra_javascript:
-  - https://unpkg.com/mermaid@8.9.2/dist/mermaid.min.js
+# Extra
+# extra_javascript:
+#   # https://mermaid-js.github.io/mermaid/#/README
+#   - https://unpkg.com/mermaid@8.9.4/dist/mermaid.min.js
 
 extra_css:
   - css/extra.css
