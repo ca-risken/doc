@@ -41,7 +41,7 @@ graph TD
     D -->|YES| E[Score: 0.1]:::low;
     D -->|NO| F{{Status `WARN`?}};
     F -->|YES| G[Score: 0.3]:::low;
-    F -->|YES| H{{Status `FAIL`?}};
+    F -->|NO| H{{Status `FAIL`?}};
     H -->|YES| I[Score: <plugin score>]:::unknown;
     H -->|NO| J[Score: 0.0]:::unknown;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;

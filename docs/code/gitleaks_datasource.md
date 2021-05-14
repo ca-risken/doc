@@ -20,7 +20,7 @@ Gitleaksのデータソース設定について説明します
         - 認証情報登録後に設定済みのTokenは閲覧できません（xxxxのようなマスク値で表示されます）
     - **リポジトリの可視性**: スキャン対象にする[可視性 :octicons-link-external-24:](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility){ target="_blank" } を選択してください（Internal／Privateを対象にする場合はPATの登録が必要です）
         - `Public`: インターネットに公開されているリポジトリをスキャンします
-        - `Internal`: Enterpris内のリポジトリをスキャンします
+        - `Internal`: Enterprise内のリポジトリをスキャンします
         - `Private`: プライベートリポジトリをスキャンします
     - ![Gitleask設定](/img/code/gitleaks_setting.png){style="width:500px"}
 
