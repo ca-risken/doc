@@ -42,7 +42,7 @@ graph TD
     D -->|YES| E[Score: 0.1]:::low;
     D -->|NO| F{{Severity = MEDIUM?}};
     F -->|YES| G[Score: 0.3]:::low;
-    F -->|YES| H{{Severity = HIGH?}};
+    F -->|NO| H{{Severity = HIGH?}};
     H -->|YES| I[Score: 0.6]:::mid;
     H -->|NO| J{{Severity = CRITICAL?}};
     J -->|YES| K[Score: 0.9]:::high;
