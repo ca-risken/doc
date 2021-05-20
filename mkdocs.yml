@@ -43,6 +43,7 @@ nav:
     - Asset:                   google/asset.md
     - Security Command Center: google/scc.md
     - CloudSploit:             google/cloudsploit.md
+    - PortScan:                google/portscan.md
 
   - Diagnosis:
     - Overview:     diagnosis/index.md

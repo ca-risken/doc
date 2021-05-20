@@ -41,7 +41,7 @@ graph TD
     D -->|YES| E[Score: 0.1]:::low;
     D -->|NO| F{{Status `WARN`?}};
     F -->|YES| G[Score: 0.3]:::low;
-    F -->|YES| H{{Status `FAIL`?}};
+    F -->|NO| H{{Status `FAIL`?}};
     H -->|YES| I[Score: <plugin score>]:::unknown;
     H -->|NO| J[Score: 0.0]:::unknown;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
@@ -60,21 +60,21 @@ graph TD
 
 |Category|Plugin|Score|Compliance Tag|
 |---|---|---|---|
-|ACM|acmCertificateExpiry|6.0|pci|
-|CloudTrail|cloudtrailEnabled|8.0|hipaa,pci,cis1,cis|
-|EC2|ebsSnapshotPublic|8.0||
-|EC2|openAllPortsProtocols|8.0|hipaa,pci|
-|IAM|rootAccessKeys|8.0|hipaa,cis1,cis|
-|IAM|rootAccountInUse|6.0|hipaa,pci,cis1,cis|
-|IAM|rootMfaEnabled|8.0|pci,cis1,cis|
-|Lambda|lambdaPublicAccess|6.0||
-|RDS|rdsEncryptionEnabled|6.0|hipaa,pci|
-|RDS|rdsPubliclyAccessible|8.0|hipaa,pci|
-|Redshift|redshiftEncryptionEnabled|6.0|hipaa|
-|Redshift|redshiftPubliclyAccessible|8.0|hipaa,pci|
-|Route53|danglingDnsRecords|6.0||
-|Route53|domainExpiry|8.0||
-|S3|bucketAllUsersAcl|6.0|pci|
-|S3|bucketAllUsersPolicy|6.0|pci|
-|SageMaker|notebookDirectInternetAccess|6.0||
-|SQS|sqsPublicAccess|6.0||
+|ACM|acmCertificateExpiry|0.6|pci|
+|CloudTrail|cloudtrailEnabled|0.8|hipaa,pci,cis1,cis|
+|EC2|ebsSnapshotPublic|0.8||
+|EC2|openAllPortsProtocols|0.8|hipaa,pci|
+|IAM|rootAccessKeys|0.8|hipaa,cis1,cis|
+|IAM|rootAccountInUse|0.6|hipaa,pci,cis1,cis|
+|IAM|rootMfaEnabled|0.8|pci,cis1,cis|
+|Lambda|lambdaPublicAccess|0.6||
+|RDS|rdsEncryptionEnabled|0.6|hipaa,pci|
+|RDS|rdsPubliclyAccessible|0.8|hipaa,pci|
+|Redshift|redshiftEncryptionEnabled|0.6|hipaa|
+|Redshift|redshiftPubliclyAccessible|0.8|hipaa,pci|
+|Route53|danglingDnsRecords|0.6||
+|Route53|domainExpiry|0.8||
+|S3|bucketAllUsersAcl|0.6|pci|
+|S3|bucketAllUsersPolicy|0.6|pci|
+|SageMaker|notebookDirectInternetAccess|0.6||
+|SQS|sqsPublicAccess|0.6||

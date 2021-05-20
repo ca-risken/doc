@@ -362,4 +362,4 @@ $ gcloud iam roles create RISKEN \
     --file=risken.yaml
 ```
     - 組織IDの確認方法は[公式ドキュメント](https://cloud.google.com/resource-manager/docs/creating-managing-organization?hl=ja#retrieving_your_organization_id)を参照してください
-    - プロジェクト名はの確認方法は[公式ドキュメント](https://cloud.google.com/resource-manager/docs/creating-managing-projects?hl=ja&visit_id=637520764214530521-3717510879&rd=1)を参照してください
+    - プロジェクト名の確認方法は[公式ドキュメント](https://cloud.google.com/resource-manager/docs/creating-managing-projects?hl=ja&visit_id=637520764214530521-3717510879&rd=1)を参照してください
