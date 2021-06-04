@@ -7,8 +7,9 @@ RISKENではOSINTツールのなかでドメイン情報に関するものを複
 ???+ tip "リスクの高いドメインとは？"
     RISKENでは以下の観点でドメインを解析します
 
-    -一般的に公開してはいけないプロダクション環境以外のURLがインターネット上にオープンになっていないか
-    -[サブドメインテイクオーバー :octicons-link-external-24:](https://developer.mozilla.org/en-US/docs/Web/Security/Subdomain_takeovers){ target="_blank" } の可能性のあるドメインがないか
+    - 一般的に公開してはいけないプロダクション環境以外のURLがインターネット上にオープンになっていないか
+    - [サブドメインテイクオーバー :octicons-link-external-24:](https://developer.mozilla.org/en-US/docs/Web/Security/Subdomain_takeovers){ target="_blank" } の可能性のあるドメインがないか
+    - SSLサーバー証明書が有効期限切れ間近になっていないか
 
 ## フォーマット
 
@@ -24,7 +25,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 
 ## スコアリング
 
-上述したとおり、RISKENでは2つの観点にてドメインのリスクを判定します
+上述したとおり、RISKENでは3つの観点にてドメインのリスクを判定します
 
 スコアリングは観点ごとに以下の通りとなります
 
@@ -35,6 +36,19 @@ graph TD
     A[Start] --> B{{Does subdomain match DetectWord?}};
     B -->|YES| C[Score: 0.3]:::low;
     B -->|NO| D[Finding isn't registered.];
+    classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
+    classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
+    classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
+```
+
+### SSLサーバー証明書が有効期限切れ間近になっている
+
+```mermaid
+graph TD
+    A[Start] --> B{{Is number of days left until certificate expiration?}};
+    B -->|More than 50 days| C[Score: 0.1]:::low;
+    B -->|Less than 50 days| D[Score: 0.6]:::mid;
+    B -->|Less than 25 days| E[Score: 0.8]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
     classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
