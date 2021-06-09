@@ -1,19 +1,21 @@
 # Admin Checker
 
-AdminCheckerデータソースを有効にすると、AWSの特権IAMユーザを抽出します
+AdminCheckerデータソースを有効にすると、AWSのIAMサービスで強い権限、または過剰に付与されたIAMリソースを抽出します
 
 ???+ tip "AdminCheckerとは？"
     - AdminCheckerはRISKENチームが開発したチェックツールです（AWSのサービスではありません）
-    - `特権ユーザ`の判定はユーザまたはグループに対して以下を有する場合に `true` となります
-        - AdministratorAccess（マネージドポリシー）が付与されている
-        - IAMFullAccess（マネージドポリシー）が付与されている
-        - インラインポリシーにてAdministratorAccess相当が付与されている
-        - インラインポリシーにてIAMFullAccess相当が付与されている
-    - `過剰権限付与のチェック`は、[AceessAdvisor :octicons-link-external-24:](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-view-data.html){ target="_blank" } のデータをもとに必要以上に権限が付与されているかをチェックします
-        - 許可されているAWSサービス数に対して実際にアクセス履歴があったサービスの割合を計算します
-        - 上記の割合が多いほど高スコアがつく仕組みになっています
-        - これは最小権限のプラクティスを参考にしています
-        - IAMユーザやIAMロールの棚卸しにご活用ください
+    - 以下のスキャナが実装されています
+        - `特権ユーザチェック`
+        - `最小権限チェック`
+
+## 特権ユーザチェック
+
+- `特権ユーザチェック`の判定はユーザまたはグループに対して管理者権限・特権を持っているかをチェックします
+- 以下の場合に特権チェックが `true` となります
+    - AdministratorAccess（マネージドポリシー）が付与されている
+    - IAMFullAccess（マネージドポリシー）が付与されている
+    - インラインポリシーにてAdministratorAccess相当が付与されている
+    - インラインポリシーにてIAMFullAccess相当が付与されている
 
 ??? Warning "特権ユーザ判定では、いくつかの設定項目は無視されます"
     - Denyルール
@@ -23,6 +25,15 @@ AdminCheckerデータソースを有効にすると、AWSの特権IAMユーザ�
         - Conditionsにより漏洩リスク等の低いユーザでもスコアが高い状態（特権ユーザ）で取り込まれる可能性があります
     - PermissionBoundoryルール
         - PermissionBoundoryによってリスク低減がされている場合にはスコアが下がりますが、設定内容の詳細までは見ていません（ほぼ無視）
+
+## 最小権限チェック
+
+- `最小権限チェック`は、[AceessAdvisor :octicons-link-external-24:](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-view-data.html){ target="_blank" } のデータをもとに必要以上に権限が付与されているIAMユーザ、IAMロールをスキャンします
+- このスキャナは[最小権限のプラクティス :octicons-link-external-24:](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html){ target="_blank" } の思想を参考にしています
+    - 許可されているAWSサービス数に対して実際にアクセス履歴があったサービスの割合を計算します
+    - 上記の割合が大きいほど高スコアがつく仕組みになっています
+    - IAMユーザやIAMロールの棚卸しなどのユースケースにご活用ください
+
 
 ---
 
@@ -36,7 +47,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | IAMユーザーのARN                           |
 | `Description`  | 説明                                      |
 | `Score`        | [スコアリング](/aws/adminchecker/#_2)参照   |
-| `Tag`          | `aws` `admin-checker` `admin` (特権ユーザチェック) `access-report` （過剰権限チェック） |
+| `Tag`          | `aws` `admin-checker` `admin` (特権ユーザチェック) `access-report` （最小権限チェック） |
 
 ---
 
@@ -58,7 +69,7 @@ graph TD
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
 ```
 
-### 過剰権限チェック
+### 最小権限チェック
 
 ```mermaid
 graph TD
