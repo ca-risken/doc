@@ -6,13 +6,13 @@ AWSのインスタンス、セキュリティグループ情報等から外部�
 
 RISKENへデータを取り込む際に、以下のメタデータを付加します
 
-| 項目            | 説明                                        |
-| -------------- | -----------------------------------------  |
-| `DataSource`   | aws:portscan (固定)                        |
-| `ResourceName` | スキャン対象のリソースのARN                    |
-| `Description`  | 説明                                        |
-| `Score`        | [スコアリング](/aws/portscan#_2)参照          |
-| `Tag`          | `aws` `portscan` `{AWSのサービス}`           |
+| 項目            | 説明                                            |
+| -------------- | ------------------------------------------------|
+| `DataSource`   | aws:portscan (固定)                              |
+| `ResourceName` | スキャン対象のリソースのARN                         |
+| `Description`  | 説明                                             |
+| `Score`        | [スコアリング](/aws/portscan#_2)参照               |
+| `Tag`          | `aws` `portscan` `{AWSのサービス}` `{アカウントID}` |
 
 ## スコアリング
 

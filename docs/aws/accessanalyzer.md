@@ -12,13 +12,13 @@ AccessAnalyzerデータソースを有効にすると、AWSの[AccessAnalyzerサ
 
 RISKENへデータを取り込む際に、以下のメタデータを付加します
 
-| 項目            | 説明                                      |
-| -------------- | ---------------------------------------- |
-| `DataSource`   | aws:access-analyzer (固定)                |
-| `ResourceName` | AccessAnalyzerで検知したリソースのARN        |
-| `Description`  | 説明                                      |
-| `Score`        | [スコアリング](/aws/accessanalyzer/#_2)参照 |
-| `Tag`          | `aws` `access-analyzer` `{タイプ}`         |
+| 項目            | 説明                                    　　　　　  |
+| -------------- | ---------------------------------------- 　　　　　|
+| `DataSource`   | aws:access-analyzer (固定)               　　　　　 |
+| `ResourceName` | AccessAnalyzerで検知したリソースのARN                |
+| `Description`  | 説明                                              |
+| `Score`        | [スコアリング](/aws/accessanalyzer/#_2)参照         |
+| `Tag`          | `aws` `access-analyzer` `{タイプ}` `{アカウントID}` |
 
 ---
 
