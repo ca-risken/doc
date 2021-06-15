@@ -13,13 +13,13 @@ CloudSploitデータソースを有効にすると、オープンソースの[Cl
 
 RISKENへデータを取り込む際に、以下のメタデータを付加します
 
-| 項目            | 説明                                       |
-| -------------- | ----------------------------------------- |
-| `DataSource`   | google:cloudsploit (固定)                  |
-| `ResourceName` | 検出したアセット名                           |
-| `Description`  | 説明                                       |
-| `Score`        | [スコアリング](/google/cloudsploit#_2)参照   |
-| `Tag`          | `gcp` `cloudspoit` `{コンプライアンスマーク}` |
+| 項目            | 説明                                                       |
+| -------------- | --------------------------------------------------------- |
+| `DataSource`   | google:cloudsploit (固定)                                  |
+| `ResourceName` | 検出したアセット名                                           |
+| `Description`  | 説明                                                       |
+| `Score`        | [スコアリング](/google/cloudsploit#_2)参照                   |
+| `Tag`          | `gcp` `cloudspoit` `{コンプライアンスマーク}` `{プロジェクトID}`|
 
 ---
 

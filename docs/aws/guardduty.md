@@ -13,13 +13,13 @@ GuardDutyデータソースを有効にすると、AWSの[GuardDuty :octicons-li
 
 RISKENへデータを取り込む際に、以下のメタデータを付加します
 
-| 項目            | 説明                                      |
-| -------------- | ---------------------------------------- |
-| `DataSource`   | aws:guard-duty (固定)                      |
-| `ResourceName` | GuardDutyのFinding ARN                    |
-| `Description`  | 説明                                       |
-| `Score`        | [スコアリング](/aws/guardduty/#_2)参照       |
-| `Tag`          | `aws` `admin-checker` `{タイプ}`           |
+| 項目            | 説明                                           |
+| -------------- | ---------------------------------------------- |
+| `DataSource`   | aws:guard-duty (固定)                          |
+| `ResourceName` | GuardDutyのFinding ARN                         |
+| `Description`  | 説明                                           |
+| `Score`        | [スコアリング](/aws/guardduty/#_2)参照           |
+| `Tag`          | `aws` `admin-checker` `{タイプ}` `{アカウントID}`|
 
 
 ---
