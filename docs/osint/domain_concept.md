@@ -46,9 +46,9 @@ graph TD
 ```mermaid
 graph TD
     A[Start] --> B{{Is number of days left until certificate expiration?}};
-    B -->|More than 50 days| C[Score: 0.1]:::low;
-    B -->|Less than 50 days| D[Score: 0.6]:::mid;
-    B -->|Less than 25 days| E[Score: 0.8]:::high;
+    B -->|More than 30 days| C[Score: 0.1]:::low;
+    B -->|Less than 30 days| D[Score: 0.6]:::mid;
+    B -->|Less than 14 days| E[Score: 0.8]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
     classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
