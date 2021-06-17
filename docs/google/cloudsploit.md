@@ -63,33 +63,35 @@ graph TD
 
 ＊下記以外のプラグインはすべてスコア `0.3`が付与されます
 
-|Category|Plugin|Score|Compliance Tag|
-|---|---|---|---|
-|compute|instanceLeastPrivilege|0.6|pci|
-|iam|corporateEmailsOnly|0.8||
-|iam|serviceAccountAdmin|0.6||
-|sql|dbPubliclyAccessible|0.8|hipaa, pci|
-|storage|bucketAllUsersPolicy|0.8||
-|vpcnetwork|openAllPorts|0.8|hipaa, pci|
-|vpcnetwork|openCIFS|0.6||
-|vpcnetwork|openDNS|0.6||
-|vpcnetwork|openDocker|0.6||
-|vpcnetwork|openFTP|0.6||
-|vpcnetwork|openHadoopNameNode|0.6||
-|vpcnetwork|openHadoopNameNodeWebUI|0.6||
-|vpcnetwork|openKibana|0.6||
-|vpcnetwork|openMySQL|0.6||
-|vpcnetwork|openNetBIOS|0.6||
-|vpcnetwork|openOracle|0.6||
-|vpcnetwork|openOracleAutoDataWarehouse|0.6||
-|vpcnetwork|openPostgreSQL|0.6||
-|vpcnetwork|openRDP|0.6||
-|vpcnetwork|openRPC|0.6||
-|vpcnetwork|openSalt|0.6||
-|vpcnetwork|openSMBoTCP|0.6||
-|vpcnetwork|openSMTP|0.6||
-|vpcnetwork|openSQLServer|0.6||
-|vpcnetwork|openSSH|0.6||
-|vpcnetwork|openTelnet|0.6||
-|vpcnetwork|openVNCClient|0.6||
-|vpcnetwork|openVNCServer|0.6||
+|Category|Plugin|Score|Compliance Tag|memo|
+|---|---|---|---|---|
+|CloudSQL|dbPubliclyAccessible|0.8|hipaa, pci||
+|GCE|instanceLeastPrivilege|0.6|pci||
+|GCS|bucketAllUsersPolicy|0.8|||
+|GKE|loggingEnabled|0.6|hipaa|2021/06/17更新|
+|IAM|corporateEmailsOnly|0.8|||
+|IAM|serviceAccountAdmin|0.6|||
+|IAM|serviceAccountUser|0.6||2021/06/17更新|
+|VPC Network|openAllPorts|0.8|hipaa, pci||
+|VPC Network|openCIFS|0.8||2021/06/17更新|
+|VPC Network|openDNS|0.8||2021/06/17更新|
+|VPC Network|openDocker|0.8||2021/06/17更新|
+|VPC Network|openFTP|0.8||2021/06/17更新|
+|VPC Network|openHadoopNameNode|0.8||2021/06/17更新|
+|VPC Network|openHadoopNameNodeWebUI|0.8||2021/06/17更新|
+|VPC Network|openKibana|0.8||2021/06/17更新|
+|VPC Network|openMySQL|0.8||2021/06/17更新|
+|VPC Network|openNetBIOS|0.8||2021/06/17更新|
+|VPC Network|openOracle|0.8||2021/06/17更新|
+|VPC Network|openOracleAutoDataWarehouse|0.8||2021/06/17更新|
+|VPC Network|openPostgreSQL|0.8||2021/06/17更新|
+|VPC Network|openRDP|0.8||2021/06/17更新|
+|VPC Network|openRPC|0.8||2021/06/17更新|
+|VPC Network|openSalt|0.8||2021/06/17更新|
+|VPC Network|openSMBoTCP|0.8||2021/06/17更新|
+|VPC Network|openSMTP|0.8||2021/06/17更新|
+|VPC Network|openSQLServer|0.8||2021/06/17更新|
+|VPC Network|openSSH|0.6|||
+|VPC Network|openTelnet|0.8||2021/06/17更新|
+|VPC Network|openVNCClient|0.8||2021/06/17更新|
+|VPC Network|openVNCServer|0.8||2021/06/17更新|

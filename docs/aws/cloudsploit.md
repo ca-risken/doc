@@ -58,23 +58,70 @@ graph TD
 
 ＊下記以外のプラグインはすべてスコア `0.3`が付与されます
 
-|Category|Plugin|Score|Compliance Tag|
-|---|---|---|---|
-|ACM|acmCertificateExpiry|0.6|pci|
-|CloudTrail|cloudtrailEnabled|0.8|hipaa,pci,cis1,cis|
-|EC2|ebsSnapshotPublic|0.8||
-|EC2|openAllPortsProtocols|0.8|hipaa,pci|
-|IAM|rootAccessKeys|0.8|hipaa,cis1,cis|
-|IAM|rootAccountInUse|0.6|hipaa,pci,cis1,cis|
-|IAM|rootMfaEnabled|0.8|pci,cis1,cis|
-|Lambda|lambdaPublicAccess|0.6||
-|RDS|rdsEncryptionEnabled|0.6|hipaa,pci|
-|RDS|rdsPubliclyAccessible|0.8|hipaa,pci|
-|Redshift|redshiftEncryptionEnabled|0.6|hipaa|
-|Redshift|redshiftPubliclyAccessible|0.8|hipaa,pci|
-|Route53|danglingDnsRecords|0.6||
-|Route53|domainExpiry|0.8||
-|S3|bucketAllUsersAcl|0.6|pci|
-|S3|bucketAllUsersPolicy|0.6|pci|
-|SageMaker|notebookDirectInternetAccess|0.6||
-|SQS|sqsPublicAccess|0.6||
+|Category|Plugin|Score|Compliance Tag|memo|
+|---|---|---|---|---|
+|ACM|acmCertificateExpiry|0.6|pci||
+|ACM|acmValidation|0.6||2021/06/17更新|
+|CloudFront|insecureProtocols|0.6|hipaa, pci|2021/06/17更新|
+|CloudTrail|cloudtrailBucketPrivate|0.8|cis1, cis|2021/06/17更新|
+|CloudTrail|cloudtrailDeliveryFailing|0.8||2021/06/17更新|
+|CloudTrail|cloudtrailEnabled|0.8|hipaa,pci,cis1,cis||
+|EC2|ebsSnapshotPublic|0.8|||
+|EC2|openAllPortsProtocols|0.8|hipaa,pci||
+|EC2|ebsSnapshotPrivate|0.8||2021/06/17更新|
+|EC2|openCIFS|0.8||2021/06/17更新|
+|EC2|openDNS|0.8||2021/06/17更新|
+|EC2|openDocker|0.8||2021/06/17更新|
+|EC2|openElasticsearch|0.8||2021/06/17更新|
+|EC2|openFTP|0.8||2021/06/17更新|
+|EC2|openHadoopNameNode|0.8||2021/06/17更新|
+|EC2|openHadoopNameNodeWebUI|0.8||2021/06/17更新|
+|EC2|openKibana|0.8||2021/06/17更新|
+|EC2|openMySQL|0.8||2021/06/17更新|
+|EC2|openNetBIOS|0.8||2021/06/17更新|
+|EC2|openOracle|0.8||2021/06/17更新|
+|EC2|openOracleAutoDataWarehouse|0.8||2021/06/17更新|
+|EC2|openPostgreSQL|0.8||2021/06/17更新|
+|EC2|openRDP|0.8|cis1, cis|2021/06/17更新|
+|EC2|openRPC|0.8||2021/06/17更新|
+|EC2|openSalt|0.8||2021/06/17更新|
+|EC2|openSMBoTCP|0.8||2021/06/17更新|
+|EC2|openSMTP|0.8||2021/06/17更新|
+|EC2|openSQLServer|0.8||2021/06/17更新|
+|EC2|openSSH|0.6||2021/06/17更新|
+|EC2|openTelnet|0.8||2021/06/17更新|
+|EC2|openVNCClient|0.8||2021/06/17更新|
+|EC2|openVNCServer|0.8||2021/06/17更新|
+|EC2|publicAmi|0.8||2021/06/17更新|
+|ECR|ecrRepositoryPolicy|0.6||2021/06/17更新|
+|EKS|eksLoggingEnabled|0.6||2021/06/17更新|
+|EKS|eksSecurityGroups|0.6||2021/06/17更新|
+|ELBv2|elbv2DeletionProtection|0.6||2021/06/17更新|
+|GuardDuty|guarddutyEnabled|0.6||2021/06/17更新|
+|IAM|accessKeysExtra|0.6||2021/06/17更新|
+|IAM|accessKeysLastUsed|0.6|pci, cis1, cis|2021/06/17更新|
+|IAM|certificateExpiry|0.8||2021/06/17更新|
+|IAM|iamRoleLastUsed|0.6||2021/06/17更新|
+|IAM|iamUserAdmins|0.6|pci|2021/06/17更新|
+|IAM|rootAccessKeys|0.8|hipaa,cis1,cis||
+|IAM|rootAccountInUse|0.6|hipaa,pci,cis1,cis||
+|IAM|rootMfaEnabled|0.8|pci,cis1,cis||
+|IAM|rootSigningCertificate|0.8|hipaa|2021/06/17更新|
+|IAM|usersMfaEnabled|0.6|hipaa, pci, cis1, cis|2021/06/17更新|
+|IAM|usersPasswordAndKeys|0.6||2021/06/17更新|
+|KMS|kmsScheduledDeletion|0.6||2021/06/17更新|
+|Lambda|lambdaPublicAccess|0.6|||
+|RDS|rdsEncryptionEnabled|0.6|hipaa,pci||
+|RDS|rdsPubliclyAccessible|0.8|hipaa,pci||
+|Redshift|redshiftEncryptionEnabled|0.6|hipaa||
+|Redshift|redshiftPubliclyAccessible|0.8|hipaa,pci||
+|Route53|danglingDnsRecords|0.6|||
+|Route53|domainAutoRenew|0.6||2021/06/17更新|
+|Route53|domainExpiry|0.8|||
+|S3|bucketAllUsersAcl|0.6|pci||
+|S3|bucketAllUsersPolicy|0.6|pci||
+|SageMaker|notebookDirectInternetAccess|0.6|||
+|SES|dkimEnabled|0.6||2021/06/17更新|
+|SNS|topicPolicies|0.8||2021/06/17更新|
+|SQS|sqsPublicAccess|0.6|||
+|Transfer|transferLoggingEnabled|0.6|hipaa, pci|2021/06/17更新|
