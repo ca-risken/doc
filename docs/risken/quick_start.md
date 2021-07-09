@@ -24,7 +24,7 @@
 - [AWS :octicons-link-external-24:](/aws/overview_datasource/){ target="_blank" }
 - [GCP :octicons-link-external-24:](/google/overview_datasource/){ target="_blank" }
 - [Wordpress :octicons-link-external-24:](/diagnosis/wpscan_datasource/){ target="_blank" }
-- [ドメイン :octicons-link-external-24:](osint/domain_datasource/){ target="_blank" }
+- [ドメイン :octicons-link-external-24:](/osint/domain_datasource/){ target="_blank" }
 - [ソースコード :octicons-link-external-24:](/code/gitleaks_datasource/){ target="_blank" }
 
 ## スキャンする
