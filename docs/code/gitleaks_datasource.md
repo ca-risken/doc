@@ -18,6 +18,8 @@ Gitleaksのデータソース設定について説明します
         - 認証情報を登録しない場合はInternal／Privateリポジトリのスキャンはできません。
         - 認証情報はRISKEN上で暗号化して保存されます
         - 認証情報登録後に設定済みのTokenは閲覧できません（xxxxのようなマスク値で表示されます）
+        - OAuthのスコープは `repo` と `read:org` （Organizationのスキャン時）を指定してください
+        - ![Scope](/img/code/gitleaks_pat_scope.png){style="width:500px"}
     - **リポジトリの可視性**: スキャン対象にする[可視性 :octicons-link-external-24:](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility){ target="_blank" } を選択してください（Internal／Privateを対象にする場合はPATの登録が必要です）
         - `Public`: インターネットに公開されているリポジトリをスキャンします
         - `Internal`: Enterprise内のリポジトリをスキャンします
