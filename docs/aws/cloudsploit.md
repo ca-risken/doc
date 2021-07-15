@@ -16,7 +16,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | 検出したリソースのARN                                        |
 | `Description`  | 説明                                                       |
 | `Score`        | [スコアリング](/aws/cloudsploit#_2)参照                      |
-| `Tag`          | `aws` `cloudspoit` `{AWSのサービス}` `{コンプライアンスマーク}` `{アカウントID}` |
+| `Tag`          | `aws` `cloudspoit` `{AWSのサービス}` `{コンプライアンスマーク}` `{アカウントID}` `{プラグイン名}` |
 
 ## スコアリング
 
