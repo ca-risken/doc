@@ -19,7 +19,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | 検出したアセット名                                           |
 | `Description`  | 説明                                                       |
 | `Score`        | [スコアリング](/google/cloudsploit#_2)参照                   |
-| `Tag`          | `gcp` `cloudspoit` `{コンプライアンスマーク}` `{プロジェクトID}` `{Well-Architectedタグ}` |
+| `Tag`          | `gcp` `cloudspoit` `{コンプライアンスマーク}` `{プロジェクトID}` `{プラグイン名}` `{Well-Architectedタグ}` |
 
 ＊ `Well-Architected` タグの詳しい使い方は[/risken/well_architected](/risken/well_architected/) ページを参照してください
 
