@@ -6,15 +6,16 @@ site_author: RISKEN
 nav:
   - RISKEN:
     - Overview:
-      - RISKEN:    index.md
-      - Concept:   risken/overview_concept.md
-      - Coverage:  risken/overview_coverage.md
-    - Quick Start: risken/quick_start.md
-    - Project:     risken/project.md
-    - Finding:     risken/finding.md
-    - Alert:       risken/alert.md
-    - User:        risken/user.md
-    - Report:      risken/report.md
+      - RISKEN:         index.md
+      - Concept:        risken/overview_concept.md
+      - Coverage:       risken/overview_coverage.md
+    - Quick Start:      risken/quick_start.md
+    - Project:          risken/project.md
+    - Finding:          risken/finding.md
+    - Alert:            risken/alert.md
+    - User:             risken/user.md
+    - Report:           risken/report.md
+    - Well-Architected: risken/well_architected.md
 
   - AWS:
     - Overview:
