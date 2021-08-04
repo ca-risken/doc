@@ -69,7 +69,7 @@ graph TD
 |---|---|---|---|---|
 |CloudSQL|dbPubliclyAccessible|0.8|hipaa, pci||
 |GCE|instanceLeastPrivilege|0.6|pci||
-|GCS|bucketAllUsersPolicy|0.8|||
+|GCS|bucketAllUsersPolicy|0.6||2021/08/04更新|
 |GKE|loggingEnabled|0.6|hipaa|2021/06/17更新|
 |IAM|corporateEmailsOnly|0.8|||
 |IAM|serviceAccountAdmin|0.6|||
