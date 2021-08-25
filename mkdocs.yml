@@ -14,6 +14,7 @@ nav:
     - Finding:          risken/finding.md
     - Alert:            risken/alert.md
     - User:             risken/user.md
+    - AccessToken:      risken/access_token.md
     - Report:           risken/report.md
     - Well-Architected: risken/well_architected.md
 
@@ -70,6 +71,17 @@ nav:
       - Concept:    code/gitleaks_concept.md
       - DataSource: code/gitleaks_datasource.md
       - Scan:       code/gitleaks_scan.md
+
+  - Reference:
+    - API:           reference/api.md
+    - Finding API:   reference/api_finding.md
+    - Alert API:     reference/api_alert.md
+    - AWS API:       reference/api_aws.md
+    - Google API:    reference/api_google.md
+    - Diagnosis API: reference/api_diagnosis.md
+    - Code API:      reference/api_code.md
+    - IAM API:       reference/api_iam.md
+    - Report API:    reference/api_report.md
 
   - Contact us:
     - Contact: contact/contact.md
