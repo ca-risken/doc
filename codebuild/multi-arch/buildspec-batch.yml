@@ -1,0 +1,34 @@
+batch:
+  build-graph:
+    - identifier: build_amd64
+      buildspec: codebuild/multi-arch/buildspec-image.yml
+      env:
+        compute-type: BUILD_GENERAL1_LARGE
+        image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+        privileged-mode: true
+        type: LINUX_CONTAINER
+        variables:
+          OS: linux
+          ARCH: amd64
+    - identifier: build_arm64
+      buildspec: codebuild/multi-arch/buildspec-image.yml
+      env:
+        compute-type: BUILD_GENERAL1_LARGE
+        image: aws/codebuild/amazonlinux2-aarch64-standard:2.0
+        privileged-mode: true
+        type: ARM_CONTAINER
+        variables:
+          OS: linux
+          ARCH: arm64
+    - identifier: build_manifest
+      buildspec: codebuild/multi-arch/buildspec-manifest.yml
+      env:
+        compute-type: BUILD_GENERAL1_SMALL
+        image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+        privileged-mode: true
+        type: LINUX_CONTAINER
+      depend-on:
+        - build_amd64
+        - build_arm64
+
+

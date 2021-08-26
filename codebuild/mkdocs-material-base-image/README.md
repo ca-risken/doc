@@ -1,0 +1,6 @@
+# docサービス用のbuild imageのビルドについて
+CodeBuildのマネージドイメージに含まれているdockerのバージョンではmkdocs-materialのDockerfileのベースイメージをビルドできない。
+そのため、以下のワークアラウンドで対応すること。
+* amd64のEC2インスタンスでイメージをビルドしてECRにpush
+* arm64のEC2インスタンスで同上
+* pushしたイメージを元にmanifestを作成し、ECRにpush

@@ -1,0 +1,39 @@
+version: 0.2
+
+env:
+  variables:
+    IMAGE_PREFIX: "multi-arch-test-doc"
+  parameter-store:
+    GITHUB_USER: "/build/GITHUB_USER"
+    GITHUB_TOKEN: "/build/GITHUB_TOKEN"
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Setting environment variables"
+      - TAG=v0.0.${CODEBUILD_BUILD_NUMBER}
+      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
+      - REGISTORY=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+  pre_build:
+    commands:
+      - echo "Setting environment variables"
+      - BUILD_OPT="--no-cache --pull"
+      - TAG=$(git rev-parse --short HEAD)_${OS}_${ARCH}
+      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
+      - REGISTRY=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${REGISTRY}
+  build:
+    commands:
+      - echo Build web started on `date`
+      - echo Pushing the Docker images...
+      - make build-image-ci -f BuildMakefile -j BUILD_OPT="${BUILD_OPT}" IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${TAG} IMAGE_REGISTRY=${REGISTRY}
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - make push-image -f BuildMakefile -j IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${TAG} IMAGE_REGISTRY=${REGISTRY}
