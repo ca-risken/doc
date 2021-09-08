@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_PREFIX: "multi-arch-test-doc"
+    IMAGE_PREFIX: "risken-gateway"
   parameter-store:
     GITHUB_USER: "/build/GITHUB_USER"
     GITHUB_TOKEN: "/build/GITHUB_TOKEN"
