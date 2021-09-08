@@ -1,15 +1,20 @@
 version: 0.2
 env:
   variables:
-    IMAGE: "gateway/doc"
-    DOCKER_BUILD_OPT: "--no-cache --pull"
+    IMAGE_PREFIX: "risken-gateway"
 
 phases:
   install:
     runtime-versions:
       python: 3.8
-
+  pre_build:
+    commands:
+      - echo "Setting environment variables"
+      - BUILD_OPT="--no-cache --pull"
+      - TAG=$(git rev-parse --short HEAD)
+      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
+      - REGISTRY=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
   build:
     commands:
-      - echo "Build web started on `date`"
-      - cd ${CODEBUILD_SRC_DIR} && docker build ${DOCKER_BUILD_OPT} -t ${IMAGE}:test .
+      - echo "Build doc started on `date`"
+      - make build-ci -j BUILD_OPT="${BUILD_OPT}" IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${TAG} IMAGE_REGISTRY=${REGISTRY}
