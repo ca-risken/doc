@@ -30,10 +30,10 @@ phases:
     commands:
       - echo Build web started on `date`
       - echo Pushing the Docker images...
-      - make build-image-ci -f BuildMakefile -j BUILD_OPT="${BUILD_OPT}" IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${TAG} IMAGE_REGISTRY=${REGISTRY}
+      - make build-ci -j BUILD_OPT="${BUILD_OPT}" IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${TAG} IMAGE_REGISTRY=${REGISTRY}
 
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - make push-image -f BuildMakefile -j IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${TAG} IMAGE_REGISTRY=${REGISTRY}
+      - make push-image -j IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${TAG} IMAGE_REGISTRY=${REGISTRY}
