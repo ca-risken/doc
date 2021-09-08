@@ -1,0 +1,45 @@
+version: 0.2
+
+env:
+  variables:
+    IMAGE_MKDOCS_MATERIAL_BASE: "base/mkdocs-material-base"
+  parameter-store:
+    GITHUB_USER: "/build/GITHUB_USER"
+    GITHUB_TOKEN: "/build/GITHUB_TOKEN"
+
+phases:
+  install:
+    commands:
+      - echo "machine github.com" > ~/.netrc
+      - echo "login ${GITHUB_USER}" >> ~/.netrc
+      - echo "password ${GITHUB_TOKEN}" >> ~/.netrc
+  pre_build:
+    commands:
+      - echo Setting environment variables
+      - BUILD_OPT="--no-cache --pull"
+      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
+      - REGISTORY=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+
+      - echo Logging in to Amazon ECR...
+      - codebuild-breakpoint
+      - $(aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION})
+  build:
+    commands:
+      - echo Build mkdocs material base image started on `date`
+      - git clone https://github.com/squidfunk/mkdocs-material.git
+      - cd mkdocs-material
+      - git checkout ${MKDOCS_MATERIAL_VERSION}
+      - TAG=${MKDOCS_MATERIAL_VERSION}_${OS}_${ARCH}
+      - docker build ${BUILD_OPT} -t ${IMAGE_MKDOCS_MATERIAL_BASE}:${TAG} .
+
+      - echo Tagging the images...
+      # tag the specific version
+      - docker tag ${IMAGE_MKDOCS_MATERIAL_BASE}:${TAG} ${REGISTORY}/${IMAGE_MKDOCS_MATERIAL_BASE}:${TAG}
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+
+      # specific version
+      - docker push ${REGISTORY}/${IMAGE_MKDOCS_MATERIAL_BASE}:${TAG}
