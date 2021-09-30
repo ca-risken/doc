@@ -57,6 +57,14 @@ nav:
       - Concept:    diagnosis/jira_concept.md
       - DataSource: diagnosis/jira_datasource.md
       - Scan:       diagnosis/jira_scan.md
+    - ApplicationScan:
+      - Concept:    diagnosis/applicationscan_concept.md
+      - DataSource: diagnosis/applicationscan_datasource.md
+      - Scan:       diagnosis/applicationscan_scan.md
+    - PortScan:
+      - Concept:    diagnosis/portscan_concept.md
+      - DataSource: diagnosis/portscan_datasource.md
+      - Scan:       diagnosis/portscan_scan.md
 
   - OSINT:
     - Overview:     osint/index.md
