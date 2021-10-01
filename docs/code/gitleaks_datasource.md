@@ -37,7 +37,7 @@ Gitleaksのデータソース設定について説明します
         - `Disabled`
         - `Forkリポジトリ`
             - ＊[Forkリポジトリ :octicons-link-external-24:](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo){ target="_blank" } とは一般的にはオリジナルリポジトリへの貢献（修正の提案）のために作成されるリポジトリです
-    - リポジトリのサイズが1000MB以上のもの
+    - リポジトリのサイズが2000MB以上のもの
     - RISKEN環境からcloneできないもの
 
 ## GitHub Enterprise Serverをスキャンする
