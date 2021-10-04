@@ -1,0 +1,42 @@
+version: 0.2
+
+env:
+  variables:
+    REGISTRY: "public.ecr.aws/risken"
+    IMAGE_PREFIX: "doc"
+  parameter-store:
+    GITHUB_USER: "/build/GITHUB_USER"
+    GITHUB_TOKEN: "/build/GITHUB_TOKEN"
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.14
+    commands:
+      - echo "machine github.com" > ~/.netrc
+      - echo "login ${GITHUB_USER}" >> ~/.netrc
+      - echo "password ${GITHUB_TOKEN}" >> ~/.netrc
+  pre_build:
+    commands:
+      - echo Setting environment variables
+      - BUILD_OPT="--no-cache --pull"
+      - TAG=${CODEBUILD_WEBHOOK_TRIGGER#tag/}
+      - IMAGE_TAG=${TAG}_${OS}_${ARCH}
+      - AWS_XRAY_SDK_DISABLED=TRUE
+
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin  ${REGISTRY}
+
+      - make go-test -j
+  build:
+    commands:
+      - echo Build gateway started on `date`
+      - echo Pushing the Docker images...
+      - make build-ci -j BUILD_OPT="${BUILD_OPT}" IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${IMAGE_TAG} IMAGE_REGISTRY=${REGISTRY}
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - make push-image -j IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG=${IMAGE_TAG} IMAGE_REGISTRY=${REGISTRY}

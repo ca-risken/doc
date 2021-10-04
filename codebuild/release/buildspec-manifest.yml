@@ -1,0 +1,38 @@
+version: 0.2
+
+env:
+  variables:
+    REGISTRY: "public.ecr.aws/risken"
+    IMAGE_PREFIX: "doc"
+
+  parameter-store:
+    GITHUB_USER: "/build/GITHUB_USER"
+    GITHUB_TOKEN: "/build/GITHUB_TOKEN"
+
+phases:
+  install:
+    commands:
+      - echo "machine github.com" > ~/.netrc
+      - echo "login ${GITHUB_USER}" >> ~/.netrc
+      - echo "password ${GITHUB_TOKEN}" >> ~/.netrc
+  pre_build:
+    commands:
+      - echo Setting environment variables
+      - export DOCKER_CLI_EXPERIMENTAL=enabled
+      - TAG=${CODEBUILD_WEBHOOK_TRIGGER#tag/}
+
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${REGISTRY}
+  build:
+    commands:
+      - echo Create manifests...
+      - make create-manifest -j IMAGE_REGISTRY=${REGISTRY} IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG_BASE=${TAG} MANIFEST_TAG=${TAG}
+      - make create-manifest -j IMAGE_REGISTRY=${REGISTRY} IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_TAG_BASE=${TAG} MANIFEST_TAG=latest
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker manifest...
+      - make push-manifest -j IMAGE_REGISTRY=${REGISTRY} IMAGE_PREFIX=${IMAGE_PREFIX} MANIFEST_TAG=${TAG}
+      - make push-manifest -j IMAGE_REGISTRY=${REGISTRY} IMAGE_PREFIX=${IMAGE_PREFIX} MANIFEST_TAG=latest
