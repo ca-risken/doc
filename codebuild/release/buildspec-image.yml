@@ -27,8 +27,6 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin  ${REGISTRY}
-
-      - make go-test -j
   build:
     commands:
       - echo Build gateway started on `date`
