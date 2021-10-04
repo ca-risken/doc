@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     REGISTRY: "public.ecr.aws/risken"
-    IMAGE_PREFIX: "doc"
+    IMAGE_PREFIX: "gateway"
   parameter-store:
     GITHUB_USER: "/build/GITHUB_USER"
     GITHUB_TOKEN: "/build/GITHUB_TOKEN"
