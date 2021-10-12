@@ -36,7 +36,7 @@ GET: /finding/list-finding/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/finding/list-finding/?project_id=1002&data_source=osint:subdomain,aws:cloudsploit'
+    'https://{your-site}/api/v1/finding/list-finding/?project_id=1002&data_source=osint:subdomain,aws:cloudsploit'
 ```
 
 ### Response
@@ -84,7 +84,7 @@ GET: /finding/get-finding/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/finding/get-finding/?project_id=1001&finding_id=1001'
+    'https://{your-site}/api/v1/finding/get-finding/?project_id=1001&finding_id=1001'
 ```
 
 ### Response
@@ -145,7 +145,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "finding":{"description":"desc", "data_source":"ds", "data_source_id":"ds-004", "resource_name":"rn", "project_id":1001, "original_score":55.51, "original_max_score":100.0, "data":"{\"key\":\"value\"}"}}' \
-    'https://api.security-hub.jp/api/v1/finding/put-finding/'
+    'https://{your-site}/api/v1/finding/put-finding/'
 ```
 
 ### Response
@@ -200,7 +200,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "finding_id":1042}' \
-    'https://api.security-hub.jp/api/v1/finding/delete-finding/'
+    'https://{your-site}/api/v1/finding/delete-finding/'
 ```
 
 ### Response
@@ -239,7 +239,7 @@ GET: /finding/list-finding-tag/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/finding/list-finding-tag/?project_id=1001&finding_id=1001'
+    'https://{your-site}/api/v1/finding/list-finding-tag/?project_id=1001&finding_id=1001'
 ```
 
 ### Response
@@ -302,7 +302,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "tag": {"finding_id":1001, "project_id":1001, "tag":"key:value"}}' \
-    'https://api.security-hub.jp/api/v1/finding/tag-finding/'
+    'https://{your-site}/api/v1/finding/tag-finding/'
 ```
 
 
@@ -351,7 +351,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "finding_tag_id":1007}' \
-    'https://api.security-hub.jp/api/v1/finding/untag-finding/'
+    'https://{your-site}/api/v1/finding/untag-finding/'
 ```
 
 ### Response
@@ -386,7 +386,7 @@ GET: /finding/get-pend-finding/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/finding/get-pend-finding/?project_id=1001&finding_id=1001'
+    'https://{your-site}/api/v1/finding/get-pend-finding/?project_id=1001&finding_id=1001'
 ```
 
 ### Response
@@ -435,7 +435,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "pend_finding": {"finding_id":1001, "project_id":1001, "note":"note"}}' \
-    'https://api.security-hub.jp/api/v1/finding/put-pend-finding/'
+    'https://{your-site}/api/v1/finding/put-pend-finding/'
 ```
 
 ### Response
@@ -482,7 +482,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "finding_id":1001}' \
-    'https://api.security-hub.jp/api/v1/finding/delete-pend-finding/'
+    'https://{your-site}/api/v1/finding/delete-pend-finding/'
 ```
 
 ### Response

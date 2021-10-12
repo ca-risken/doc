@@ -30,7 +30,7 @@ GET: /alert/list-alert/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/alert/list-alert/?project_id=1001'
+    'https://{your-site}/api/v1/alert/list-alert/?project_id=1001'
 ```
 
 ### Response
@@ -82,7 +82,7 @@ GET: /alert/get-alert/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/alert/get-alert/?project_id=1001&alert_id=1001'
+    'https://{your-site}/api/v1/alert/get-alert/?project_id=1001&alert_id=1001'
 ```
 
 ### Response
@@ -134,7 +134,7 @@ GET: /alert/list-history/
 ```bash
 curl -XGET \
 --header 'Authorization: Bearer xxx' \
-'https://api.security-hub.jp/api/v1/alert/list-history/?project_id=1001&alert_id=1001'
+'https://{your-site}/api/v1/alert/list-history/?project_id=1001&alert_id=1001'
 
 ```
 
@@ -211,7 +211,7 @@ GET: /alert/list-alert-condition/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/alert/list-condition/?project_id=1001&enabled=true'
+    'https://{your-site}/api/v1/alert/list-condition/?project_id=1001&enabled=true'
 ```
 
 ### Response
@@ -268,7 +268,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "alert_condition":{"alert_condition_id":1001, "description":"update", "severity":"high", "project_id":1001, "and_or":"and", "enabled":true}}' \
-    'https://api.security-hub.jp/api/v1/alert/put-condition/'
+    'https://{your-site}/api/v1/alert/put-condition/'
 ```
 
 ### Response
@@ -318,7 +318,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "alert_condition_id":1003}' \
-    'https://api.security-hub.jp/api/v1/alert/delete-condition/'
+    'https://{your-site}/api/v1/alert/delete-condition/'
 ```
 
 ### Response
@@ -356,7 +356,7 @@ GET: /alert/list-rule/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/alert/list-rule/?project_id=1001&from_score=1.0'
+    'https://{your-site}/api/v1/alert/list-rule/?project_id=1001&from_score=1.0'
 ```
 
 ### Response
@@ -423,7 +423,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "alert_rule":{"name":"over 0.5", "project_id":1001, "score":0.5, "finding_cnt":1}}' \
-    'https://api.security-hub.jp/api/v1/alert/put-rule/'
+    'https://{your-site}/api/v1/alert/put-rule/'
 ```
 
 ### Response
@@ -472,7 +472,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "alert_rule_id":1003}' \
-    'https://api.security-hub.jp/api/v1/alert/delete-rule/'
+    'https://{your-site}/api/v1/alert/delete-rule/'
 ```
 
 ### Response
@@ -509,7 +509,7 @@ GET: /alert/list-notification/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/alert/list-notification/?project_id=1001&type=slack'
+    'https://{your-site}/api/v1/alert/list-notification/?project_id=1001&type=slack'
 ```
 
 ### Response
@@ -573,7 +573,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001,"notification":{"name":"#channel","type":"slack","notify_setting":"{\"webhook_url\":\"https://your-webhook\",\"data\":{\"channel\":\"\",\"message\":\"\"}}","project_id":1001}}' \
-    'https://api.security-hub.jp/api/v1/alert/put-notification/'
+    'https://{your-site}/api/v1/alert/put-notification/'
 ```
 
 ### Response
@@ -622,7 +622,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "notification_id":1004}' \
-    'https://api.security-hub.jp/api/v1/alert/delete-notification/'
+    'https://{your-site}/api/v1/alert/delete-notification/'
 ```
 
 ### Response
@@ -660,7 +660,7 @@ GET: /alert/list-condition_rule/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/alert/list-condition_rule/?project_id=1001'
+    'https://{your-site}/api/v1/alert/list-condition_rule/?project_id=1001'
 
 ```
 
@@ -719,7 +719,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "alert_cond_rule":{"alert_condition_id":1001, "alert_rule_id": 1001, "project_id": 1001}}' \
-    'https://api.security-hub.jp/api/v1/alert/put-condition_rule/'
+    'https://{your-site}/api/v1/alert/put-condition_rule/'
 ```
 
 ### Response
@@ -767,7 +767,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"alert_condition_id":1001, "alert_rule_id": 1001, "project_id": 1001}' \
-    'https://api.security-hub.jp/api/v1/alert/delete-condition_rule/'
+    'https://{your-site}/api/v1/alert/delete-condition_rule/'
 ```
 
 ### Response
@@ -805,7 +805,7 @@ GET: /alert/list-condition_notification/
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://api.security-hub.jp/api/v1/alert/list-condition_notification/?project_id=1001'
+    'https://{your-site}/api/v1/alert/list-condition_notification/?project_id=1001'
 
 ```
 
@@ -870,7 +870,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id":1001, "alert_cond_notification":{"alert_condition_id":1001, "notification_id": 1001, "project_id": 1001, "cache_second":3600, "notified_at":0}}' \
-    'https://api.security-hub.jp/api/v1/alert/put-condition_notification/'
+    'https://{your-site}/api/v1/alert/put-condition_notification/'
 ```
 
 ### Response
@@ -919,7 +919,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"alert_condition_id":1001, "notification_id": 1001, "project_id": 1001}' \
-    'https://api.security-hub.jp/api/v1/alert/delete-condition_notification/'
+    'https://{your-site}/api/v1/alert/delete-condition_notification/'
 ```
 
 ### Response
@@ -956,7 +956,7 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{"project_id": 1001, "alert_condition_id":[1001,1002]}' \
-    'https://api.security-hub.jp/api/v1/alert/analyze-alert/'
+    'https://{your-site}/api/v1/alert/analyze-alert/'
 ```
 
 ### Response

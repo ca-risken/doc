@@ -38,11 +38,13 @@
 ```bash
 $ curl -XGET \
     --header 'Authorization: Bearer {your-token-here}' \
-    'https://api.security-hub.jp/api/v1/iam/list-user/?activated=true'
+    'https://{your-site}/api/v1/iam/list-user/?activated=true'
 ```
 
 ???+ warning
-    上記手順でアクセスできない場合、APIのエンドポイントにIP制限などのACL設定や、トークン以外の認証方式が設定されている可能性があります。
+    APIエンドポイントの詳細（`{your-site}`）はシステム管理者に問い合わせてください。
+    
+    また、上記手順でアクセスできない場合、APIのエンドポイントにIP制限などのACL設定や、トークン以外の認証方式が設定されている可能性があります。
     詳細はシステム管理者にご確認ください。
 
 ---

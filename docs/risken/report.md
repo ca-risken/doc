@@ -63,13 +63,6 @@ Findingの登録状況や、現在発生しているアラートの重大度ご�
 ### 可視化のカスタマイズ
 
 統計データの可視化を自由にカスタマイズするには、[Googleデータポータル](https://support.google.com/datastudio/answer/6283323)などのBIツールを利用すると便利です。
-RISKENではテンプレートを用意してますのでご活用ください
-
-#### WIP Googleデータポータルテンプレート
-
-準備中です。。。
-
-- [サンプル](https://datastudio.google.com/reporting/0a47ad43-65f4-48a5-b24e-748f9ab65212)
 
 === "データポータル サンプル1"
 

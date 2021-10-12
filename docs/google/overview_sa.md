@@ -2,9 +2,9 @@
 
 RISKENからスキャン対象のGoogleリソースを参照できるようにするために事前にRISKENのサービスアカウントにアクセス権を付与する必要があります
 
-```
-risken@ca-security-hub.iam.gserviceaccount.com
-```
+???+ tip "サービスアカウント"
+    RISKEN用のサービスアカウントの詳細についてはシステム管理者に問い合わせてください.
+
 
 ### GCPの場合
 
@@ -15,10 +15,7 @@ GCPのマネージメントコンソールでサービスアカウントを追�
 2. 追加をクリックします
     - ![IAM追加](/img/google/gcp_iam_add.png){style="width:200px"}
 3. 以下を入力し保存をクリックします
-    - 新しいメンバー: 
-        ```
-        risken@ca-security-hub.iam.gserviceaccount.com
-        ```
+    - 新しいメンバー: `{your-sa}@{your-domain}iam.gserviceaccount.com` (※システム管理者にお問い合わせください)
     - ロール: `閲覧者` （roles/viewer）
     - ![ロール追加](/img/google/gcp_role_add.png){style="width:300px"}
 
