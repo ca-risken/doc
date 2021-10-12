@@ -1,18 +1,16 @@
 # Contact us
 
-導入〜運用面についてRISKENチームがサポート致します。以下までお問合せください。
-
-
 ---
 
-## Slack
+## GitHub
 
-:material-slack: : [#ca-risken :octicons-link-external-24:](https://cyberagent.slack.com/archives/C01J27AJLQ6){ target="_blank" }
+頂いたフィードバックや、現在のステータスを確認いただけます
 
-マルチワークスペースチャンネルです。CAのGridに属するワークスペースからであれば参加できます。
+準備中...
 
 ---
 
 ## Mail
 
 :material-email: : risken@cyberagent.co.jp
+

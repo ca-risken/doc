@@ -12,8 +12,6 @@
     - 現在Slackのみサポートしています
 
 
-[RISKENにログインする :octicons-link-external-24:](https://console.security-hub.jp/){ .risken-btn target="_blank" }
-
 ## データソースを設定する
 
 1. まずはあなたの環境のセキュリティ情報を収集します
