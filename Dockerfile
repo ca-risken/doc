@@ -5,4 +5,5 @@ WORKDIR /mkdocs
 RUN mkdocs build --clean --strict
 
 FROM nginx:stable-alpine
+COPY nginx/default.conf /etc/nginx/conf.d
 COPY --from=builder /mkdocs/site /usr/share/nginx/html
