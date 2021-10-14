@@ -4,9 +4,11 @@
 
 ## GitHub
 
-頂いたフィードバックや、現在のステータスを確認いただけます
+:material-github:: [RISKEN Community](https://github.com/ca-risken/community)
 
-準備中...
+- フィードバックやBugを投稿してください
+- また、各Issueのステータスも確認いただけます
+
 
 ---
 
