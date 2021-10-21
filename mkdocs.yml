@@ -80,6 +80,16 @@ nav:
       - DataSource: code/gitleaks_datasource.md
       - Scan:       code/gitleaks_scan.md
 
+  - Admin:
+    - Overview:       admin/overview.md
+    - AdminMenu:
+      - User:         admin/admin_user.md
+      - Report:       admin/admin_report.md
+    - Infrastructure:
+      - Architecture: admin/infra_architecture.md
+      - Local:        admin/infra_local.md
+      - AWS:          admin/infra_aws.md
+
   - Reference:
     - API:           reference/api.md
     - Finding API:   reference/api_finding.md
