@@ -1,4 +1,4 @@
-# [WIP] Infrastructure(AWS)
+# Infrastructure(AWS)
 
 AWS上でRISKENのシステム構築をするためのドキュメントです
 
@@ -8,11 +8,10 @@ AWS上でRISKENのシステム構築をするためのドキュメントです
 
 RISKENをAWS上に構築する上で以下の項目が必要になります
 
-- AWS Region
-    - 本ドキュメントでは`ap-northeast-1`リージョンの例を記載します
-    - その他のリージョンで構築する場合は適宜手順の修正が必要です
-- AWS EKSクラスタ
-    - EKS以外でも動作可能ですが本ドキュメントではEKSを対象にします
+- AWS環境について
+    - 本ドキュメントでは以下のAWS環境での構築例を記載します（該当しない箇所は適宜手順の修正が必要です）
+        - リージョン: `ap-northeast-1`
+        - EKSバージョン: 1.21
 - OIDCをサポートしているIdP
     - RISKENのユーザ認証は外部のIdPと連携します
     - 認証フローの詳細について[AWS ELBドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html#configure-user-authentication){ target="_blank" }  を参照してください
@@ -30,15 +29,62 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 最初にEKSクラスタを作成する必要があります
 
 - [EKSのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html){ target="_blank" } に従ってクラスタを作成してください
+- 以下はクラスタの設定例です（特にセキュリティ関連の設定はチームのポリシーにあわせて変更してください）
+```yaml
+Cluster configuration:
+    - Name: test
+    - Kubernetes Version: 1.21
+    - Cluster Service Role: AmazonEKSClusterPolicyが設定されているロール
+
+Networking: 環境にあわせて設定
+
+Cluster Endpoint Access: Public & Private
+    - AdbancedSetting: PublicからマスタAPIへのアクセスはIPアドレス制限を設定を推奨
+
+Control Plane Logging: すべて有効
+```
 
 ### NodeGroupの追加
 
 クラスタを作成したら、続いてNodeGroupを追加します
 
 - [マネージド型ノードグループの追加 :octicons-link-external-24:](https://docs.aws.amazon.com/eks/latest/userguide/create-managed-node-group.html){ target="_blank" } に従って追加してください
-- 本ドキュメントでは以下を選択してください
-    - AMI type: `Amazon Linux 2 (AL2_x86_64)`
-    - インスタンスタイプ: `t3.medium`
+- NodeGroupに設定するIAMロールについて
+    - 信頼関係の設定で以下のようにEC2サービスからのアクションを許可してください
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Action": [
+        "sts:AssumeRoleWithWebIdentity",
+        "sts:AssumeRole"
+      ]
+    }
+  ]
+}
+```
+    - また、以下のマネージドポリシーを追加してください
+```yaml
+- AmazonSQSFullAccess
+- AmazonEKSWorkerNodePolicy
+- AmazonEC2ContainerRegistryReadOnly
+- AWSXRayDaemonWriteAccess
+- AmazonSSMManagedInstanceCore
+- CloudWatchLogsFullAccess
+- AmazonSSMReadOnlyAccess
+- AmazonEKS_CNI_Policy
+```
+- 本ドキュメントでは以下のインスタンスタイプを選択してください
+```yaml
+- AMI type: `Amazon Linux 2 (AL2_x86_64)`
+- インスタンスタイプ: `t3.medium`
+- インスタンス数（Min）: 3
+```
 
 ???+ tip "FargateタイプやGraviton2タイプのノードを使いたい"
     - RISKENは他のノードタイプでも動作しますが、本ドキュメントでは手順を簡略化するために上記のノードの例を記載します
@@ -47,7 +93,9 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
     - 一部のコンポーネント（DBやQueue）のコンテナイメージがCPUのマルチアーキテクチャに未対応です
         - Graviton2などのARM64アーキテクチャで動作する場合は上記のコンポーネントをAWSのマネージドサービスで構築する必要があります（詳細はページ下を参照ください）
 
+<!-- ### IAM OIDCプロバイダーを作成します
 
+[クラスターの IAM OIDC プロバイダーを作成するには :octicons-link-external-24:](https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/enable-iam-roles-for-service-accounts.html){ target="_blank" }を参考にOIDCプロバイダーを作成してください -->
 
 ---
 
@@ -60,16 +108,22 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 ### ターゲットグループを作成する
 
 1. API用のターゲットグループ
-    - Name: api
-    - Type: Instance
-    - Protocol(Port): HTTP/1.1(30080)
-    - HealthCheck Path: /healthz
+```yaml
+- Name: api
+- Type: Instance
+- Protocol: HTTP/1.1
+- Port: 30080
+- HealthCheck Path: /healthz
+```
 
 2. WEB用のターゲットグループ
-    - Name: web
-    - Type: Instance
-    - Protocol(Port): HTTP/1.1(30081)
-    - HealthCheck Path: /index.html
+```yaml
+- Name: web
+- Type: Instance
+- Protocol: HTTP/1.1
+- Port: 30081
+- HealthCheck Path: /index.html
+```
 
 3. Auto-Scaling GroupにLBのターゲットグループを設定する
     - Nodeライフサイクルに連動してターゲットグループの紐付けが自動設定されるようにしておきます
@@ -82,30 +136,39 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 - 以下のEKSクラスタのセキュリティグループInboundルールを設定してください
     - Type: CustomTCP
     - Protcol: TCP
-    - Port Range: 30080 - 30081
+    - Port Range: `30080 - 30081`
 
 ### ALBリスナールールを作成する
 
 1. ルール1
-    - IF(all match)
-        - Host Header: ALBのドメイン（またはカスタムドメイン）
-        - Path: /api/*
-    - THEN
-        - Authenticatate: OIDC(*)
-        - ForwardTo: {API用のターゲットグループ}
+```yaml
+IF:
+    - Host Header: ALBのドメイン（またはカスタムドメイン）
+    - Path: /api/*
+THEN:
+    - Authenticatate: OIDC(*)
+    - ForwardTo: {API用のターゲットグループ}
+```
+
 2. ルール2
-    - IF(all match)
-        - Host Header: ALBのドメイン（またはカスタムドメイン）
-        - Path: /*
-    - THEN
-        - Authenticatate: OIDC(*)
-        - ForwardTo: {WEB用のターゲットグループ}
+```yaml
+IF:
+    - Host Header: ALBのドメイン（またはカスタムドメイン）
+    - Path: /*
+THEN:
+    - Authenticatate: OIDC(*)
+    - ForwardTo: {WEB用のターゲットグループ}
+```
+
 3. Last(Default Action)
-    - IF: Requests otherwise not routed
-    - THEN
-        - Return fixed response: 404
-        - Content-Type: text/plain
-        - Response body: Not found
+```yaml
+IF:
+    - Requests otherwise not routed
+THEN:
+    - Return fixed response: 404
+    - Content-Type: text/plain
+    - Response body: Not found
+```
 
 ???+ tip "(*) OIDC（OpenIDConnect）設定"
     - OIDC連携に必要な以下の項目をあらかじめ準備してください
@@ -130,63 +193,19 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 $ aws eks --region ap-northeast-1 update-kubeconfig --name <cluster_name>
 ```
 
-### ParameterStoreにシステムプロパティを登録する
-
 ### Manifestファイルを使ってデプロイ
 
-- サンプルmanifestをcloneします
+- [サンプルmanifest :octicons-link-external-24:](https://github.com/ca-risken/k8s-sample){ target="_blank" }をcloneします
 ```sell
-$ git clone git@github.com:ca-risken/k8s-sample.git
+$ git clone https://github.com/ca-risken/k8s-sample.git
 ```
-- EKS用のテンプレートをコピーし先程作成したクラスタ名に置換します
+- EKS用のテンプレートをコピーし先程作成したクラスタ情報に置換します
 ```sell
-cp -r overlays/eks-template overlays/eks
-sed -i "" -e 's/your-cluster/test-cluster/g' overlays/eks/*.yaml
+$ cp -r overlays/eks-template overlays/eks
+$ sed -i "" -e 's/your-cluster/<cluster_name>/g' overlays/eks/*.yaml
+$ sed -i "" -e 's#arn:aws:iam::123456789012:role/your-role#<your_role_arn>#g' overlays/eks/*.yaml
 ```
 - Kustomizeコマンドよりアプリケーションをデプロイします
 ```bash
-kustomize build overlays/eks | kubectl apply -f -
+$ kustomize build overlays/eks | kubectl apply -f -
 ```
-
----
-
-## Option
-
-## Pod単位でIAMロールを紐付ける
-
-- AWS EKSではKubernetes内のサービスアカウントとIAMロールを紐付けることにより、Pod単位での細かなアクセスコントロールが可能になります
-- 例えば以下のような形でサービスアカウントのannotationにIAMロールのARNを設定することで紐付けることが可能です
-
-```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: my-sa
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::123456789012:role/your-role
-
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod
-spec:
-  serviceAccountName: my-sa
-  ...
-```
-
-- 必要に応じて作成してください
-- 詳細は[サービスアカウントのIAMロール :octicons-link-external-24:](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html){ target="_blank" } を参照してください
-
-### AWS Cognito経由の認証フローを設定する
-
-### カスタムドメインURLを設定する
-
-### RDSと連携する
-
-### SQSと連携する
-
-### Observability
-
-### Secrets ManagerでCredentialを管理する
-

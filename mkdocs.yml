@@ -89,6 +89,17 @@ nav:
       - Architecture: admin/infra_architecture.md
       - Local:        admin/infra_local.md
       - AWS:          admin/infra_aws.md
+      - AWS Option:   admin/infra_aws_option.md
+    - Parameters:
+      - Index:        admin/param_index.md
+      - Common:       admin/param_common.md
+      - Gateway:      admin/param_gateway.md
+      - Core:         admin/param_core.md
+      - AWS:          admin/param_aws.md
+      - Google:       admin/param_google.md
+      - Diagnosis:    admin/param_diagnosis.md
+      - OSINT:        admin/param_osint.md
+      - Code:         admin/param_code.md
 
   - Reference:
     - API:           reference/api.md
