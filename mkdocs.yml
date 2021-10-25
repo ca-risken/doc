@@ -88,8 +88,9 @@ nav:
     - Infrastructure:
       - Architecture: admin/infra_architecture.md
       - Local:        admin/infra_local.md
-      - AWS:          admin/infra_aws.md
-      - AWS Option:   admin/infra_aws_option.md
+      - AWS:
+        - Installation: admin/infra_aws.md
+        - Options:      admin/infra_aws_option.md
     - Parameters:
       - Index:        admin/param_index.md
       - Common:       admin/param_common.md
