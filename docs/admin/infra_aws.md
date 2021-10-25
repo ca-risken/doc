@@ -14,7 +14,7 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
         - EKSバージョン: 1.21
 - OIDCをサポートしているIdP
     - RISKENのユーザ認証は外部のIdPと連携します
-    - 認証フローの詳細について[AWS ELBドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html#configure-user-authentication){ target="_blank" }  を参照してください
+    - 認証フローの詳細について[AWS ELBドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html#configure-user-authentication){ target="_blank" } を参照してください
 - 各種CLIツールをインストールする
     - [aws cli :octicons-link-external-24:](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html){ target="_blank" }
     - [kubectl :octicons-link-external-24:](https://kubernetes.io/de/docs/tasks/tools/install-kubectl/){ target="_blank" }
@@ -31,17 +31,14 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 - [EKSのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html){ target="_blank" } に従ってクラスタを作成してください
 - 以下はクラスタの設定例です（特にセキュリティ関連の設定はチームのポリシーにあわせて変更してください）
 ```yaml
-Cluster configuration:
-    - Name: test
+- Cluster configuration
     - Kubernetes Version: 1.21
     - Cluster Service Role: AmazonEKSClusterPolicyが設定されているロール
-
-Networking: 環境にあわせて設定
-
-Cluster Endpoint Access: Public & Private
+- Networking: 環境にあわせて設定
+- Cluster Endpoint Access: Public & Private
     - AdbancedSetting: PublicからマスタAPIへのアクセスはIPアドレス制限を設定を推奨
-
-Control Plane Logging: すべて有効
+- Control Plane Logging: すべて有効
+- その他: デフォルト値
 ```
 
 ### NodeGroupの追加
@@ -93,10 +90,6 @@ Control Plane Logging: すべて有効
     - 一部のコンポーネント（DBやQueue）のコンテナイメージがCPUのマルチアーキテクチャに未対応です
         - Graviton2などのARM64アーキテクチャで動作する場合は上記のコンポーネントをAWSのマネージドサービスで構築する必要があります（詳細はページ下を参照ください）
 
-<!-- ### IAM OIDCプロバイダーを作成します
-
-[クラスターの IAM OIDC プロバイダーを作成するには :octicons-link-external-24:](https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/enable-iam-roles-for-service-accounts.html){ target="_blank" }を参考にOIDCプロバイダーを作成してください -->
-
 ---
 
 ## ALBを作成する
@@ -114,6 +107,7 @@ Control Plane Logging: すべて有効
 - Protocol: HTTP/1.1
 - Port: 30080
 - HealthCheck Path: /healthz
+- Register target: なし（後ほどAuto-Scaling Groupで設定）
 ```
 
 2. WEB用のターゲットグループ
@@ -123,6 +117,7 @@ Control Plane Logging: すべて有効
 - Protocol: HTTP/1.1
 - Port: 30081
 - HealthCheck Path: /index.html
+- Register target: なし（後ほどAuto-Scaling Groupで設定）
 ```
 
 3. Auto-Scaling GroupにLBのターゲットグループを設定する
@@ -199,13 +194,40 @@ $ aws eks --region ap-northeast-1 update-kubeconfig --name <cluster_name>
 ```sell
 $ git clone https://github.com/ca-risken/k8s-sample.git
 ```
+
 - EKS用のテンプレートをコピーし先程作成したクラスタ情報に置換します
 ```sell
 $ cp -r overlays/eks-template overlays/eks
 $ sed -i "" -e 's/your-cluster/<cluster_name>/g' overlays/eks/*.yaml
-$ sed -i "" -e 's#arn:aws:iam::123456789012:role/your-role#<your_role_arn>#g' overlays/eks/*.yaml
 ```
+
 - Kustomizeコマンドよりアプリケーションをデプロイします
 ```bash
 $ kustomize build overlays/eks | kubectl apply -f -
 ```
+
+- PodのStatusが`Runnig`になるのを待ちます
+```bash
+$ kubectl get pod -A
+```
+
+???+ tip "デフォルトでは一部のサービスのみが有効です"
+    - 以下のサービスは起動時にクレデンシャルが必要になるためデフォルトでは起動しません
+        - Google
+        - Code
+        - JIRA
+    - 必須パラメータを設定しManifestファイル内のPod起動数を`1`以上に更新してください
+        - パラメータの詳細は[Prameters](/admin/param_index/)を参照してください
+
+---
+
+## 作成したリソースを削除する
+
+以下の順でリソースを削除してください
+
+1. EKS NodeGroup
+2. EKS Cluster
+3. ALB
+4. Target Group
+5. Security Group
+6. IAM Role
