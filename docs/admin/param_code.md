@@ -18,7 +18,7 @@ Codeのパラメータです
 | **GITLEAKS_FULL_SCAN_QUEUE_NAME** | Gitleaks(full-scan用)キュー名 | | `code-gitleaks-full-scan` |
 | **GITLEAKS_FULL_SCAN_QUEUE_URL** | Gitleaks(full-scan用)キューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-gitleaks-full-scan` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -30,10 +30,10 @@ Codeのパラメータです
 
 | Param | Description | Required | Default |
 | --- | --- | --- | --- |
-| **PORT** | | yes | `10001` |
+| **PORT** | | | `10001` |
 | **DATA_KEY** | GitHubのクレデンシャル用の暗号キー | yes | |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -48,14 +48,14 @@ Codeのパラメータです
 | **DEBUG** | DEBUGレベルログの有効化 | | `false` |
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
-| **DATA_KEY** | GitHubのクレデンシャル用の暗号キー | yes | |
+| **DATA_KEY** | GitHubのクレデンシャル用の暗号キー | | |
 | **GITHUB_DEFAULT_TOKEN** | GitHubデフォルトトークン | | `your-token-here`|
 | **LIMIT_REPOSITORY_SIZE_KB** | Gitleaksスキャン時のリポジトリサイズLimit値 | | `500000` |
 | **SEPERATE_SCAN_DAYS** | Gitleaksスキャン時のコミット分割期間 | | `365` |
 | **GITLEAKS_SCAN_THREADS** | Gitleaksのスキャンスレッドオプション | | `1` |
 | **SCAN_ON_MEMORY** | リポジトリスキャンをOnMemoryで実行するかどうか | | `false` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 

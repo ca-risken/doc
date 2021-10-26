@@ -26,7 +26,7 @@ AWSのパラメータです
 | **ASSET_NAME** | AWS Portscanキュー名 | | `aws-portscan` |
 | **ASSET_QUEUE_URL** | AWS PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-portscan` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -38,9 +38,9 @@ AWSのパラメータです
 
 | Param | Description | Required | Default |
 | --- | --- | --- | --- |
-| **PORT** | | yes | `9001` |
+| **PORT** | | | `9001` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -56,7 +56,7 @@ AWSのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デクーの時間間隔（秒） | | `20` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -70,7 +70,7 @@ AWSのパラメータです
 | --- | --- | --- | --- |
 | **PORT** | | | `9007` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -86,7 +86,7 @@ AWSのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -102,7 +102,7 @@ AWSのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `5` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -118,7 +118,7 @@ AWSのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -133,10 +133,10 @@ AWSのパラメータです
 | **DEBUG** | DEBUGレベルログの有効化 | | `false` |
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
-| **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | yes | `1000` |
+| **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | | `1000` |
 
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 

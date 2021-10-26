@@ -16,7 +16,7 @@ OSINTのパラメータです
 | **SUBDOMAIN_QUEUE_NAME** | OSINT Subdomainキュー名 | | `osint-subdomain` |
 | **SUBDOMAIN_QUEUE_URL** | OSINT SubdomainキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/osint-subdomain` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -28,9 +28,9 @@ OSINTのパラメータです
 
 | Param | Description | Required | Default |
 | --- | --- | --- | --- |
-| **PORT** | | yes | `18081` |
+| **PORT** | | | `18081` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -45,7 +45,7 @@ OSINTのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `5` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 

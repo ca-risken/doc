@@ -22,7 +22,7 @@ Googleのパラメータです
 | **PORTSCAN_QUEUE_NAME** | Security Command Centerキュー名 | | `google-portscan` |
 | **PORTSCAN_QUEUE_URL** | Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-portscan` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -37,7 +37,7 @@ Googleのパラメータです
 | --- | --- | --- | --- |
 | **PORT** | | | `11001` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -53,12 +53,12 @@ Googleのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 | **GOOGLE_CREDENTIAL_PATH** | GCPサービスアカウントのクレデンシャルを一時保存するパス | | `/tmp/credential.json` |
-| **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes | `20` |
+| **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes | |
 | **WAIT_MILLI_SEC_PER_REQUEST** | GCP Asset 1秒間の最大APIのリクエスト数 | | `500` |
 | **ASSET_API_RETRY_NUM** | GCP Asset API失敗時のリトライ回数 | | `3` |
 | **ASSET_API_RETRY_WAIT_SEC** | GCP Asset APIリトライ再開までの待ち時間（秒） | | `30` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -76,7 +76,7 @@ Googleのパラメータです
 | **GOOGLE_SERVICE_ACCOUNT_EMAIL** | GCPサービスアカウントのEMAIL | yes | |
 | **GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY** | GCPサービスアカウントのRSA秘密鍵 | yes | |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -93,15 +93,15 @@ Googleのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 | **GOOGLE_CREDENTIAL_PATH** | GCPサービスアカウントのクレデンシャルを一時保存するパス | | `/tmp/credential.json` |
-| **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes | `20` |
+| **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes | |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
 - `/env/google/scc`
 
-## Security Command Centerサービス
+## Portscanサービス
 
 ### Parameters
 
@@ -111,10 +111,10 @@ Googleのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 | **GOOGLE_CREDENTIAL_PATH** | GCPサービスアカウントのクレデンシャルを一時保存するパス | | `/tmp/credential.json` |
-| **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes | `20` |
-| **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | yes | `1000` |
+| **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes ||
+| **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | | `1000` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
