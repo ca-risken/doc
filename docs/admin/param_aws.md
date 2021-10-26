@@ -133,8 +133,8 @@ AWSのパラメータです
 | **DEBUG** | DEBUGレベルログの有効化 | | `false` |
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
-| **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
 | **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | yes | `1000` |
+
 
 ### ParameterStore保存先（例）
 
