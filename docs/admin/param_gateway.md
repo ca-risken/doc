@@ -14,7 +14,7 @@ Gatewayのパラメータです
 | **OIDC_DATA_HEADER** | IdPから渡されるヘッダ（ユーザ情報が含まれるJWTペイロード） | | `x-amzn-oidc-data` |
 | **IDP_PROVIDER_NAME** | IdP名 | | |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 

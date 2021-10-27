@@ -13,26 +13,28 @@
 - [OSINT](/admin/param_osint/)
 - [Code](/admin/param_code/)
 
-## AWS ParameterStoreをサポートしています
+## AWS Parameter Storeをサポートしています
 
-RISKENではアプリケーション実行時に安全にパラメータを渡すためにAWSのParameterStoreをサポートしています
+RISKENではアプリケーション実行時に安全にパラメータを渡すためにAWSのParameter Storeをサポートしています
 
-ParameterStoreを利用することで以下のメリットがあります
+Parameter Storeを利用することで以下のメリットがあります
 
 - ソースコードにクレデンシャルを保存しなくて済む
-- KMSによる暗号化して保存と利用時に復号（Envelope Encryption）
+- KMSによる暗号化／利用時に復号化（Envelope Encryption）
     - クレデンシャルの「保存（暗号化）」と「利用（復号化）」の権限分離
     - クレデンシャル操作の監査ログが残せる
+    - クレデンシャルを保存する場合は、`Secret String` を指定してください
+    - 詳細は[公式ドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/kms/latest/developerguide/services-parameter-store.html#parameter-store-advanced-encrypt){ target="_blank" } をご確認ください
 
 ## 仕組み・利用方法
 
 各コンテナ実行時のエントリポイントで[env-injector :octicons-link-external-24:](https://github.com/okzk/env-injector){ target="_blank" } を実行しています
 
-- env-injectorにParameterStoreの保存先を指定する（`ENV_INJECTOR_PATH` や `ENV_INJECTOR_META_CONFIG`で指定）ことで、登録済みの値を環境変数としてコンテナにロードできます
-- ParameterStoreではなく、SecretsManagerを利用する場合は `ENV_INJECTOR_SECRET_NAME`を指定してください
+- env-injectorにParameter Storeの保存先を指定する（`ENV_INJECTOR_PATH` や `ENV_INJECTOR_META_CONFIG`で指定）ことで、登録済みの値を環境変数としてコンテナにロードできます
+- Parameter Storeではなく、SecretsManagerを利用する場合は `ENV_INJECTOR_SECRET_NAME`を指定してください
 - 詳細は[env-injector :octicons-link-external-24:](https://github.com/okzk/env-injector){ target="_blank" }のREADME.mdをご確認ください
 
-## ParameterStore 設定例
+## Parameter Store 設定例
 
 1. 例えば、findingサービスに以下の環境変数（`ENV_INJECTOR_META_CONFIG`）を指定します
 ```yaml
@@ -42,14 +44,14 @@ ParameterStoreを利用することで以下のメリットがあります
         - `{env}` 部分はシステム環境の識別子を想定しています
         - `{name_space}` 部分はRISKENの各NameSpaceです
         - `{service_name}` 部分はRISKENのサービス名です
-2. コンテナ実行時に上記１で指定されたParameterStoreが読み込まれます
+2. コンテナ実行時に上記１で指定されたParameter Storeが読み込まれます
 3. `/prd/meta/core/finding`には以下の値がyaml形式で保存されているとします
 ```yaml
 - parameter_store_path: /prd/common
 - parameter_store_path: /prd/core/finding
 ```
 4. 上記３で指定した`parameter_store_path` が順番に読み込まれます
-    - 最初に`/prd/common/`のParameterStoreのパスが参照されます
+    - 最初に`/prd/common/`のParameter Storeのパスが参照されます
         - `/prd/common/`配下のパスに以下のパラメータが登録されているとします
         ```yaml
         - /prd/common/DB_HOST
@@ -62,7 +64,7 @@ ParameterStoreを利用することで以下のメリットがあります
         - DB_USER: hoge
         - DB_PASSWORD: moge
         ```
-    - 次に`/prd/core/finding`のParameterStoreのパスが参照されます
+    - 次に`/prd/core/finding`のParameter Storeのパスが参照されます
         - `/prd/core/finding/`配下のパスに以下のパラメータが登録されているとします
         ```yaml
         - /prd/core/finding/SERVICE_ADDRESS

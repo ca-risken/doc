@@ -62,9 +62,9 @@ spec:
 - SQSを利用することで、可用性・メンテナンス性・可観測性が向上します
 - 特にプロダクション環境ではSQSの利用が推奨です
 
-## ParameterStoreにシステムプロパティを登録する
+## Parameter Storeにシステムプロパティを登録する
 
-RISKENでは各Podに設定する環境変数の値をParameterStoreから取得する機能をサポートしています。
+RISKENでは各Podに設定する環境変数の値をParameter Storeから取得する機能をサポートしています。
 詳細は[Parameters](/admin/param_index/)のページを参照してください
 
 ## Secrets ManagerでCredentialを管理する

@@ -6,12 +6,12 @@ RISKENのサービス共通のパラメータです
 
 | Param | Description | Required | Default |
 | --- | --- | --- | --- |
-| **DB_MASTER_HOST** | DB(Master)のホスト名 | yes | `db.middleware.svc.cluster.local` |
-| **DB_MASTER_USER** | DB(Master)のユーザ名 | yes | `hoge` |
-| **DB_MASTER_PASSWORD** | DB(Master)のパスワード | yes | `mode` |
-| **DB_SLAVE_HOST** | DB(Slave)のホスト名 | yes | `db.middleware.svc.cluster.local` |
-| **DB_SLAVE_USER** | DB(Slave)のユーザ名 | yes | `hoge` |
-| **DB_SLAVE_PASSWORD** | DB(Slave)のパスワード | yes | `mode` |
+| **DB_MASTER_HOST** | DB(Master)のホスト名 | | `db.middleware.svc.cluster.local` |
+| **DB_MASTER_USER** | DB(Master)のユーザ名 | | `hoge` |
+| **DB_MASTER_PASSWORD** | DB(Master)のパスワード | | `moge` |
+| **DB_SLAVE_HOST** | DB(Slave)のホスト名 | | `db.middleware.svc.cluster.local` |
+| **DB_SLAVE_USER** | DB(Slave)のユーザ名 | | `hoge` |
+| **DB_SLAVE_PASSWORD** | DB(Slave)のパスワード | | `moge` |
 | **DB_SCHEMA** | DBスキーマ | | `mimosa` |
 | **DB_PORT** | DBポート | | `3306` |
 | **DB_LOG_MODE** | DBログモード | | `false` |
@@ -41,7 +41,7 @@ RISKENのサービス共通のパラメータです
 | **AWS_XRAY_SDK_DISABLED** | XRAYの無効化 | | `true` |
 | **AWS_XRAY_CONTEXT_MISSING** | XRAYのコンテキストパラメータが存在しない場合の挙動 | | `LOG_ERROR` |
 
-## ParameterStore保存先（例）
+## Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 

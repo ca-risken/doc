@@ -22,7 +22,7 @@ Diagnosisのパラメータです
 | **DIAGNOSIS_APPLICATION_SCAN_QUEUE_NAME** | アプリケーションスキャンキュー名 | | `diagnosis-applicationscan` |
 | **DIAGNOSIS_APPLICATION_SCAN_QUEUE_URL** | アプリケーションスキャンキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/diagnosis-applicationscan` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -36,7 +36,7 @@ Diagnosisのパラメータです
 | --- | --- | --- | --- |
 | **PORT** | | | `19002` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -55,7 +55,7 @@ Diagnosisのパラメータです
 | **DIAGNOSIS_JIRA_USER_ID** | JIRAのユーザID | yes | |
 | **DIAGNOSIS_JIRA_USER_PASSWORD** | JIRAのパスワード | yes | |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -71,7 +71,7 @@ Diagnosisのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -88,7 +88,7 @@ Diagnosisのパラメータです
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 | **WPSCAN_VULNDB_APIKEY** | WPScan用のAPIキー（有料プランを利用してる場合に設定） | | |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
@@ -104,7 +104,7 @@ Diagnosisのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 
-### ParameterStore保存先（例）
+### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
