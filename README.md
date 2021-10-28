@@ -6,7 +6,7 @@
 
 Please check [RISKEN Documentation](https://docs.security-hub.jp/).
 
-![RISKEN-DEMO](https://user-images.githubusercontent.com/25426601/139181590-3cfdc4c6-7c36-4d9c-9dad-10c76a532de6.gif)
+![RISKEN-demo-640x400](https://user-images.githubusercontent.com/25426601/139187114-f21479be-5483-43f5-a397-a4a9a4d09e4d.gif)
 
 ## Quick Start
 
