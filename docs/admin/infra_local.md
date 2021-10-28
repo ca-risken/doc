@@ -18,6 +18,11 @@
 ## Kubernetesを起動する
 
 - [Docker Desktopのドキュメント :octicons-link-external-24:](https://docs.docker.com/desktop/kubernetes/) を参照しKubernetesを起動してください
+- ローカル環境で動作させるためにはDocker Desktopに割り当てるCPU、MEMリソースを以下の値以上に設定する必要があります
+    - `Preferences` > `Resourses` > `ADVANCED`
+        - `CPUs`: 4+
+        - `Memory`: 8GB+
+    - ![Docker Desktop Resource setting](/img/admin/admin_docker_desktop_min.png)
 
 ---
 
