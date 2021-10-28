@@ -15,7 +15,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | aws:cloudsploit (固定)                                     |
 | `ResourceName` | 検出したリソースのARN                                        |
 | `Description`  | 説明                                                       |
-| `Score`        | [スコアリング](/aws/cloudsploit#_2)参照                      |
+| `Score`        | [スコアリング](/aws/cloudsploit/#_2)参照                      |
 | `Tag`          | `aws` `cloudspoit` `{AWSのサービス}` `{コンプライアンスマーク}` `{アカウントID}`　`{プラグイン名}`　`{Well-Architectedタグ}` |
 
 ＊ `Well-Architected` タグの詳しい使い方は[/risken/well_architected](/risken/well_architected/) ページを参照してください

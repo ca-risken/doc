@@ -13,7 +13,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | diagnosis:applicationscan (固定)                |
 | `ResourceName` | スキャン対象のURL                                         |
 | `Description`  | 検知された脆弱性とスキャン対象のURL         　                |
-| `Score`        | [スコアリング](/diagnosis/applicationscan_concept#_2)参照            |
+| `Score`        | [スコアリング](/diagnosis/applicationscan_concept/#_2)参照            |
 | `Tag`          | `diagnosis` `application-scan` `vulnerability` (全て固定)  |
 
 ---

@@ -20,7 +20,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | diagnosis:wpscan (固定)                         |
 | `ResourceName` | スキャン対象のURL                                 |
 | `Description`  | 説明                                            |
-| `Score`        | [スコアリング](/diagnosis/wpscan_concept#_2)参照            |
+| `Score`        | [スコアリング](/diagnosis/wpscan_concept/#_2)参照            |
 | `Tag`          | `diagnosis` `wpscan` `vulnerability` (全て固定)  |
 
 ---
