@@ -19,7 +19,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | code:gitleaks (固定)                            |
 | `ResourceName` | リポジトリ名                                     |
 | `Description`  | 説明                                            |
-| `Score`        | [スコアリング](/code/gitleaks#_4)参照             |
+| `Score`        | [スコアリング](/code/gitleaks_concept/#_2)参照             |
 | `Tag`          | `code` `gitleaks` `{visibillity}` `{key-type}` |
 
 ---
@@ -28,10 +28,10 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 
 Gitleaksで解析された結果データにはスコアに相当するデータを持っていません
 
-なので、RISKENでは[キータイプ](/code/gitleaks#_5)ごとのリスクを加味してスコアリングしています
+なので、RISKENでは[キータイプ](/code/gitleaks_concept/#_3)ごとのリスクを加味してスコアリングしています
 
 ???+ help "Gitleaksのルールセット"
-    - Gitleaksはオープンソースなので、[ルールセット :octicons-link-external-24:](https://github.com/zricethezav/gitleaks/blob/master/config/default.go){ target="_blank" } も公開されています
+    - Gitleaksはオープンソースなので、[ルールセット :octicons-link-external-24:](https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml){ target="_blank" } も公開されています
     - この中で特に危険と判断されるキーが保存されていた場合はスコアが高くなります
 
 
@@ -76,6 +76,6 @@ RISKENでは以下のキータイプが `Critical` と判定されます
 - Shopify private app access token
 
 ???+ tip "全てのキータイプを確認するには？"
-    Gitleaksの[ルールセット :octicons-link-external-24:](https://github.com/zricethezav/gitleaks/blob/master/config/default.go){ target="_blank" }を確認してください。
+    Gitleaksの[ルールセット :octicons-link-external-24:](https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml){ target="_blank" }を確認してください。
 
     ルールセットの `Description` 項目がRISKEN上のキータイプと紐づきます

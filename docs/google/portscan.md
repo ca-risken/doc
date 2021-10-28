@@ -11,10 +11,10 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | aws:portscan (固定)                         |
 | `ResourceName` | スキャン対象のリソースのARN                    |
 | `Description`  | 説明                                        |
-| `Score`        | [スコアリング](/google/portscan#_2)参照       |
+| `Score`        | [スコアリング](/google/portscan/#_2)参照       |
 | `Tag`          | `gcp` `portscan` `{プロジェクトID}`          |
 
 ## スコアリング
 
 スコアリングの内容はAWSのPortscanと同様です。
-[AWSのPortscanスコアリング](/aws/portscan#_3)を参照してください。
+[AWSのPortscanスコアリング](/aws/portscan/#_2)を参照してください。

@@ -13,11 +13,11 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | diagnosis:portscan (固定)                |
 | `ResourceName` | スキャン対象のIP/FQDN                                         |
 | `Description`  | 説明        　                |
-| `Score`        | [スコアリング](/diagnosis/portscan#_2)参照            |
+| `Score`        | [スコアリング](/diagnosis/portscan_concept/#_2)参照            |
 | `Tag`          | `diagnosis` `portscan` `vulnerability`  |
 
 ---
 ## スコアリング
 
 スコアリングの内容はAWSのPortscanと同様です。
-[AWSのPortscanスコアリング](/aws/portscan#_3)を参照してください。
+[AWSのPortscanスコアリング](/aws/portscan/#_2)を参照してください。

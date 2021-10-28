@@ -20,7 +20,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | osint:subdomain (固定)                          |
 | `ResourceName` | スキャン対象のドメイン                             |
 | `Description`  | 説明                                            |
-| `Score`        | [スコアリング](/osint/domain_concept#_2)参照      |
+| `Score`        | [スコアリング](/osint/domain_concept/#_2)参照      |
 | `Tag`          | `osint` `domain` `{リスクの種別}`                |
 
 ## スコアリング

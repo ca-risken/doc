@@ -11,14 +11,14 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | aws:portscan (固定)                              |
 | `ResourceName` | スキャン対象のリソースのARN                         |
 | `Description`  | 説明                                             |
-| `Score`        | [スコアリング](/aws/portscan#_2)参照               |
+| `Score`        | [スコアリング](/aws/portscan/#_2)参照               |
 | `Tag`          | `aws` `portscan` `{AWSのサービス}` `{アカウントID}` |
 
 ## スコアリング
 
-スキャン結果の[ステータス](/aws/portscan#_3)、スキャン対象のポート、アクセスした結果のHTTPレスポンスにてスコアリングを行います。
+スキャン結果の[ステータス](/aws/portscan/#_3)、スキャン対象のポート、アクセスした結果のHTTPレスポンスにてスコアリングを行います。
 
-また、ポートが開いておりHTTP,SSH等のサービスが動作していることを確認できた場合に[追加の確認](/aws/portscan#_4)を行います。
+また、ポートが開いておりHTTP,SSH等のサービスが動作していることを確認できた場合に[追加の確認](/aws/portscan/#_4)を行います。
 
 ```mermaid
 graph TD

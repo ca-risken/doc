@@ -11,7 +11,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `DataSource`   | diagnosis:jira (固定)                           |
 | `ResourceName` | Jiraに登録されたプロジェクト名                      |
 | `Description`  | Jiraに登録された課題名(概ね脆弱性名となります)        |
-| `Score`        | [スコアリング](/diagnosis/jira_concept#_2)参照            |
+| `Score`        | [スコアリング](/diagnosis/jira_concept/#_2)参照            |
 | `Tag`          | `diagnosis` `jira` `vulnerability` (全て固定)    |
 
 
