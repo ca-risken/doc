@@ -87,7 +87,10 @@ nav:
       - Report:       admin/admin_report.md
     - Infrastructure:
       - Architecture: admin/infra_architecture.md
-      - Local:        admin/infra_local.md
+      - SpecTuning:   admin/infra_spec_tuning.md
+      - Local:
+        - Installation: admin/infra_local.md
+        - Options:      admin/infra_local_option.md
       - AWS:
         - Installation: admin/infra_aws.md
         - Options:      admin/infra_aws_option.md
