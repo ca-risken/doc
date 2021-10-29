@@ -81,19 +81,19 @@ nav:
       - Scan:       code/gitleaks_scan.md
 
   - Admin:
-    - Overview:       admin/overview.md
+    - Overview:         admin/overview.md
     - AdminMenu:
-      - User:         admin/admin_user.md
-      - Report:       admin/admin_report.md
+      - User:           admin/admin_user.md
+      - Report:         admin/admin_report.md
     - Infrastructure:
-      - Architecture: admin/infra_architecture.md
-      - SpecTuning:   admin/infra_spec_tuning.md
+      - Architecture:   admin/infra_architecture.md
       - Local:
         - Installation: admin/infra_local.md
         - Options:      admin/infra_local_option.md
       - AWS:
         - Installation: admin/infra_aws.md
         - Options:      admin/infra_aws_option.md
+      - Tuning:         admin/infra_tuning.md
     - Parameters:
       - Index:        admin/param_index.md
       - Common:       admin/param_common.md
