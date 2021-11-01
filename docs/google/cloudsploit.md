@@ -68,9 +68,12 @@ graph TD
 |Category|Plugin|Score|Compliance Tag|memo|
 |---|---|---|---|---|
 |CloudSQL|dbPubliclyAccessible|0.8|hipaa, pci||
+|CloudSQL|dbAutomatedBackups|0.6||2021/11/01更新|
 |GCE|instanceLeastPrivilege|0.6|pci||
+|GCE|connectSerialPortsDisabled|0.6||2021/11/01更新|
 |GCS|bucketAllUsersPolicy|0.6||2021/08/04更新|
 |GKE|loggingEnabled|0.6|hipaa|2021/06/17更新|
+|GKE|clusterLeastPrivilege|0.6||2021/11/01更新|
 |IAM|corporateEmailsOnly|0.8|||
 |IAM|serviceAccountAdmin|0.6|||
 |IAM|serviceAccountUser|0.6||2021/06/17更新|
