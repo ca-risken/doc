@@ -215,7 +215,6 @@ $ kubectl get pod -A
     - 以下のサービスは起動時にクレデンシャルが必要になるためデフォルトでは起動しません
         - Google
         - Code
-        - JIRA
     - 必須パラメータを設定しManifestファイル内のPod起動数を`1`以上に更新してください
         - パラメータの詳細は[Prameters](/admin/param_index/)を参照してください
 

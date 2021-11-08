@@ -58,7 +58,6 @@ RISKENシステム内で動作する主なマイクロサービスについて�
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
 |diagnosis|diagnosis|診断の各種データソース設定やスキャンの呼び出しを行います||
-|diagnosis|jira|JIRAチケットのデータ収集を行います||
 |diagnosis|wpscan|WP Scanツールを使ったスキャンを行います||
 |diagnosis|application-scan|OWASP ZAPツールを使ったスキャンを行います||
 |diagnosis|portscan|ポートスキャンを行います||
