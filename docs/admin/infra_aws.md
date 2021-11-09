@@ -94,7 +94,7 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 
 ## ALBを作成する
 
-インターネットからのリクエスト受け付けるためALBを作成します
+インターネットからのリクエストを受け付けるためにALBを作成します
 
 [ALBのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html){ target="_blank" } に従ってALBを作成してください
 
@@ -122,16 +122,17 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 
 3. Auto-Scaling GroupにLBのターゲットグループを設定する
     - Nodeライフサイクルに連動してターゲットグループの紐付けが自動設定されるようにしておきます
-    - [EC2 AutoScalingのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html){ target="_blank" } を参考に上記で作成したターゲットグループとAuto-Scalingグループの紐付けを行ってください
+    - [EC2 AutoScalingのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html){ target="_blank" } を参考にAuto-Scalingグループと上記で作成したターゲットグループの紐付けを行ってください
 
 
 ### ALBからEKSへの通信を許可する
 
 - ALBからEKS NodePort経由で通信を許可します
-- 以下のEKSクラスタのセキュリティグループInboundルールを設定してください
+- EKSクラスタのセキュリティグループに以下のInboundルールを設定してください
     - Type: CustomTCP
     - Protcol: TCP
     - Port Range: `30080 - 30081`
+    - Source: EKS,ALBが存在するVPCのIPレンジ
 
 ### ALBリスナールールを作成する
 
@@ -206,7 +207,7 @@ $ sed -i "" -e 's/your-cluster/<cluster_name>/g' overlays/eks/*.yaml
 $ kustomize build overlays/eks | kubectl apply -f -
 ```
 
-- PodのStatusが`Runnig`になるのを待ちます
+- PodのStatusが`Running`になるのを待ちます
 ```bash
 $ kubectl get pod -A
 ```
