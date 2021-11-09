@@ -122,7 +122,7 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 
 3. Auto-Scaling GroupにLBのターゲットグループを設定する
     - Nodeライフサイクルに連動してターゲットグループの紐付けが自動設定されるようにしておきます
-    - [EC2 AutoScalingのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html){ target="_blank" } を参考にEC2 Auto ScalingコンソールからAuto-Scalingグループと上記で作成したターゲットグループの紐付けを行ってください
+    - [EC2 AutoScalingのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html){ target="_blank" } を参考にAuto-Scalingグループと上記で作成したターゲットグループの紐付けを行ってください
 
 
 ### ALBからEKSへの通信を許可する
