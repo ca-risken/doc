@@ -15,8 +15,8 @@ Codeのパラメータです
 | **SQS_ENDPOINT** | SQSエンドポイント | | `http://queue.middleware.svc.cluster.local:9324` |
 | **GITLEAKS_QUEUE_NAME** | Gitleaksキュー名 | | `code-gitleaks` |
 | **GITLEAKS_QUEUE_URL** | GileaksキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-gitleaks` |
-| **GITLEAKS_FULL_SCAN_QUEUE_NAME** | Gitleaks(full-scan用)キュー名 | | `code-gitleaks-full-scan` |
-| **GITLEAKS_FULL_SCAN_QUEUE_URL** | Gitleaks(full-scan用)キューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-gitleaks-full-scan` |
+| **GITLEAKS_FULL_SCAN_QUEUE_NAME** | Gitleaks(full-scan用)キュー名 | | `code-gitleaks` |
+| **GITLEAKS_FULL_SCAN_QUEUE_URL** | Gitleaks(full-scan用)キューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-gitleaks` |
 
 ### Parameter Store保存先（例）
 
@@ -39,7 +39,7 @@ Codeのパラメータです
 
 - `/env/code/code`
 
-## Gitleaks(Gitleaks-full-scan)サービス
+## Gitleaksサービス
 
 ### Parameters
 
@@ -60,3 +60,44 @@ Codeのパラメータです
 以下のPath配下にパラメータを保存
 
 - `/env/code/gitleaks`
+
+## GitleaksFullScanサービス（Optional）
+
+Gitleaksの初回スキャンはGitHubリポジトリのフルスキャン処理が実行されるため時間がかかる可能性があります。（次回以降は差分スキャンです。）
+
+オプションとして `GITLEAKS_FULL_SCAN_QUEUE_NAME` と `GITLEAKS_FULL_SCAN_QUEUE_URL` を設定することで、別のキューにスキャン処理の依頼を振り分けることができます。（デフォルト値は通常のスキャンと同じキューURLが設定されています）
+
+初回フルスキャン用のキューを分けると以下のメリットがあります
+
+- Podのスペックを調整できる
+- キューの可視性タイムアウト時間を調整できる
+
+フルスキャン用のキューに振り分ける場合は、専用のDeploymentを追加してください。コンテナイメージはGitleaksのものと同じです。
+マニフェストのサンプルは以下です。
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitleaks-full-scan
+  namespace: code
+  labels:
+    app: gitleaks-full-scan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitleaks-full-scan
+  template:
+    metadata:
+      labels:
+        app: gitleaks-full-scan
+    spec:
+      serviceAccountName: code
+      containers:
+        - name: gitleaks-full-scan
+          image: 'public.ecr.aws/risken/code/gitleaks:latest'
+          ports:
+            - containerPort: 10002
+              name: gitleaks
+```

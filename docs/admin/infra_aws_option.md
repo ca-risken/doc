@@ -4,6 +4,15 @@ AWSのマネージドサービスとの連携や、細かなチューニング�
 
 ---
 
+## Observability
+
+AWSのObservability関連の各種サービスと連携することが可能です。詳細は下記のAWSドキュメントを参照ください
+
+- [Amazon EKS と Kubernetes での Container Insights のセットアップ :octicons-link-external-24:](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-EKS.html){ target="_blank" }
+- [CloudWatch Logs へログを送信する DaemonSet として Fluent Bit を設定する :octicons-link-external-24:](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-setup-logs-FluentBit.html){ target="_blank" }
+
+---
+
 ## Pod単位でIAMロールを設定する
 
 - AWS EKSではKubernetes内のサービスアカウントとIAMロールを紐付けることにより、Pod単位での細かなアクセスコントロールが可能になります
