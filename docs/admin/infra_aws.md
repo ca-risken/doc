@@ -85,7 +85,7 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 
 ???+ tip "FargateタイプやGraviton2タイプのノードを使いたい"
     - RISKENは他のノードタイプでも動作しますが、本ドキュメントでは手順を簡略化するために上記のノードの例を記載します
-    - Fargateやその他のノード型の場合リソースの制約やLoggingなどObsrverbility関連に影響します
+    - Fargateやその他のノード型の場合リソースの制約やLoggingなどObservability関連に影響します
         - 詳細は[EKSのNode :octicons-link-external-24:](https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/eks-compute.html){ target="_blank" } を参照してください
     - 一部のコンポーネント（DBやQueue）のコンテナイメージがCPUのマルチアーキテクチャに未対応です
         - Graviton2などのARM64アーキテクチャで動作する場合は上記のコンポーネントをAWSのマネージドサービスで構築する必要があります（詳細はページ下を参照ください）
@@ -216,7 +216,7 @@ $ kubectl get pod -A
         - Google
         - Code
     - 必須パラメータを設定しManifestファイル内のPod起動数を`1`以上に更新してください
-        - パラメータの詳細は[Prameters](/admin/param_index/)を参照してください
+        - パラメータの詳細は[Parameters](/admin/param_index/)を参照してください
 
 ---
 

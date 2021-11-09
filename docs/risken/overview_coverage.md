@@ -11,7 +11,7 @@ RISKENでは以下のカテゴリ／項目をサポートしています
 | `クラウド`    | :material-check: 脅威情報            | GuardDutyやSecurityCommandCenterなど脅威検知の結果を収集                     | セキュリティサービスの利用料が発生する可能性があります                 |
 |              | :material-check: リソース情報        | クラウドで利用中のリソース情報と問題のある設定をモニタリング                       | CISベンチマークなどの第三者評価基準等の準拠性をチェックすることができます |
 |              | :material-check: 情報資産の公開状態   | インターネットなどに公開状態になっているクラウドストレージ等の情報を収集します        |                                                               |
-| `WEBサイト診断`        | :material-check: Wordpress         | WordPressに対してのスキャンを実施します                                       |  |
+| `WEBサイト診断`        | :material-check: WordPress         | WordPressに対してのスキャンを実施します                                       |  |
 |              | :material-check: Application         | OWASP ZAPを用いて簡易的なWEBアプリケーションスキャンを実施します | 認証が必要なWEBページへのスキャンは現在サポート外です |
 | `OSINT`      | :material-check: ドメイン           | Staging環境など通常インターネット公開されるべきでないwebサイトが存在しないか、サブドメインテイクオーバーなどのリスクが存在しないかを検査します|                 |
 | `ソースコード` | :material-check: シークレットスキャン | GitHubなどのソースコードリポジトリに保存すべきでない機密情報が存在しないかを検査します　|                                                               |

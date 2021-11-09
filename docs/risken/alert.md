@@ -46,7 +46,7 @@ RISKENでは問題のあるデータを発見しときにアラートを生成�
     - **Show Options** : チェックONにするとオプション設定を表示します
     - **Custom Message** : デフォルトの通知メッセージを上書きすることができます
         - デフォルトは `@xxxx アラートが発生しました` です
-        - `@xxxx`の部分は設定したServerityに応じて変化します
+        - `@xxxx`の部分は設定したSeverityに応じて変化します
             - `High` : @channel
             - `Medium` : @here
             - `Low`: メンションなし
@@ -58,7 +58,7 @@ RISKENでは問題のあるデータを発見しときにアラートを生成�
 2. 画面右側の`NEW`をクリックします
 3. Alert Conditionダイアログで以下の項目を入力し`REGIST`をクリックします
     - **Description**: アラートの説明
-    - **Serverity**: 重大度の選択
+    - **Severity**: 重大度の選択
         - **High**: 最も危険なレベル。通知時時に `@channel` でメンションされます
         - **Medium**: 中間のレベル。通知時時に `@here` でメンションされます
         - **Low**: INFOレベル。通知時のメンションはなし。
