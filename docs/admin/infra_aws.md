@@ -195,10 +195,9 @@ $ aws eks --region ap-northeast-1 update-kubeconfig --name <cluster_name>
 $ git clone https://github.com/ca-risken/k8s-sample.git
 ```
 
-- EKS用のテンプレートをコピーし先程作成したクラスタ情報に置換します
+- EKS用のテンプレートをコピーします
 ```sell
 $ cp -r overlays/eks-template overlays/eks
-$ sed -i "" -e 's/your-cluster/<cluster_name>/g' overlays/eks/*.yaml
 ```
 
 - Kustomizeコマンドよりアプリケーションをデプロイします
