@@ -20,6 +20,6 @@ RISKEN上にあなたのGoogle情報を登録することで、Google関連の�
 GCPのデータソース設定には以下の作業が必要です
 
 1. RISKENに[GCPプロジェクトを登録](/google/overview_gcp/)する
-2. RISKENの[サービスアカウントにアクセス許可](/google/overview_sa/)を設定するする
+2. RISKENの[サービスアカウントにアクセス許可](/google/overview_sa/)を設定する
 3. GCPの[各種データソースを有効](/google/overview_datasource/)にする
 
