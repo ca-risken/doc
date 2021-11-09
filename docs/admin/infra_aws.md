@@ -11,7 +11,7 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 - AWS環境について
     - 本ドキュメントでは以下のAWS環境での構築例を記載します（該当しない箇所は適宜手順の修正が必要です）
         - リージョン: `ap-northeast-1`
-        - EKSバージョン: 1.21
+        - EKSバージョン: 1.21+
 - OIDCをサポートしているIdP
     - RISKENのユーザ認証は外部のIdPと連携します
     - 認証フローの詳細について[AWS ELBドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html#configure-user-authentication){ target="_blank" } を参照してください
