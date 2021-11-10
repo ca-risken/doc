@@ -15,8 +15,8 @@ Googleのパラメータです
 | **SQS_ENDPOINT** | SQSエンドポイント | | `http://queue.middleware.svc.cluster.local:9324` |
 | **ASSET_QUEUE_NAME** | Google Assetキュー名 | | `google-asset` |
 | **ASSET_QUEUE_URL** | Google AssetキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-asset` |
-| **CLOUDSPOIT_QUEUE_NAME** | Google CloudSploitキュー名 | | `google-cloudsploit` |
-| **CLOUDSPOIT_QUEUE_URL** | Google CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-cloudsploit` |
+| **CLOUDSPLOIT_QUEUE_NAME** | Google CloudSploitキュー名 | | `google-cloudsploit` |
+| **CLOUDSPLOIT_QUEUE_URL** | Google CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-cloudsploit` |
 | **SCC_QUEUE_NAME** | Security Command Centerキュー名 | | `google-scc` |
 | **SCC_QUEUE_URL** | Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-scc` |
 | **PORTSCAN_QUEUE_NAME** | Security Command Centerキュー名 | | `google-portscan` |
