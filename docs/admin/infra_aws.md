@@ -88,17 +88,17 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
     - Fargateやその他のノード型の場合リソースの制約やLoggingなどObservability関連に影響します
         - 詳細は[EKSのNode :octicons-link-external-24:](https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/eks-compute.html){ target="_blank" } を参照してください
     - 一部のコンポーネント（DBやQueue）のコンテナイメージがCPUのマルチアーキテクチャに未対応です
-        - Graviton2などのARM64アーキテクチャで動作する場合は上記のコンポーネントをAWSのマネージドサービスで構築する必要があります（詳細はページ下を参照ください）
+        - Graviton2などのARM64アーキテクチャで動作する場合は上記のコンポーネントをAWSのマネージドサービスで構築する必要があります（詳細は[Options](/admin/infra_aws_option/)ページを参照ください）
 
 ---
 
 ## ALBを作成する
 
-インターネットからのリクエストを受け付けるためにALBを作成します
-
-[ALBのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html){ target="_blank" } に従ってALBを作成してください
+インターネットからのリクエストを受け付けるエンドポイントとしてALBを作成します
 
 ### ターゲットグループを作成する
+
+まず、ALBのルーティング先にあたるターゲットグループを２つ作成します
 
 1. API用のターゲットグループ
 ```yaml
@@ -120,19 +120,17 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 - Register target: なし（後ほどAuto-Scaling Groupで設定）
 ```
 
-3. Auto-Scaling GroupにLBのターゲットグループを設定する
-    - Nodeライフサイクルに連動してターゲットグループの紐付けが自動設定されるようにしておきます
-    - [EC2 AutoScalingのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html){ target="_blank" } を参考にAuto-Scalingグループと上記で作成したターゲットグループの紐付けを行ってください
+### Auto-Scaling GroupにLBのターゲットグループを設定する
+
+- Nodeライフサイクルに連動してターゲットグループの紐付けが自動設定されるようにしておきます
+- [EC2 AutoScalingのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html){ target="_blank" } を参考にAuto-Scalingグループと上記で作成したターゲットグループの紐付けを行ってください
 
 
-### ALBからEKSへの通信を許可する
+### ALBを作成する
 
-- ALBからEKS NodePort経由で通信を許可します
-- EKSクラスタのセキュリティグループに以下のInboundルールを設定してください
-    - Type: CustomTCP
-    - Protcol: TCP
-    - Port Range: `30080 - 30081`
-    - Source: EKS,ALBが存在するVPCのIPレンジ
+続いて、[ALBのドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancer-getting-started.html){ target="_blank" } に従ってALBを作成してください。
+
+ターゲットグループの設定は上記で作成したものを指定します。ただし、後述の `ALBリスナールールを作成する` で細かな修正を行いますのでここでは任意のターゲットグループの指定で問題ありません。
 
 ### ALBリスナールールを作成する
 
@@ -177,6 +175,17 @@ THEN:
         - その際に必要なRedirectURIはALBの場合には以下になります
         - `https://{your-domain}/oauth2/idpresponse`
         - 詳細は[AWSドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/es_es/elasticloadbalancing/latest/application/listener-authenticate-users.html){ target="_blank" } を参照してください
+
+### ALBからEKSへの通信を許可する
+
+最後に `ALB` -> ( `TargetGroup` ) -> `EKS` への通信の設定を行います
+
+- ALBからEKS NodePort経由で通信を許可します
+- EKSクラスタのセキュリティグループに以下のInboundルールを設定してください
+    - Type: CustomTCP
+    - Protcol: TCP
+    - Port Range: `30080 - 30081`
+    - Source: ALBに設定したセキュリティグループ
 
 ---
 
