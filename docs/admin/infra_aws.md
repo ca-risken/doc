@@ -93,7 +93,7 @@ RISKENをAWS上に構築する上で以下の項目が必要になります
 ```yaml
 - AMI type: `Amazon Linux 2 (AL2_x86_64)`
 - インスタンスタイプ: `t3.medium`
-- インスタンス数（Min）: 3
+- インスタンス数（Min）: 2
 ```
 
 ???+ tip "FargateタイプやGraviton2タイプのノードを使いたい"
