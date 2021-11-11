@@ -2,6 +2,19 @@
 
 AWS上でRISKENのシステム構築をするためのドキュメントです
 
+## ゴール
+
+最終的に作成される構成は以下のようになります
+
+![AWS Simple Architecture](/img/admin/admin_aws_simple_arch.png){style="width:480px"}
+
+- AWS VPC内に `Public Subnet` と `Private Subnet` を持ちます
+    - Public SubnetはインターネットFacingなネットワークです。ここにはALBを配置しています。
+    - Private Subnet内にEKSノードが配置されます。ALBから特定のポートを許可します
+- EKS上にRISKENのコンテナアプリケーションがデプロイされます
+- これは最もシンプルなアーキテクチャイメージです
+    - Cognito, Route53, ACM, RDS, SQS, ParameterStore, KMS等のAWSサービスと連携することも可能ですが、説明をシンプルにするためにこの図には含めません
+
 ---
 
 ## 準備
