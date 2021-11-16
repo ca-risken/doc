@@ -6,6 +6,8 @@ env:
   parameter-store:
     GITHUB_USER: "/build/GITHUB_USER"
     GITHUB_TOKEN: "/build/GITHUB_TOKEN"
+    DOCKER_USER: "/build/DOCKER_USER"
+    DOCKER_TOKEN: "/build/DOCKER_TOKEN"
 
 phases:
   install:
@@ -26,6 +28,13 @@ phases:
 
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${REGISTRY}
+
+      - |
+        #!/bin/bash
+        if [[ -n "${DOCKER_USER}" ]] && [[ -n "${DOCKER_TOKEN}" ]]; then
+          echo 'Logging in to Docker Hub...'
+          echo "$DOCKER_TOKEN" | docker login -u $DOCKER_USER --password-stdin
+        fi
   build:
     commands:
       - echo Build web started on `date`
