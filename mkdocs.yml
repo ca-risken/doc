@@ -163,7 +163,10 @@ extra:
     - icon: fontawesome/solid/paper-plane
       link: mailto:<risken@cyberagent.co.jp>
       name: RISKEN
-
+  # Google Analitics
+  analytics:
+    provider: google
+    property: G-Q0YRWEDKYG
 
 # Plugins
 plugins:
