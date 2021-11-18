@@ -63,12 +63,15 @@ nav:
       - Scan:       diagnosis/portscan_scan.md
 
   - OSINT:
-    - Overview:     osint/index.md
+    - Overview:
+      - Concept: osint/overview_osint.md
+      - DataSource: osint/datasource.md
+      - Scan:       osint/scan.md
     - Domain:
       - Concept:    osint/domain_concept.md
-      - DataSource: osint/domain_datasource.md
-      - Scan:       osint/domain_scan.md
-
+    - Website:
+      - Concept:    osint/website_concept.md
+  
   - Code:
     - Overview:     code/index.md
     - Gitleaks:
