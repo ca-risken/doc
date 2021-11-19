@@ -9,7 +9,7 @@
 事前に以下のツールが必要になります
 
 - 各種CLIツールをインストールする
-    - [aws cli :octicons-link-external-24:](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html){ target="_blank" }
+    - [Docker Desktop :octicons-link-external-24:](https://www.docker.com/products/docker-desktop){ target="_blank" }
     - [kubectl :octicons-link-external-24:](https://kubernetes.io/de/docs/tasks/tools/install-kubectl/){ target="_blank" }
     - [kustomize :octicons-link-external-24:](https://kubectl.docs.kubernetes.io/installation/kustomize/){ target="_blank" }
 
