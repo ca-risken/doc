@@ -18,7 +18,7 @@ GCPのマネージメントコンソールでサービスアカウントを追�
     - ![IAM追加](/img/google/gcp_iam_add.png){style="width:200px"}
 4. 以下を入力し保存をクリックします
     - 新しいメンバー: `{your-sa}@{your-domain}iam.gserviceaccount.com` (※システム管理者にお問い合わせください)
-    - ロール: `閲覧者` （roles/viewer）
+    - ロール: `RISKEN` （上記1で作成したカスタムロールです）
     - ![ロール追加](/img/google/gcp_role_add.png){style="width:300px"}
 
     ???+ Warning "カスタムロールに許可される権限について"
