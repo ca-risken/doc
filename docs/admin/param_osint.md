@@ -50,3 +50,18 @@ OSINTのパラメータです
 以下のPath配下にパラメータを保存
 
 - `/env/osint/subdomain`
+
+## Websiteサービス
+
+### Parameters
+
+| Param | Description | Required | Default |
+| --- | --- | --- | --- |
+| **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `5` |
+| **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
+
+### Parameter Store保存先（例）
+
+以下のPath配下にパラメータを保存
+
+- `/env/osint/website`
