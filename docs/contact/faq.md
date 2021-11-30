@@ -2,12 +2,12 @@
 
 WPScanのスキャン実行時にエラーが発生する
 -------------------
-`Failed exec WPScan Ask the system administrator.`というエラーが`Status Detail`に表示されている場合、以下をご確認ください  
-その他のエラーが表示されている場合、システム管理者へお問い合わせください
+`Failed exec WPScan Ask the system administrator.`というエラーが表示されている場合、以下をご確認ください  
 
 1. スキャン対象のサイトがWordPressで作成されていることを確認する
-2. RISKENからスキャン対象のサイトへの通信が許可されている
+2. RISKENからスキャン対象のサイトへの通信が許可されていることを確認する
     - RISKENのIPアドレスからの通信を許可する必要があります
+    - BASIC認証などの制御が行われている場合、現状スキャンができません
 3. スキャン対象への通信がWAF(Web Application Firewall)などによりフィルタリングされている
     - `Setting Detail`から以下の設定を有効にすることでスキャンが可能になる場合があります
         - `Use a random user-agent for each scan` にチェックを入れる
