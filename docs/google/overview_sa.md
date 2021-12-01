@@ -26,6 +26,25 @@ GCPのマネージメントコンソールでサービスアカウントを追�
         ですが、プロジェクト内に保存されているセンシティブなデータにまでアクセスできないように権限を必要最小限にするべきです。
         特に、DBやStorageのデータにアクセスできるような権限は付与しないように注意してください
 
+??? tip "Security Command Center 用の設定"
+    Security Command Center はOrganizationレイヤのサービスとなっており、プロジェクト側のIAMにサービスアカウントを設定しただけでは権限が不十分です。
+
+    OrganizationのIAMでもサービスアカウントを登録し、以下の `ロール` または `パーミッション` を含むカスタムロールを設定してください
+
+    ### ロール
+    - Security Center Findings Viewer／セキュリティ センターの検出閲覧者 （ `roles/securitycenter.findingsViewer` ）
+
+    ### パーミッション
+
+    ```yaml
+    - securitycenter.findings.group
+    - securitycenter.findings.list
+    - securitycenter.findings.listFindingPropertyNames
+    - securitycenter.sources.get
+    - securitycenter.sources.list
+    ```
+
+
 ---
 
 ## GCPカスタムロール
