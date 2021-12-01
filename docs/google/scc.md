@@ -7,10 +7,23 @@ SCCデータソースを有効にすると、GCPの[Security Command Centerサ�
     - SCCでどのような項目が検知されるかは[公式ドキュメント :octicons-link-external-24:](https://cloud.google.com/security-command-center/docs/concepts-vulnerabilities-findings){ target="_blank" }を参照してください
 
 
-???+ Warning "SCCは組織向けのソリューションです"
+???+ Warning "Security Command Centerは組織向けのソリューションです"
     SCCは[組織 :octicons-link-external-24:](https://cloud.google.com/resource-manager/docs/creating-managing-organization){ target="_blank" }向けのセキュリティサービスです
     
-    そのため設定を有効にするには何らかの組織に属する必要があります
+    - 設定を有効にするには何らかの組織に属する必要があります
+    - 組織側のIAMにもサービスアカウントの登録が必要です
+        - サービスアカウントに以下のロールを設定してください
+            - Security Center Findings Viewer／セキュリティ センターの検出閲覧者 （ `roles/securitycenter.findingsViewer` ）
+        - もしくは以下のパーミッション（SCCの参照権限）を含むカスタムロールを設定してください
+        ```yaml
+        - securitycenter.findings.group
+        - securitycenter.findings.list
+        - securitycenter.findings.listFindingPropertyNames
+        - securitycenter.sources.get
+        - securitycenter.sources.list
+        ```
+        - 詳細は [サービスアカウントを許可](/google/overview_sa/) を参照してください
+
 
 ---
 
