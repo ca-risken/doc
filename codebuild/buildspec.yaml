@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+  variables:
+    S3_BUCKET: "bucket-name" # override this env
+    CF_DESTRIBUTION_ID: "cloudfront-destribution-id" # override this env
+
+phases:
+  install:
+    commands:
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
+      - aws --version
+      - pip install mkdocs
+      - pip install mkdocs-material
+      - mkdocs --version
+  build:
+    commands:
+      - mkdocs build --clean --strict
+
+  post_build:
+    commands:
+      - cd site
+      - pwd
+      - echo $HOMEPAGE_S3_BUCKET
+      - aws s3 sync . s3://$S3_BUCKET --delete
+      - aws cloudfront create-invalidation --distribution-id $CF_DESTRIBUTION_ID --paths "/*"
