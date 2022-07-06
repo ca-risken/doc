@@ -114,7 +114,7 @@ graph TD
 |KMS|kmsScheduledDeletion|0.6||2021/06/17更新|
 |Lambda|lambdaPublicAccess|0.6|||
 |RDS|rdsEncryptionEnabled|0.6|hipaa,pci||
-|RDS|rdsPubliclyAccessible|0.8|hipaa,pci||
+|RDS|rdsPubliclyAccessible|0.6|hipaa,pci|2022/07/01更新|
 |Redshift|redshiftEncryptionEnabled|0.6|hipaa||
 |Redshift|redshiftPubliclyAccessible|0.8|hipaa,pci||
 |Route53|danglingDnsRecords|0.6|||
