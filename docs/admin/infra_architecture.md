@@ -25,17 +25,13 @@ RISKENシステム内で動作する主なマイクロサービスについて�
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|core|iam|Identity and AccessManagementの役割を持つサービスです。||
-|core|finding|Finding関連のサービスです||
-|core|project|Project関連のサービスです||
-|core|alert|Alert関連のサービスです||
-|core|report|Report関連のサービスです||
+|core|core|IAM（Identity and AccessManagement）、Finding、Project、Alert、Report関連のAPIサービスです||
+|core|datasource-api|AWS, Google, Diagnosis, OSINT, Codeの各種データソース設定やスキャンの呼び出しを行います||
 
 ### AWS
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|aws|aws|AWSの各種データソース設定やスキャンの呼び出しを行います||
 |aws|guard-duty|GuardDutyのスキャンを行います||
 |aws|admin-checker|IAMユーザやロールの特権チェックに特化したスキャナーです||
 |aws|access-analyzer|AccessAnalyzerのスキャンを行います||
@@ -47,7 +43,6 @@ RISKENシステム内で動作する主なマイクロサービスについて�
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|google|google|Googleの各種データソース設定やスキャンの呼び出しを行います||
 |google|asset|GCP Asset APIを利用して主にIAMやStorege関連のスキャンを行います||
 |google|scc|GCP Security Command Center(SCC)のスキャンを行います||
 |google|cloudsploit|CloudSploitツールを使ったスキャンを行います||
@@ -57,7 +52,6 @@ RISKENシステム内で動作する主なマイクロサービスについて�
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|diagnosis|diagnosis|診断の各種データソース設定やスキャンの呼び出しを行います||
 |diagnosis|wpscan|WP Scanツールを使ったスキャンを行います||
 |diagnosis|application-scan|OWASP ZAPツールを使ったスキャンを行います||
 |diagnosis|portscan|ポートスキャンを行います||
@@ -66,12 +60,11 @@ RISKENシステム内で動作する主なマイクロサービスについて�
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|osint|osint|OSINTの各種データソース設定やスキャンの呼び出しを行います||
-|osint|subdomain|ドメイン情報を収集し、OSINTツールを使ったスキャンを行います||
+|osint|subdomain|ドメイン情報を収集しOSINTツールを使ったスキャンを行います||
+|osint|website|URLからWEBサイト情報を収集しOSINTツールを使ったスキャンを行います||
 
 ### Code
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|code|code|Codeの各種データソース設定やスキャンの呼び出しを行います||
 |code|gitleaks|Gitleaksツールを使ったスキャンを行います||

@@ -20,17 +20,9 @@ RISKENのサービス共通のパラメータです
 
 | Param | Description | Required | Default |
 | --- | --- | --- | --- |
-| **FINDING_SVC_ADDR** | Findingサービスアドレス | | `finding.core.svc.cluster.local:8001` |
-| **IAM_SVC_ADDR** | IAMサービスアドレス | | `iam.core.svc.cluster.local:8002` |
-| **PROJECT_SVC_ADDR** | Projectサービスアドレス | | `project.core.svc.cluster.local:8003` |
-| **ALERT_SVC_ADDR** | Alertサービスアドレス | | `alert.core.svc.cluster.local:8004` |
-| **REPORT_SVC_ADDR** | Reportサービスアドレス | | `report.core.svc.cluster.local:8005` |
-| **AWS_SVC_ADDR** | AWSサービスアドレス | | `aws.aws.svc.cluster.local:9001` |
+| **CORE_SVC_ADDR** | Coreサービスアドレス | | `ccore.core.svc.cluster.local:8080` |
+| **DATA_SOURCE_API_SVC_ADDR** | DataSourceAPIサービスアドレス | | `datasource-api.core.svc.cluster.local:8081` |
 | **AWS_ACTIVITY_SVC_ADDR** | AWS Actibityサービスアドレス | | `activity.aws.svc.cluster.local:9007` |
-| **OSINT_SVC_ADDR** | OSINTサービスアドレス | | `osint.osint.svc.cluster.local:18081` |
-| **DIAGNOSIS_SVC_ADDR** | Diagnosisサービスアドレス | | `diagnosis.diagnosis.svc.cluster.local:19001` |
-| **CODE_SVC_ADDR** | Codeサービスアドレス | | `code.code.svc.cluster.local:10001` |
-| **GOOGLE_SVC_ADDR** | Googleサービスアドレス | | `google.google.svc.cluster.local:11001` |
 
 ## その他
 
@@ -38,8 +30,6 @@ RISKENのサービス共通のパラメータです
 | --- | --- | --- | --- |
 | **TZ** | サーバータイムゾーン（ログの出力日付等） | | `Asia/Tokyo` |
 | **ENV_NAME** | 環境ごとの識別子（Observability関連で利用） | | `local` |
-| **AWS_XRAY_SDK_DISABLED** | XRAYの無効化 | | `true` |
-| **AWS_XRAY_CONTEXT_MISSING** | XRAYのコンテキストパラメータが存在しない場合の挙動 | | `LOG_ERROR` |
 
 ## Parameter Store保存先（例）
 

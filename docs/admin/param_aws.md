@@ -13,38 +13,22 @@ AWSのパラメータです
 | **AWS_SECRET_ACCESS_KEY** | AWSシークレットキー | | |
 | **AWS_SESSION_TOKEN** | AWSセッショントークン（STS一時キーを利用する場合） | | |
 | **SQS_ENDPOINT** | SQSエンドポイント | | `http://queue.middleware.svc.cluster.local:9324` |
-| **GUARD_DUTY_QUEUE_NAME** | AWS GuardDutyキュー名 | | `aws-guardduty` |
-| **GUARD_DUTY_QUEUE_URL** | AWS GuardDutyキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-guardduty` |
-| **ACCESS_ANALYZER_QUEUE_NAME** | AWS AccessAnalyzerキュー名 | | `aws-accessanalyzer` |
-| **ACCESS_ANALYZER_QUEUE_URL** | AWS AccessAnalyzerキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-accessanalyzer` |
-| **ADMIN_CHECKER_QUEUE_NAME** | AWS AdminCheckerキュー名 | | `aws-adminchecker` |
-| **ADMIN_CHECKER_QUEUE_URL** | AWS AdminCheckerキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-adminchecker` |
-| **CLOUDSPLOIT_QUEUE_NAME** | AWS CloudSploitキュー名 | | `aws-cloudsploit` |
-| **CLOUDSPLOIT_QUEUE_URL** | AWS CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-cloudsploit` |
-| **PORTSCAN_QUEUE_NAME** | AWS Portscanキュー名 | | `aws-portscan` |
-| **PORTSCAN_QUEUE_URL** | AWS PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-portscan` |
-| **ASSET_NAME** | AWS Portscanキュー名 | | `aws-portscan` |
-| **ASSET_QUEUE_URL** | AWS PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-portscan` |
+| **AWS_GUARD_DUTY_QUEUE_NAME** | AWS GuardDutyキュー名 | | `aws-guardduty` |
+| **AWS_GUARD_DUTY_QUEUE_URL** | AWS GuardDutyキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-guardduty` |
+| **AWS_ACCESS_ANALYZER_QUEUE_NAME** | AWS AccessAnalyzerキュー名 | | `aws-accessanalyzer` |
+| **AWS_ACCESS_ANALYZER_QUEUE_URL** | AWS AccessAnalyzerキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-accessanalyzer` |
+| **AWS_ADMIN_CHECKER_QUEUE_NAME** | AWS AdminCheckerキュー名 | | `aws-adminchecker` |
+| **AWS_ADMIN_CHECKER_QUEUE_URL** | AWS AdminCheckerキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-adminchecker` |
+| **AWS_CLOUDSPLOIT_QUEUE_NAME** | AWS CloudSploitキュー名 | | `aws-cloudsploit` |
+| **AWS_CLOUDSPLOIT_QUEUE_URL** | AWS CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-cloudsploit` |
+| **AWS_PORTSCAN_QUEUE_NAME** | AWS Portscanキュー名 | | `aws-portscan` |
+| **AWS_PORTSCAN_QUEUE_URL** | AWS PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/aws-portscan` |
 
 ### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
 - `/env/aws/common`
-
-## AWSサービス
-
-### Parameters
-
-| Param | Description | Required | Default |
-| --- | --- | --- | --- |
-| **PORT** | | | `9001` |
-
-### Parameter Store保存先（例）
-
-以下のPath配下にパラメータを保存
-
-- `/env/aws/aws`
 
 ## AccessAnalyzerサービス
 
