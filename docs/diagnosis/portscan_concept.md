@@ -14,7 +14,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | スキャン対象のIP/FQDN                                         |
 | `Description`  | 説明        　                |
 | `Score`        | [スコアリング](/diagnosis/portscan_concept/#_2)参照            |
-| `Tag`          | `diagnosis` `portscan` `vulnerability`  |
+| `Tag`          | `diagnosis` `portscan` `vulnerability` `fqdn` `{スキャン対象}` |
 
 ---
 ## スコアリング

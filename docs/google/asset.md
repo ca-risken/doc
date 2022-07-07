@@ -20,7 +20,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | 検出したアセット名                          |
 | `Description`  | 説明                                      |
 | `Score`        | [スコアリング](/google/asset/#_2)参照        |
-| `Tag`          | `gcp` `asset` `{タイプ}` `{プロジェクトID}` |
+| `Tag`          | `google` `gcp` `asset` `{タイプ}` `{プロジェクトID}` |
 
 ---
 

@@ -20,7 +20,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | リポジトリ名                                     |
 | `Description`  | 説明                                            |
 | `Score`        | [スコアリング](/code/gitleaks_concept/#_2)参照             |
-| `Tag`          | `code` `gitleaks` `{visibillity}` `{key-type}` |
+| `Tag`          | `code` `repository` `gitleaks` `{リポジトリ名}` `{visibillity}` `{key-type}` |
 
 ---
 
