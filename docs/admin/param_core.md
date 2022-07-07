@@ -34,7 +34,7 @@ Coreのパラメータです
 | **GOOGLE_ASSET_QUEUE_URL** | Google AssetキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-asset` |
 | **GOOGLE_CLOUDSPLOIT_QUEUE_URL** | Google CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-cloudsploit` |
 | **GOOGLE_SCC_QUEUE_URL** | Google Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-scc` |
-| **GOOGLE_PORTSCAN_QUEUE_URL** | Google Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-portscan` |
+| **GOOGLE_PORTSCAN_QUEUE_URL** | Google PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-portscan` |
 | **CODE_GITLEAKS_QUEUE_URL** | GileaksキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-gitleaks` |
 | **DIAGNOSIS_WPSCAN_QUEUE_URL** | WPScanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/diagnosis-wpscan` |
 | **DIAGNOSIS_PORTSCAN_QUEUE_URL** | PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/diagnosis-portscan` |

@@ -19,8 +19,8 @@ Googleのパラメータです
 | **GOOGLE_CLOUDSPLOIT_QUEUE_URL** | Google CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-cloudsploit` |
 | **GOOGLE_SCC_QUEUE_NAME** | Security Command Centerキュー名 | | `google-scc` |
 | **GOOGLE_SCC_QUEUE_URL** | Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-scc` |
-| **GOOGLE_PORTSCAN_QUEUE_NAME** | Security Command Centerキュー名 | | `google-portscan` |
-| **GOOGLE_PORTSCAN_QUEUE_URL** | Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-portscan` |
+| **GOOGLE_PORTSCAN_QUEUE_NAME** | Google Portscanキュー名 | | `google-portscan` |
+| **GOOGLE_PORTSCAN_QUEUE_URL** | Google PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-portscan` |
 
 ### Parameter Store保存先（例）
 
@@ -98,6 +98,7 @@ Googleのパラメータです
 | **GOOGLE_CREDENTIAL_PATH** | GCPサービスアカウントのクレデンシャルを一時保存するパス | | `/tmp/credential.json` |
 | **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes ||
 | **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | | `1000` |
+| **SCAN_CONCURRENCY** | スキャン並行数 | | `5` |
 
 ### Parameter Store保存先（例）
 

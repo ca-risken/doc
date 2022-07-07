@@ -118,7 +118,7 @@ AWSのパラメータです
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
 | **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | | `1000` |
-
+| **SCAN_CONCURRENCY** | スキャン並行数 | | `5` |
 
 ### Parameter Store保存先（例）
 

@@ -32,6 +32,7 @@ OSINTのパラメータです
 | --- | --- | --- | --- |
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `5` |
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
+| **INSPECT_CONCURRENCY** | スキャン並行数 | | `50` |
 
 ### Parameter Store保存先（例）
 
