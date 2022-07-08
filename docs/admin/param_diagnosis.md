@@ -26,20 +26,6 @@ Diagnosisのパラメータです
 
 - `/env/diagnosis/common`
 
-## Diagnosisサービス
-
-### Parameters
-
-| Param | Description | Required | Default |
-| --- | --- | --- | --- |
-| **PORT** | | | `19002` |
-
-### Parameter Store保存先（例）
-
-以下のPath配下にパラメータを保存
-
-- `/env/diagnosis/diagnosis`
-
 ## Portscanサービス
 
 ### Parameters

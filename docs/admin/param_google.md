@@ -13,35 +13,20 @@ Googleのパラメータです
 | **AWS_SECRET_ACCESS_KEY** | AWSシークレットキー | | |
 | **AWS_SESSION_TOKEN** | AWSセッショントークン（STS一時キーを利用する場合） | | |
 | **SQS_ENDPOINT** | SQSエンドポイント | | `http://queue.middleware.svc.cluster.local:9324` |
-| **ASSET_QUEUE_NAME** | Google Assetキュー名 | | `google-asset` |
-| **ASSET_QUEUE_URL** | Google AssetキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-asset` |
-| **CLOUDSPLOIT_QUEUE_NAME** | Google CloudSploitキュー名 | | `google-cloudsploit` |
-| **CLOUDSPLOIT_QUEUE_URL** | Google CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-cloudsploit` |
-| **SCC_QUEUE_NAME** | Security Command Centerキュー名 | | `google-scc` |
-| **SCC_QUEUE_URL** | Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-scc` |
-| **PORTSCAN_QUEUE_NAME** | Security Command Centerキュー名 | | `google-portscan` |
-| **PORTSCAN_QUEUE_URL** | Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-portscan` |
+| **GOOGLE_ASSET_QUEUE_NAME** | Google Assetキュー名 | | `google-asset` |
+| **GOOGLE_ASSET_QUEUE_URL** | Google AssetキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-asset` |
+| **GOOGLE_CLOUDSPLOIT_QUEUE_NAME** | Google CloudSploitキュー名 | | `google-cloudsploit` |
+| **GOOGLE_CLOUDSPLOIT_QUEUE_URL** | Google CloudSploitキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-cloudsploit` |
+| **GOOGLE_SCC_QUEUE_NAME** | Security Command Centerキュー名 | | `google-scc` |
+| **GOOGLE_SCC_QUEUE_URL** | Security Command CenterキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-scc` |
+| **GOOGLE_PORTSCAN_QUEUE_NAME** | Google Portscanキュー名 | | `google-portscan` |
+| **GOOGLE_PORTSCAN_QUEUE_URL** | Google PortscanキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/google-portscan` |
 
 ### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存
 
 - `/env/google/common`
-
-
-## Googleサービス
-
-### Parameters
-
-| Param | Description | Required | Default |
-| --- | --- | --- | --- |
-| **PORT** | | | `11001` |
-
-### Parameter Store保存先（例）
-
-以下のPath配下にパラメータを保存
-
-- `/env/google/google`
 
 ## Assetサービス
 
@@ -113,6 +98,7 @@ Googleのパラメータです
 | **GOOGLE_CREDENTIAL_PATH** | GCPサービスアカウントのクレデンシャルを一時保存するパス | | `/tmp/credential.json` |
 | **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes ||
 | **SCAN_EXCLUDE_PORT_NUMBER** | スキャン対象のPort番号のレンジのリミット値（この数を超えるPort数はスキャン対象外になる） | | `1000` |
+| **SCAN_CONCURRENCY** | スキャン並行数 | | `5` |
 
 ### Parameter Store保存先（例）
 
