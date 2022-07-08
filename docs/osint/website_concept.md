@@ -14,7 +14,9 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | 検知した使用されている技術名                        |
 | `Description`  | 説明                                            |
 | `Score`        | [スコアリング](/osint/domain_concept/#_2)参照      |
-| `Tag`          | `osint` `website` `{サイトのURL}` `{使用されている技術のカテゴリ}` |
+| `Tag`          | `osint` `website` `osint_id:{OsintID}` `{使用されている技術のカテゴリ}` |
+
+＊ `Tag`の`OsintID`には、OSINTのリソース登録画面にてリソース登録時に採番されるIDが入ります
 
 ## スコアリング
 

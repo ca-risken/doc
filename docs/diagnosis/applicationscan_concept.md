@@ -14,7 +14,9 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | スキャン対象のURL                                         |
 | `Description`  | 検知された脆弱性とスキャン対象のURL         　                |
 | `Score`        | [スコアリング](/diagnosis/applicationscan_concept/#_2)参照            |
-| `Tag`          | `diagnosis` `application-scan` `vulnerability` (全て固定)  |
+| `Tag`          | `diagnosis` `url` `application-scan` `vulnerability` `application_scan_id:{ApplicationScanID}` |
+
+* `Tag`の`ApplicationScanID`には、ApplicationScan登録画面にてスキャン設定登録時に採番されるIDが入ります
 
 ---
 ## スコアリング

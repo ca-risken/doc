@@ -12,7 +12,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | スキャン対象のリソースのARN                    |
 | `Description`  | 説明                                        |
 | `Score`        | [スコアリング](/google/portscan/#_2)参照       |
-| `Tag`          | `gcp` `portscan` `{プロジェクトID}`          |
+| `Tag`          | `google` `gcp` `portscan` `{プロジェクトID}`   |
 
 ## スコアリング
 
