@@ -73,11 +73,16 @@ nav:
       - Concept:    osint/website_concept.md
   
   - Code:
-    - Overview:     code/index.md
+    - Concept:    code/index.md
+    - GitHub:  code/github_setting.md
     - Gitleaks:
       - Concept:    code/gitleaks_concept.md
       - DataSource: code/gitleaks_datasource.md
       - Scan:       code/gitleaks_scan.md
+    - Dependency:
+      - Concept:    code/dependency_concept.md
+      - DataSource: code/dependency_datasource.md
+      - Scan:       code/dependency_scan.md
 
   - Admin:
     - Overview:         admin/overview.md
