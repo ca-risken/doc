@@ -15,6 +15,8 @@ Codeのパラメータです
 | **SQS_ENDPOINT** | SQSエンドポイント | | `http://queue.middleware.svc.cluster.local:9324` |
 | **CODE_GITLEAKS_QUEUE_NAME** | Gitleaksキュー名 | | `code-gitleaks` |
 | **CODE_GITLEAKS_QUEUE_URL** | GileaksキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-gitleaks` |
+| **CODE_DEPENDENCY_QUEUE_NAME** | Dependencyキュー名 | | `code-dependency` |
+| **CODE_DEPENDENCY_QUEUE_URL** | DependencyキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-dependency` |
 
 ### Parameter Store保存先（例）
 
@@ -41,3 +43,22 @@ Codeのパラメータです
 以下のPath配下にパラメータを保存
 
 - `/env/code/gitleaks`
+
+## Dependencyサービス
+
+### Parameters
+
+| Param | Description | Required | Default |
+| --- | --- | --- | --- |
+| **DEBUG** | DEBUGレベルログの有効化 | | `false` |
+| **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
+| **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
+| **CODE_DATA_KEY** | GitHubのクレデンシャル用の暗号キー | | |
+| **GITHUB_DEFAULT_TOKEN** | GitHubデフォルトトークン | | `your-token-here`|
+| **LIMIT_REPOSITORY_SIZE_KB** | Gitleaksスキャン時のリポジトリサイズLimit値 | | `500000` |
+
+### Parameter Store保存先（例）
+
+以下のPath配下にパラメータを保存
+
+- `/env/code/dependency`
