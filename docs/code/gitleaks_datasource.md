@@ -2,9 +2,6 @@
 
 Gitleaksのデータソース設定について説明します
 
-???+ warning "他者の環境に対してのスキャンはNGです"
-    発見した場合、強制的にデータ削除する可能性があります
-
 ## Gitleaksスキャン設定
 
 1. [GitHub設定](github_setting.md#githubリポジトリの設定)を完了した後に設定画面が表示されます
@@ -28,13 +25,3 @@ Gitleaksのデータソース設定について説明します
 2. GitHub設定一覧から変更したい列の`Action -> Edit Item`をクリックします
 3. ダイアログにてcode:gitleaksをクリックして、Gitleaksの設定を開きます
 
-???+ warning "Limitation"
-    以下の条件に該当するリポジトリはスキャン対象外になります
-
-    - リポジトリのステータスが以下のもの
-        - `Archived`
-        - `Disabled`
-        - `Forkリポジトリ`
-            - ＊[Forkリポジトリ :octicons-link-external-24:](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo){ target="_blank" } とは一般的にはオリジナルリポジトリへの貢献（修正の提案）のために作成されるリポジトリです
-    - リポジトリのサイズによる制限があります（詳細はシステム管理者に問い合わせてください）
-    - RISKEN環境からcloneできないもの

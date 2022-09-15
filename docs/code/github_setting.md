@@ -2,9 +2,6 @@
 
 Codeサービスのデータソース設定について説明します
 
-???+ warning "他者の環境に対してのスキャンはNGです"
-    発見した場合、強制的にデータ削除する可能性があります
-
 ## GitHubリポジトリの設定
 1. メニューより`Code > GitHub`をクリックします
 2. 画面右側の`NEW`をクリックします
@@ -36,3 +33,13 @@ Codeサービスのデータソース設定について説明します
 1. 利用中のGEHS環境にて、GitHub v3 APIアクセスに対してIP制限をしている場合はRISKEN環境のIPを許可する必要があります（IPアドレスはRISKEN管理者にお問い合わせください）
 2. GitHubのスキャン設定で `Base URL` を設定してください（e.g. http(s)://hostname/api/v3/）
 
+???+ warning "Limitation"
+    以下の条件に該当するリポジトリはスキャン対象外になります
+
+    - リポジトリのステータスが以下のもの
+        - `Archived` (Gitleaksのみ対象外になります)
+        - `Disabled`
+        - `Forkリポジトリ`
+            - ＊[Forkリポジトリ :octicons-link-external-24:](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo){ target="_blank" } とは一般的にはオリジナルリポジトリへの貢献（修正の提案）のために作成されるリポジトリです
+    - リポジトリのサイズによる制限があります（詳細はシステム管理者に問い合わせてください）
+    - RISKEN環境からcloneできないもの

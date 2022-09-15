@@ -13,6 +13,8 @@ Codeのパラメータです
 | **AWS_SECRET_ACCESS_KEY** | AWSシークレットキー | | |
 | **AWS_SESSION_TOKEN** | AWSセッショントークン（STS一時キーを利用する場合） | | |
 | **SQS_ENDPOINT** | SQSエンドポイント | | `http://queue.middleware.svc.cluster.local:9324` |
+| **CODE_DATA_KEY** | GitHubのクレデンシャル用の暗号キー | | |
+| **GITHUB_DEFAULT_TOKEN** | GitHubデフォルトトークン | | `your-token-here`|
 | **CODE_GITLEAKS_QUEUE_NAME** | Gitleaksキュー名 | | `code-gitleaks` |
 | **CODE_GITLEAKS_QUEUE_URL** | GileaksキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/code-gitleaks` |
 | **CODE_DEPENDENCY_QUEUE_NAME** | Dependencyキュー名 | | `code-dependency` |
@@ -33,8 +35,6 @@ Codeのパラメータです
 | **DEBUG** | DEBUGレベルログの有効化 | | `false` |
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
-| **CODE_DATA_KEY** | GitHubのクレデンシャル用の暗号キー | | |
-| **GITHUB_DEFAULT_TOKEN** | GitHubデフォルトトークン | | `your-token-here`|
 | **LIMIT_REPOSITORY_SIZE_KB** | Gitleaksスキャン時のリポジトリサイズLimit値 | | `500000` |
 | **REDACT** | 検出されたシークレット情報をRISKNEN側でマスクして保存します | | `true` |
 
@@ -53,9 +53,7 @@ Codeのパラメータです
 | **DEBUG** | DEBUGレベルログの有効化 | | `false` |
 | **MAX_NUMBER_OF_MESSAGE** | 1度に並行処理するキューメッセージ数 | | `10` |
 | **WAIT_TIME_SECOND** | デキューの間隔（秒） | | `20` |
-| **CODE_DATA_KEY** | GitHubのクレデンシャル用の暗号キー | | |
-| **GITHUB_DEFAULT_TOKEN** | GitHubデフォルトトークン | | `your-token-here`|
-| **LIMIT_REPOSITORY_SIZE_KB** | Gitleaksスキャン時のリポジトリサイズLimit値 | | `500000` |
+| **LIMIT_REPOSITORY_SIZE_KB** | Dependencyスキャン時のリポジトリサイズLimit値 | | `500000` |
 
 ### Parameter Store保存先（例）
 
