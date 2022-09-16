@@ -68,3 +68,4 @@ RISKENシステム内で動作する主なマイクロサービスについて�
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
 |code|gitleaks|Gitleaksツールを使ったスキャンを行います||
+|code|dependency|パッケージに含まれる脆弱性のスキャンを行います||
