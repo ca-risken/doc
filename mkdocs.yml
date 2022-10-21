@@ -121,8 +121,9 @@ nav:
     - Report API:    reference/api_report.md
 
   - Contact us:
-    - Contact: contact/contact.md
-    - FAQ:     contact/faq.md
+    - Contact:       contact/contact.md
+    - Migration:     contact/migration.md
+    - FAQ:           contact/faq.md
 
 # Theme
 theme:
