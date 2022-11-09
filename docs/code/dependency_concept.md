@@ -18,7 +18,7 @@ RISKENへデータを取り込む際に、以下のメタデータを付加し�
 | `ResourceName` | 脆弱性を検知したパッケージ名                           |
 | `Description`  | 説明                                            |
 | `Score`        | [スコアリング](/code/dependency_concept/#_2)参照             |
-| `Tag`          | `code` `repository` `dependency` `repository_id:{RepositoryID}` |
+| `Tag`          | `code` `dependency` `repository_id:{RepositoryID}` |
 
 * `Tag`の`RepositoryID`には、検知した脆弱性を使用しているパッケージが含まれるリポジトリのIDが入ります
 
