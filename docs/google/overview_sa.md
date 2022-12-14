@@ -59,6 +59,7 @@ description: "RISKEN custom role."
 stage: "GA"
 includedPermissions:
 - cloudasset.assets.analyzeIamPolicy
+- cloudasset.assets.listResource
 - cloudasset.assets.searchAllIamPolicies
 - cloudasset.assets.searchAllResources
 - cloudsql.instances.get
@@ -339,6 +340,7 @@ includedPermissions:
 - logging.views.listLogs
 - logging.views.listResourceKeys
 - logging.views.listResourceValues
+- monitoring.alertPolicies.list
 - networkmanagement.connectivitytests.list
 - networkmanagement.locations.list
 - networkmanagement.operations.list
@@ -352,8 +354,22 @@ includedPermissions:
 - networkservices.httpfilters.list
 - networkservices.locations.list
 - networkservices.operations.list
+- resourcemanager.folders.get
+- resourcemanager.folders.getIamPolicy
+- resourcemanager.folders.list
+- resourcemanager.hierarchyNodes.listTagBindings
+- resourcemanager.organizations.get
+- resourcemanager.organizations.getIamPolicy
 - resourcemanager.projects.get
 - resourcemanager.projects.getIamPolicy
+- resourcemanager.projects.list
+- resourcemanager.resourceTagBindings.list
+- resourcemanager.tagKeys.get
+- resourcemanager.tagKeys.getIamPolicy
+- resourcemanager.tagKeys.list
+- resourcemanager.tagValues.get
+- resourcemanager.tagValues.getIamPolicy
+- resourcemanager.tagValues.list
 - securitycenter.findings.group
 - securitycenter.findings.list
 - securitycenter.findings.listFindingPropertyNames
