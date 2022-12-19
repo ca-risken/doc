@@ -64,39 +64,61 @@ graph TD
 また、プラグインによってCISやPCIDSSなどのコンプライアンス基準のタグが付与されます
 
 ＊下記以外のプラグインはすべてスコア `0.3`が付与されます
+＊最新バージョンのスコアになります
 
 |Category|Plugin|Score|Compliance Tag|memo|
 |---|---|---|---|---|
+|BigQuery|datasetAllUsersPolicy|0.6||2022/12/19更新|
 |CloudSQL|dbPubliclyAccessible|0.8|hipaa, pci||
 |CloudSQL|dbAutomatedBackups|0.6||2021/11/01更新|
-|GCE|instanceLeastPrivilege|0.6|pci||
+|CloudSQL|serverCertificateRotation|0.6||2022/12/19更新|
+|CloudSQL|storageAutoIncreaseEnabled|0.6||2022/12/19更新|
 |GCE|connectSerialPortsDisabled|0.6||2021/11/01更新|
+|GCE|deprecatedImages|0.6||2022/12/19更新|
+|GCE|instanceLeastPrivilege|0.6|pci||
+|GCE|instancePublicAccess|0.6||2022/12/19更新|
+|GCE|publicDiskImages|0.8||2022/12/19更新|
 |GCS|bucketAllUsersPolicy|0.6||2021/08/04更新|
 |GKE|loggingEnabled|0.6|hipaa|2021/06/17更新|
 |GKE|clusterLeastPrivilege|0.6||2021/11/01更新|
+|KMS|kmsPublicAccess|0.8||2022/12/19更新|
 |IAM|corporateEmailsOnly|0.8|||
 |IAM|serviceAccountAdmin|0.6|||
 |IAM|serviceAccountUser|0.6||2021/06/17更新|
 |VPC Network|openAllPorts|0.8|hipaa, pci||
-|VPC Network|openCIFS|0.8||2021/06/17更新|
-|VPC Network|openDNS|0.8||2021/06/17更新|
-|VPC Network|openDocker|0.8||2021/06/17更新|
-|VPC Network|openFTP|0.8||2021/06/17更新|
-|VPC Network|openHadoopNameNode|0.8||2021/06/17更新|
-|VPC Network|openHadoopNameNodeWebUI|0.8||2021/06/17更新|
-|VPC Network|openKibana|0.8||2021/06/17更新|
-|VPC Network|openMySQL|0.8||2021/06/17更新|
-|VPC Network|openNetBIOS|0.8||2021/06/17更新|
-|VPC Network|openOracle|0.8||2021/06/17更新|
-|VPC Network|openOracleAutoDataWarehouse|0.8||2021/06/17更新|
-|VPC Network|openPostgreSQL|0.8||2021/06/17更新|
-|VPC Network|openRDP|0.8||2021/06/17更新|
-|VPC Network|openRPC|0.8||2021/06/17更新|
-|VPC Network|openSalt|0.8||2021/06/17更新|
-|VPC Network|openSMBoTCP|0.8||2021/06/17更新|
-|VPC Network|openSMTP|0.8||2021/06/17更新|
-|VPC Network|openSQLServer|0.8||2021/06/17更新|
+|VPC Network|openCassandra|0.6||2022/12/19更新|
+|VPC Network|openCassandraClient|0.6||2022/12/19更新|
+|VPC Network|openCassandraInternode|0.6||2022/12/19更新|
+|VPC Network|openCassandraMonitoring|0.6||2022/12/19更新|
+|VPC Network|openCassandraThrift|0.6||2022/12/19更新|
+|VPC Network|openCustomPorts|0.6||2022/12/19更新|
+|VPC Network|openCIFS|0.6||2022/12/19更新|
+|VPC Network|openDNS|0.6||2022/12/19更新|
+|VPC Network|openDocker|0.6||2022/12/19更新|
+|VPC Network|openElasticsearch|0.6||2022/12/19更新|
+|VPC Network|openFTP|0.6||2022/12/19更新|
+|VPC Network|openHadoopNameNode|0.6||2022/12/19更新|
+|VPC Network|openHadoopNameNodeWebUI|0.6||2022/12/19更新|
+|VPC Network|openInternalWeb|0.6||2022/12/19更新|
+|VPC Network|openKibana|0.6||2022/12/19更新|
+|VPC Network|openLDAP|0.6||2022/12/19更新|
+|VPC Network|openLDAPS|0.6||2022/12/19更新|
+|VPC Network|openMemcached|0.6||2022/12/19更新|
+|VPC Network|openMongo|0.6||2022/12/19更新|
+|VPC Network|openMsSQL|0.6||2022/12/19更新|
+|VPC Network|openMySQL|0.6||2022/12/19更新|
+|VPC Network|openNetBIOS|0.6||2022/12/19更新|
+|VPC Network|openOracle|0.6||2022/12/19更新|
+|VPC Network|openOracleAutoDataWarehouse|0.6||2022/12/19更新|
+|VPC Network|openPostgreSQL|0.6||2022/12/19更新|
+|VPC Network|openRedis|0.6||2022/12/19更新|
+|VPC Network|openRDP|0.6||2022/12/19更新|
+|VPC Network|openRPC|0.6||2022/12/19更新|
+|VPC Network|openSalt|0.6||2022/12/19更新|
+|VPC Network|openSMBoTCP|0.6||2022/12/19更新|
+|VPC Network|openSMTP|0.6||2022/12/19更新|
+|VPC Network|openSQLServer|0.6||2022/12/19更新|
 |VPC Network|openSSH|0.6|||
-|VPC Network|openTelnet|0.8||2021/06/17更新|
-|VPC Network|openVNCClient|0.8||2021/06/17更新|
-|VPC Network|openVNCServer|0.8||2021/06/17更新|
+|VPC Network|openTelnet|0.6||2022/12/19更新|
+|VPC Network|openVNCClient|0.6||2022/12/19更新|
+|VPC Network|openVNCServer|0.6||2022/12/19更新|
