@@ -13,6 +13,9 @@ Gatewayのパラメータです
 | **USER_IDENTITY_HEADER** | IdPから渡されるヘッダ（ユーザを識別する値） | | `x-amzn-oidc-identity` |
 | **OIDC_DATA_HEADER** | IdPから渡されるヘッダ（ユーザ情報が含まれるJWTペイロード） | | `x-amzn-oidc-data` |
 | **IDP_PROVIDER_NAME** | IdP名 | | |
+| **VERIFY_ID_TOKEN** | JWTペイロードの検証を行うかのフラグ | | `false` |
+| **USER_IDP_KEY** | ユーザ予約で使用するUser Keyに使用するJWTペイロードのキー | | `preferred_username` |
+| **REGION** | IdPに Amazon Cognitoを使用している場合のユーザープールを作成したRegion | | `ap-northeast-1` |
 
 ### Parameter Store保存先（例）
 
