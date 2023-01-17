@@ -37,5 +37,10 @@ Gatewayのパラメータです
 
 - `/build/web/VUE_APP_STATIC_LINK`
 
+以下は登録する値のサンプルです。
+```json
+[{"title": "Document", "url": "https://docs.security-hub.jp/"}]
+```
+
 ???+ note
     Webサービスのパラメータはビルド時に参照されます
