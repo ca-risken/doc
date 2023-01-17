@@ -22,3 +22,20 @@ Gatewayのパラメータです
 以下のPath配下にパラメータを保存
 
 - `/env/gateway/gateway`
+
+## Webサービス
+
+### Parameters
+
+| Param | Description | Required | Default |
+| --- | --- | --- | --- |
+| **VUE_APP_STATIC_LINK** | コンソール画面のヘッダとメニューに表するリンク | | `[]` |
+
+### Parameter Store保存先（例）
+
+以下の名前でParameter Storeに登録してください
+
+- `/build/web/VUE_APP_STATIC_LINK`
+
+???+ note
+    Webサービスのパラメータはビルド時に参照されます
