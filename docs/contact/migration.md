@@ -1,10 +1,37 @@
 # Migration Guide
 
-[v0.4.0未満のバージョンからv0.4.0への移行](#v040v040)
+[v0.5.0への移行](#v050)  
+[v0.4.0への移行](#v040)
 
 ---
+## v0.5.0への移行
+`v0.5.0`でのユーザー予約機能追加にともない、データベースに変更があります
 
-## v0.4.0未満のバージョンからv0.4.0への移行
+### 移行手順
+以下の手順に従って、移行を行ってください
+
+### 既存テーブルの修正
+以下のコマンドを実行して、userテーブルにカラムを追加します
+```mysql
+ALTER TABLE user ADD user_idp_key varchar(255) NULL;
+alter table user add constraint uidx_user_idp_key unique(user_idp_key);
+```
+
+#### 新規テーブルの追加
+以下のコマンドを実行して、新規テーブルを追加します
+```mysql
+CREATE TABLE user_reserved (
+  reserved_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  user_idp_key VARCHAR(255) NOT NULL,
+  role_id INT UNSIGNED NOT NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY(reserved_id),
+  UNIQUE KEY uidx_user_reserved (user_idp_key, role_id)
+) ENGINE = InnoDB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin AUTO_INCREMENT = 1001;
+```
+
+## v0.4.0への移行
 
 `v0.4.0`にて、Codeサービスで使用するデータベースのテーブルに変更があります
 
