@@ -5,6 +5,7 @@ AccessAnalyzerデータソースを有効にすると、AWSの[AccessAnalyzerサ
 ???+ tip "AccessAnalyzerとは？"
     - AWS AccessAnalyzerとは、自身のAWSアカウント外へ共有しているリソースを発見するのに便利なサービスです
     - AccessAnalyzerでサポートされているサービス等については[公式ドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-resources.html){ target="_blank" }を参照してください
+    - AccessAnalyzerの解析結果は数十分~24時間遅延することがあります。通常、アクセスポリシー変更のイベントを検知してスキャンが実施されますが特定の条件下では数時間〜最大24時間遅延する可能性があります。詳細は[公式ドキュメント :octicons-link-external-24:](https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/what-is-access-analyzer.html){ target="_blank" }を参照してください
 
 ---
 
