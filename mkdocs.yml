@@ -30,11 +30,6 @@ nav:
     - CloudSploit:    aws/cloudsploit.md
     - GuardDuty:      aws/guardduty.md
     - PortScan:       aws/portscan.md
-    - Activity:
-      - Concept:      aws/activity_concept.md
-      - Data Types:   aws/activity_data.md
-      - Filtering:    aws/activity_filter.md
-      - Limitation:   aws/activity_limitation.md
 
   - Google:
     - Overview:
