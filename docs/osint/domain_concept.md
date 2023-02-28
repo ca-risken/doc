@@ -56,7 +56,7 @@ graph TD
 
 ### サブドメインテイクオーバーの可能性のあるドメイン
 
-サブドメインがCNAMEレコードを持っているか、サーバーがダウンしているかによってスコアを算出します
+サブドメインがCNAMEレコードを持っているか、サーバー／サイトがダウンしているかによってスコアを算出します
 
 サーバーがダウンしていて、かつ後述のサブドメインテイクオーバーのリスクが高いドメインの場合にはさらにスコアが高くなります
 
@@ -78,69 +78,16 @@ graph TD
 
 下記のリストは第三者がCNAMEを容易に取得できることが考えられるリストです
 
-設定されているCNAMEがリストに該当する場合、サブドメインにアクセスした結果サーバーがダウンしている場合にはスコアが高くなります
+設定されているCNAMEがリストに該当する場合、サブドメインにアクセスした結果サーバー／サイトがダウンしている場合にはスコアが高くなります
 
-- herokuapp.com
-- herokussl.com
-- azurewebsites.net
-- cloudapp.net
-- azure-api.net
-- trafficmanager.net
-- azureedge.net
-- cloudapp.azure.com
+- us-east-1.elasticbeanstalk.com
 - s3.amazonaws.com
-- awsptr.com
-- elasticbeanstalk.com
-- uservoice.com
-- unbouncepages.com
-- ghs.google.com
-- ghs.googlehosted.com
-- ghs-ssl.googlehosted.com
-- github.io
-- www.gitbooks.io
-- sendgrid.net
-- feedpress.me
-- fastly.net
-- webflow.io
-- proxy.webflow.com
+- s3-website-{region}.amazonaws.com
+- s3-website.{region}.amazonaws.com
+- animaapp.io
+- bitbucket.io
+- furyns.com
+- ghost.io
+- hatenablog.com
+- helpjuice.com
 - helpscoutdocs.com
-- readmessl.com
-- desk.com
-- zendesk.com
-- mktoweb.com
-- wordpress.com
-- wpengine.com
-- cloudflare.net
-- netlify.com
-- bydiscourse.com
-- netdna-cdn.com
-- pageserve.co
-- pantheonsite.io
-- arlo.co
-- apigee.net
-- pmail5.com
-- cm-hosting.com
-- ext-cust.squarespace.com
-- ext.squarespace.com
-- www.squarespace6.com
-- locationinsight.com
-- helpsite.io
-- saas.moonami.com
-- custom.bnc.lt
-- qualtrics.com
-- dotcmscloud.net
-- dotcmscloud.com
-- knowledgeowl.com
-- atlashost.eu
-- headwayapp.co
-- domain.pixieset.com
-- cname.bitly.com
-- awmdm.com
-- meteor.com
-- postaffiliatepro.com
-- na.iso.postaffiliatepro.com
-- copiny.com
-- kxcdn.com
-- phs.getpostman.com
-- appdirect.com
-- streamshark.io
