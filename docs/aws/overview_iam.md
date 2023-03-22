@@ -15,7 +15,11 @@ AWSマネージメントコンソールからの設定例を記載します
             "Effect": "Allow",
             "Action": [
                 "ses:DescribeActiveReceiptRuleSet",
+                "athena:GetWorkGroup",
+                "logs:DescribeLogGroups",
+                "logs:DescribeMetricFilters",
                 "elastictranscoder:ListPipelines",
+                "elasticfilesystem:DescribeFileSystems",
                 "servicequotas:ListServiceQuotas"
             ],
             "Resource": "*"
