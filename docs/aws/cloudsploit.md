@@ -64,6 +64,7 @@ graph TD
 |---|---|---|---|---|
 |ACM|acmCertificateExpiry|0.6|pci||
 |ACM|acmValidation|0.6||2021/06/17更新|
+|AutoScaling|webTierAsgApprovedAmi|0.6||2023/04/11更新|
 |CloudFront|insecureProtocols|0.6|hipaa, pci|2021/06/17更新|
 |CloudTrail|cloudtrailBucketPrivate|0.8|cis1, cis|2021/06/17更新|
 |CloudTrail|cloudtrailDeliveryFailing|0.8||2021/06/17更新|
@@ -95,10 +96,15 @@ graph TD
 |EC2|openVNCClient|0.8||2021/06/17更新|
 |EC2|openVNCServer|0.8||2021/06/17更新|
 |EC2|publicAmi|0.8||2021/06/17更新|
-|ECR|ecrRepositoryPolicy|0.6||2021/06/17更新|
+|EC2|outdatedAmiInUse|0.6||2023/04/11更新|
+|EC2|vpcPeeringConnections|0.8||2023/04/11更新|
+|ECR|ecrRepositoryPolicy|~~0.6~~ -> 0.3||2023/04/11更新|
 |EKS|eksLoggingEnabled|0.6||2021/06/17更新|
 |EKS|eksSecurityGroups|0.6||2021/06/17更新|
+|ElasticBeanstalk|enviromentAccessLogs|0.6||2023/04/11更新|
 |ELBv2|elbv2DeletionProtection|0.6||2021/06/17更新|
+|ELBv2|elbv2SslTermination|0.6||2023/04/11更新|
+|ES|esClusterStatus|0.6||2023/04/11更新|
 |GuardDuty|guarddutyEnabled|0.6||2021/06/17更新|
 |IAM|accessKeysExtra|0.6||2021/06/17更新|
 |IAM|accessKeysLastUsed|0.6|pci, cis1, cis|2021/06/17更新|
@@ -113,8 +119,14 @@ graph TD
 |IAM|usersPasswordAndKeys|0.6||2021/06/17更新|
 |KMS|kmsScheduledDeletion|0.6||2021/06/17更新|
 |Lambda|lambdaPublicAccess|0.6|||
+|Lambda|lambdaAdminPrivileges|0.6||2023/04/11更新|
+|MQ|mskClusterPublicAccess|0.6||2023/04/11更新|
+|MSK|mskClusterPublicAccess|0.6||2023/04/11更新|
+|MWAA|environmentAdminPrivileges|0.6||2023/04/11更新|
+|MWAA|webServerPublicAccess|0.8||2023/04/11更新|
 |RDS|rdsEncryptionEnabled|0.6|hipaa,pci||
 |RDS|rdsPubliclyAccessible|0.6|hipaa,pci|2022/07/01更新|
+|RDS|rdsSnapshotPubliclyAccessible|0.8||2023/04/11更新|
 |Redshift|redshiftEncryptionEnabled|0.6|hipaa||
 |Redshift|redshiftPubliclyAccessible|0.8|hipaa,pci||
 |Route53|danglingDnsRecords|0.6|||
@@ -122,8 +134,11 @@ graph TD
 |Route53|domainExpiry|0.8|||
 |S3|bucketAllUsersAcl|0.6|pci||
 |S3|bucketAllUsersPolicy|0.6|pci||
+|S3|bucketPolicyCloudFrontOac|0.6||2023/04/11更新|
+|S3Glacier|vaultPublicAccess|0.6||2023/04/11更新|
 |SageMaker|notebookDirectInternetAccess|0.6|||
 |SES|dkimEnabled|0.6||2021/06/17更新|
 |SNS|topicPolicies|0.8||2021/06/17更新|
+|SSM|ssmDocumentPublicAccess|0.8||2023/04/11更新|
 |SQS|sqsPublicAccess|0.6|||
 |Transfer|transferLoggingEnabled|0.6|hipaa, pci|2021/06/17更新|
