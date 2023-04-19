@@ -46,20 +46,6 @@ AWSのパラメータです
 
 - `/env/aws/access-analyzer`
 
-## Activityサービス
-
-### Parameters
-
-| Param | Description | Required | Default |
-| --- | --- | --- | --- |
-| **PORT** | | | `9007` |
-
-### Parameter Store保存先（例）
-
-以下のPath配下にパラメータを保存
-
-- `/env/aws/activity`
-
 ## AdminCheckerサービス
 
 ### Parameters
