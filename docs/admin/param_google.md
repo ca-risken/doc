@@ -39,9 +39,6 @@ Googleのパラメータです
 | **WAIT_TIME_SECOND** | デキューの時間間隔（秒） | | `20` |
 | **GOOGLE_CREDENTIAL_PATH** | GCPサービスアカウントのクレデンシャルを一時保存するパス | | `/tmp/credential.json` |
 | **GOOGLE_SERVICE_ACCOUNT_JSON** | GCPサービスアカウントのクレデンシャル（JSON） | yes | |
-| **WAIT_MILLI_SEC_PER_REQUEST** | GCP Asset 1秒間の最大APIのリクエスト数 | | `500` |
-| **ASSET_API_RETRY_NUM** | GCP Asset API失敗時のリトライ回数 | | `3` |
-| **ASSET_API_RETRY_WAIT_SEC** | GCP Asset APIリトライ再開までの待ち時間（秒） | | `30` |
 
 ### Parameter Store保存先（例）
 
