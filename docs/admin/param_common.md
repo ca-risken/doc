@@ -21,7 +21,7 @@ RISKENのサービス共通のパラメータです
 | Param | Description | Required | Default |
 | --- | --- | --- | --- |
 | **CORE_SVC_ADDR** | Coreサービスアドレス | | `core.core.svc.cluster.local:8080` |
-| **DATA_SOURCE_API_SVC_ADDR** | DataSourceAPIサービスアドレス | | `datasource-api.core.svc.cluster.local:8081` |
+| **DATA_SOURCE_API_SVC_ADDR** | DataSourceAPIサービスアドレス | | `datasource-api.datasource.svc.cluster.local:8081` |
 
 ## その他
 
