@@ -1,0 +1,43 @@
+# Dependency
+
+You can continuously collect the results analyzed by the open-source [Trivy :octicons-link-external-24:](https://github.com/aquasecurity/trivy){ target="_blank" } for various targets including container images, file systems, and Git repositories.
+
+???+ help "What is Trivy?"
+    - Trivy is a comprehensive security scanner for various targets including container images, file systems, and Git repositories.
+    - The Dependency data source targets repositories on GitHub and investigates known vulnerabilities.
+
+## Format
+
+The following metadata is added when importing data to RISKEN:
+
+| Field           | Description                                      |
+| --------------- | ---------------------------------------------- |
+| `DataSource`   | code:dependency (fixed)                            |
+| `ResourceName` | The name of the package where the vulnerability was detected |
+| `Description`  | Description                                      |
+| `Score`        | Refer to [Scoring](/code/dependency_concept/#_2)             |
+| `Tag`          | `code` `dependency` `repository_id:{RepositoryID}` |
+
+* The `RepositoryID` in `Tag` should contain the ID of the repository that contains the package using the detected vulnerability.
+
+---
+
+## Scoring
+
+Scoring is performed based on the severity of vulnerabilities in the result data analyzed by Trivy.
+
+```mermaid
+graph TD
+    A[Start] --> B{{Exists vulnerability?}};
+    B -->|NO| C[Findings will not be registered]:::low;
+    B -->|YES| D{{Vulnerability Severity}};
+    D -->|CRITICAL| E[Score: 0.6]:::high;
+    D -->|HIGH| F[Score: 0.5]:::high;
+    D -->|MEDIUM| G[Score: 0.3]:::mid;
+    D -->|LOW| H[Score: 0.1]:::low;
+    D -->|UNKNOWN| J[Score: 0.1]:::unknown;
+    classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
+    classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
+    classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
+    classDef unknown fill:#FFFFFF,stroke:#BDBDBD,stroke-width:4px;
+```
