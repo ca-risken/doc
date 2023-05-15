@@ -1,4 +1,4 @@
-# What is the RISKEN
+# What is RISKEN
 
 This is a _Security Operation Platform_ for continuously collecting and monitoring **risk information** lurking in the system environment.
 
