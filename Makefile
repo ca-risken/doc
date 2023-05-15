@@ -2,7 +2,7 @@
 all: build
 
 .PHONY: run
-run: build
+run:
 	mkdocs serve -a localhost:8001
 
 .PHONY: build
@@ -14,3 +14,4 @@ install:
 	pip install --upgrade pip
 	pip install mkdocs
 	pip install mkdocs-material
+	pip install mkdocs-static-i18n
