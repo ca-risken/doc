@@ -26,46 +26,50 @@ RISKENシステム内で動作する主なマイクロサービスについて�
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
 |core|core|IAM（Identity and AccessManagement）、Finding、Project、Alert、Report関連のAPIサービスです||
-|core|datasource-api|AWS, Google, Diagnosis, OSINT, Codeの各種データソース設定やスキャンの呼び出しを行います||
 
-### AWS
-
-|Namespace|Service|Description|Memo|
-|---|---|---|---|
-|aws|guard-duty|GuardDutyのスキャンを行います||
-|aws|admin-checker|IAMユーザやロールの特権チェックに特化したスキャナーです||
-|aws|access-analyzer|AccessAnalyzerのスキャンを行います||
-|aws|cloudsploit|CloudSploitツールを使ったスキャンを行います||
-|aws|portscan|AWSリソースに対するポートスキャンを行います||
-|aws|activity|AWSリソースのアクティビティ情報を解析します||
-
-### Google
+### DataSource
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|google|asset|GCP Asset APIを利用して主にIAMやStorege関連のスキャンを行います||
-|google|scc|GCP Security Command Center(SCC)のスキャンを行います||
-|google|cloudsploit|CloudSploitツールを使ったスキャンを行います||
-|google|portscan|GCPリソースに対するポートスキャンを行います||
+|datasource|datasource-api|AWS, Google, Diagnosis, OSINT, Codeの各種データソース設定やスキャンの呼び出しを行います||
 
-### Diagnosis
+#### AWS
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|diagnosis|wpscan|WP Scanツールを使ったスキャンを行います||
-|diagnosis|application-scan|OWASP ZAPツールを使ったスキャンを行います||
-|diagnosis|portscan|ポートスキャンを行います||
+|datasource|guard-duty|GuardDutyのスキャンを行います||
+|datasource|admin-checker|IAMユーザやロールの特権チェックに特化したスキャナーです||
+|datasource|access-analyzer|AccessAnalyzerのスキャンを行います||
+|datasource|cloudsploit|CloudSploitツールを使ったスキャンを行います||
+|datasource|portscan|AWSリソースに対するポートスキャンを行います||
 
-### OSINT
-
-|Namespace|Service|Description|Memo|
-|---|---|---|---|
-|osint|subdomain|ドメイン情報を収集しOSINTツールを使ったスキャンを行います||
-|osint|website|URLからWEBサイト情報を収集しOSINTツールを使ったスキャンを行います||
-
-### Code
+#### Google
 
 |Namespace|Service|Description|Memo|
 |---|---|---|---|
-|code|gitleaks|Gitleaksツールを使ったスキャンを行います||
-|code|dependency|パッケージに含まれる脆弱性のスキャンを行います||
+|datasource|asset|GCP Asset APIを利用して主にIAMやStorege関連のスキャンを行います||
+|datasource|scc|GCP Security Command Center(SCC)のスキャンを行います||
+|datasource|cloudsploit|CloudSploitツールを使ったスキャンを行います||
+|datasource|portscan|GCPリソースに対するポートスキャンを行います||
+
+#### Diagnosis
+
+|Namespace|Service|Description|Memo|
+|---|---|---|---|
+|datasource|wpscan|WP Scanツールを使ったスキャンを行います||
+|datasource|application-scan|OWASP ZAPツールを使ったスキャンを行います||
+|datasource|portscan|ポートスキャンを行います||
+
+#### OSINT
+
+|Namespace|Service|Description|Memo|
+|---|---|---|---|
+|datasource|subdomain|ドメイン情報を収集しOSINTツールを使ったスキャンを行います||
+|datasource|website|URLからWEBサイト情報を収集しOSINTツールを使ったスキャンを行います||
+
+#### Code
+
+|Namespace|Service|Description|Memo|
+|---|---|---|---|
+|datasource|gitleaks|Gitleaksツールを使ったシークレットスキャンを行います||
+|datasource|dependency|パッケージに含まれる脆弱性のスキャンを行います||
