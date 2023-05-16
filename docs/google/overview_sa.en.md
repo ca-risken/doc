@@ -12,13 +12,13 @@ Here is an example of adding a service account in the GCP management console:
 1. Create a custom role for RISKEN
     - Please follow the instructions in [GCP Custom Roles](/google/#gcp_1).
 2. Open the IAM menu
-    - ![IAM Menu](/img/google/gcp_iam_menu.png){style="width:200px"}
-3. Click "Add"
-    - ![Add IAM](/img/google/gcp_iam_add.png){style="width:200px"}
+    - ![IAM Menu](/img/google/gcp_iam_menu_en.png){style="width:200px"}
+3. Click "GRANT ACCESS"
+    - ![Add IAM](/img/google/gcp_iam_add_en.png){style="width:200px"}
 4. Enter the following and click "Save"
     - New member: `{your-sa}@{your-domain}iam.gserviceaccount.com` (*Please contact your system administrator*)
     - Role: `RISKEN` (the custom role created in step 1)
-    - ![Add Role](/img/google/gcp_role_add.png){style="width:300px"}
+    - ![Add Role](/img/google/gcp_role_add_en.png){style="width:300px"}
 
     ???+ warning "Permissions to be granted by custom role"
         The `viewer` permission is required for monitoring.

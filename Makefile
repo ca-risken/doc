@@ -2,8 +2,8 @@
 all: build
 
 .PHONY: run
-run:
-	mkdocs serve -a localhost:8001
+run: build
+	mkdocs serve --dirtyreload -a localhost:8001
 
 .PHONY: build
 build:

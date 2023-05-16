@@ -29,7 +29,7 @@ Here's how to register your GCP project.
 4. Add the following label:
     - Key: `risken`
     - Value: `{verification code set in RISKEN}`
-    - ![GCP project label](/img/google/gcp_project_label.png){style="width:580px"}
+    - ![GCP project label](/img/google/gcp_project_label_en.png){style="width:580px"}
 
 ??? warning "Project permissions are required to set labels"
     - Project permissions for [ResourceManager API :octicons-link-external-24:](https://cloud.google.com/resource-manager/docs/creating-managing-labels) are required to set labels.
