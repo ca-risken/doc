@@ -12,6 +12,6 @@ build:
 .PHONY: install
 install:
 	pip install --upgrade pip
-	pip install mkdocs
-	pip install mkdocs-material
-	pip install mkdocs-static-i18n
+	pip install mkdocs==1.4.3
+	pip install mkdocs-material==8.4.3
+	pip install mkdocs-static-i18n==0.56

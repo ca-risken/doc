@@ -142,11 +142,9 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    # - navigation.instant
     - navigation.indexes
     - navigation.tracking
     - navigation.expand
-    # - navigation.sections
     - navigation.top
     - toc.integrate
     - search.suggest
