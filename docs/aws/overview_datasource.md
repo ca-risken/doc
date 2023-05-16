@@ -18,7 +18,7 @@ arn:aws:iam::{AWSアカウントID}:role/RISKEN
         - 任意のロール名でも問題ありません
     - **External ID**: `AUTO-GENERATE EXTERNAL ID`ボタンをクリックしランダムな文字列を設定してください
 
-        ???+ inline end info "[補足]"
+        ???+ info "[補足]"
             - RISKENの環境は複数のAWSを監視しています
             - 他のプロジェクトがあなたのAWSを参照しないように区別する必要があります
 
@@ -26,5 +26,6 @@ arn:aws:iam::{AWSアカウントID}:role/RISKEN
 
 
     - ![setupダイアログ](/img/aws/aws_setup_dialog.png){style="width:400px"}
+
 7. ここで設定した`AssumeRole`と`ExternalID`は次のIAMロール作成時に必要です
     - 必要に応じて :material-content-copy: （コピーボタン）をご利用ください

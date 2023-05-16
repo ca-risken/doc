@@ -60,7 +60,7 @@ nav:
 
   - OSINT:
     - Overview:
-      - Concept: osint/overview_osint.md
+      - Concept:    osint/overview_osint.md
       - DataSource: osint/datasource.md
       - Scan:       osint/scan.md
     - Domain:
@@ -70,7 +70,7 @@ nav:
   
   - Code:
     - Concept:    code/index.md
-    - GitHub:  code/github_setting.md
+    - GitHub:     code/github_setting.md
     - Gitleaks:
       - Concept:    code/gitleaks_concept.md
       - DataSource: code/gitleaks_datasource.md
@@ -145,7 +145,7 @@ theme:
     # - navigation.instant
     - navigation.indexes
     - navigation.tracking
-    # - navigation.expand
+    - navigation.expand
     # - navigation.sections
     - navigation.top
     - toc.integrate
@@ -162,8 +162,6 @@ extra:
     - name: English
       link: /en/
       lang: en
-  # version:
-  #   provider: mike
   social:
     - icon: fontawesome/solid/paper-plane
       link: mailto:<risken@cyberagent.co.jp>
@@ -177,8 +175,13 @@ extra:
 plugins:
   - search:
       lang:
-        # - en
         - ja
+        - en
+  - i18n:
+      default_language: ja
+      languages:
+        ja: 日本語
+        en: English
 
 # Extensions
 markdown_extensions:
@@ -225,4 +228,4 @@ extra_javascript:
 extra_css:
   - css/extra.css
 
-copyright: 　&copy; 2021 - 2021 RISKEN
+copyright: 　&copy; 2021 - 2023 RISKEN

@@ -3,7 +3,7 @@ all: build
 
 .PHONY: run
 run: build
-	mkdocs serve -a localhost:8001
+	mkdocs serve --dirtyreload -a localhost:8001
 
 .PHONY: build
 build:
@@ -14,3 +14,4 @@ install:
 	pip install --upgrade pip
 	pip install mkdocs
 	pip install mkdocs-material
+	pip install mkdocs-static-i18n
