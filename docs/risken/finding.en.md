@@ -39,6 +39,27 @@ RISKEN distinguishes Severity and color-coding based on the following bands:
 | `0.4 ~ 0.7` | :material-check-circle-outline:  Medium | Check when you have time, not immediately. |
 | `0.0 ~ 0.3` | :material-cancel:               Low | It is safe to ignore. Check if you are concerned. |
 
+## ChatGPT Assist Feature
+
+When you open the modal screen for detailed findings, you will see the `Summarize with ChatGPT` button in the upper right corner.
+
+![ChatGPT](/img/risken/finding_openai.png){style="width:500px"}
+
+???+ warning "ChatGPT feature is optional"
+    To use the ChatGPT feature, you need an API token from OpenAI.
+    The API token mentioned needs to be loaded into the `OPEN_AI_TOKEN` variable on the server side. (For more details on parameters, click [here](/admin/param_core/))
+    Please contact your system administrator for more information.
+
+- Clicking the button will provide translations, summaries, and recommended actions for security issues.
+- If there are specialized terms involved, it may take time for anyone other than security specialists to understand.
+- ChatGPT will assist in understanding through summarization.
+    - However, it is necessary to verify the proposed actions as it is dangerous to completely trust AI-generated content.
+- Additionally, due to security concerns like the following, several constraints have been put in place:
+    - Only a part of the finding data will be sent, and any information that may reveal the cloud environment will be excluded as much as possible.
+        - However, according to OpenAI's [policy](https://openai.com/policies/api-data-usage-policies), data sent via the API will not be used for model training.
+    - The prompts will be generated on the server side.
+        - This is done considering security threats such as prompt injection and jailbreaking for LLM, as described in the [Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/guides/prompts-adversarial.md).
+
 ---
 
 ## Deletion/Pending
