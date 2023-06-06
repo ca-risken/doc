@@ -43,6 +43,28 @@ RISKENでは以下の帯域によってSeverity（重大度）や色分けにて
 | `0.4 ~ 0.7` | :material-check-circle-outline: 中 | すぐにではないですが、時間がある時に確認してください。                      　  |
 | `0.0 ~ 0.3` | :material-cancel:               低 | 無視しても大丈夫です。気になる場合はチェックしてください。                       |
 
+---
+
+## ChatGPTアシスト機能
+
+Finding詳細のモーダル画面を開くと右上に `ChatGPTに聞いてみる` ボタンが表示されます。
+
+![ChatGPT](/img/risken/finding_openai.png){style="width:500px"}
+
+???+ warning "ChatGPT機能はオプションです"
+    ChatGPT機能を利用するにはOpenAIのAPIトークンが必要です。
+    サーバ側でAPIトークンを `OPEN_AI_TOKEN` 変数にロードする必要があります。（パラメータの詳細は[こちら](/admin/param_core/)）
+    詳細はシステム管理者にお問い合わせください。
+
+- ボタンをクリックするとセキュリティの問題を翻訳・要約・推奨アクションの提案をしてくれます
+- 専門的な用語が含まれる場合、セキュリティのスペシャリスト以外は理解に時間がかかるケースがあります
+- ChatGPTによる要約で理解をアシストしてくれます
+    - しかし、AIによる自動生成のコンテンツを100%信頼することは危険なので、提案事項の検証は必要です
+- また、以下のようなセキュリティの懸念があるため制約事項をいくつか設けています
+    - 送信するデータはFindingデータの一部のみとし、クラウド環境が特定される情報は極力排除する方針にします
+        - ただし、OpenAIの[ポリシー](https://openai.com/policies/api-data-usage-policies)ではAPI経由で送信されたデータはモデルの学習などには活用されないとあります
+    - プロンプトはサーバ側で生成します
+        - プロンプトインジェクションやジェイルブレキングなどの[LLMに対するセキュリティ脅威](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/guides/prompts-adversarial.md)を考慮した背景があります
 
 ---
 

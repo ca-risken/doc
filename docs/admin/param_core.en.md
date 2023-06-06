@@ -41,6 +41,7 @@ Save the parameters under the following path:
 | **DIAGNOSIS_APPLICATION_SCAN_QUEUE_URL** | Application Scan queue URL | | `http://queue.middleware.svc.cluster.local:9324/queue/diagnosis-applicationscan` |
 | **OSINT_SUBDOMAIN_QUEUE_URL** | OSINT Subdomain queue URL | | `http://queue.middleware.svc.cluster.local:9324/queue/osint-subdomain` |
 | **OSINT_WEBSITE_QUEUE_URL** | OSINT Website queue URL | | `http://queue.middleware.svc.cluster.local:9324/queue/osint-website` |
+| **OPEN_AI_TOKEN** | [OpenAI API Token](https://platform.openai.com/account/api-keys) | | |
 
 ### Parameter Store Destination (Example)
 

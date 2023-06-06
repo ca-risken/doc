@@ -41,6 +41,7 @@ Coreのパラメータです
 | **DIAGNOSIS_APPLICATION_SCAN_QUEUE_URL** | アプリケーションスキャンキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/diagnosis-applicationscan` |
 | **OSINT_SUBDOMAIN_QUEUE_URL** | OSINT SubdomainキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/osint-subdomain` |
 | **OSINT_WEBSITE_QUEUE_URL** | OSINT WebsiteキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/osint-website` |
+| **OPEN_AI_TOKEN** | [OpenAIのAPIトークン](https://platform.openai.com/account/api-keys) | | |
 
 ### Parameter Store保存先（例）
 
