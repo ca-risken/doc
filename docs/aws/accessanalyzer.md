@@ -36,11 +36,10 @@ graph TD
     B -->|NO| C[Score: 0.1]:::low;
     B -->|YES| D{{isPublic?}};
     D -->|NO| E[Score: 0.3]:::low;
-    D -->|YES| F{{Read Only?}};
-    F -->|YES| G[Score: 0.7]:::mid;
-    F -->|NO| H{{Both Read & Write?}};
-    H -->|NO| I[Score: 0.9]:::high;
-    H -->|YES| J[Score: 1.0]:::high;
+    D -->|YES| F{{Has permissions?}};
+    F -->|Readable| G[Score: 0.7]:::mid;
+    F -->|Writable| H[Score: 0.9]:::high;
+    F -->|Readable & Writable| I[Score: 1.0]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
     classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
