@@ -38,9 +38,9 @@ graph TD
     D -->|NO| E[Score: 0.3]:::low;
     D -->|YES| F{{Read Only?}};
     F -->|YES| G[Score: 0.7]:::mid;
-    F -->|NO| H{{Write Only?}};
-    H -->|YES| I[Score: 0.9]:::high;
-    H -->|NO| J[Score: 1.0]:::high;
+    F -->|NO| H{{Both Read & Write?}};
+    H -->|NO| I[Score: 0.9]:::high;
+    H -->|YES| J[Score: 1.0]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
     classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
