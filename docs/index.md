@@ -14,6 +14,10 @@
 
     ![Finding](/img/risken/finding_detail.png){style="width:600px"}
 
+=== "AttackFlow"
+
+    ![attack_flow.png](/img/risken/attack_flow.png){style="width:600px"}
+
 === "Alert"
 
     ![Alert](/img/risken/alert_dialog.png){style="width:600px"}
