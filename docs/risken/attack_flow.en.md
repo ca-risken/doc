@@ -14,7 +14,7 @@ Specify the resource that serves as the starting point for the attack flow analy
 
 ## Supported Services
 
-The following cloud services are supported:
+The following cloud services are starting points for attack flow analysis (From there, the analysis extends to related backend services.)
 
 | Cloud Environment | Cloud Service | Classification |
 |:---|:---|:---|
@@ -25,5 +25,11 @@ The following cloud services are supported:
 | AWS | AWS Lambda | Compute |
 | AWS | AWS AppRunner | Compute |
 | AWS | Amazon S3 | DataStore |
+| AWS | Amazon SNS | DataStore |
 
-*The above services are the starting point for the attack flow analysis. (From there, the analysis extends to related backend services.)
+The following cloud services are analyzed as backend services:
+
+| Cloud Environment | Cloud Service | Classification |
+|:---|:---|:---|
+| AWS | Amazon SQS | DataStore |
+| AWS | Amazon EventBridge | DataStore |
