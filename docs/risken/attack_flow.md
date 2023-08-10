@@ -16,7 +16,7 @@ RISKENが検出したFinding単体だけでなく、それが他にどのよう�
 
 ## サポート対象サービス
 
-以下のクラウドサービスをサポートしています。
+以下のクラウドサービスがアタックフロー分析の起点となるサービスです。（そこから関連するバックエンドサービスを分析します）
 
 | クラウド環境 | クラウドサービス | 分類 |
 |:---|:---|:---|
@@ -27,5 +27,12 @@ RISKENが検出したFinding単体だけでなく、それが他にどのよう�
 | AWS | AWS Lambda | Compute |
 | AWS | AWS AppRunner | Compute |
 | AWS | Amazon S3 | DataStore |
+| AWS | Amazon SNS | DataStore |
 
-＊上記はアタックフロー分析の起点となるサービスです。（そこから関連するバックエンドサービスを分析します）
+下記のクラウドサービスはバックエンドサービスとして分析されます
+
+| クラウド環境 | クラウドサービス | 分類 |
+|:---|:---|:---|
+| AWS | Amazon SQS | DataStore |
+| AWS | Amazon EventBridge | DataStore |
+| AWS | Amazon IAM | Lateral Movement |
