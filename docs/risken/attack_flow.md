@@ -35,3 +35,4 @@ RISKENが検出したFinding単体だけでなく、それが他にどのよう�
 |:---|:---|:---|
 | AWS | Amazon SQS | DataStore |
 | AWS | Amazon EventBridge | DataStore |
+| AWS | Amazon IAM | Lateral Movement |

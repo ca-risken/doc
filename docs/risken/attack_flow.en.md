@@ -33,3 +33,4 @@ The following cloud services are analyzed as backend services:
 |:---|:---|:---|
 | AWS | Amazon SQS | DataStore |
 | AWS | Amazon EventBridge | DataStore |
+| AWS | Amazon IAM | Lateral Movement |
