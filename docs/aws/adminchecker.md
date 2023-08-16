@@ -60,13 +60,15 @@ RISKENに取り込む際に、以下のロジックによって危険度を判�
 
 ```mermaid
 graph TD
-    A[Start] --> B{{is Admin?}};
-    B -->|NO| C[Score: 0.3]:::low;
-    B -->|YES| D{{No AccessKey & Enable `MFA`?}};
-    D -->|YES| E[Score: 0.5]:::mid;
-    D -->|NO| F{{Enable `PermissionBoundory`?}};
-    F -->|YES| G[Score: 0.7]:::mid;
-    F -->|NO| H[Score: 0.9]:::high;
+    A[Start] --> B{{No AccessKey & No Password?}};
+    B -->|YEW| C[Score: 0.1]:::low;
+    B -->|No| D{{Is Admin?}};
+    D -->|NO| E[Score: 0.3]:::low;
+    D -->|YES| F{{No AccessKey & Enable `MFA`?}};
+    F -->|YES| G[Score: 0.5]:::mid;
+    F -->|NO| H{{Enable `PermissionBoundary`?}};
+    H -->|YES| I[Score: 0.7]:::mid;
+    H -->|NO| J[Score: 0.9]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
     classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
