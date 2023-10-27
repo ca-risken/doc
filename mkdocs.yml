@@ -5,122 +5,126 @@ site_author: RISKEN
 # Navigation
 nav:
   - RISKEN:
-    - Overview:
-      - RISKEN:         index.md
-      - Concept:        risken/overview_concept.md
-      - Coverage:       risken/overview_coverage.md
-    - Quick Start:      risken/quick_start.md
-    - Project:          risken/project.md
-    - Finding:          risken/finding.md
-    - AttackFlow:       risken/attack_flow.md
-    - Alert:            risken/alert.md
-    - User:             risken/user.md
-    - AccessToken:      risken/access_token.md
-    - User Reservation: risken/user_reservation.md
-    - Report:           risken/report.md
-    - Well-Architected: risken/well_architected.md
+      - Overview:
+          - RISKEN: index.md
+          - Concept: risken/overview_concept.md
+          - Coverage: risken/overview_coverage.md
+      - Quick Start: risken/quick_start.md
+      - Project: risken/project.md
+      - Finding: risken/finding.md
+      - AttackFlow: risken/attack_flow.md
+      - Alert: risken/alert.md
+      - User: risken/user.md
+      - AccessToken: risken/access_token.md
+      - User Reservation: risken/user_reservation.md
+      - Report: risken/report.md
+      - Well-Architected: risken/well_architected.md
 
   - AWS:
-    - Overview:
-      - Concept:      aws/overview_aws.md
-      - DataSource:   aws/overview_datasource.md
-      - IAM Role:     aws/overview_iam.md
-      - Scan:         aws/overview_scan.md
-    - AccessAnalyzer: aws/accessanalyzer.md
-    - AdminChecker:   aws/adminchecker.md
-    - CloudSploit:    aws/cloudsploit.md
-    - GuardDuty:      aws/guardduty.md
-    - PortScan:       aws/portscan.md
+      - Overview:
+          - Concept: aws/overview_aws.md
+          - DataSource: aws/overview_datasource.md
+          - IAM Role: aws/overview_iam.md
+          - Scan: aws/overview_scan.md
+      - AccessAnalyzer: aws/accessanalyzer.md
+      - AdminChecker: aws/adminchecker.md
+      - CloudSploit: aws/cloudsploit.md
+      - GuardDuty: aws/guardduty.md
+      - PortScan: aws/portscan.md
 
   - Google:
-    - Overview:
-      - Concept:               google/overview_google.md
-      - GCP:                   google/overview_gcp.md
-      - ServiceAccount:        google/overview_sa.md
-      - DataSource:            google/overview_datasource.md
-      - Scan:                  google/overview_scan.md
-    - Asset:                   google/asset.md
-    - Security Command Center: google/scc.md
-    - CloudSploit:             google/cloudsploit.md
-    - PortScan:                google/portscan.md
+      - Overview:
+          - Concept: google/overview_google.md
+          - GCP: google/overview_gcp.md
+          - ServiceAccount: google/overview_sa.md
+          - DataSource: google/overview_datasource.md
+          - Scan: google/overview_scan.md
+      - Asset: google/asset.md
+      - Security Command Center: google/scc.md
+      - CloudSploit: google/cloudsploit.md
+      - PortScan: google/portscan.md
 
   - Diagnosis:
-    - Overview:     diagnosis/index.md
-    - WPScan:
-      - Concept:    diagnosis/wpscan_concept.md
-      - DataSource: diagnosis/wpscan_datasource.md
-      - Scan:       diagnosis/wpscan_scan.md
-    - ApplicationScan:
-      - Concept:    diagnosis/applicationscan_concept.md
-      - DataSource: diagnosis/applicationscan_datasource.md
-      - Scan:       diagnosis/applicationscan_scan.md
-    - PortScan:
-      - Concept:    diagnosis/portscan_concept.md
-      - DataSource: diagnosis/portscan_datasource.md
-      - Scan:       diagnosis/portscan_scan.md
+      - Overview: diagnosis/index.md
+      - WPScan:
+          - Concept: diagnosis/wpscan_concept.md
+          - DataSource: diagnosis/wpscan_datasource.md
+          - Scan: diagnosis/wpscan_scan.md
+      - ApplicationScan:
+          - Concept: diagnosis/applicationscan_concept.md
+          - DataSource: diagnosis/applicationscan_datasource.md
+          - Scan: diagnosis/applicationscan_scan.md
+      - PortScan:
+          - Concept: diagnosis/portscan_concept.md
+          - DataSource: diagnosis/portscan_datasource.md
+          - Scan: diagnosis/portscan_scan.md
 
   - OSINT:
-    - Overview:
-      - Concept:    osint/overview_osint.md
-      - DataSource: osint/datasource.md
-      - Scan:       osint/scan.md
-    - Domain:
-      - Concept:    osint/domain_concept.md
-    - Website:
-      - Concept:    osint/website_concept.md
-  
+      - Overview:
+          - Concept: osint/overview_osint.md
+          - DataSource: osint/datasource.md
+          - Scan: osint/scan.md
+      - Domain:
+          - Concept: osint/domain_concept.md
+      - Website:
+          - Concept: osint/website_concept.md
+
   - Code:
-    - Concept:    code/index.md
-    - GitHub:     code/github_setting.md
-    - Gitleaks:
-      - Concept:    code/gitleaks_concept.md
-      - DataSource: code/gitleaks_datasource.md
-      - Scan:       code/gitleaks_scan.md
-    - Dependency:
-      - Concept:    code/dependency_concept.md
-      - DataSource: code/dependency_datasource.md
-      - Scan:       code/dependency_scan.md
+      - Concept: code/index.md
+      - GitHub: code/github_setting.md
+      - Gitleaks:
+          - Concept: code/gitleaks_concept.md
+          - DataSource: code/gitleaks_datasource.md
+          - Scan: code/gitleaks_scan.md
+      - Dependency:
+          - Concept: code/dependency_concept.md
+          - DataSource: code/dependency_datasource.md
+          - Scan: code/dependency_scan.md
+      - CodeScan:
+          - Concept: code/codescan_concept.md
+          - DataSource: code/codescan_datasource.md
+          - Scan: code/codescan_scan.md
 
   - Admin:
-    - Overview:         admin/overview.md
-    - AdminMenu:
-      - User:           admin/admin_user.md
-      - Report:         admin/admin_report.md
-    - Infrastructure:
-      - Architecture:   admin/infra_architecture.md
-      - Local:
-        - Installation: admin/infra_local.md
-        - Options:      admin/infra_local_option.md
-      - AWS:
-        - Installation: admin/infra_aws.md
-        - Options:      admin/infra_aws_option.md
-      - Tuning:         admin/infra_tuning.md
-    - Parameters:
-      - Index:        admin/param_index.md
-      - Common:       admin/param_common.md
-      - Gateway:      admin/param_gateway.md
-      - Core:         admin/param_core.md
-      - AWS:          admin/param_aws.md
-      - Google:       admin/param_google.md
-      - Diagnosis:    admin/param_diagnosis.md
-      - OSINT:        admin/param_osint.md
-      - Code:         admin/param_code.md
+      - Overview: admin/overview.md
+      - AdminMenu:
+          - User: admin/admin_user.md
+          - Report: admin/admin_report.md
+      - Infrastructure:
+          - Architecture: admin/infra_architecture.md
+          - Local:
+              - Installation: admin/infra_local.md
+              - Options: admin/infra_local_option.md
+          - AWS:
+              - Installation: admin/infra_aws.md
+              - Options: admin/infra_aws_option.md
+          - Tuning: admin/infra_tuning.md
+      - Parameters:
+          - Index: admin/param_index.md
+          - Common: admin/param_common.md
+          - Gateway: admin/param_gateway.md
+          - Core: admin/param_core.md
+          - AWS: admin/param_aws.md
+          - Google: admin/param_google.md
+          - Diagnosis: admin/param_diagnosis.md
+          - OSINT: admin/param_osint.md
+          - Code: admin/param_code.md
 
   - Reference:
-    - API:           reference/api.md
-    - Finding API:   reference/api_finding.md
-    - Alert API:     reference/api_alert.md
-    - AWS API:       reference/api_aws.md
-    - Google API:    reference/api_google.md
-    - Diagnosis API: reference/api_diagnosis.md
-    - Code API:      reference/api_code.md
-    - IAM API:       reference/api_iam.md
-    - Report API:    reference/api_report.md
+      - API: reference/api.md
+      - Finding API: reference/api_finding.md
+      - Alert API: reference/api_alert.md
+      - AWS API: reference/api_aws.md
+      - Google API: reference/api_google.md
+      - Diagnosis API: reference/api_diagnosis.md
+      - Code API: reference/api_code.md
+      - IAM API: reference/api_iam.md
+      - Report API: reference/api_report.md
 
   - Contact us:
-    - Contact:       contact/contact.md
-    - Migration:     contact/migration.md
-    - FAQ:           contact/faq.md
+      - Contact: contact/contact.md
+      - Migration: contact/migration.md
+      - FAQ: contact/faq.md
 
 # Theme
 theme:
@@ -200,8 +204,8 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.keys
