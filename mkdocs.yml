@@ -80,6 +80,10 @@ nav:
           - Concept: code/dependency_concept.md
           - DataSource: code/dependency_datasource.md
           - Scan: code/dependency_scan.md
+      - CodeScan:
+          - Concept: code/codescan_concept.md
+          - DataSource: code/codescan_datasource.md
+          - Scan: code/codescan_scan.md
 
   - Admin:
       - Overview: admin/overview.md
