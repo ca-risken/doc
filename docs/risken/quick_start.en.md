@@ -22,8 +22,8 @@ This page explains how to set up security monitoring for your system environment
 - [AWS :octicons-link-external-24:](/aws/overview_datasource/){ target="_blank" }
 - [GCP :octicons-link-external-24:](/google/overview_datasource/){ target="_blank" }
 - [WordPress :octicons-link-external-24:](/diagnosis/wpscan_datasource/){ target="_blank" }
-- [Domain :octicons-link-external-24:](/osint/domain_datasource/){ target="_blank" }
-- [Source code :octicons-link-external-24:](/code/gitleaks_datasource/){ target="_blank" }
+- [OSINT :octicons-link-external-24:](/osint/datasource/){ target="_blank" }
+- [GitHub :octicons-link-external-24:](/code/github_setting/){ target="_blank" }
 
 ## Run a scan
 
