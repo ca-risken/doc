@@ -69,8 +69,8 @@ The above setup works on its own, but you can optionally integrate it with an ex
 - uses: ca-risken/security-review@v1
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
-    risken_console_url: ${{ env.RISKEN_CONSOLE_URL }} # optional
-    risken_api_endpoint: ${{ env.RISKEN_API_ENDPOINT }} # optional
+    risken_console_url: $RISKEN_CONSOLE_URL # optional
+    risken_api_endpoint: $RISKEN_API_ENDPOINT # optional
     risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
 ```
 
@@ -146,7 +146,7 @@ jobs:
       - uses: ca-risken/security-review@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          risken_console_url: ${{ env.RISKEN_CONSOLE_URL }} # optional
-          risken_api_endpoint: ${{ env.RISKEN_API_ENDPOINT }} # optional
+          risken_console_url: $RISKEN_CONSOLE_URL # optional
+          risken_api_endpoint: $RISKEN_API_ENDPOINT # optional
           risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
 ```
