@@ -69,12 +69,12 @@ The above setup works on its own, but you can optionally integrate it with an ex
 - uses: ca-risken/security-review@v1
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
-    risken_console_url: $RISKEN_CONSOLE_URL # optional
-    risken_api_endpoint: $RISKEN_API_ENDPOINT # optional
+    risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
+    risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
     risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
 ```
 
-To run this JOB, you need to register `env` and `secrets` that GitHub Actions can reference in advance.
+To run this JOB, you need to register `secrets` that GitHub Actions can reference in advance.
 
 
 | Parameter | Key | Description | Required | Default | Examples |
@@ -146,7 +146,7 @@ jobs:
       - uses: ca-risken/security-review@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          risken_console_url: $RISKEN_CONSOLE_URL # optional
-          risken_api_endpoint: $RISKEN_API_ENDPOINT # optional
+          risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
+          risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
           risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
 ```

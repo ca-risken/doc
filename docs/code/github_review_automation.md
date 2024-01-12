@@ -69,12 +69,12 @@ jobs:
 - uses: ca-risken/security-review@v1
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
-    risken_console_url: $RISKEN_CONSOLE_URL # optional
-    risken_api_endpoint: $RISKEN_API_ENDPOINT # optional
+    risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
+    risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
     risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
 ```
 
-このJOBを実行するにはGitHub Actionsが参照できる`env`と`secrets`を事前に登録する必要があります。
+このJOBを実行するにはGitHub Actionsが参照できる`secrets`を事前に登録する必要があります。
 
 
 | Pameter | Key | Description | Required | Default | Examples |
@@ -144,7 +144,7 @@ jobs:
       - uses: ca-risken/security-review@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          risken_console_url: $RISKEN_CONSOLE_URL # optional
-          risken_api_endpoint: $RISKEN_API_ENDPOINT # optional
+          risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
+          risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
           risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
 ```
