@@ -64,15 +64,7 @@ jobs:
     - `risken_console_url`
     - `risken_api_endpoint`
     - `risken_api_token`
-
-```yaml
-- uses: ca-risken/security-review@v1
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
-    risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
-    risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
-```
+- 最終的なワークフローファイルは[以下（サンプル）](#_4)のようになります
 
 このJOBを実行するにはGitHub Actionsが参照できる`secrets`を事前に登録する必要があります。
 
@@ -97,9 +89,9 @@ Organization管理者の場合は個別のリポジトリに設定する以外�
 1. Organization内に `.github` リポジトリを作成します（作成済みの場合はそのまま利用します）
     - `.github` リポジトリとは、共通のテンプレートやワークフローを保存するための特別なリポジトリです
     - ただし、他のリポジトリでも問題ありません
-2. Organizationの設定でRISKEN情報を登録する
-    - Organization variablesに `RISKEN_CONSOLE_URL` を登録します（VisibilityはAll repositories）
-    - Organization variablesに `RISKEN_API_ENDPOINT` を登録します（VisibilityはAll repositories）
+2. Organizationの設定でRISKEN情報を登録する(`optional`)
+    - Organization secretsに `RISKEN_CONSOLE_URL` を保存します（VisibilityはAll repositories）
+    - Organization secretsに `RISKEN_API_ENDPOINT` を保存します（VisibilityはAll repositories）
     - Organization secretsに `RISKEN_API_TOKEN` を保存します（VisibilityはAll repositories）
         - 事前にRISKEN環境で[アクセストークン :octicons-link-external-24:](/risken/access_token/){ target="_blank" } を発行する必要があります
 3. `.github` リポジトリに以下の[ワークフローファイル](#_4)を作成します
@@ -144,7 +136,7 @@ jobs:
       - uses: ca-risken/security-review@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
-          risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
-          risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
+          risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }}
+          risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }}
+          risken_api_token: ${{ secrets.RISKEN_API_TOKEN }}
 ```

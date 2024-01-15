@@ -64,15 +64,7 @@ The above setup works on its own, but you can optionally integrate it with an ex
     - `risken_console_url`
     - `risken_api_endpoint`
     - `risken_api_token`
-
-```yaml
-- uses: ca-risken/security-review@v1
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
-    risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
-    risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
-```
+- The final workflow file will look like [below (sample)](#_4)
 
 To run this JOB, you need to register `secrets` that GitHub Actions can reference in advance.
 
@@ -97,11 +89,9 @@ If you are an organization administrator, in addition to setting up individual r
 1. Create a `.github` repository within the organization (use an existing one if already created)
     - The `.github` repository is a special repository for storing common templates and workflows
     - However, any other repository is also fine
-2. Register RISKEN information in the organization settings
-    - Register `RISKEN_CONSOLE_URL` in Organization variables (Visibility is All repositories)
-    - Register `RISKEN_API_ENDPOINT` in Organization variables (Visibility is
-
- All repositories)
+2. Register RISKEN information in the organization settings(`optional`)
+    - Save `RISKEN_CONSOLE_URL` in Organization secrets (Visibility is All repositories)
+    - Save `RISKEN_API_ENDPOINT` in Organization secrets (Visibility is All repositories)
     - Save `RISKEN_API_TOKEN` in Organization secrets (Visibility is All repositories)
         - You need to issue an [Access Token :octicons-link-external-24:](/risken/access_token/){ target="_blank" } in the RISKEN environment beforehand
 3. Create the following [workflow file](#_4) in the `.github` repository
@@ -146,7 +136,7 @@ jobs:
       - uses: ca-risken/security-review@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }} # optional
-          risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }} # optional
-          risken_api_token: ${{ secrets.RISKEN_API_TOKEN }} # optional
+          risken_console_url: ${{ secrets.RISKEN_CONSOLE_URL }}
+          risken_api_endpoint: ${{ secrets.RISKEN_API_ENDPOINT }}
+          risken_api_token: ${{ secrets.RISKEN_API_TOKEN }}
 ```
