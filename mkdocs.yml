@@ -71,7 +71,9 @@ nav:
 
   - Code:
       - Concept: code/index.md
-      - GitHub: code/github_setting.md
+      - GitHub:
+          - Setting: code/github_setting.md
+          - CodeReviewAutomation: code/github_review_automation.md
       - Gitleaks:
           - Concept: code/gitleaks_concept.md
           - DataSource: code/gitleaks_datasource.md
