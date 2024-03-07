@@ -38,20 +38,28 @@ RISKENでは問題のあるデータを発見しときにアラートを生成�
 ### 通知先の設定
 1. 左メニューの`Alert > Notification`をクリックしてください
 2. 画面右側の`NEW`をクリックします
-3. 以下の項目を入力し`REGIST`をクリックします
+3. 必要な項目を入力し`REGIST`をクリックします
     - **Name** : 通知名
     - **Type** : 現状`Slack`のみサポート
-    - **Webhook URL** : [Incomming Webhook](https://api.slack.com/messaging/webhooks)で作成されたWebhook URLを指定
-        - Incomming Webhookで上で指定したchannel/ icon/ nameで通知が飛びます
-    - **Show Options** : チェックONにするとオプション設定を表示します
-    - **Custom Message** : デフォルトの通知メッセージを上書きすることができます
-        - デフォルトは `@xxxx アラートが発生しました` です
-        - `@xxxx`の部分は設定したSeverityに応じて変化します
-            - `High` : @channel
-            - `Medium` : @here
-            - `Low`: メンションなし
-    - **Channel** （Depricated） : 通知先のチャンネルを指定します。現在、非推奨な設定項目です。
-    - ![alert_notification.png](/img/risken/alert_notification.png){style="width:600px"}
+    - **Notification Language** : 通知言語を設定してください
+    - **Slack Setting**: `SlackApp` からの通知か `WebhookURL` が選択できます
+
+#### Slack App
+- **Channel ID** : 通知先のチャンネルIDまたはチャンネル名を指定します（ただし、チャンネル名の場合はSlack側が変更になると通知されなくなります）
+- ![alert_notification.png](/img/risken/alert_notification_slackapp.png){style="width:600px"}
+
+#### WebhookURL
+- **Webhook URL** : [Incomming Webhook](https://api.slack.com/messaging/webhooks)で作成されたWebhook URLを指定
+    - Incomming Webhookで上で指定したchannel/ icon/ nameで通知が飛びます
+- **Show Options** : チェックONにするとオプション設定を表示します
+- **Custom Message** : デフォルトの通知メッセージを上書きすることができます
+    - デフォルトは `@xxxx アラートが発生しました` です
+    - `@xxxx`の部分は設定したSeverityに応じて変化します
+        - `High` : @channel
+        - `Medium` : @here
+        - `Low`: メンションなし
+- **Channel** （Depricated） : 通知先のチャンネルを指定します。現在、非推奨な設定項目です。
+- ![alert_notification.png](/img/risken/alert_notification_webhook.png){style="width:600px"}
 
 ### アラート条件の設定
 1. 左メニューの`Alert > Condition`をクリックしてください

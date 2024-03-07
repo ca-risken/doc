@@ -29,6 +29,7 @@ RISKENのサービス共通のパラメータです
 | --- | --- | --- | --- |
 | **TZ** | サーバータイムゾーン（ログの出力日付等） | | `Asia/Tokyo` |
 | **ENV_NAME** | 環境ごとの識別子（Observability関連で利用） | | `local` |
+| **SLACK_API_TOKEN** | Slack Appの[Botトークン](https://api.slack.com/authentication/token-types#bot) （`xoxb-` で始まる形式） | | |
 
 ## Parameter Store保存先（例）
 

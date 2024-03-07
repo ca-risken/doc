@@ -35,20 +35,28 @@ In RISKEN, we have implemented a feature that generates alerts and sends notific
 ### Setting up Notification Destination
 1. Click on `Alert > Notification` on the left menu
 2. Click on `NEW` on the right side of the screen
-3. Enter the following information and click on `REGIST`:
+3. Fill in the required fields and click `REGIST`.
     - **Name**: Notification name
     - **Type**: Currently only supports `Slack`
-    - **Webhook URL**: Specify the Webhook URL created with [Incomming Webhook](https://api.slack.com/messaging/webhooks)
-        - Notifications will be sent with the channel/icon/name specified in Incomming Webhook
-    - **Show Options**: Check to display option settings
-    - **Custom Message**: Override the default notification message
-        - Default is `@xxxx Alert occurred`
-        - `@xxxx` changes depending on the severity set
-            - `High`: @channel
-            - `Medium`: @here
-            - `Low`: No mention
-    - **Channel** (Depricated): Specify the channel to receive the notification. Currently a deprecated setting.
-    - ![alert_notification.png](/img/risken/alert_notification.png){style="width:600px"}
+    - **Notification Language**: Please set the notification language.
+    - **Slack Setting**: You can choose between notifications from `SlackApp` or a `WebhookURL`.
+
+#### Slack App
+- **Channel ID**: Specify the destination channel ID or channel name (however, if the channel name is used, notifications may not be sent if Slack changes it).
+- ![alert_notification.png](/img/risken/alert_notification_slackapp.png){style="width:600px"}
+
+#### WebhookURL
+- **Webhook URL**: Specify the Webhook URL created with [Incomming Webhook](https://api.slack.com/messaging/webhooks)
+    - Notifications will be sent with the channel/icon/name specified in Incomming Webhook
+- **Show Options**: Check to display option settings
+- **Custom Message**: Override the default notification message
+    - Default is `@xxxx Alert occurred`
+    - `@xxxx` changes depending on the severity set
+        - `High`: @channel
+        - `Medium`: @here
+        - `Low`: No mention
+- **Channel** (Depricated): Specify the channel to receive the notification. Currently a deprecated setting.
+- ![alert_notification.png](/img/risken/alert_notification_webhook.png){style="width:600px"}
 
 ### Setting up Alert Conditions
 1. Click on `Alert > Condition` on the left menu

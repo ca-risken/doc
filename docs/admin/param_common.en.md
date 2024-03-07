@@ -29,6 +29,7 @@ These are the common parameters for RISKEN's services.
 | --- | --- | --- | --- |
 | **TZ** | Server timezone (for output date in logs, etc.). | | `Asia/Tokyo` |
 | **ENV_NAME** | Identifier for each environment (used in observability). | | `local` |
+| **SLACK_API_TOKEN** | The [Bot Token](https://api.slack.com/authentication/token-types#bot) for the Slack App (in the format starting with `xoxb-`) | | |
 
 ## Parameter Store Storage Location (Example)
 
