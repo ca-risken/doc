@@ -29,6 +29,12 @@ RISKENのサービス共通のパラメータです
 | --- | --- | --- | --- |
 | **TZ** | サーバータイムゾーン（ログの出力日付等） | | `Asia/Tokyo` |
 | **ENV_NAME** | 環境ごとの識別子（Observability関連で利用） | | `local` |
+| **SLACK_API_TOKEN** | Slack Appの[Botトークン](https://api.slack.com/authentication/token-types#bot) （`xoxb-` で始まる形式） | | |
+
+???+ info "Slack Appの準備"
+    SlackAPITokenを設定することでSlackApp経由の通知が可能になります。
+    Slack Appの作成は[公式ドキュメント :octicons-link-external-24:](https://api.slack.com/reference){ target="_blank" }を参照してください。
+    また、通知に必要なパーミッションとして [chat:write :octicons-link-external-24:](https://api.slack.com/scopes/chat:write){ target="_blank" }が必要になります。
 
 ## Parameter Store保存先（例）
 
