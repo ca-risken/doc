@@ -31,6 +31,11 @@ These are the common parameters for RISKEN's services.
 | **ENV_NAME** | Identifier for each environment (used in observability). | | `local` |
 | **SLACK_API_TOKEN** | The [Bot Token](https://api.slack.com/authentication/token-types#bot) for the Slack App (in the format starting with `xoxb-`) | | |
 
+???+ info "Preparing the Slack App"
+    By setting the Slack API Token, it becomes possible to send notifications via the Slack App.
+    To create a Slack App, please refer to the [official documentation :octicons-link-external-24:](https://api.slack.com/reference){ target="_blank" }.
+    Additionally, the permission required for notifications is [chat:write :octicons-link-external-24:](https://api.slack.com/scopes/chat:write){ target="_blank" }.
+
 ## Parameter Store Storage Location (Example)
 
 Parameters are stored under the following path:
