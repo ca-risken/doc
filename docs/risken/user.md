@@ -50,6 +50,7 @@ RISKENへログインしたことのないユーザへ権限を割り当てる�
 
 - **ポリシー** とはデータ（リソース）に対して、どんな操作（アクション）を許可するかを定義したものです
 - １つのロールに対して複数のポリシーを設定することが可能です
+- ポリシーの記述には[正規表現  :octicons-link-external-24:](https://github.com/google/re2/wiki/Syntax)を使用しています
 
 ### ポリシー設定
 
@@ -59,7 +60,7 @@ RISKENへログインしたことのないユーザへ権限を割り当てる�
 3. ポリシーダイアログで以下を入力し`REGIST`をクリックします
     - **Name**: ポリシー名
     - **Action Pattern**: Action名のパターン
-        -   例えばReadOnly用のActionは`(get|list|describe|show)`を設定します
+        - 　例えばReadOnly用のActionは`(get|list|is-admin|put-alert-first-viewed-at)`を設定します
     - **Resource Pattern**: Resource名のパターン
         - ※ 現在細かいResourceパターンでの制御は未サポートです。そのため、Resource欄は`.*`で指定してください。（一律プロジェクト単位での制御となります）
 

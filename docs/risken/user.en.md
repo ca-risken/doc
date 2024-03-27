@@ -46,6 +46,7 @@ Before creating a role, you need to set the **policy** that is associated with t
 
 - **Policy** defines what operations (actions) are allowed for data (resources).
 - It is possible to set multiple policies for a single role.
+- The policy is described in [regular expressions :octicons-link-external-24:](https://github.com/google/re2/wiki/Syntax). 
 
 ### Policy Setting
 
@@ -55,7 +56,7 @@ Before creating a role, you need to set the **policy** that is associated with t
 3. Enter the following in the policy dialog and click `REGIST`.
     - **Name**: Policy name
     - **Action Pattern**: Action name pattern
-        - For example, set `(get|list|describe|show)` for the ReadOnly action.
+        - For example, set `(get|list|is-admin|put-alert-first-viewed-at)` for the ReadOnly action.
     - **Resource Pattern**: Resource name pattern
         - *Currently, detailed control using resource patterns is not supported. Therefore, please specify `.*` in the Resource field. (Control will be uniformly at the project level.)
 
