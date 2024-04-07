@@ -139,6 +139,5 @@ graph TD
 |SageMaker|notebookDirectInternetAccess|0.6|||
 |SES|dkimEnabled|0.6||2021/06/17更新|
 |SNS|topicPolicies|0.8||2021/06/17更新|
-|SSM|ssmDocumentPublicAccess|0.8||2023/04/11更新|
 |SQS|sqsPublicAccess|0.6|||
 |Transfer|transferLoggingEnabled|0.6|hipaa, pci|2021/06/17更新|
