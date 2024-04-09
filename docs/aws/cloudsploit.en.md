@@ -140,6 +140,5 @@ In addition, compliance tags for standards such as CIS and PCIDSS are assigned d
 |SageMaker|notebookDirectInternetAccess|0.6|||
 |SES|dkimEnabled|0.6||Updated 2021/06/17|
 |SNS|topicPolicies|0.8||Updated 2021/06/17|
-|SSM|ssmDocumentPublicAccess|0.8||Updated 2023/04/11|
 |SQS|sqsPublicAccess|0.6|||
 |Transfer|transferLoggingEnabled|0.6|hipaa, pci|Updated 2021/06/17|
