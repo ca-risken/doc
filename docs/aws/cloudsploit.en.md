@@ -98,7 +98,7 @@ In addition, compliance tags for standards such as CIS and PCIDSS are assigned d
 |EC2|openVNCServer|0.8||Updated 2021/06/17|
 |EC2|publicAmi|0.8||Updated 2021/06/17|
 |EC2|outdatedAmiInUse|0.6||Updated 2023/04/11|
-|EC2|vpcPeeringConnections|0.8||Updated 2023/04/11|
+|EC2|vpcPeeringConnections|~~0.8~~ -> 0.3||Updated 2024/05/21|
 |ECR|ecrRepositoryPolicy|~~0.6~~ -> 0.3||Updated 2023/04/11|
 |EKS|eksLoggingEnabled|0.6||Updated 2021/06/17|
 |EKS|eksSecurityGroups|0.6||Updated 2021/06/17|
