@@ -97,7 +97,7 @@ graph TD
 |EC2|openVNCServer|0.8||2021/06/17更新|
 |EC2|publicAmi|0.8||2021/06/17更新|
 |EC2|outdatedAmiInUse|0.6||2023/04/11更新|
-|EC2|vpcPeeringConnections|0.8||2023/04/11更新|
+|EC2|vpcPeeringConnections|~~0.8~~ -> 0.3||2024/05/21更新|
 |ECR|ecrRepositoryPolicy|~~0.6~~ -> 0.3||2023/04/11更新|
 |EKS|eksLoggingEnabled|0.6||2021/06/17更新|
 |EKS|eksSecurityGroups|0.6||2021/06/17更新|
