@@ -123,7 +123,7 @@ graph TD
 |MQ|mskClusterPublicAccess|0.6||2023/04/11更新|
 |MSK|mskClusterPublicAccess|0.6||2023/04/11更新|
 |MWAA|environmentAdminPrivileges|0.6||2023/04/11更新|
-|MWAA|webServerPublicAccess|0.8||2023/04/11更新|
+|MWAA|webServerPublicAccess|~~0.8~~ -> 0.3||2024/05/23更新|
 |RDS|rdsEncryptionEnabled|0.6|hipaa,pci||
 |RDS|rdsPubliclyAccessible|0.6|hipaa,pci|2022/07/01更新|
 |RDS|rdsSnapshotPubliclyAccessible|0.8||2023/04/11更新|
