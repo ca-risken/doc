@@ -124,7 +124,7 @@ In addition, compliance tags for standards such as CIS and PCIDSS are assigned d
 |MQ|mskClusterPublicAccess|0.6||Updated 2023/04/11|
 |MSK|mskClusterPublicAccess|0.6||Updated 2023/04/11|
 |MWAA|environmentAdminPrivileges|0.6||Updated 2023/04/11|
-|MWAA|webServerPublicAccess|0.8||Updated 2023/04/11|
+|MWAA|webServerPublicAccess|~~0.8~~ -> 0.3||Updated 2024/05/23|
 |RDS|rdsEncryptionEnabled|0.6|hipaa,pci||
 |RDS|rdsPubliclyAccessible|0.6|hipaa,pci|Updated 2022/07/01|
 |RDS|rdsSnapshotPubliclyAccessible|0.8||Updated 2023/04/11|
