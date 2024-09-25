@@ -13,8 +13,8 @@ Azureのパラメータです
 | **AWS_SECRET_ACCESS_KEY** | AWSシークレットキー | | |
 | **AWS_SESSION_TOKEN** | AWSセッショントークン（STS一時キーを利用する場合） | | |
 | **SQS_ENDPOINT** | SQSエンドポイント | | `http://queue.middleware.svc.cluster.local:9324` |
-| **GOOGLE_PROWLER_QUEUE_NAME** | Azure Prowlerキュー名 | | `azure-prowler` |
-| **GOOGLE_PROWLER_QUEUE_URL** | Azure ProwlerキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/azure-prowler` |
+| **AZURE_PROWLER_QUEUE_NAME** | Azure Prowlerキュー名 | | `azure-prowler` |
+| **AZURE_PROWLER_QUEUE_URL** | Azure ProwlerキューURL | | `http://queue.middleware.svc.cluster.local:9324/queue/azure-prowler` |
 ### Parameter Store保存先（例）
 
 以下のPath配下にパラメータを保存

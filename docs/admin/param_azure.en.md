@@ -13,8 +13,8 @@ Parameters for Azure
 | **AWS_SECRET_ACCESS_KEY** | AWS sercret key | | |
 | **AWS_SESSION_TOKEN** | AWS session token (if using STS temporary key) | | |
 | **SQS_ENDPOINT** | SQS endpoint | | `http://queue.middleware.svc.cluster.local:9324` |
-| **GOOGLE_PROWLER_QUEUE_NAME** | Azure Prowler queue name | | `azure-prowler` |
-| **GOOGLE_PROWLER_QUEUE_URL** | Azure Prowler queue URL | | `http://queue.middleware.svc.cluster.local:9324/queue/azure-prowler` |
+| **AZURE_PROWLER_QUEUE_NAME** | Azure Prowler queue name | | `azure-prowler` |
+| **AZURE_PROWLER_QUEUE_URL** | Azure Prowler queue URL | | `http://queue.middleware.svc.cluster.local:9324/queue/azure-prowler` |
 
 ### Parameter Store Storage Example
 
