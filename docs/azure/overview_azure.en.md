@@ -16,6 +16,6 @@ This section provides an explanation of the various data source settings for Azu
 
 The following steps are required to configure Azure data sources:
 
-1. Register your [Azure Subscription](/en/azure/overview_subscription/) on RISKEN.
-2. Set up [Permission Assignment to Service Principals](/en/azure/overview_sp/) on RISKEN.
+1. Set up [Permission Assignment to Service Principals](/en/azure/overview_sp/) on RISKEN.
+2. Register your [Azure Subscription](/en/azure/overview_subscription/) on RISKEN.
 3. Enable [Various Data Sources](/en/azure/overview_datasource/) on Azure.

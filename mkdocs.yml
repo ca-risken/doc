@@ -90,8 +90,8 @@ nav:
   - Azure:
       - Overview:
           - Concept: azure/overview_azure.md
-          - Subscription: azure/overview_subscription.md
           - ServicePrincipal: azure/overview_sp.md
+          - Subscription: azure/overview_subscription.md
           - DataSource: azure/overview_datasource.md
           - Scan: azure/overview_scan.md
       - Prowler: azure/prowler.md

@@ -16,8 +16,8 @@ RISKEN上にあなたのAzure Subscriptionを登録することで、Azure関連
 
 Azureのデータソース設定には以下の作業が必要です
 
-1. RISKENに[Azure Subscriptionを登録](/azure/overview_subscription/)する
-2. RISKENの[サービスプリンシパルに権限割り当て](/azure/overview_sp/)を設定する
+1. RISKENの[サービスプリンシパルに権限割り当て](/azure/overview_sp/)を設定する
+2. RISKENに[Azure Subscriptionを登録](/azure/overview_subscription/)する
 3. Azureの[各種データソースを有効](/azure/overview_datasource/)にする
 
 
