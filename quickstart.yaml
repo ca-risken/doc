@@ -1,0 +1,268 @@
+name: risken
+x-common-env: &common-env
+  DEBUG: ${DEBUG:-false}
+  DB_LOG_MODE: ${DB_LOG_MODE:-false}
+  DB_MASTER_HOST: db
+  DB_SLAVE_HOST: db
+  CORE_ADDR: core:8080
+  CORE_SVC_ADDR: core:8080
+  DATA_SOURCE_API_SVC_ADDR: datasource-api:8081
+  AWS_REGION: ${AWS_REGION:-ap-northeast-1}
+  SQS_ENDPOINT: http://queue:9324
+  AWS_GUARD_DUTY_QUEUE_URL: http://queue:9324/queue/aws-guardduty
+  AWS_ACCESS_ANALYZER_QUEUE_URL: http://queue:9324/queue/aws-accessanalyzer
+  AWS_ADMIN_CHECKER_QUEUE_URL: http://queue:9324/queue/aws-adminchecker
+  AWS_CLOUD_SPLOIT_QUEUE_URL: http://queue:9324/queue/aws-cloudsploit
+  AWS_PORT_SCAN_QUEUE_URL: http://queue:9324/queue/aws-portscan
+  GOOGLE_ASSET_QUEUE_URL: http://queue:9324/queue/google-asset
+  GOOGLE_CLOUD_SPLOIT_QUEUE_URL: http://queue:9324/queue/google-cloudsploit
+  GOOGLE_CLOUD_SPLOIT_OLD_QUEUE_URL: http://queue:9324/queue/google-cloudsploit-old
+  GOOGLE_SCC_QUEUE_URL: http://queue:9324/queue/google-scc
+  GOOGLE_PORT_SCAN_QUEUE_URL: http://queue:9324/queue/google-portscan
+  CODE_GITLEAKS_QUEUE_URL: http://queue:9324/queue/code-gitleaks
+  CODE_DEPENDENCY_QUEUE_URL: http://queue:9324/queue/code-dependency
+  CODE_CODE_SCAN_QUEUE_URL: http://queue:9324/queue/code-codescan
+  OSINT_SUBDOMAIN_QUEUE_URL: http://queue:9324/queue/osint-subdomain
+  OSINT_WEBSITE_QUEUE_URL: http://queue:9324/queue/osint-website
+  DIAGNOSIS_WPSCAN_QUEUE_URL: http://queue:9324/queue/diagnosis-wpscan
+  DIAGNOSIS_PORT_SCAN_QUEUE_URL: http://queue:9324/queue/diagnosis-portscan
+  DIAGNOSIS_APPLICATION_SCAN_QUEUE_URL: http://queue:9324/queue/diagnosis-applicationscan
+
+x-code-env: &code-env
+  CODE_DATA_KEY: ${CODE_DATA_KEY}
+  GITHUB_DEFAULT_TOKEN: ${GITHUB_DEFAULT_TOKEN}
+
+x-slack-env: &slack-env
+  SLACK_API_TOKEN: ${SLACK_API_TOKEN}
+
+x-aws-env: &aws-env
+  AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-dummy}
+  AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-dummy}
+  AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN}
+
+networks:
+  risken-network:
+    name: risken-network
+
+services:
+  db:
+    image: public.ecr.aws/risken/middleware/db:latest
+    networks:
+      - risken-network
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--general-log-file=/var/lib/mysql/general.log"
+      - "--general-log=1"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - "3306"
+
+  queue:
+    image: public.ecr.aws/risken/middleware/queue:latest
+    networks:
+      - risken-network
+    ports:
+      - "9324"
+      - "9325"
+
+  core:
+    image: public.ecr.aws/risken/risken-core:latest
+    networks:
+      - risken-network
+    ports:
+      - "8080"
+    environment:
+      <<: [*common-env, *slack-env]
+      OPEN_AI_TOKEN: ${OPEN_AI_TOKEN}
+      CHAT_GPT_MODEL: ${CHAT_GPT_MODEL}
+    depends_on:
+      - db
+    restart: always
+
+  datasource-api:
+    image: public.ecr.aws/risken/risken-datasource-api:latest
+    networks:
+      - risken-network
+    ports:
+      - "8081"
+    environment:
+      <<: [*common-env, *slack-env, *code-env, *aws-env]
+    depends_on:
+      - db
+      - queue
+    restart: always
+
+  gateway:
+    image: public.ecr.aws/risken/gateway/gateway:latest
+    networks:
+      - risken-network
+    ports:
+      - "8000"
+    environment:
+      <<: *common-env
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+
+  web:
+    image: public.ecr.aws/risken/gateway/web:latest
+    networks:
+      - risken-network
+    ports:
+      - "80"
+    depends_on:
+      - gateway
+    restart: always
+
+  proxy:
+    image: nginx:latest
+    networks:
+      - risken-network
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - gateway
+      - web
+    restart: always
+
+  # AWS
+  aws-accessanalyzer:
+    image: public.ecr.aws/risken/aws/access-analyzer:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  aws-adminchecker:
+    image: public.ecr.aws/risken/aws/admin-checker:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  aws-cloudsploit:
+    image: public.ecr.aws/risken/aws/cloudsploit:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  aws-portscan:
+    image: public.ecr.aws/risken/aws/portscan:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  aws-guardduty:
+    image: public.ecr.aws/risken/aws/guard-duty:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+
+  # Code
+  code-gitleaks:
+    image: public.ecr.aws/risken/code/gitleaks:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *code-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  code-dependency:
+    image: public.ecr.aws/risken/code/dependency:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *code-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  code-codescan:
+    image: public.ecr.aws/risken/code/codescan:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *code-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+
+  # OSINT
+  osint-subdomain:
+    image: public.ecr.aws/risken/osint/subdomain:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  osint-website:
+    image: public.ecr.aws/risken/osint/website:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+
+  # Diagnosis
+  diagnosis-wpscan:
+    image: public.ecr.aws/risken/diagnosis/wpscan:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  diagnosis-portscan:
+    image: public.ecr.aws/risken/diagnosis/portscan:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always
+  diagnosis-applicationscan:
+    image: public.ecr.aws/risken/diagnosis/applicationscan:latest
+    networks:
+      - risken-network
+    environment:
+      <<: [*common-env, *aws-env]
+    depends_on:
+      - core
+      - datasource-api
+    restart: always

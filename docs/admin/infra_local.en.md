@@ -9,20 +9,8 @@ This is a document for building the RISKEN system on Docker Desktop (Mac) on a l
 The following tools are required in advance:
 
 - Install various CLI tools
-    - [Docker Desktop :octicons-link-external-24:](https://www.docker.com/products/docker-desktop){ target="_blank" }
-    - [kubectl :octicons-link-external-24:](https://kubernetes.io/de/docs/tasks/tools/install-kubectl/){ target="_blank" }
-    - [kustomize :octicons-link-external-24:](https://kubectl.docs.kubernetes.io/installation/kustomize/){ target="_blank" }
-
----
-
-## Launch Kubernetes
-
-- Refer to the [Docker Desktop documentation :octicons-link-external-24:](https://docs.docker.com/desktop/kubernetes/) to start Kubernetes.
-- To run it in the local environment, you need to set the CPU and MEM resources assigned to Docker Desktop to the following values or higher:
-    - `Preferences` > `Resourses` > `ADVANCED`
-        - `CPUs`: 4+
-        - `Memory`: 8GB+
-    - ![Docker Desktop Resource setting](/img/admin/admin_docker_desktop_min.png)
+    - [Docker :octicons-link-external-24:](https://docs.docker.com/engine/install/){ target="_blank" }
+    - [Docker Compose :octicons-link-external-24:](https://docs.docker.com/compose/install/){ target="_blank" }
 
 ---
 
@@ -30,26 +18,36 @@ The following tools are required in advance:
 
 ### Deploy using Manifest file
 
-- Clone the [sample manifest :octicons-link-external-24:](https://github.com/ca-risken/k8s-sample){ target="_blank" }.
-```sell
-$ git clone https://github.com/ca-risken/k8s-sample.git
-$ cd k8s-sample
-```
-
-- Deploy it in the local environment using the make command.
-```sell
-$ make local-apply
-```
-
-- Wait for the Pod's status to become `Running`.
+- Run the following command to start RISKEN.
 ```bash
-$ kubectl get pod -A
+# clone
+git clone https://github.com/ca-risken/doc.git
+cd doc
+
+# run
+docker compose -f quickstart.yaml up -d
 ```
 
 - Access the local environment in a browser.
 ```bash
 http://localhost/
 ```
+
+### AWS Scan
+
+To scan the AWS environment, AWS authentication information is required.
+Scanning can be done by passing an AWS IAM user or STS temporary key through environment variables to RISKEN.
+
+```bash
+export AWS_ACCESS_KEY_ID=xxx
+export AWS_SECRET_ACCESS_KEY=xxx
+export AWS_SESSION_TOKEN=xxx
+docker compose -f quickstart.yaml up -d
+```
+
+You can also set the AWS credentials in the `.env` file.
+
+### Other services
 
 ???+ tip "By default, only some services are enabled."
     - The following services are not started by default because credentials are required at startup:
@@ -63,5 +61,5 @@ http://localhost/
 
 - Delete the local environment resources with the make command.
 ```sell
-$ make local-delete
+$ docker compose -f quickstart.yaml down
 ```

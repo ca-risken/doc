@@ -10,14 +10,34 @@ Please check [RISKEN Documentation](https://docs.security-hub.jp/).
 
 ## Quick Start
 
-- Installation guide: [k8s-sample](https://github.com/ca-risken/k8s-sample) 
+You can quickly start the RISKEN server with the docker compose command.
+If it works, you can access the RISKEN server at http://localhost/.
+
 ```bash
-$ git clone https://github.com/ca-risken/k8s-sample.git
-$ cd k8s-sample
-$ make local-apply
+git clone https://github.com/ca-risken/doc.git
+cd doc
+docker compose -f quickstart.yaml up -d
 ```
 
-For more information, please check [RISKEN Instration on local machine](https://docs.security-hub.jp/admin/infra_local/).
+### AWS Scan
+
+If you want to scan AWS resources, you need to set the AWS credentials in the environment variables.
+
+```bash
+export AWS_ACCESS_KEY_ID=xxx
+export AWS_SECRET_ACCESS_KEY=xxx
+export AWS_SESSION_TOKEN=xxx
+docker compose -f quickstart.yaml up -d
+```
+
+You can also set the AWS credentials in the `.env` file.
+
+### Support services
+
+Some services(GoogleCloud, Azure, etc.) will not work in the quick start. Because they require administrator settings such as credentials.
+For more details, please refer to the following documentation.
+
+- [RISKEN Instration on local machine](https://docs.security-hub.jp/admin/infra_local/)
 
 ## Background
 

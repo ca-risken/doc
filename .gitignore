@@ -1,3 +1,6 @@
 site/
 .DS_Store
 .idea/
+.env
+data/
+.perman-aws-vault
