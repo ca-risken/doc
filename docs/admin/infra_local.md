@@ -23,7 +23,7 @@ git clone https://github.com/ca-risken/doc.git
 cd doc
 
 # run
-docker compose -f quickstart.yaml up -d
+docker compose up -d
 ```
 
 - ブラウザでローカル環境にアクセスします
@@ -40,7 +40,7 @@ AWSのIAMユーザまたは、STSの一時キーを環境変数経由でRISKEN�
 export AWS_ACCESS_KEY_ID=xxx
 export AWS_SECRET_ACCESS_KEY=xxx
 export AWS_SESSION_TOKEN=xxx
-docker compose -f quickstart.yaml up -d
+docker compose up -d
 ```
 
 環境変数ではなく、`.env`ファイルに設定することも可能です。
@@ -58,6 +58,6 @@ docker compose -f quickstart.yaml up -d
 ## 作成したリソースを削除する
 
 - makeコマンドでローカル環境のリソースを削除します
-```sell
-$ docker compose -f quickstart.yaml down
+```bash
+docker compose down
 ```

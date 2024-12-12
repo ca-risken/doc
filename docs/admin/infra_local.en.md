@@ -25,7 +25,7 @@ git clone https://github.com/ca-risken/doc.git
 cd doc
 
 # run
-docker compose -f quickstart.yaml up -d
+docker compose up -d
 ```
 
 - Access the local environment in a browser.
@@ -42,7 +42,7 @@ Scanning can be done by passing an AWS IAM user or STS temporary key through env
 export AWS_ACCESS_KEY_ID=xxx
 export AWS_SECRET_ACCESS_KEY=xxx
 export AWS_SESSION_TOKEN=xxx
-docker compose -f quickstart.yaml up -d
+docker compose up -d
 ```
 
 You can also set the AWS credentials in the `.env` file.
@@ -60,6 +60,6 @@ You can also set the AWS credentials in the `.env` file.
 ## Delete created resources
 
 - Delete the local environment resources with the make command.
-```sell
-$ docker compose -f quickstart.yaml down
+```bash
+docker compose down
 ```

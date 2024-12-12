@@ -16,7 +16,7 @@ If it works, you can access the RISKEN server at http://localhost/.
 ```bash
 git clone https://github.com/ca-risken/doc.git
 cd doc
-docker compose -f quickstart.yaml up -d
+docker compose up -d
 ```
 
 ### AWS Scan
@@ -27,7 +27,7 @@ If you want to scan AWS resources, you need to set the AWS credentials in the en
 export AWS_ACCESS_KEY_ID=xxx
 export AWS_SECRET_ACCESS_KEY=xxx
 export AWS_SESSION_TOKEN=xxx
-docker compose -f quickstart.yaml up -d
+docker compose up -d
 ```
 
 You can also set the AWS credentials in the `.env` file.
