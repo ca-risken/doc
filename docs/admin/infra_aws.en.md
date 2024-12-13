@@ -2,6 +2,10 @@
 
 This is a document for building the RISKEN system on AWS.
 
+In this document, we assume a large-scale environment where RISKEN scans the equivalent of hundreds of projects.
+If you are operating in a smaller environment that does not fall under this category, please refer to [Installation on Local Machine](/admin/infra_local/). (It is possible to start with a single instance configuration using docker compose.)
+
+
 ## Goal
 
 The final configuration that will be created is as follows:

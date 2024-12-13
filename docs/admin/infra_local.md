@@ -1,6 +1,6 @@
 # Infrastructure(Local)
 
-ローカルマシーンのDocker Desktop（Mac）上でRISKENのシステム構築をするためのドキュメントです
+ローカルマシーンの上でRISKENのシステム構築をするためのドキュメントです
 
 ---
 
@@ -9,41 +9,21 @@
 事前に以下のツールが必要になります
 
 - 各種CLIツールをインストールする
-    - [Docker Desktop :octicons-link-external-24:](https://www.docker.com/products/docker-desktop){ target="_blank" }
-    - [kubectl :octicons-link-external-24:](https://kubernetes.io/de/docs/tasks/tools/install-kubectl/){ target="_blank" }
-    - [kustomize :octicons-link-external-24:](https://kubectl.docs.kubernetes.io/installation/kustomize/){ target="_blank" }
-
----
-
-## Kubernetesを起動する
-
-- [Docker Desktopのドキュメント :octicons-link-external-24:](https://docs.docker.com/desktop/kubernetes/) を参照しKubernetesを起動してください
-- ローカル環境で動作させるためにはDocker Desktopに割り当てるCPU、MEMリソースを以下の値以上に設定する必要があります
-    - `Preferences` > `Resourses` > `ADVANCED`
-        - `CPUs`: 4+
-        - `Memory`: 8GB+
-    - ![Docker Desktop Resource setting](/img/admin/admin_docker_desktop_min.png)
+    - [Docker :octicons-link-external-24:](https://docs.docker.com/engine/install/){ target="_blank" }
+    - [Docker Compose :octicons-link-external-24:](https://docs.docker.com/compose/install/){ target="_blank" }
 
 ---
 
 ## RISKENをデプロイする
 
-### Manifestファイルを使ってデプロイ
-
-- [サンプルmanifest :octicons-link-external-24:](https://github.com/ca-risken/k8s-sample){ target="_blank" }をcloneします
-```sell
-$ git clone https://github.com/ca-risken/k8s-sample.git
-$ cd k8s-sample
-```
-
-- makeコマンドでlocal環境にデプロイします
-```sell
-$ make local-apply
-```
-
-- PodのStatusが`Runnig`になるのを待ちます
+- 以下のコマンドを実行してRISKENを起動します
 ```bash
-$ kubectl get pod -A
+# clone
+git clone https://github.com/ca-risken/doc.git
+cd doc
+
+# run
+docker compose up -d
 ```
 
 - ブラウザでローカル環境にアクセスします
@@ -51,6 +31,21 @@ $ kubectl get pod -A
 http://localhost/
 ```
 
+## AWS環境をスキャンする
+
+AWS環境をスキャンするためにはAWSの認証情報が必要です。
+AWSのIAMユーザまたは、STSの一時キーを環境変数経由でRISKENにわたすことでスキャンが可能になります。
+
+```bash
+export AWS_ACCESS_KEY_ID=xxx
+export AWS_SECRET_ACCESS_KEY=xxx
+export AWS_SESSION_TOKEN=xxx
+docker compose up -d
+```
+
+環境変数ではなく、`.env`ファイルに設定することも可能です。
+
+### その他のサービスについて
 
 ???+ tip "デフォルトでは一部のサービスのみが有効です"
     - 以下のサービスは起動時にクレデンシャルが必要になるためデフォルトでは起動しません
@@ -63,6 +58,6 @@ http://localhost/
 ## 作成したリソースを削除する
 
 - makeコマンドでローカル環境のリソースを削除します
-```sell
-$ make local-delete
+```bash
+docker compose down
 ```
