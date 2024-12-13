@@ -29,8 +29,8 @@ x-common-env: &common-env
   DIAGNOSIS_APPLICATION_SCAN_QUEUE_URL: http://queue:9324/queue/diagnosis-applicationscan
 
 x-code-env: &code-env
-  CODE_DATA_KEY: ${CODE_DATA_KEY}
-  GITHUB_DEFAULT_TOKEN: ${GITHUB_DEFAULT_TOKEN}
+  CODE_DATA_KEY: ${CODE_DATA_KEY:-12345678901234567890123456789012}
+  GITHUB_DEFAULT_TOKEN: ${GITHUB_DEFAULT_TOKEN:-your-token}
 
 x-slack-env: &slack-env
   SLACK_API_TOKEN: ${SLACK_API_TOKEN}
