@@ -45,7 +45,11 @@ In RISKEN, we have implemented a feature that generates alerts and sends notific
 - **Channel ID**: Specify the destination channel ID or channel name (however, if the channel name is used, notifications may not be sent if Slack changes it).
 - **Options**
     - **Custom Message**: You can customize the notification message.
-        - To insert a mention, specify `<@user_name>` or `<!here>`, etc.
+        - To insert a mention, specify the following format:
+            - User: `<@user_name>` (or `<@user_id>`)
+            - Group: `<!subteam^GROUP_ID>` (e.g. `<!subteam^S01234567890>`)
+            - Special mention: `<!here>`, etc.
+            - For details, refer to the [Slack official documentation :octicons-link-external-24:](https://api.slack.com/reference/surfaces/formatting#mentioning-users){ target="_blank" }
         - If not entered, the default message is `@xxxx Alert occurred`.
             - The `@xxxx` part changes according to the set Severity.
                 - `High`: @channel

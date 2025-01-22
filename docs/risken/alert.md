@@ -48,7 +48,11 @@ RISKENでは問題のあるデータを発見しときにアラートを生成�
 - **Channel ID** : 通知先のチャンネルIDまたはチャンネル名を指定します（ただし、チャンネル名の場合はSlack側が変更になると通知されなくなります）
 - **Options**
     - **Custom Message** : 通知メッセージをカスタマイズできます
-        - メンションを挿入する場合は `<@user_name>` や、 `<!here>` などを指定してください
+        - メンションを挿入する場合は以下のフォーマットを指定してください
+            - ユーザ: `<@user_name>` （または `<@user_id>`）
+            - グループ: `<!subteam^GROUP_ID>`  (例: `<!subteam^S01234567890>`)
+            - 特別なメンション: `<!here>` など
+            - 詳細は[Slack公式ドキュメント :octicons-link-external-24:](https://api.slack.com/reference/surfaces/formatting#mentioning-users){ target="_blank" }を参照してください
         - 未入力の場合、デフォルトメッセージは `@xxxx アラートが発生しました` です
             - `@xxxx` の部分は設定したSeverityに応じて変化します
                 - `High` : @channel
