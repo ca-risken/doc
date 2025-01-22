@@ -43,20 +43,29 @@ In RISKEN, we have implemented a feature that generates alerts and sends notific
 
 #### Slack App
 - **Channel ID**: Specify the destination channel ID or channel name (however, if the channel name is used, notifications may not be sent if Slack changes it).
-- ![alert_notification.png](/img/risken/alert_notification_slackapp.png){style="width:600px"}
+- **Options**
+    - **Custom Message**: You can customize the notification message.
+        - To insert a mention, specify `<@user_name>` or `<!here>`, etc.
+        - If not entered, the default message is `@xxxx Alert occurred`.
+            - The `@xxxx` part changes according to the set Severity.
+                - `High`: @channel
+                - `Medium`: @here
+                - `Low`: No mention
+- ![alert_notification.png](/img/risken/alert_notification_slackapp.png){style="width:400px"}
 
 #### WebhookURL
 - **Webhook URL**: Specify the Webhook URL created with [Incomming Webhook](https://api.slack.com/messaging/webhooks)
     - Notifications will be sent with the channel/icon/name specified in Incomming Webhook
-- **Show Options**: Check to display option settings
-- **Custom Message**: Override the default notification message
-    - Default is `@xxxx Alert occurred`
-    - `@xxxx` changes depending on the severity set
-        - `High`: @channel
-        - `Medium`: @here
-        - `Low`: No mention
+- **Options**
+    - **Custom Message**: You can customize the notification message.
+        - To insert a mention, specify `<@user_name>` or `<!here>`, etc.
+        - If not entered, the default message is `@xxxx Alert occurred`.
+            - The `@xxxx` part changes according to the set Severity.
+                - `High`: @channel
+                - `Medium`: @here
+                - `Low`: No mention
 - **Channel** (Depricated): Specify the channel to receive the notification. Currently a deprecated setting.
-- ![alert_notification.png](/img/risken/alert_notification_webhook.png){style="width:600px"}
+- ![alert_notification.png](/img/risken/alert_notification_webhook.png){style="width:400px"}
 
 ### Setting up Alert Conditions
 1. Click on `Alert > Condition` on the left menu
