@@ -14,6 +14,7 @@ nav:
       - Finding: risken/finding.md
       - AttackFlow: risken/attack_flow.md
       - Alert: risken/alert.md
+      - Auto Triage: risken/triage.md
       - User: risken/user.md
       - AccessToken: risken/access_token.md
       - User Reservation: risken/user_reservation.md
