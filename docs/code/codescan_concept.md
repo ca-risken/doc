@@ -25,19 +25,29 @@ RISKEN へデータを取り込む際に、以下のメタデータを付加し�
 CodeScan で解析された結果をもとに以下の通りにスコアを設定します
 
 ```mermaid
-graph TD
-    A[Start] --> B{{Exists findings?}};
-    B -->|NO| C[Findings will not be registered]:::low;
-    B -->|YES| D{{What is finding severity?}};
-    D -->|ERROR| E[Score: 0.6]:::high;
-    D -->|WARNING| F[Score: 0.3]:::low;
-    D -->|INFO| G[Score: 0.1]:::low;
-    D -->|UNKNOWN| J[Score: 0.0]:::unknown;
-    classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
-    classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
-    classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
-    classDef unknown fill:#FFFFFF,stroke:#BDBDBD,stroke-width:4px;
+flowchart TD
+    A[Start] --> B{{Severity?}}
+    %% Other severity levels
+    B -->|INFO| C[Score: 0.1]:::low
+    B -->|WARNING| D[Score: 0.3]:::low
+    
+    %% ERROR branch with detailed logic
+    B -->|ERROR| F{{Impact/Likelihood?}}
+    F -->|Impact=HIGH & Likelihood=HIGH| G[Score: 0.8]:::high
+    F -->|Impact=HIGH & Likelihood!=HIGH| H[Score: 0.6]:::mid
+    F -->|Impact=MEDIUM| I[Score: 0.5]:::mid
+    F -->|Impact=LOW| J[Score: 0.4]:::low
+    F -->|default| K[Score: 0.6]:::mid
+
+    classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px
+    classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px
+    classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px
+    classDef unknown fill:#FFFFFF,stroke:#BDBDBD,stroke-width:4px
 ```
+
+- `Severity` はSemgrepのルールの重大度を表します。（ERRORの場合は重大度=高）
+- `Impact` は脆弱性が引き起こすダメージの程度を表します。
+- `Likelihood` は発見された問題を攻撃者が悪用する可能性を表します。
 
 ## 検知ルール
 
