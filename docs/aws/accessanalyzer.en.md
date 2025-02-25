@@ -37,10 +37,13 @@ graph TD
     B -->|YES| D{{isPublic?}};
     D -->|NO| E[Score: 0.3]:::low;
     D -->|YES| F{{Has permissions?}};
-    F -->|Readable| G[Score: 0.7]:::mid;
-    F -->|Writable| H[Score: 0.9]:::high;
-    F -->|Readable & Writable| I[Score: 1.0]:::high;
+    F -->|ControlledAction| G[Score: 0.7]:::mid;
+    F -->|UnsafeAction| H[Score: 0.9]:::high;
+    F -->|ControlledAction & UnsafeAction| I[Score: 1.0]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
     classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
 ```
+
+- *ControlledAction* : Reference actions such as `Get*`, `List*`, `Describe*`, and other permissions with low impact on resources
+- *UnsafeAction* : Update actions such as `Delete*`, `Update*`, and other permissions with high impact on resources

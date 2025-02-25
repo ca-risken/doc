@@ -37,10 +37,13 @@ graph TD
     B -->|YES| D{{isPublic?}};
     D -->|NO| E[Score: 0.3]:::low;
     D -->|YES| F{{Has permissions?}};
-    F -->|Readable| G[Score: 0.7]:::mid;
-    F -->|Writable| H[Score: 0.9]:::high;
-    F -->|Readable & Writable| I[Score: 1.0]:::high;
+    F -->|ControlledAction| G[Score: 0.7]:::mid;
+    F -->|UnsafeAction| H[Score: 0.9]:::high;
+    F -->|ControlledAction & UnsafeAction| I[Score: 1.0]:::high;
     classDef high fill:#FFFFFF,stroke:#C2185B,stroke-width:4px;
     classDef mid fill:#FFFFFF,stroke:#F57C00,stroke-width:4px;
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
 ```
+
+- *ControlledAction* : `Get*`, `List*`, `Describe*` などの参照系のアクション、その他リソースへの影響が小さい権限
+- *UnsafeAction* : `Delete*`, `Update*` などの更新系のアクション、その他リソースへの影響が大きい権限
