@@ -378,6 +378,7 @@ includedPermissions:
 - serviceusage.quotas.get
 - serviceusage.services.get
 - serviceusage.services.list
+- storage.buckets.get
 - storage.buckets.getIamPolicy
 - storage.buckets.list
 - storage.objects.getIamPolicy
