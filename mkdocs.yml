@@ -17,6 +17,7 @@ nav:
       - Auto Triage: risken/triage.md
       - User: risken/user.md
       - AccessToken: risken/access_token.md
+      - MCP Server: risken/mcp.md
       - User Reservation: risken/user_reservation.md
       - Report: risken/report.md
       - Well-Architected: risken/well_architected.md
