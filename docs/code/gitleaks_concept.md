@@ -76,6 +76,6 @@ RISKENでは以下のキータイプが `Critical` と判定されます
 - Shopify private app access token
 
 ???+ tip "全てのキータイプを確認するには？"
-    Gitleaksの[ルールセット :octicons-link-external-24:](https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml){ target="_blank" }を確認してください。
+    Gitleaksの[ルールセット :octicons-link-external-24:](https://github.com/gitleaks/gitleaks/blob/v8.8.6/config/gitleaks.toml){ target="_blank" }を確認してください。
 
     ルールセットの `Description` 項目がRISKEN上のキータイプと紐づきます

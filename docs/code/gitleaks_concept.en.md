@@ -74,4 +74,4 @@ The following key types are determined to be `Critical` in RISKEN:
 - Shopify private app access token
 
 ???+ tip "How to check all key types?"
-    Please check the Gitleaks [rule set :octicons-link-external-24:](https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml){ target="_blank" }
+    Please check the Gitleaks [rule set :octicons-link-external-24:](https://github.com/gitleaks/gitleaks/blob/v8.8.6/config/gitleaks.toml){ target="_blank" }
