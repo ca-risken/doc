@@ -64,3 +64,18 @@ graph TD
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
     classDef unknown fill:#FFFFFF,stroke:#BDBDBD,stroke-width:4px;
 ```
+
+## About Triage
+
+Scores calculated by the data source may be re-evaluated by RISKEN's [Auto-Triage feature](/risken/triage/).
+
+### Findings with CVE-ID
+
+In addition to CVSS scores, findings are re-evaluated based on whether a PoC has been published or whether there is a history of actual exploitation.
+
+### For Enterprise or Premium Tier
+
+System exposure and business impact are calculated based on [Attack exposure scores :octicons-link-external-24:](https://cloud.google.com/security-command-center/docs/attack-exposure-learn).
+
+- Findings are triaged from a system exposure perspective based on the `Attack Exposure` score
+- Findings are triaged from a business impact perspective based on the presence of `High/Medium Resources`
