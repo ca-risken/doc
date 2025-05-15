@@ -65,3 +65,18 @@ graph TD
     classDef low fill:#FFFFFF,stroke:#4DB6AC,stroke-width:4px;
     classDef unknown fill:#FFFFFF,stroke:#BDBDBD,stroke-width:4px;
 ```
+
+## トリアージについて
+
+RISKENの [Auto-Triage機能](/risken/triage/) によって、データソースで算出されたスコアが再評価される場合があります。
+
+### CVE-IDを持つFinding
+
+CVSSスコア以外に、PoCが公開されているか、実際に悪用された実績があるか等によってスコアが再評価されます。
+
+### Enterprise または Premium Tierの場合
+
+[Attack exposure scores :octicons-link-external-24:](https://cloud.google.com/security-command-center/docs/attack-exposure-learn) をもとに、システム露出とビジネス影響を算出します。
+
+- `Attack Exposure` のスコアによってシステム露出の観点でトリアージされます
+- `High/Medium Resources` の有無によってビジネス影響の観点でトリアージされます
