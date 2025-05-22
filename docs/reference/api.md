@@ -23,4 +23,5 @@ https://{your-site}/api/v1/{service}/{API endpoints}
 - [Diagnosis API](/reference/api_diagnosis/)
 - [Code API](/reference/api_code/)
 - [IAM API](/reference/api_iam/)
+- [Project API](/reference/api_project/)
 - [Report API](/reference/api_report/)
