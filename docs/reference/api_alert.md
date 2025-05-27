@@ -1,6 +1,6 @@
 # Alert API
 
-The Alert API allows to manage and control the alert data.
+The Alert API allows to manage and control the alert data, including alerts, alert conditions, alert rules, and notifications.
 
 ---
 
@@ -112,6 +112,8 @@ Status: 200 OK
 
 ## ListAlertHistory
 
+List alert history by the various conditions.
+
 ### Endpoint
 
 ```yaml
@@ -190,10 +192,12 @@ Status: 200 OK
 
 ## ListCondition
 
+List alert conditions by the various conditions.
+
 ### Endpoint
 
 ```yaml
-GET: /alert/list-alert-condition/
+GET: /alert/list-condition/
 ```
 
 ### Parameters
@@ -242,6 +246,8 @@ Status: 200 OK
 ---
 
 ## PutCondition
+
+Create or update an alert condition.
 
 ### Endpoint
 
@@ -297,6 +303,8 @@ Status: 200 OK
 ---
 
 ## DeleteCondition
+
+Delete an alert condition.
 
 ### Endpoint
 
@@ -397,6 +405,8 @@ Status: 200 OK
 
 ## PutRule
 
+Create or update an alert rule.
+
 ### Endpoint
 
 ```yaml
@@ -452,6 +462,8 @@ Status: 200 OK
 
 ## DeleteRule
 
+Delete an alert rule.
+
 ### Endpoint
 
 ```yaml
@@ -488,6 +500,8 @@ Status: 200 OK
 ---
 
 ## ListNotification
+
+List notifications by the various conditions.
 
 ### Endpoint
 
@@ -549,6 +563,8 @@ Status: 200 OK
 
 ## PutNotification
 
+Create or update a notification.
+
 ### Endpoint
 
 ```yaml
@@ -602,6 +618,8 @@ Status: 200 OK
 
 ## DeleteNotification
 
+Delete a notification.
+
 ### Endpoint
 
 ```yaml
@@ -638,6 +656,8 @@ Status: 200 OK
 ---
 
 ## ListConditionRule
+
+List alert condition rules by the various conditions.
 
 ### Endpoint
 
@@ -697,6 +717,8 @@ Status: 200 OK
 
 ## PutConditionRule
 
+Create or update a relationship between an alert condition and an alert rule.
+
 ### Endpoint
 
 ```yaml
@@ -746,6 +768,8 @@ Status: 200 OK
 
 ## DeleteConditionRule
 
+Delete a relationship between an alert condition and an alert rule.
+
 ### Endpoint
 
 ```yaml
@@ -783,6 +807,8 @@ Status: 200 OK
 ---
 
 ## ListConditionNotification
+
+List alert condition notifications by the various conditions.
 
 ### Endpoint
 
@@ -846,6 +872,8 @@ Status: 200 OK
 
 ## PutConditionNotification
 
+Create or update a relationship between an alert condition and a notification.
+
 ### Endpoint
 
 ```yaml
@@ -896,7 +924,9 @@ Status: 200 OK
 
 ---
 
-## DleteConditionNotification
+## DeleteConditionNotification
+
+Delete a relationship between an alert condition and a notification.
 
 ### Endpoint
 
@@ -936,6 +966,8 @@ Status: 200 OK
 
 ## AnalyzeAlert
 
+Analyze alerts based on alert conditions.
+
 ### Endpoint
 
 ```yaml
@@ -957,6 +989,240 @@ curl -XPOST \
     --header 'Content-Type: application/json' \
     --data '{"project_id": 1001, "alert_condition_id":[1001,1002]}' \
     'https://{your-site}/api/v1/alert/analyze-alert/'
+```
+
+### Response
+
+```yaml
+Status: 200 OK
+```
+
+```json
+{"data":{}}
+```
+---
+
+## PutAlert
+
+Create or update an alert.
+
+### Endpoint
+
+```yaml
+POST: /alert/put-alert/
+```
+
+### Parameters
+
+| Name           | Type   | In    | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `project_id` | number | body | yes | |
+| `alert.alert_id` | number | body | | |
+| `alert.alert_condition_id` | number | body | yes | |
+| `alert.description` | string | body | | |
+| `alert.severity` | string | body | | `high`, `medium`, `low` |
+| `alert.project_id` | number | body | yes | |
+| `alert.status` | number | body | | `1`: active, `2`: deactive |
+
+### Code sample
+
+```bash
+curl -XPOST \
+    --header 'Authorization: Bearer xxx' \
+    --header 'Content-Type: application/json' \
+    --data '{"project_id":1001, "alert":{"alert_condition_id":1001, "description":"test alert", "severity":"high", "project_id":1001, "status":1}}' \
+    'https://{your-site}/api/v1/alert/put-alert/'
+```
+
+### Response
+
+```yaml
+Status: 200 OK
+```
+
+```json
+{
+    "data": {
+        "alert": {
+            "alert_id": 1001,
+            "alert_condition_id": 1001,
+            "description": "test alert",
+            "severity": "high",
+            "project_id": 1001,
+            "status": 1,
+            "created_at": 1629337534,
+            "updated_at": 1629337534
+        }
+    }
+}
+```
+
+---
+
+## PutAlertFirstViewedAt
+
+Update the first viewed timestamp of an alert.
+
+### Endpoint
+
+```yaml
+POST: /alert/put-alert-first-viewed-at/
+```
+
+### Parameters
+
+| Name           | Type   | In    | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `project_id` | number | body | yes | |
+| `alert_id` | number | body | yes | |
+| `first_viewed_at` | number | body | | UNIX time |
+
+### Code sample
+
+```bash
+curl -XPOST \
+    --header 'Authorization: Bearer xxx' \
+    --header 'Content-Type: application/json' \
+    --data '{"project_id":1001, "alert_id":1001, "first_viewed_at":1629337534}' \
+    'https://{your-site}/api/v1/alert/put-alert-first-viewed-at/'
+```
+
+### Response
+
+```yaml
+Status: 200 OK
+```
+
+```json
+{"data":{}}
+```
+
+---
+
+## ListRelAlertFinding
+
+List relationships between alerts and findings.
+
+### Endpoint
+
+```yaml
+GET: /alert/list-rel_alert_finding/
+```
+
+### Parameters
+
+| Name           | Type   | In    | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `project_id` | number | query | yes | |
+| `alert_id` | number | query | | |
+| `finding_id` | number | query | | |
+| `from_at` | number | query | | UNIX time |
+| `to_at` | number | query | | UNIX time |
+
+### Code sample
+
+```bash
+curl -XGET \
+    --header 'Authorization: Bearer xxx' \
+    'https://{your-site}/api/v1/alert/list-rel_alert_finding/?project_id=1001&alert_id=1001'
+```
+
+### Response
+
+```yaml
+Status: 200 OK
+```
+
+```json
+{
+    "data": {
+        "rel_alert_finding": [
+            {
+                "alert_id": 1001,
+                "finding_id": 1001,
+                "project_id": 1001,
+                "created_at": 1629337534,
+                "updated_at": 1629337534
+            },
+            {
+                "alert_id": 1001,
+                "finding_id": 1002,
+                "project_id": 1001,
+                "created_at": 1629337534,
+                "updated_at": 1629337534
+            }
+        ]
+    }
+}
+```
+
+---
+
+## TestNotification
+
+Test a notification by sending a test message.
+
+### Endpoint
+
+```yaml
+POST: /alert/test-notification/
+```
+
+### Parameters
+
+| Name           | Type   | In    | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `project_id` | number | body | yes | |
+| `notification_id` | number | body | yes | |
+
+### Code sample
+
+```bash
+curl -XPOST \
+    --header 'Authorization: Bearer xxx' \
+    --header 'Content-Type: application/json' \
+    --data '{"project_id":1001, "notification_id":1001}' \
+    'https://{your-site}/api/v1/alert/test-notification/'
+```
+
+### Response
+
+```yaml
+Status: 200 OK
+```
+
+```json
+{"data":{}}
+```
+
+---
+
+## RequestProjectRoleNotification
+
+Request a notification for project role changes.
+
+### Endpoint
+
+```yaml
+POST: /alert/request-project-role-notification/
+```
+
+### Parameters
+
+| Name           | Type   | In    | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `project_id` | number | body | yes | |
+| `email` | string | body | yes | |
+| `role` | string | body | yes | `admin`, `operator`, `viewer` |
+
+### Code sample
+
+```bash
+curl -XPOST \
+    --header 'Authorization: Bearer xxx' \
+    --header 'Content-Type: application/json' \
+    --data '{"project_id":1001, "email":"user@example.com", "role":"admin"}' \
+    'https://{your-site}/api/v1/alert/request-project-role-notification/'
 ```
 
 ### Response
