@@ -132,6 +132,7 @@ nav:
       - Diagnosis API: reference/api_diagnosis.md
       - Code API: reference/api_code.md
       - IAM API: reference/api_iam.md
+      - Project API: reference/api_project.md
       - Report API: reference/api_report.md
 
   - Contact us:
