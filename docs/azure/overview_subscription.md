@@ -12,7 +12,7 @@
         - サブスクリプションIDの確認方法は [Microsoft Azureのドキュメント :octicons-link-external-24:](https://learn.microsoft.com/ja-jp/azure/azure-portal/get-subscription-tenant-id){ target="_blank" } を参照してください
     - **Verification Code ＊**: 検証コード
         - 新規作成の場合は`自動生成ボタン`でランダムな値を設定してください
-    - ![Subscription登録](/img/azure/role_allocation.png){style="width:350px"}
+    - ![Subscription登録](/img/azure/subscription_regist.png){style="width:350px"}
 
 4. 検証コードは後ほどあなたのSubscriptionに登録する必要があります
     - 必要に応じて :material-content-copy: （コピーボタン）をご利用ください

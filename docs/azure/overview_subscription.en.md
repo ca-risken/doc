@@ -12,7 +12,7 @@ This guide explains how to register your Azure Subscription.
         - For how to check your Subscription ID, refer to [Microsoft Azure Documentation :octicons-link-external-24:](https://learn.microsoft.com/en-us/azure/azure-portal/get-subscription-tenant-id){ target="_blank" }
     - **Verification Code ＊**: Verification code
         - If creating a new one, set a random value using the `Auto Generate button`.
-    - ![Subscription Registration](/img/azure/role_allocation_en.png){style="width:350px"}
+    - ![Subscription Registration](/img/azure/subscription_regist.png){style="width:350px"}
 
 4. The verification code must be registered to your Subscription later.
     - If needed, use :material-content-copy: (copy button).
