@@ -1,6 +1,6 @@
 # Prowler
 
-By enabling the Prowler data source, results analyzed by the open source [Prowler :octicons-link-external-24:](https://github.com/aquasecurity/prowler){ target="_blank" } will be collected.
+By enabling the Prowler data source, results analyzed by the open source [Prowler :octicons-link-external-24:](https://github.com/prowler-cloud/prowler){ target="_blank" } will be collected.
 
 ???+ help "What is Prowler?"
     - Prowler is an open-source [CSPM :octicons-link-external-24:](https://docs.prowler.com/projects/prowler-open-source/en/latest/){ target="_blank" } tool published by [Prowler, Inc :octicons-link-external-24:](https://prowler.com/){ target="_blank" }.
