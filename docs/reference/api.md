@@ -25,3 +25,4 @@ https://{your-site}/api/v1/{service}/{API endpoints}
 - [IAM API](/reference/api_iam/)
 - [Project API](/reference/api_project/)
 - [Report API](/reference/api_report/)
+- [AI API](/reference/api_ai/)
