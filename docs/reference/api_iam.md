@@ -1,43 +1,43 @@
 # IAM API
 
-IAM APIは、ユーザー、ロール、ポリシー、アクセストークンの管理を行うためのAPIです。
+The IAM API provides management capabilities for users, roles, policies, and access tokens.
 
-## 認証
+## Authentication
 
-すべてのIAM APIエンドポイントは、Bearerトークンによる認証が必要です。
+All IAM API endpoints require Bearer token authentication.
 
 ```bash
 --header 'Authorization: Bearer xxx'
 ```
 
-### 認可レベル
+### Authorization Levels
 
-IAM APIには以下の認可レベルがあります：
+The IAM API has the following authorization levels:
 
-- **一般アクセス**: 基本的なユーザー情報の取得・更新
-- **プロジェクト認可**: プロジェクトに関連するリソースの管理（`authzWithProject`）
-- **管理者専用**: システム管理者のみがアクセス可能（`authzOnlyAdmin`）
+- **General Access**: Basic user information retrieval and updates
+- **Project Authorization**: Management of project-related resources (`authzWithProject`)
+- **Admin Only**: Accessible only to system administrators (`authzOnlyAdmin`)
 
 ---
 
 ## ListUser
 
-ユーザー一覧を取得します。
+Retrieve a list of users.
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/list-user/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `user_id` | number | query | | ユーザーID |
-| `sub` | string | query | | ユーザーのサブジェクト |
+| `user_id` | number | query | | User ID |
+| `sub` | string | query | | User subject |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -45,7 +45,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/list-user/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -58,7 +58,7 @@ Status: 200 OK
       {
         "user_id": 1001,
         "sub": "user-sub-001",
-        "name": "ユーザー名",
+        "name": "User Name",
         "user_idp_key": "idp-key-001",
         "activated": true,
         "created_at": 1629337534,
@@ -73,21 +73,21 @@ Status: 200 OK
 
 ## GetUser
 
-ユーザー詳細情報を取得します。
+Retrieve detailed user information.
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/get-user/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `user_id` | number | query | yes | ユーザーID |
+| `user_id` | number | query | yes | User ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -95,7 +95,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/get-user/?user_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -107,7 +107,7 @@ Status: 200 OK
     "user": {
       "user_id": 1001,
       "sub": "user-sub-001",
-      "name": "ユーザー名",
+      "name": "User Name",
       "user_idp_key": "idp-key-001",
       "activated": true,
       "created_at": 1629337534,
@@ -121,21 +121,21 @@ Status: 200 OK
 
 ## IsAdmin
 
-ユーザーが管理者権限を持っているかを確認します。
+Check if a user has administrator privileges.
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/is-admin/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `user_id` | number | query | yes | ユーザーID |
+| `user_id` | number | query | yes | User ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -143,7 +143,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/is-admin/?user_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -161,32 +161,32 @@ Status: 200 OK
 
 ## PutUser
 
-ユーザー情報を作成または更新します。
+Create or update user information.
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/put-user/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `user.name` | string | body | yes | ユーザー名 |
-| `user.activated` | boolean | body | | アクティベーション状態 |
+| `user.name` | string | body | yes | User name |
+| `user.activated` | boolean | body | | Activation status |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
-    --data '{"user": {"name": "新しいユーザー名", "activated": true}}' \
+    --data '{"user": {"name": "New User Name", "activated": true}}' \
     'https://{your-site}/api/v1/iam/put-user/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -198,7 +198,7 @@ Status: 200 OK
     "user": {
       "user_id": 1001,
       "sub": "user-sub-001",
-      "name": "新しいユーザー名",
+      "name": "New User Name",
       "user_idp_key": "idp-key-001",
       "activated": true,
       "created_at": 1629337534,
@@ -212,23 +212,23 @@ Status: 200 OK
 
 ## ListRole
 
-ロール一覧を取得します。（プロジェクト認可が必要）
+Retrieve a list of roles. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/list-role/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | query | yes | プロジェクトID |
-| `role_id` | number | query | | ロールID |
-| `name` | string | query | | ロール名 |
+| `project_id` | number | query | yes | Project ID |
+| `role_id` | number | query | | Role ID |
+| `name` | string | query | | Role name |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -236,7 +236,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/list-role/?project_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -262,22 +262,22 @@ Status: 200 OK
 
 ## GetRole
 
-ロール詳細情報を取得します。（プロジェクト認可が必要）
+Retrieve detailed role information. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/get-role/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | query | yes | プロジェクトID |
-| `role_id` | number | query | yes | ロールID |
+| `project_id` | number | query | yes | Project ID |
+| `role_id` | number | query | yes | Role ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -285,7 +285,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/get-role/?project_id=1001&role_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -309,23 +309,23 @@ Status: 200 OK
 
 ## PutRole
 
-ロールを作成または更新します。（プロジェクト認可が必要）
+Create or update a role. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/put-role/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `role.name` | string | body | yes | ロール名 |
-| `role.project_id` | number | body | yes | プロジェクトID |
+| `project_id` | number | body | yes | Project ID |
+| `role.name` | string | body | yes | Role name |
+| `role.project_id` | number | body | yes | Project ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -335,7 +335,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/put-role/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -359,22 +359,22 @@ Status: 200 OK
 
 ## DeleteRole
 
-ロールを削除します。（プロジェクト認可が必要）
+Delete a role. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/delete-role/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `role_id` | number | body | yes | ロールID |
+| `project_id` | number | body | yes | Project ID |
+| `role_id` | number | body | yes | Role ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -384,7 +384,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/delete-role/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -398,23 +398,23 @@ Status: 200 OK
 
 ## AttachRole
 
-ユーザーにロールを割り当てます。（プロジェクト認可が必要）
+Assign a role to a user. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/attach-role/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `user_id` | number | body | yes | ユーザーID |
-| `role_id` | number | body | yes | ロールID |
+| `project_id` | number | body | yes | Project ID |
+| `user_id` | number | body | yes | User ID |
+| `role_id` | number | body | yes | Role ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -424,7 +424,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/attach-role/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -448,23 +448,23 @@ Status: 200 OK
 
 ## DetachRole
 
-ユーザーからロールを削除します。（プロジェクト認可が必要）
+Remove a role from a user. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/detach-role/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `user_id` | number | body | yes | ユーザーID |
-| `role_id` | number | body | yes | ロールID |
+| `project_id` | number | body | yes | Project ID |
+| `user_id` | number | body | yes | User ID |
+| `role_id` | number | body | yes | Role ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -474,7 +474,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/detach-role/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -488,23 +488,23 @@ Status: 200 OK
 
 ## ListPolicy
 
-ポリシー一覧を取得します。（プロジェクト認可が必要）
+Retrieve a list of policies. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/list-policy/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | query | yes | プロジェクトID |
-| `policy_id` | number | query | | ポリシーID |
-| `name` | string | query | | ポリシー名 |
+| `project_id` | number | query | yes | Project ID |
+| `policy_id` | number | query | | Policy ID |
+| `name` | string | query | | Policy name |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -512,7 +512,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/list-policy/?project_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -540,22 +540,22 @@ Status: 200 OK
 
 ## GetPolicy
 
-ポリシー詳細情報を取得します。（プロジェクト認可が必要）
+Retrieve detailed policy information. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/get-policy/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | query | yes | プロジェクトID |
-| `policy_id` | number | query | yes | ポリシーID |
+| `project_id` | number | query | yes | Project ID |
+| `policy_id` | number | query | yes | Policy ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -563,7 +563,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/get-policy/?project_id=1001&policy_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -589,25 +589,25 @@ Status: 200 OK
 
 ## PutPolicy
 
-ポリシーを作成または更新します。（プロジェクト認可が必要）
+Create or update a policy. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/put-policy/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `policy.name` | string | body | yes | ポリシー名 |
-| `policy.project_id` | number | body | yes | プロジェクトID |
-| `policy.action_ptn` | string | body | yes | アクションパターン |
-| `policy.resource_ptn` | string | body | yes | リソースパターン |
+| `project_id` | number | body | yes | Project ID |
+| `policy.name` | string | body | yes | Policy name |
+| `policy.project_id` | number | body | yes | Project ID |
+| `policy.action_ptn` | string | body | yes | Action pattern |
+| `policy.resource_ptn` | string | body | yes | Resource pattern |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -617,7 +617,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/put-policy/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -643,22 +643,22 @@ Status: 200 OK
 
 ## DeletePolicy
 
-ポリシーを削除します。（プロジェクト認可が必要）
+Delete a policy. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/delete-policy/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `policy_id` | number | body | yes | ポリシーID |
+| `project_id` | number | body | yes | Project ID |
+| `policy_id` | number | body | yes | Policy ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -668,7 +668,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/delete-policy/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -682,23 +682,23 @@ Status: 200 OK
 
 ## AttachPolicy
 
-ロールにポリシーを割り当てます。（プロジェクト認可が必要）
+Assign a policy to a role. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/attach-policy/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `role_id` | number | body | yes | ロールID |
-| `policy_id` | number | body | yes | ポリシーID |
+| `project_id` | number | body | yes | Project ID |
+| `role_id` | number | body | yes | Role ID |
+| `policy_id` | number | body | yes | Policy ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -708,7 +708,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/attach-policy/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -732,23 +732,23 @@ Status: 200 OK
 
 ## DetachPolicy
 
-ロールからポリシーを削除します。（プロジェクト認可が必要）
+Remove a policy from a role. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/detach-policy/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `role_id` | number | body | yes | ロールID |
-| `policy_id` | number | body | yes | ポリシーID |
+| `project_id` | number | body | yes | Project ID |
+| `role_id` | number | body | yes | Role ID |
+| `policy_id` | number | body | yes | Policy ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -758,7 +758,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/detach-policy/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -772,23 +772,23 @@ Status: 200 OK
 
 ## ListAccessToken
 
-アクセストークン一覧を取得します。（プロジェクト認可が必要）
+Retrieve a list of access tokens. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/list-access-token/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | query | yes | プロジェクトID |
-| `access_token_id` | number | query | | アクセストークンID |
-| `name` | string | query | | トークン名 |
+| `project_id` | number | query | yes | Project ID |
+| `access_token_id` | number | query | | Access token ID |
+| `name` | string | query | | Token name |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -796,7 +796,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/list-access-token/?project_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -809,7 +809,7 @@ Status: 200 OK
       {
         "access_token_id": 1001,
         "name": "api-token-001",
-        "description": "API用トークン",
+        "description": "API token",
         "project_id": 1001,
         "expired_at": 1660873534,
         "created_at": 1629337534,
@@ -824,35 +824,35 @@ Status: 200 OK
 
 ## GenerateAccessToken
 
-新しいアクセストークンを生成します。（プロジェクト認可が必要）
+Generate a new access token. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/generate-access-token/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `access_token.name` | string | body | yes | トークン名 |
-| `access_token.description` | string | body | | トークンの説明 |
-| `access_token.project_id` | number | body | yes | プロジェクトID |
-| `access_token.expired_at` | number | body | yes | 有効期限（Unix timestamp） |
+| `project_id` | number | body | yes | Project ID |
+| `access_token.name` | string | body | yes | Token name |
+| `access_token.description` | string | body | | Token description |
+| `access_token.project_id` | number | body | yes | Project ID |
+| `access_token.expired_at` | number | body | yes | Expiration time (Unix timestamp) |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
-    --data '{"project_id": 1001, "access_token": {"name": "new-api-token", "description": "新しいAPIトークン", "project_id": 1001, "expired_at": 1660873534}}' \
+    --data '{"project_id": 1001, "access_token": {"name": "new-api-token", "description": "New API token", "project_id": 1001, "expired_at": 1660873534}}' \
     'https://{your-site}/api/v1/iam/generate-access-token/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -871,35 +871,35 @@ Status: 200 OK
 
 ## UpdateAccessToken
 
-アクセストークンを更新します。（プロジェクト認可が必要）
+Update an access token. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/update-access-token/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `access_token.access_token_id` | number | body | yes | アクセストークンID |
-| `access_token.name` | string | body | | トークン名 |
-| `access_token.description` | string | body | | トークンの説明 |
-| `access_token.expired_at` | number | body | | 有効期限（Unix timestamp） |
+| `project_id` | number | body | yes | Project ID |
+| `access_token.access_token_id` | number | body | yes | Access token ID |
+| `access_token.name` | string | body | | Token name |
+| `access_token.description` | string | body | | Token description |
+| `access_token.expired_at` | number | body | | Expiration time (Unix timestamp) |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
-    --data '{"project_id": 1001, "access_token": {"access_token_id": 1002, "name": "updated-api-token", "description": "更新されたAPIトークン"}}' \
+    --data '{"project_id": 1001, "access_token": {"access_token_id": 1002, "name": "updated-api-token", "description": "Updated API token"}}' \
     'https://{your-site}/api/v1/iam/update-access-token/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -911,7 +911,7 @@ Status: 200 OK
     "access_token": {
       "access_token_id": 1002,
       "name": "updated-api-token",
-      "description": "更新されたAPIトークン",
+      "description": "Updated API token",
       "project_id": 1001,
       "expired_at": 1660873534,
       "created_at": 1629337534,
@@ -925,22 +925,22 @@ Status: 200 OK
 
 ## DeleteAccessToken
 
-アクセストークンを削除します。（プロジェクト認可が必要）
+Delete an access token. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/delete-access-token/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `access_token_id` | number | body | yes | アクセストークンID |
+| `project_id` | number | body | yes | Project ID |
+| `access_token_id` | number | body | yes | Access token ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -950,7 +950,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/delete-access-token/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -964,23 +964,23 @@ Status: 200 OK
 
 ## AttachAccessToken
 
-アクセストークンにロールを割り当てます。（プロジェクト認可が必要）
+Assign a role to an access token. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/attach-access-token/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `access_token_id` | number | body | yes | アクセストークンID |
-| `role_id` | number | body | yes | ロールID |
+| `project_id` | number | body | yes | Project ID |
+| `access_token_id` | number | body | yes | Access token ID |
+| `role_id` | number | body | yes | Role ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -990,7 +990,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/attach-access-token/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -1014,23 +1014,23 @@ Status: 200 OK
 
 ## DetachAccessToken
 
-アクセストークンからロールを削除します。（プロジェクト認可が必要）
+Remove a role from an access token. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/detach-access-token/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `access_token_id` | number | body | yes | アクセストークンID |
-| `role_id` | number | body | yes | ロールID |
+| `project_id` | number | body | yes | Project ID |
+| `access_token_id` | number | body | yes | Access token ID |
+| `role_id` | number | body | yes | Role ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -1040,7 +1040,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/detach-access-token/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -1054,22 +1054,22 @@ Status: 200 OK
 
 ## ListUserReserved
 
-予約ユーザー一覧を取得します。（プロジェクト認可が必要）
+Retrieve a list of reserved users. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 GET: /iam/list-user-reserved/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | query | yes | プロジェクトID |
-| `reserved_id` | number | query | | 予約ID |
+| `project_id` | number | query | yes | Project ID |
+| `reserved_id` | number | query | | Reserved ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XGET \
@@ -1077,7 +1077,7 @@ curl -XGET \
     'https://{your-site}/api/v1/iam/list-user-reserved/?project_id=1001'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -1104,24 +1104,24 @@ Status: 200 OK
 
 ## PutUserReserved
 
-予約ユーザーを作成または更新します。（プロジェクト認可が必要）
+Create or update a reserved user. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/put-user-reserved/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `user_reserved.user_idp_key` | string | body | yes | ユーザーIDPキー |
-| `user_reserved.role_id` | number | body | yes | ロールID |
-| `user_reserved.project_id` | number | body | yes | プロジェクトID |
+| `project_id` | number | body | yes | Project ID |
+| `user_reserved.user_idp_key` | string | body | yes | User IDP key |
+| `user_reserved.role_id` | number | body | yes | Role ID |
+| `user_reserved.project_id` | number | body | yes | Project ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -1131,7 +1131,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/put-user-reserved/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -1156,22 +1156,22 @@ Status: 200 OK
 
 ## DeleteUserReserved
 
-予約ユーザーを削除します。（プロジェクト認可が必要）
+Delete a reserved user. (Project authorization required)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /iam/delete-user-reserved/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `project_id` | number | body | yes | プロジェクトID |
-| `reserved_id` | number | body | yes | 予約ID |
+| `project_id` | number | body | yes | Project ID |
+| `reserved_id` | number | body | yes | Reserved ID |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -1181,7 +1181,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/iam/delete-user-reserved/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -1195,22 +1195,22 @@ Status: 200 OK
 
 ## UpdateUserAdmin
 
-ユーザーの管理者権限を更新します。（管理者専用）
+Update user administrator privileges. (Admin only)
 
-### エンドポイント
+### Endpoint
 
 ```yaml
 POST: /admin/update-user-admin/
 ```
 
-### パラメータ
+### Parameters
 
 | Name | Type | In | Required | Description |
 | ---- | ---- | -- | -------- | ----------- |
-| `user_id` | number | body | yes | ユーザーID |
-| `admin` | boolean | body | yes | 管理者権限の有無 |
+| `user_id` | number | body | yes | User ID |
+| `admin` | boolean | body | yes | Administrator privilege status |
 
-### コードサンプル
+### Code Sample
 
 ```bash
 curl -XPOST \
@@ -1220,7 +1220,7 @@ curl -XPOST \
     'https://{your-site}/api/v1/admin/update-user-admin/'
 ```
 
-### レスポンス
+### Response
 
 ```yaml
 Status: 200 OK
@@ -1232,7 +1232,7 @@ Status: 200 OK
     "user": {
       "user_id": 1001,
       "sub": "user-sub-001",
-      "name": "ユーザー名",
+      "name": "User Name",
       "user_idp_key": "idp-key-001",
       "activated": true,
       "admin": true,
