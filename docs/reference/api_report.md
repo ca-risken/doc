@@ -1,147 +1,114 @@
 # Report API
 
-レポートサービスのAPIエンドポイントについて説明します。
+The Report API allows to manage and control report data.
 
-## 認証
+---
 
-すべてのAPIエンドポイントはBearer認証が必要です。
+## GetReport
 
-```bash
-curl -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-     https://{your-site}/api/v1/report/get-report
+Get report data for a specific project.
+
+### Endpoint
+
+```yaml
+GET: /report/get-report/
 ```
 
-## エンドポイント
+### Parameters
 
-### GET /api/v1/report/get-report
+| Name | Type | In | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `project_id` | number | query | yes | |
 
-プロジェクトのレポートを取得します。プロジェクトの認可が必要です。
-
-#### パラメータ
-
-| 名前 | 型 | 場所 | 必須 | 説明 |
-|------|----|----|------|------|
-| Authorization | string | header | ✓ | Bearer認証トークン |
-| project_id | integer | query | ✓ | プロジェクトID |
-
-#### コードサンプル
+### Code sample
 
 ```bash
-curl -X GET "https://{your-site}/api/v1/report/get-report?project_id=1" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+curl -XGET \
+    --header 'Authorization: Bearer xxx' \
+    'https://{your-site}/api/v1/report/get-report/?project_id=1001'
 ```
 
-#### レスポンス
+### Response
 
-**ステータスコード: 200**
+```yaml
+Status: 200 OK
+```
 
 ```json
 {
-  "success": {
+  "data": {
     "report": {
-      "project_id": 1,
-      "findings": [],
-      "created_at": "2024-01-01T00:00:00Z"
+      "project_id": 1001,
+      "findings": [
+        {
+          "finding_id": 1001,
+          "description": "Security finding description",
+          "score": 8.5,
+          "status": "active"
+        }
+      ],
+      "created_at": 1629337534,
+      "updated_at": 1629337534
     }
   }
 }
 ```
 
-**ステータスコード: 400**
+---
 
-```json
-{
-  "error": "Bad Request"
-}
+## GetReportAll
+
+Get report data for all projects (Admin only).
+
+### Endpoint
+
+```yaml
+GET: /report/get-report-all/
 ```
 
-**ステータスコード: 401**
+### Parameters
 
-```json
-{
-  "error": "Unauthorized"
-}
-```
+| Name | Type | In | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
 
-**ステータスコード: 403**
-
-```json
-{
-  "error": "Forbidden"
-}
-```
-
-**ステータスコード: 500**
-
-```json
-{
-  "error": "InternalServerError"
-}
-```
-
-### GET /api/v1/report/get-report-all
-
-全プロジェクトのレポートを取得します。管理者権限が必要です。
-
-#### パラメータ
-
-| 名前 | 型 | 場所 | 必須 | 説明 |
-|------|----|----|------|------|
-| Authorization | string | header | ✓ | Bearer認証トークン（管理者権限） |
-
-#### コードサンプル
+### Code sample
 
 ```bash
-curl -X GET "https://{your-site}/api/v1/report/get-report-all" \
-  -H "Authorization: Bearer YOUR_ADMIN_ACCESS_TOKEN"
+curl -XGET \
+    --header 'Authorization: Bearer xxx' \
+    'https://{your-site}/api/v1/report/get-report-all/'
 ```
 
-#### レスポンス
+### Response
 
-**ステータスコード: 200**
+```yaml
+Status: 200 OK
+```
 
 ```json
 {
-  "success": {
+  "data": {
     "reports": [
       {
-        "project_id": 1,
+        "project_id": 1001,
+        "findings": [
+          {
+            "finding_id": 1001,
+            "description": "Security finding description",
+            "score": 8.5,
+            "status": "active"
+          }
+        ],
+        "created_at": 1629337534,
+        "updated_at": 1629337534
+      },
+      {
+        "project_id": 1002,
         "findings": [],
-        "created_at": "2024-01-01T00:00:00Z"
+        "created_at": 1629337534,
+        "updated_at": 1629337534
       }
     ]
   }
-}
-```
-
-**ステータスコード: 400**
-
-```json
-{
-  "error": "Bad Request"
-}
-```
-
-**ステータスコード: 401**
-
-```json
-{
-  "error": "Unauthorized"
-}
-```
-
-**ステータスコード: 403**
-
-```json
-{
-  "error": "Forbidden"
-}
-```
-
-**ステータスコード: 500**
-
-```json
-{
-  "error": "InternalServerError"
 }
 ```

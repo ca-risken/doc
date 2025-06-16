@@ -1,84 +1,47 @@
 # AI API
 
-AIサービスのAPIエンドポイントについて説明します。
+The AI API allows to manage and control AI chat functionality.
 
-## 認証
+---
 
-すべてのAPIエンドポイントはBearer認証が必要です。
+## ChatAI
 
-```bash
-curl -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-     -H "Content-Type: application/json" \
-     https://{your-site}/api/v1/ai/chat-ai
+Chat with AI for security-related questions and analysis.
+
+### Endpoint
+
+```yaml
+POST: /ai/chat-ai/
 ```
 
-## エンドポイント
+### Parameters
 
-### POST /api/v1/ai/chat-ai
+| Name | Type | In | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `project_id` | number | body | yes | |
+| `message` | string | body | yes | |
 
-AIとのチャット機能を提供します。
+### Code sample
 
-#### パラメータ
+```bash
+curl -XPOST \
+    --header 'Authorization: Bearer xxx' \
+    --header 'Content-Type: application/json' \
+    --data '{"project_id":1001, "message":"What are the security risks?"}' \
+    'https://{your-site}/api/v1/ai/chat-ai/'
+```
 
-| 名前 | 型 | 場所 | 必須 | 説明 |
-|------|----|----|------|------|
-| Authorization | string | header | ✓ | Bearer認証トークン |
-| Content-Type | string | header | ✓ | application/json |
+### Response
 
-#### リクエストボディ
+```yaml
+Status: 200 OK
+```
 
 ```json
 {
-  "message": "string",
-  "project_id": 1
-}
-```
-
-#### コードサンプル
-
-```bash
-curl -X POST https://{your-site}/api/v1/ai/chat-ai \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "セキュリティに関する質問です",
-    "project_id": 1
-  }'
-```
-
-#### レスポンス
-
-**ステータスコード: 200**
-
-```json
-{
-  "success": {
-    "response": "string",
-    "created_at": "2024-01-01T00:00:00Z"
+  "data": {
+    "response": "Based on the analysis...",
+    "created_at": 1629337534
   }
-}
-```
-
-**ステータスコード: 400**
-
-```json
-{
-  "error": "Bad Request"
-}
-```
-
-**ステータスコード: 401**
-
-```json
-{
-  "error": "Unauthorized"
-}
-```
-
-**ステータスコード: 500**
-
-```json
-{
-  "error": "InternalServerError"
 }
 ```
