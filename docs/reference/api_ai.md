@@ -20,7 +20,7 @@ POST: /ai/chat-ai/
 | -------------- | ------ | ----- | -------- | ----------- |
 | `question` | string | body | yes | AIに送信する質問（最小長1文字） |
 | `chat_history` | array | body | no | チャット履歴の配列 |
-| `chat_history[].role` | string | body | no | チャットの役割（CHAT_ROLE_USER, CHAT_ROLE_ASSISTANT, CHAT_ROLE_SYSTEM, CHAT_ROLE_UNSPECIFIED） |
+| `chat_history[].role` | int | body | no | チャットの役割（1=ユーザーからのメッセージ, 2=AIアシスタントからの応答, 3=システムメッセージ） |
 | `chat_history[].content` | string | body | no | チャットの内容 |
 
 ### Code sample
@@ -33,11 +33,11 @@ curl -XPOST \
       "question": "セキュリティリスクは何ですか？",
       "chat_history": [
         {
-          "role": "CHAT_ROLE_USER",
+          "role": 1,
           "content": "前回の脆弱性スキャン結果について教えてください"
         },
         {
-          "role": "CHAT_ROLE_ASSISTANT", 
+          "role": 2, 
           "content": "前回のスキャンでは3つの中程度の脆弱性が検出されました"
         }
       ]
