@@ -1,6 +1,6 @@
 # Prowler
 
-Prowlerデータソースを有効にすると、オープンソースの[Prowler :octicons-link-external-24:](https://github.com/aquasecurity/prowler){ target="_blank" } で解析された結果が収集されます
+Prowlerデータソースを有効にすると、オープンソースの[Prowler :octicons-link-external-24:](https://github.com/prowler-cloud/prowler){ target="_blank" } で解析された結果が収集されます
 
 ???+ help "Prowlerとは？"
     - Prowlerは[Prowler, Inc :octicons-link-external-24:](https://prowler.com/){ target="_blank" } が公開しているオープンソースの[CSPM :octicons-link-external-24:](https://docs.prowler.com/projects/prowler-open-source/en/latest/){ target="_blank" } ツールです
