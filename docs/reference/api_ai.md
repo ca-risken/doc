@@ -1,12 +1,12 @@
 # AI API
 
-The AI API allows to manage and control AI chat functionality.
+AIサービスのAPIを使用してチャット機能を管理および制御できます。
 
 ---
 
 ## ChatAI
 
-Chat with AI for security-related questions and analysis.
+セキュリティ関連の質問と分析のためのAIチャット機能。
 
 ### Endpoint
 
@@ -16,10 +16,10 @@ POST: /ai/chat-ai/
 
 ### Parameters
 
-| Name | Type | In | Required | Description |
+| Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
-| `project_id` | number | body | yes | |
-| `message` | string | body | yes | |
+| `project_id` | number | body | yes | プロジェクトID |
+| `message` | string | body | yes | AIに送信するメッセージ |
 
 ### Code sample
 
@@ -27,7 +27,7 @@ POST: /ai/chat-ai/
 curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
-    --data '{"project_id":1001, "message":"What are the security risks?"}' \
+    --data '{"project_id":1001, "message":"セキュリティリスクは何ですか？"}' \
     'https://{your-site}/api/v1/ai/chat-ai/'
 ```
 
@@ -40,7 +40,7 @@ Status: 200 OK
 ```json
 {
   "data": {
-    "response": "Based on the analysis...",
+    "response": "分析に基づくと...",
     "created_at": 1629337534
   }
 }

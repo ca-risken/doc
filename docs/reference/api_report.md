@@ -1,12 +1,12 @@
 # Report API
 
-The Report API allows to manage and control report data.
+レポートAPIを使用してレポートデータを管理および制御できます。
 
 ---
 
 ## GetReport
 
-Get report data for a specific project.
+特定のプロジェクトのレポートデータを取得します。
 
 ### Endpoint
 
@@ -16,9 +16,9 @@ GET: /report/get-report/
 
 ### Parameters
 
-| Name | Type | In | Required | Description |
+| Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
-| `project_id` | number | query | yes | |
+| `project_id` | number | query | yes | プロジェクトID |
 
 ### Code sample
 
@@ -42,7 +42,7 @@ Status: 200 OK
       "findings": [
         {
           "finding_id": 1001,
-          "description": "Security finding description",
+          "description": "セキュリティ検出項目の説明",
           "score": 8.5,
           "status": "active"
         }
@@ -58,7 +58,7 @@ Status: 200 OK
 
 ## GetReportAll
 
-Get report data for all projects (Admin only).
+全プロジェクトのレポートデータを取得します（管理者のみ）。
 
 ### Endpoint
 
@@ -68,7 +68,7 @@ GET: /report/get-report-all/
 
 ### Parameters
 
-| Name | Type | In | Required | Description |
+| Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
 
 ### Code sample
@@ -94,7 +94,7 @@ Status: 200 OK
         "findings": [
           {
             "finding_id": 1001,
-            "description": "Security finding description",
+            "description": "セキュリティ検出項目の説明",
             "score": 8.5,
             "status": "active"
           }
