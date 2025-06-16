@@ -1,12 +1,12 @@
 # AI API
 
-AIサービスのAPIを使用してチャット機能を管理および制御できます。
+Use the AI service API to manage and control chat functionality.
 
 ---
 
 ## ChatAI
 
-セキュリティ関連の質問と分析のためのAIチャット機能。
+AI chat functionality for security-related questions and analysis.
 
 ### Endpoint
 
@@ -18,10 +18,10 @@ POST: /ai/chat-ai/
 
 | Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
-| `question` | string | body | yes | AIに送信する質問（最小長1文字） |
-| `chat_history` | array | body | no | チャット履歴の配列 |
-| `chat_history[].role` | int | body | no | チャットの役割（1=ユーザーからのメッセージ, 2=AIアシスタントからの応答, 3=システムメッセージ） |
-| `chat_history[].content` | string | body | no | チャットの内容 |
+| `question` | string | body | yes | Question to send to AI (minimum length 1 character) |
+| `chat_history` | array | body | no | Array of chat history |
+| `chat_history[].role` | int | body | no | Chat role (1=User message, 2=AI assistant response, 3=System message) |
+| `chat_history[].content` | string | body | no | Chat content |
 
 ### Code sample
 
@@ -30,18 +30,18 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{
-      "question": "セキュリティリスクは何ですか？",
+      "question": "What are the security risks?",
       "chat_history": [
         {
           "role": 1,
-          "content": "前回の脆弱性スキャン結果について教えてください"
+          "content": "Please tell me about the previous vulnerability scan results"
         },
         {
           "role": 2, 
-          "content": "前回のスキャンでは3つの中程度の脆弱性が検出されました"
+          "content": "The previous scan detected 3 medium-severity vulnerabilities"
         }
       ]
-    }' \
+    }'\
     'https://{your-site}/api/v1/ai/chat-ai/'
 ```
 
@@ -54,7 +54,7 @@ Status: 200 OK
 ```json
 {
   "data": {
-    "answer": "検出されたセキュリティリスクに基づくと、SQLインジェクションの脆弱性が最も重要な問題です。データベースへの不正アクセスを防ぐため、パラメータ化クエリの実装を推奨します。"
+    "answer": "Based on the detected security risks, SQL injection vulnerability is the most critical issue. We recommend implementing parameterized queries to prevent unauthorized database access."
   }
 }
 ```

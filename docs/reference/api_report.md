@@ -1,12 +1,12 @@
 # Report API
 
-レポートAPIを使用してレポートデータを管理および制御できます。
+Use the Report API to manage and control report data.
 
 ---
 
 ## GetReport
 
-特定のプロジェクトのレポートデータを取得します。
+Retrieve report data for a specific project.
 
 ### Endpoint
 
@@ -18,11 +18,11 @@ GET: /report/get-report/
 
 | Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
-| `project_id` | number | query | yes | プロジェクトID（1以上の値） |
-| `from_date` | string | query | no | 開始日（YYYY-MM-DD形式、例：2023-01-01） |
-| `to_date` | string | query | no | 終了日（YYYY-MM-DD形式、例：2023-12-31） |
-| `score` | number | query | no | スコア閾値（0.0-1.0の範囲） |
-| `data_source` | array | query | no | データソースの配列（複数指定可能） |
+| `project_id` | number | query | yes | Project ID (value >= 1) |
+| `from_date` | string | query | no | Start date (YYYY-MM-DD format, e.g., 2023-01-01) |
+| `to_date` | string | query | no | End date (YYYY-MM-DD format, e.g., 2023-12-31) |
+| `score` | number | query | no | Score threshold (0.0-1.0 range) |
+| `data_source` | array | query | no | Array of data sources (multiple values allowed) |
 
 ### Code sample
 
@@ -44,7 +44,7 @@ Status: 200 OK
     "report_finding": [
       {
         "finding_id": 1001,
-        "description": "セキュリティ検出項目の説明",
+        "description": "Security finding description",
         "score": 0.8,
         "data_source": "aws",
         "resource_name": "example-resource",
@@ -54,7 +54,7 @@ Status: 200 OK
       },
       {
         "finding_id": 1002,
-        "description": "別のセキュリティ検出項目",
+        "description": "Another security finding",
         "score": 0.6,
         "data_source": "gcp",
         "resource_name": "another-resource",
@@ -71,7 +71,7 @@ Status: 200 OK
 
 ## GetReportAll
 
-全プロジェクトのレポートデータを取得します（管理者のみ）。
+Retrieve report data for all projects (administrators only).
 
 ### Endpoint
 
@@ -83,11 +83,11 @@ GET: /report/get-report-all/
 
 | Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
-| `project_id` | number | query | no | プロジェクトID（指定した場合、そのプロジェクトのみ） |
-| `from_date` | string | query | no | 開始日（YYYY-MM-DD形式、例：2023-01-01） |
-| `to_date` | string | query | no | 終了日（YYYY-MM-DD形式、例：2023-12-31） |
-| `score` | number | query | no | スコア閾値（0.0-1.0の範囲） |
-| `data_source` | array | query | no | データソースの配列（複数指定可能） |
+| `project_id` | number | query | no | Project ID (if specified, only that project) |
+| `from_date` | string | query | no | Start date (YYYY-MM-DD format, e.g., 2023-01-01) |
+| `to_date` | string | query | no | End date (YYYY-MM-DD format, e.g., 2023-12-31) |
+| `score` | number | query | no | Score threshold (0.0-1.0 range) |
+| `data_source` | array | query | no | Array of data sources (multiple values allowed) |
 
 ### Code sample
 
@@ -109,7 +109,7 @@ Status: 200 OK
     "report_finding": [
       {
         "finding_id": 1001,
-        "description": "セキュリティ検出項目の説明",
+        "description": "Security finding description",
         "score": 0.8,
         "data_source": "aws",
         "resource_name": "example-resource",
@@ -119,7 +119,7 @@ Status: 200 OK
       },
       {
         "finding_id": 2001,
-        "description": "別のプロジェクトの検出項目",
+        "description": "Finding from another project",
         "score": 0.9,
         "data_source": "osint",
         "resource_name": "domain-resource",
