@@ -72,3 +72,19 @@ RISKENへログインしたことのないユーザへ権限を割り当てる�
     - **Policy**: ロールに紐付けたいポリシーを選択します
     - ![ロールダイアログ](/img/risken/user_role_dialog.png){style="width:350px"}
 
+## ユーザーにOrganizationのロールを付与する {#_7}
+
+Organizationの権限は前述のプロジェクトとのIAMとは異なるOrganization IAMによって管理されます。
+
+![Organization IAM](/img/risken/organization_iam.png){style="width:400px"}
+
+操作方法はプロジェクトのIAMと同じであるため、詳細については前述のものを参照してください。
+
+### Organization IAMをプロジェクトへ継承する {#_8}
+
+Organizationに権限を持つユーザーは、そのOrganizationに所属するプロジェクトに対して同じ権限を持ちます（**継承**）。
+
+具体的には、Organizationのロールを持つユーザーはそのOrganizationに所属するプロジェクトにアクセスした時、Organizationのロールポリシーが適用されます。
+
+???+ note
+    Organizationのロールは、プロジェクトのロールの権限チェックの後に評価されます。

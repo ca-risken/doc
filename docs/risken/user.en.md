@@ -68,3 +68,21 @@ Before creating a role, you need to set the **policy** that is associated with t
     - **Name**: Role name
     - **Policy**: Select the policy you want to associate with the role.
     - ![Role dialog](/img/risken/user_role_dialog.png){style="width:350px"}
+
+
+## Granting Organization Roles to Users {#_7}
+
+Organization permissions are managed by Organization IAM, which is different from the IAM used for projects described earlier.
+
+![Organization IAM](/img/risken/organization_iam.png){style="width:400px"}
+
+The operation method is the same as project IAM, so please refer to the previous section for details.
+
+### Inheriting Organization IAM to Projects {#_8}
+
+Users with permissions in an Organization will have the same permissions for projects that belong to that Organization (**inheritance**).
+
+Specifically, when a user with an Organization role accesses a project belonging to that Organization, the Organization's role policy is applied.
+
+???+ note
+    Organization roles are evaluated after the project's role permissions are checked.
