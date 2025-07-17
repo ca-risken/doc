@@ -21,7 +21,6 @@ nav:
       - MCP Server: risken/mcp.md
       - User Reservation: risken/user_reservation.md
       - Report: risken/report.md
-
       - Well-Architected: risken/well_architected.md
 
   - AWS:

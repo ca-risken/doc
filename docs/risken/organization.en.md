@@ -1,7 +1,7 @@
 # Organization
 
 The Organization feature allows you to centrally manage risks and permissions scattered across multiple Projects. Organization permissions are managed by a separate "Organization IAM."
-For details about Organization IAM, please refer to [Organization IAM :octicons-link-external-24:](/en/risken/user/#_7){ target="_blank" }.
+For details about Organization IAM, please refer to [Organization IAM :octicons-link-external-24:](/en/risken/user/#managing-organization-access-permissions){ target="_blank" }.
 
 ## How to Use Organization
 
