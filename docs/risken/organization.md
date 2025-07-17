@@ -1,7 +1,7 @@
 # Organization
 
 Organizationは複数のProjectに散らばったリスク・権限を一元管理するための機能です。Organizationとは異なる「Organization IAM」によって権限管理されます。
-Organization IAMについては[Organization IAM :octicons-link-external-24:](/risken/user/#_7){ target="_blank" }をご確認ください。
+Organization IAMについては[Organization IAM :octicons-link-external-24:](/risken/user/#_8){ target="_blank" }をご確認ください。
 
 ## Organizationの使用方法
 
