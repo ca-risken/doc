@@ -12,14 +12,14 @@ Organization IAMについては[Organization IAM :octicons-link-external-24:](/r
 **Organization Modeに切り替える**
 
 1. Project Modeのとき、画面右上のプルダウンメニューより、 `Organization Mode` ボタンをクリックします
-    - ![OrganizationMode](/img/risken/organization_mode.png){style="width:300px"}
+    - ![OrganizationMode](/img/risken/organization_mode.png){style="width:400px"}
 2. 切り替えに成功すると上メニューの `P` 部分が `O` に切り替わり、Projectの招待画面に遷移します
     - ![プロジェクト招待画面](/img/risken/project_invitation.png){style="width:400px"}
 
 **Project Modeに切り替える**
 
 1. Organization Modeのとき、画面右上のプルダウンメニューより、 `Project Mode` ボタンをクリックします
-    - ![ProjectMode](/img/risken/project_mode.png){style="width:300px"}
+    - ![ProjectMode](/img/risken/project_mode.png){style="width:400px"}
 2. 作成が完了すると上メニューの `O` 部分が `P` に切り替わり、Projectのダッシュボード画面に遷移します
     - ![RISKENトップ](/img/risken/top.png){style="width:400px"}
 
@@ -28,7 +28,7 @@ Organization IAMについては[Organization IAM :octicons-link-external-24:](/r
 ### Organization新規作成
 
 1. 画面上メニューの `O` ボタンをクリックします
-    - ![Organizationボタン](/img/risken/organization_btn.png){style="width:300px"}
+    - ![Organizationボタン](/img/risken/organization_btn.png){style="width:400px"}
 2. Organizationダイアログで `CREATE NEW ORGANIZATION` ボタンをクリックします
     - ![Organizationダイアログ](/img/risken/organization_dialog.png){style="width:350px"}
 3. Organization作成画面でOrganizationの名前、説明(任意)を入力して `CREATE` をクリックします
