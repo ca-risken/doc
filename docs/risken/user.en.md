@@ -80,7 +80,7 @@ Organization permissions are managed by Organization IAM, which is different fro
 
 ![Organization IAM](/img/risken/organization_iam.png){style="width:400px"}
 
-The operation method is the same as project IAM, so please refer to [Managing Project Access Permissions](/en/risken/user/#_2) for details.
+The operation method is the same as project IAM, so please refer to [Managing Project Access Permissions](/en/risken/user/#managing-project-access-permissions) for details.
 
 ### Inheriting Organization IAM to Projects
 
