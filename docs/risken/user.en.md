@@ -8,7 +8,9 @@ For information on how to assign permissions to users who have never logged into
 
 ---
 
-## Inviting Users to a Project
+## Managing Project Access Permissions
+
+### Inviting Users to a Project
 
 1. Select the project you want from the menu on the screen using the `P` button.
 2. Click `IAM > User` from the left menu.
@@ -25,7 +27,7 @@ For information on how to assign permissions to users who have never logged into
 
 ---
 
-## Assigning Roles to Users
+### Assigning Roles to Users
 
 1. Click `IAM > User` from the left menu.
 2. The user screen displays users who are already participating in the project.
@@ -39,7 +41,7 @@ For information on how to assign permissions to users who have never logged into
 
 ---
 
-## Setting Detailed Roles
+### Setting Detailed Roles
 
 You can set detailed roles such as allowing only specific functions within the project.
 Before creating a role, you need to set the **policy** that is associated with the role.
@@ -48,7 +50,7 @@ Before creating a role, you need to set the **policy** that is associated with t
 - It is possible to set multiple policies for a single role.
 - The policy is described in [regular expressions :octicons-link-external-24:](https://github.com/google/re2/wiki/Syntax). 
 
-### Policy Setting
+#### Policy Setting
 
 1. Click `IAM > Policy` on the left menu.
 2. Click `NEW` on the right side of the screen.
@@ -60,7 +62,7 @@ Before creating a role, you need to set the **policy** that is associated with t
     - **Resource Pattern**: Resource name pattern
         - *Currently, detailed control using resource patterns is not supported. Therefore, please specify `.*` in the Resource field. (Control will be uniformly at the project level.)
 
-### Role Setting
+#### Role Setting
 
 1. Click `IAM > Role` on the left menu.
 2. Click `NEW` on the right side of the screen.
@@ -68,3 +70,23 @@ Before creating a role, you need to set the **policy** that is associated with t
     - **Name**: Role name
     - **Policy**: Select the policy you want to associate with the role.
     - ![Role dialog](/img/risken/user_role_dialog.png){style="width:350px"}
+
+
+## Managing Organization Access Permissions
+
+### Granting Organization Roles to Users
+
+Organization permissions are managed by Organization IAM, which is different from the IAM used for projects described earlier.
+
+![Organization IAM](/img/risken/organization_iam.png){style="width:400px"}
+
+The operation method is the same as project IAM, so please refer to [Managing Project Access Permissions](/en/risken/user/#managing-project-access-permissions) for details.
+
+### Inheriting Organization IAM to Projects
+
+Users with permissions in an Organization will have the same permissions for projects that belong to that Organization (**inheritance**).
+
+Specifically, when a user with an Organization role accesses a project belonging to that Organization, the Organization's role policy is applied.
+
+???+ note
+    Organization roles are evaluated after the project's role permissions are checked.

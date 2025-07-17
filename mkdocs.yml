@@ -11,6 +11,7 @@ nav:
           - Coverage: risken/overview_coverage.md
       - Quick Start: risken/quick_start.md
       - Project: risken/project.md
+      - Organization: risken/organization.md
       - Finding: risken/finding.md
       - AttackFlow: risken/attack_flow.md
       - Alert: risken/alert.md
