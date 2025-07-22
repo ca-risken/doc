@@ -135,6 +135,8 @@ nav:
       - IAM API: reference/api_iam.md
       - Project API: reference/api_project.md
       - Report API: reference/api_report.md
+      - AI API: reference/api_ai.md
+      - OSINT API: reference/api_osint.md
 
   - Contact us:
       - Contact: contact/contact.md
