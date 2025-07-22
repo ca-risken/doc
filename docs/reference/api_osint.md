@@ -1,20 +1,20 @@
 # OSINT API
 
-OSINT（Open Source Intelligence）APIは、オープンソースインテリジェンス情報の収集と管理を行うためのAPIです。
+The OSINT (Open Source Intelligence) API provides endpoints for collecting and managing open source intelligence information.
 
-## 認証
+## Authentication
 
-すべてのAPIエンドポイントはBearer認証が必要です。
+All API endpoints require Bearer authentication.
 
 ```
 Authorization: Bearer {your-token}
 ```
 
-## エンドポイント
+## Endpoints
 
 ### ListOsint
 
-OSINT設定の一覧を取得します。
+Retrieves a list of OSINT configurations.
 
 **Endpoint**
 
@@ -26,7 +26,7 @@ GET https://{your-site}/api/v1/osint/list-osint/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | query | Yes | プロジェクトID |
+| project_id | integer | query | Yes | Project ID |
 
 **Code sample**
 
@@ -61,7 +61,7 @@ Status: 200 OK
 
 ### GetOsint
 
-指定されたOSINT設定の詳細を取得します。
+Retrieves details of a specific OSINT configuration.
 
 **Endpoint**
 
@@ -73,8 +73,8 @@ GET https://{your-site}/api/v1/osint/get-osint/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | query | Yes | プロジェクトID |
-| osint_id | integer | query | Yes | OSINT設定ID |
+| project_id | integer | query | Yes | Project ID |
+| osint_id | integer | query | Yes | OSINT configuration ID |
 
 **Code sample**
 
@@ -107,7 +107,7 @@ Status: 200 OK
 
 ### PutOsint
 
-OSINT設定を登録または更新します。
+Creates or updates an OSINT configuration.
 
 **Endpoint**
 
@@ -119,12 +119,12 @@ POST https://{your-site}/api/v1/osint/put-osint/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| osint | object | body | Yes | OSINT設定オブジェクト |
-| osint.osint_id | integer | body | No | OSINT設定ID（更新時） |
-| osint.project_id | integer | body | Yes | プロジェクトID |
-| osint.resource_type | string | body | Yes | リソースタイプ |
-| osint.resource_name | string | body | Yes | リソース名 |
+| project_id | integer | body | Yes | Project ID |
+| osint | object | body | Yes | OSINT configuration object |
+| osint.osint_id | integer | body | No | OSINT configuration ID (for updates) |
+| osint.project_id | integer | body | Yes | Project ID |
+| osint.resource_type | string | body | Yes | Resource type |
+| osint.resource_name | string | body | Yes | Resource name |
 
 **Code sample**
 
@@ -166,7 +166,7 @@ Status: 200 OK
 
 ### DeleteOsint
 
-指定されたOSINT設定を削除します。
+Deletes a specific OSINT configuration.
 
 **Endpoint**
 
@@ -178,8 +178,8 @@ POST https://{your-site}/api/v1/osint/delete-osint/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| osint_id | integer | body | Yes | OSINT設定ID |
+| project_id | integer | body | Yes | Project ID |
+| osint_id | integer | body | Yes | OSINT configuration ID |
 
 **Code sample**
 
@@ -208,7 +208,7 @@ Status: 200 OK
 
 ### ListOsintDataSource
 
-OSINTデータソースの一覧を取得します。
+Retrieves a list of OSINT data sources.
 
 **Endpoint**
 
@@ -220,8 +220,8 @@ GET https://{your-site}/api/v1/osint/list-datasource/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | query | Yes | プロジェクトID |
-| name | string | query | No | データソース名（フィルタ） |
+| project_id | integer | query | Yes | Project ID |
+| name | string | query | No | Data source name (filter) |
 
 **Code sample**
 
@@ -256,7 +256,7 @@ Status: 200 OK
 
 ### PutOsintDataSource
 
-OSINTデータソースを登録または更新します。
+Creates or updates an OSINT data source.
 
 **Endpoint**
 
@@ -268,12 +268,12 @@ POST https://{your-site}/api/v1/osint/put-datasource/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| osint_data_source | object | body | Yes | OSINTデータソースオブジェクト |
-| osint_data_source.osint_data_source_id | integer | body | No | OSINTデータソースID（更新時） |
-| osint_data_source.name | string | body | Yes | データソース名 |
-| osint_data_source.description | string | body | Yes | データソース説明 |
-| osint_data_source.max_score | float | body | Yes | 最大スコア |
+| project_id | integer | body | Yes | Project ID |
+| osint_data_source | object | body | Yes | OSINT data source object |
+| osint_data_source.osint_data_source_id | integer | body | No | OSINT data source ID (for updates) |
+| osint_data_source.name | string | body | Yes | Data source name |
+| osint_data_source.description | string | body | Yes | Data source description |
+| osint_data_source.max_score | float | body | Yes | Maximum score |
 
 **Code sample**
 
@@ -315,7 +315,7 @@ Status: 200 OK
 
 ### DeleteOsintDataSource
 
-指定されたOSINTデータソースを削除します。
+Deletes a specific OSINT data source.
 
 **Endpoint**
 
@@ -327,8 +327,8 @@ POST https://{your-site}/api/v1/osint/delete-datasource/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| osint_data_source_id | integer | body | Yes | OSINTデータソースID |
+| project_id | integer | body | Yes | Project ID |
+| osint_data_source_id | integer | body | Yes | OSINT data source ID |
 
 **Code sample**
 
@@ -357,7 +357,7 @@ Status: 200 OK
 
 ### ListRelOsintDataSource
 
-OSINT関連データソースの一覧を取得します。
+Retrieves a list of OSINT related data sources.
 
 **Endpoint**
 
@@ -369,9 +369,9 @@ GET https://{your-site}/api/v1/osint/list-rel-datasource/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | query | Yes | プロジェクトID |
-| osint_id | integer | query | No | OSINT設定ID（フィルタ） |
-| osint_data_source_id | integer | query | No | OSINTデータソースID（フィルタ） |
+| project_id | integer | query | Yes | Project ID |
+| osint_id | integer | query | No | OSINT configuration ID (filter) |
+| osint_data_source_id | integer | query | No | OSINT data source ID (filter) |
 
 **Code sample**
 
@@ -409,7 +409,7 @@ Status: 200 OK
 
 ### PutRelOsintDataSource
 
-OSINT関連データソースを登録または更新します。
+Creates or updates an OSINT related data source.
 
 **Endpoint**
 
@@ -421,15 +421,15 @@ POST https://{your-site}/api/v1/osint/put-rel-datasource/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| rel_osint_data_source | object | body | Yes | OSINT関連データソースオブジェクト |
-| rel_osint_data_source.rel_osint_data_source_id | integer | body | No | OSINT関連データソースID（更新時） |
-| rel_osint_data_source.osint_data_source_id | integer | body | Yes | OSINTデータソースID |
-| rel_osint_data_source.osint_id | integer | body | Yes | OSINT設定ID |
-| rel_osint_data_source.project_id | integer | body | Yes | プロジェクトID |
-| rel_osint_data_source.status | integer | body | Yes | ステータス（0:UNKNOWN, 1:OK, 2:CONFIGURED, 3:IN_PROGRESS, 4:ERROR） |
-| rel_osint_data_source.status_detail | string | body | No | ステータス詳細 |
-| rel_osint_data_source.scan_at | integer | body | No | スキャン実行時刻 |
+| project_id | integer | body | Yes | Project ID |
+| rel_osint_data_source | object | body | Yes | OSINT related data source object |
+| rel_osint_data_source.rel_osint_data_source_id | integer | body | No | OSINT related data source ID (for updates) |
+| rel_osint_data_source.osint_data_source_id | integer | body | Yes | OSINT data source ID |
+| rel_osint_data_source.osint_id | integer | body | Yes | OSINT configuration ID |
+| rel_osint_data_source.project_id | integer | body | Yes | Project ID |
+| rel_osint_data_source.status | integer | body | Yes | Status (0:UNKNOWN, 1:OK, 2:CONFIGURED, 3:IN_PROGRESS, 4:ERROR) |
+| rel_osint_data_source.status_detail | string | body | No | Status detail |
+| rel_osint_data_source.scan_at | integer | body | No | Scan execution time |
 
 **Code sample**
 
@@ -475,7 +475,7 @@ Status: 200 OK
 
 ### DeleteRelOsintDataSource
 
-指定されたOSINT関連データソースを削除します。
+Deletes a specific OSINT related data source.
 
 **Endpoint**
 
@@ -487,8 +487,8 @@ POST https://{your-site}/api/v1/osint/delete-rel-datasource/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| rel_osint_data_source_id | integer | body | Yes | OSINT関連データソースID |
+| project_id | integer | body | Yes | Project ID |
+| rel_osint_data_source_id | integer | body | Yes | OSINT related data source ID |
 
 **Code sample**
 
@@ -517,7 +517,7 @@ Status: 200 OK
 
 ### ListOsintDetectWord
 
-OSINT検知ワードの一覧を取得します。
+Retrieves a list of OSINT detect words.
 
 **Endpoint**
 
@@ -529,8 +529,8 @@ GET https://{your-site}/api/v1/osint/list-word/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | query | Yes | プロジェクトID |
-| rel_osint_data_source_id | integer | query | No | OSINT関連データソースID（フィルタ） |
+| project_id | integer | query | Yes | Project ID |
+| rel_osint_data_source_id | integer | query | No | OSINT related data source ID (filter) |
 
 **Code sample**
 
@@ -565,7 +565,7 @@ Status: 200 OK
 
 ### PutOsintDetectWord
 
-OSINT検知ワードを登録または更新します。
+Creates or updates an OSINT detect word.
 
 **Endpoint**
 
@@ -577,12 +577,12 @@ POST https://{your-site}/api/v1/osint/put-word/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| osint_detect_word | object | body | Yes | OSINT検知ワードオブジェクト |
-| osint_detect_word.osint_detect_word_id | integer | body | No | OSINT検知ワードID（更新時） |
-| osint_detect_word.rel_osint_data_source_id | integer | body | Yes | OSINT関連データソースID |
-| osint_detect_word.word | string | body | Yes | 検知ワード |
-| osint_detect_word.project_id | integer | body | Yes | プロジェクトID |
+| project_id | integer | body | Yes | Project ID |
+| osint_detect_word | object | body | Yes | OSINT detect word object |
+| osint_detect_word.osint_detect_word_id | integer | body | No | OSINT detect word ID (for updates) |
+| osint_detect_word.rel_osint_data_source_id | integer | body | Yes | OSINT related data source ID |
+| osint_detect_word.word | string | body | Yes | Detect word |
+| osint_detect_word.project_id | integer | body | Yes | Project ID |
 
 **Code sample**
 
@@ -624,7 +624,7 @@ Status: 200 OK
 
 ### DeleteOsintDetectWord
 
-指定されたOSINT検知ワードを削除します。
+Deletes a specific OSINT detect word.
 
 **Endpoint**
 
@@ -636,8 +636,8 @@ POST https://{your-site}/api/v1/osint/delete-word/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| osint_detect_word_id | integer | body | Yes | OSINT検知ワードID |
+| project_id | integer | body | Yes | Project ID |
+| osint_detect_word_id | integer | body | Yes | OSINT detect word ID |
 
 **Code sample**
 
@@ -666,7 +666,7 @@ Status: 200 OK
 
 ### InvokeScan
 
-OSINTスキャンを実行します。
+Executes an OSINT scan.
 
 **Endpoint**
 
@@ -678,9 +678,9 @@ POST https://{your-site}/api/v1/osint/invoke-scan/
 
 | Name | Type | In | Required | Description |
 |------|------|----|---------|-----------| 
-| project_id | integer | body | Yes | プロジェクトID |
-| rel_osint_data_source_id | integer | body | Yes | OSINT関連データソースID |
-| scan_only | boolean | body | No | スキャンのみ実行するかどうか |
+| project_id | integer | body | Yes | Project ID |
+| rel_osint_data_source_id | integer | body | Yes | OSINT related data source ID |
+| scan_only | boolean | body | No | Whether to execute scan only |
 
 **Code sample**
 
