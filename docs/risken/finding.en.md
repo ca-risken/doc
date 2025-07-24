@@ -114,7 +114,7 @@ Fine-grained score adjustment is possible by resource name. You can increase the
 
 - Open `Finding > Settings`.
 - Click on `new` on the right side of the screen.
-- Set the target resource name (exact match) and score coefficient.
+- Set the target resource name (prefix match) and score coefficient.
     - If you set a coefficient greater than `1.0`, the actual score will be higher than the base score.
     - If you set a coefficient smaller than `1.0`, the actual score will be lower than the base score.
 
