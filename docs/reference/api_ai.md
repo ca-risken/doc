@@ -58,3 +58,52 @@ Status: 200 OK
   }
 }
 ```
+
+---
+
+## GenerateReport
+
+Generate AI-powered security reports based on findings data.
+
+### Endpoint
+
+```yaml
+POST: /ai/generate-report/
+```
+
+### Parameters
+
+| Name           | Type   | In    | Required | Description |
+| -------------- | ------ | ----- | -------- | ----------- |
+| `prompt` | string | body | yes | Prompt for report generation (minimum length 1 character) |
+| `project_id` | number | body | yes | Project ID (value >= 1) |
+| `name` | string | body | yes | Report name (minimum length 1 character) |
+
+### Code sample
+
+```bash
+curl -XPOST \
+    --header 'Authorization: Bearer xxx' \
+    --header 'Content-Type: application/json' \
+    --data '{
+      "prompt": "Generate a comprehensive security report for this month including vulnerability analysis and recommendations",
+      "project_id": 1001,
+      "name": "Monthly Security Report - January 2023"
+    }' \
+    'https://{your-site}/api/v1/ai/generate-report/'
+```
+
+### Response
+
+```yaml
+Status: 200 OK
+```
+
+```json
+{
+  "data": {
+    "report_id": 1001,
+    "status": "IN_PROGRESS"
+  }
+}
+```
