@@ -43,14 +43,14 @@ Status: 200 OK
   "data": {
     "report_finding": [
       {
-        "finding_id": 1001,
-        "description": "Security finding description",
-        "score": 0.8,
-        "data_source": "aws",
-        "resource_name": "example-resource",
+        "report_finding_id": 1001,
+        "report_date": "2023-01-01",
         "project_id": 1001,
-        "created_at": 1629337534,
-        "updated_at": 1629337534
+        "project_name": "Example Project",
+        "category": "Security",
+        "data_source": "aws",
+        "score": 0.8,
+        "count": 5
       }
     ]
   }
@@ -74,7 +74,7 @@ GET: /report/get-report/
 | Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
 | `project_id` | number | query | yes | Project ID (value >= 1) |
-| `report_id` | number | query | yes | Report ID |
+| `report_id` | number | query | yes | Report ID (value >= 1) |
 
 ### Code sample
 
@@ -95,10 +95,11 @@ Status: 200 OK
   "data": {
     "report": {
       "report_id": 1001,
-      "name": "Monthly Security Report",
       "project_id": 1001,
-      "from_date": "2023-01-01",
-      "to_date": "2023-01-31",
+      "name": "Monthly Security Report",
+      "type": "Markdown",
+      "status": "OK",
+      "content": "# Security Report\n\nThis is the report content...",
       "created_at": 1629337534,
       "updated_at": 1629337534
     }
@@ -123,17 +124,13 @@ GET: /report/list-report/
 | Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
 | `project_id` | number | query | yes | Project ID (value >= 1) |
-| `sort` | string | query | no | Sort field: `report_id`, `name`, `created_at`, `updated_at` |
-| `direction` | string | query | no | Sort direction: `asc`, `desc` |
-| `offset` | number | query | no | Offset for pagination |
-| `limit` | number | query | no | Limit for pagination |
 
 ### Code sample
 
 ```bash
 curl -XGET \
     --header 'Authorization: Bearer xxx' \
-    'https://{your-site}/api/v1/report/list-report/?project_id=1001&sort=created_at&direction=desc&limit=10'
+    'https://{your-site}/api/v1/report/list-report/?project_id=1001'
 ```
 
 ### Response
@@ -148,25 +145,25 @@ Status: 200 OK
     "report": [
       {
         "report_id": 1001,
-        "name": "Monthly Security Report",
         "project_id": 1001,
-        "from_date": "2023-01-01",
-        "to_date": "2023-01-31",
+        "name": "Monthly Security Report",
+        "type": "Markdown",
+        "status": "OK",
+        "content": "# Security Report\n\nThis is the report content...",
         "created_at": 1629337534,
         "updated_at": 1629337534
       },
       {
         "report_id": 1002,
-        "name": "Weekly Vulnerability Report",
         "project_id": 1001,
-        "from_date": "2023-01-01",
-        "to_date": "2023-01-07",
+        "name": "Weekly Vulnerability Report",
+        "type": "HTML",
+        "status": "IN_PROGRESS",
+        "content": "<h1>Vulnerability Report</h1><p>Report content...</p>",
         "created_at": 1629337534,
         "updated_at": 1629337534
       }
-    ],
-    "count": 2,
-    "total": 2
+    ]
   }
 }
 ```
@@ -187,10 +184,12 @@ POST: /report/put-report/
 
 | Name           | Type   | In    | Required | Description |
 | -------------- | ------ | ----- | -------- | ----------- |
-| `project_id` | number | body | yes | Project ID |
-| `report.name` | string | body | yes | Report name |
-| `report.from_date` | string | body | yes | Start date (YYYY-MM-DD format) |
-| `report.to_date` | string | body | yes | End date (YYYY-MM-DD format) |
+| `report_id` | number | body | no | Report ID (0 for new report) |
+| `project_id` | number | body | yes | Project ID (value >= 1) |
+| `name` | string | body | yes | Report name (max 200 characters) |
+| `type` | string | body | no | Report type: "Markdown" or "HTML" |
+| `status` | string | body | no | Report status: "OK", "IN_PROGRESS", or "ERROR" |
+| `content` | string | body | no | Report content |
 
 ### Code sample
 
@@ -199,12 +198,12 @@ curl -XPOST \
     --header 'Authorization: Bearer xxx' \
     --header 'Content-Type: application/json' \
     --data '{
+      "report_id": 0,
       "project_id": 1001,
-      "report": {
-        "name": "Monthly Security Report",
-        "from_date": "2023-01-01",
-        "to_date": "2023-01-31"
-      }
+      "name": "Monthly Security Report",
+      "type": "Markdown",
+      "status": "OK",
+      "content": "# Security Report\n\nThis is the report content..."
     }' \
     'https://{your-site}/api/v1/report/put-report/'
 ```
@@ -220,10 +219,11 @@ Status: 200 OK
   "data": {
     "report": {
       "report_id": 1001,
-      "name": "Monthly Security Report",
       "project_id": 1001,
-      "from_date": "2023-01-01",
-      "to_date": "2023-01-31",
+      "name": "Monthly Security Report",
+      "type": "Markdown",
+      "status": "OK",
+      "content": "# Security Report\n\nThis is the report content...",
       "created_at": 1629337534,
       "updated_at": 1629337534
     }
@@ -272,24 +272,24 @@ Status: 200 OK
   "data": {
     "report_finding": [
       {
-        "finding_id": 1001,
-        "description": "Security finding description",
-        "score": 0.8,
-        "data_source": "aws",
-        "resource_name": "example-resource",
+        "report_finding_id": 1001,
+        "report_date": "2023-01-01",
         "project_id": 1001,
-        "created_at": 1629337534,
-        "updated_at": 1629337534
+        "project_name": "Example Project",
+        "category": "Security",
+        "data_source": "aws",
+        "score": 0.8,
+        "count": 5
       },
       {
-        "finding_id": 2001,
-        "description": "Finding from another project",
-        "score": 0.9,
-        "data_source": "osint",
-        "resource_name": "domain-resource",
+        "report_finding_id": 2001,
+        "report_date": "2023-01-01",
         "project_id": 1002,
-        "created_at": 1629337534,
-        "updated_at": 1629337534
+        "project_name": "Another Project",
+        "category": "Vulnerability",
+        "data_source": "osint",
+        "score": 0.9,
+        "count": 3
       }
     ]
   }
