@@ -20,7 +20,7 @@ POST: /ai/chat-ai/
 | -------------- | ------ | ----- | -------- | ----------- |
 | `question` | string | body | yes | Question to send to AI (minimum length 1 character) |
 | `chat_history` | array | body | no | Array of chat history |
-| `chat_history[].role` | string | body | no | Chat role: "CHAT_ROLE_USER", "CHAT_ROLE_ASSISTANT", "CHAT_ROLE_SYSTEM" |
+| `chat_history[].role` | int | body | no | Chat role (1=User message, 2=AI assistant response, 3=System message) |
 | `chat_history[].content` | string | body | no | Chat content |
 
 ### Code sample
@@ -33,11 +33,11 @@ curl -XPOST \
       "question": "What are the security risks?",
       "chat_history": [
         {
-          "role": "CHAT_ROLE_USER",
+          "role": 1,
           "content": "Please tell me about the previous vulnerability scan results"
         },
         {
-          "role": "CHAT_ROLE_ASSISTANT", 
+          "role": 2, 
           "content": "The previous scan detected 3 medium-severity vulnerabilities"
         }
       ]
