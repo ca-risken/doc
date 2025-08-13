@@ -12,51 +12,66 @@ RISKENで収集したデータが日々どのような変化をしているか�
 
 ---
 
-## ダッシュボード
+## Report
 
-`Dashboard`画面ではプロジェクトの現在の状態を可視化します
+`Analysis > Report` 画面ではプロジェクトプロジェクトレポートを作成できます
 
-![ダッシュボード](/img/risken/report_dashboard.png){style="width:500px"}
+![レポート](/img/risken/report_report.png){style="width:1200px"}
 
-### Status
+### AIによるレポートの自動生成
 
-`Dashboard`画面の上部にステータスを表示します
+- `Analysis > Report` 画面に遷移します
+- リストの上部にある `NEW` ボタンをクリックします
 
-- `プロジェクトステータス`: プロジェクトの全体の状態を表示します
-    - `ステータス`の根拠は以下の3つから判定されます
-        1. アラートが残ってないか
-        2. 高スコアのFindingが放置されていないか
-        3. プロジェクトの設定状況が十分か
-- `アラート（赤）`: 現在有効なアラートが存在する場合はそのカウントが表示されます
-    - クリックすると`Alert > Alert`画面に遷移します
-- `Finding（青）`: 高スコア（0.8以上）のFindingが存在する場合はそのカウントが表示されます
-    - クリックすると`Finding > Finding`画面に遷移します
-- `設定状況（グレー）`: プロジェクトが十分な設定状況かを%で表示します
-    - クリックするとダイアログで設定状況の詳細を表示します
+![レポート](/img/risken/report_new.png){style="width:300px"}
+
+- ダイアログで以下の項目を入力してください
+    - **Name**: レポートの名前
+    - **DataSource**: レポート対象のデータソースを選択します
+    - **Base Score**: ベーススコアを設定します
+    - **Prompt**: レポートの内容を生成するためのプロンプトを入力します
+- 入力後、`CREATE AUTO` ボタンをクリックします
+
+![レポート](/img/risken/report_ai.png){style="width:500px"}
+
+- AIによる生成ではななく手動でレポートを作成する場合には `CREATE EMPTY REPORT` ボタンをクリックします
+
+### レポートを編集する
+
+- `Analysis > Report` 画面に遷移します
+- 対象のレポートを選択します
+- 右側のペインから `Edit` タブを選択するか、 `＞` ボタンをクリックします
+
+![レポート](/img/risken/report_edit.png){style="width:600px"}
+
+- レポートの内容を編集します
+- 編集後、`SAVE` ボタンをクリックします
+
+![レポート](/img/risken/report_edit_save.png){style="width:600px"}
+
+- `＜`, `＞` ボタンでプレビュー→編集を切り替えながら編集できます
 
 
-### Category
+### PDFダウンロードする
 
-`Dashboard`画面の中央部にカテゴリ毎（データソースなど）の問題箇所を表示します。
-クリックすると対象画面に遷移します。
+- `Analysis > Report` 画面に遷移します
+- 対象のレポートを選択します
+- 右側のペインから `DOWNLOAD PDF` ボタンをクリックします
 
-### Chart
-
-`Dashboard`画面の下部にグラフを表示します。
-Findingの登録状況や、現在発生しているアラートの重大度ごとの割合を表示します。
+![レポート](/img/risken/report_pdf.png){style="width:800px"}
 
 ---
 
 
-## レポート
+## Finding Summary
 
-`Report > ReportFinding` 画面ではFindingの統計データを表示／ダウンロードすることができます
+`Report > Finding Summary` 画面ではFindingの統計データを表示／ダウンロードすることができます
 
 ![レポートFinding](/img/risken/report_finding.png){style="width:500px"}
 
 ### ダウンロード
 
-- `Report > ReportFinding` 画面に遷移します
+- `Analysis > Finding Summary` 画面に遷移します
 - DataSource, Score, 期間, ファイル形式を選択してください
 - **DOWNLOAD REPORT(PROJECT)** をクリックすると現在選択中のプロジェクトの統計データがダウンロードできます
 

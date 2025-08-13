@@ -12,49 +12,64 @@ You can report how the data collected by RISKEN changes day by day.
 
 ---
 
-## Dashboard
+## Report
 
-The `Dashboard` screen visualizes the current status of the project.
+The `Analysis > Report` screen allows you to create project reports.
 
-![Dashboard](/img/risken/report_dashboard.png){style="width:500px"}
+![Report](/img/risken/report_report.png){style="width:1200px"}
 
-### Status
+### AI-powered Automatic Report Generation
 
-The status is displayed at the top of the `Dashboard` screen.
+- Navigate to the `Analysis > Report` screen
+- Click the `NEW` button at the top of the list
 
-- `Project Status`: Indicates the overall status of the project.
-    - `Status` is determined by the following three factors:
-        1. Are there any remaining alerts?
-        2. Are high-scoring findings (0.8 or higher) left unattended?
-        3. Is the project adequately configured?
-- `Alert (Red)`: If there are currently active alerts, the count is displayed.
-    - Clicking takes you to the `Alert > Alert` screen.
-- `Finding (Blue)`: If there are high-scoring (0.8 or higher) findings, the count is displayed.
-    - Clicking takes you to the `Finding > Finding` screen.
-- `Configuration Status (Gray)`: Indicates the degree to which the project is adequately configured in %.
-    - Clicking displays the details of the configuration status in a dialog.
+![Report](/img/risken/report_new.png){style="width:300px"}
 
-### Category
+- In the dialog, enter the following items:
+    - **Name**: Name of the report
+    - **DataSource**: Select the data source for the report
+    - **Base Score**: Set the base score
+    - **Prompt**: Enter a prompt to generate the report content
+- After entering the information, click the `CREATE AUTO` button
 
-The center of the `Dashboard` screen displays the problem areas for each category (such as data sources).
-Clicking takes you to the corresponding screen.
+![Report](/img/risken/report_ai.png){style="width:500px"}
 
-### Chart
+- To create a report manually instead of using AI generation, click the `CREATE EMPTY REPORT` button
 
-The bottom of the `Dashboard` screen displays a graph.
-It shows the registration status of findings and the percentage of current alerts by severity.
+### Editing Reports
+
+- Navigate to the `Analysis > Report` screen
+- Select the target report
+- Choose the `Edit` tab from the right panel or click the `>` button
+
+![Report](/img/risken/report_edit.png){style="width:600px"}
+
+- Edit the report content
+- After editing, click the `SAVE` button
+
+![Report](/img/risken/report_edit_save.png){style="width:600px"}
+
+- You can switch between preview and edit modes using the `<` and `>` buttons while editing
+
+### Downloading PDF
+
+- Navigate to the `Analysis > Report` screen
+- Select the target report
+- Click the `DOWNLOAD PDF` button from the right panel
+
+![Report](/img/risken/report_pdf.png){style="width:800px"}
 
 ---
 
-## Report
+## Finding Summary
 
-On the `Report > ReportFinding` screen, you can display/download statistical data for findings.
+On the `Analysis > Finding Summary` screen, you can display/download statistical data for findings.
 
 ![ReportFinding](/img/risken/report_finding.png){style="width:500px"}
 
 ### Download
 
-- Go to the `Report > ReportFinding` screen.
+- Go to the `Analysis > Finding Summary` screen.
 - Select DataSource, Score, Period, and File format.
 - Click **DOWNLOAD REPORT(PROJECT)** to download statistical data for the currently selected project.
 
