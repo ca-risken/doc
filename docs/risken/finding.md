@@ -128,3 +128,14 @@ Findingの詳細ダイアログより `NEW TAG`ボタンからFinidngにタグ�
     - `1.0` より大きい係数を設定した場合は実際のスコアはベーススコアよりも大きくなります
     - `1.0` より小さい係数を設定した場合は実際のスコアはベーススコアよりも小さくなります
 ![Finding設定](/img/risken/finding_setting.png){style="width:400px"}
+
+--- 
+
+## プロジェクト横断での管理
+
+RISKENでは[Organization機能](/risken/organization/)を使って、複数のプロジェクトのFindingを横断して管理することができます。プロジェクト同様に、左メニューより`Finding > Finding`をクリックして一覧を確認できます。
+
+プロジェクト内のFindingに対して行っていた検索、削除、ペンディング、一括更新などの操作をOrganizationに所属するプロジェクト全てのFindingを対象に行うことができます。
+
+
+![OrganizationでのFinding一覧](/img/risken/finding_organization.png)
