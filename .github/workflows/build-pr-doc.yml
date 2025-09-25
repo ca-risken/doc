@@ -1,0 +1,33 @@
+name: Build for PR Documentation
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-docs:
+    runs-on: codebuild-mimosa-doc-pr-runner-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+      
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install --upgrade awscli
+        aws --version
+        pip install mkdocs==1.5.3
+        pip install mkdocs-material==9.4.6
+        pip install mkdocs-static-i18n==0.56
+        pip install mkdocs-material-extensions==1.3
+        mkdocs --version
+        
+    - name: Build documentation
+      run: |
+        echo "Build doc started on $(date)"
+        mkdocs build --clean
