@@ -3,6 +3,8 @@ name: Build for PR Documentation
 on:
   pull_request:
     branches: [ master ]
+    types: [ opened, synchronize ]
+  workflow_dispatch:
 
 permissions:
   contents: read
