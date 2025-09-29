@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [ master ]
 
+permissions:
+  contents: read
+
 jobs:
   build-docs:
     runs-on: codebuild-mimosa-doc-pr-runner-${{ github.run_id }}-${{ github.run_attempt }}
