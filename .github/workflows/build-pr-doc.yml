@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build-docs:
+  build-pr-doc:
     runs-on: codebuild-mimosa-doc-pr-runner-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
     - name: Checkout code
