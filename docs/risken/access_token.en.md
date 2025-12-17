@@ -50,5 +50,15 @@ Below is an example of alert conditions to detect access token expiration:
     ＊However, even if you use the default conditions, you still need to set up the notification destination separately.
 
 ---
+
+## Issuing an Access Token (Organization)
+
+You can also issue access tokens for Organizations. The operation method is the same as for projects (for details, see [Issuing an Access Token](#issuing-an-access-token)). As with projects, please ensure that a token administrator exists.
+
+???+ warning
+    Note that the expiration detection feature described in [Detecting Access Token Expiration](#detecting-access-token-expiration) is not provided for Organization access tokens.
+
+---
+
 ## API Reference
 For more details on the API, please refer to the [API Reference](/reference/api/)
