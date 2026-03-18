@@ -103,7 +103,7 @@ When a project-level alert is triggered, if the Organization that the project be
 ### Setting Organization Notification Destinations
 
 1. [Switch to Organization Mode](/risken/organization/#organization_2)
-2. Click `Alert > Notification` in the left menu
+2. Click `Settings > Alert > Notification` in the left menu
     - ![org_alert_list.png](/img/risken/org_alert_list.png){style="width:600px"}
 3. Click `NEW` on the right side of the screen
 4. Fill in the required fields and click `REGIST`

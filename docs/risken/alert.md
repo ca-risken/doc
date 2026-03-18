@@ -107,7 +107,7 @@ Organization Modeでは、Organizationに所属する全プロジェクトのア
 ### Organization通知先の設定
 
 1. [Organization Modeに切り替え](/risken/organization/#organization_2)ます
-2. 左メニューの`Alert > Notification`をクリックしてください
+2. 左メニューの`Settings > Alert > Notification`をクリックしてください
     - ![org_alert_list.png](/img/risken/org_alert_list.png){style="width:600px"}
 3. 画面右側の`NEW`をクリックします
 4. 必要な項目を入力し`REGIST`をクリックします
