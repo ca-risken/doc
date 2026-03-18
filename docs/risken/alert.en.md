@@ -98,7 +98,7 @@ In Organization Mode, you can set up **Organization Notifications** that send al
 When a project-level alert is triggered, if the Organization that the project belongs to has notification destinations configured, Organization notifications will also be sent automatically.
 
 ???+ info "Difference from Project Alerts"
-    Project alerts consist of three elements: rules, conditions, and notifications. Organization notifications only support **configuring notification destinations**
+    Project alerts consist of three elements: rules, conditions, and notifications. For now, Organization notifications only support **configuring notification destinations**
 
 ### Setting Organization Notification Destinations
 
