@@ -91,6 +91,29 @@ In RISKEN, we have implemented a feature that generates alerts and sends notific
     - ![alert_condition.png](/img/risken/alert_condition.png){style="width:600px"}
 
 ---
+
+## Organization Alert Notification
+
+In Organization Mode, you can set up **Organization Notifications** that send alerts across all projects belonging to the Organization.
+When a project-level alert is triggered, if the Organization that the project belongs to has notification destinations configured, Organization notifications will also be sent automatically.
+
+???+ info "Difference from Project Alerts"
+    Project alerts consist of three elements: rules, conditions, and notifications. For now, Organization notifications only support **configuring notification destinations**
+
+### Setting Organization Notification Destinations
+
+1. [Switch to Organization Mode](/risken/organization/#organization_2)
+2. Click `Settings > Alert > Notification` in the left menu
+    - ![org_alert_list.png](/img/risken/org_alert_list.png){style="width:600px"}
+3. Click `NEW` on the right side of the screen
+4. Fill in the required fields and click `REGIST`
+    - **Name**: Notification name
+    - **Type**: Currently only supports `Slack`
+    - **Notification Language**: Set the notification language
+    - **Slack Setting**: You can choose between `SlackApp` or `WebhookURL` notifications
+    - For details on the settings, see [Setting up Notification Destination](#_5)
+
+---
 ## Alert Exclusion Settings
 
 After RISKEN performs regular data source scans, it evaluates and generates alerts based on registered alert conditions. However, you can exclude alerts from the evaluation target by performing the following operation.
