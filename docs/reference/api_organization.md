@@ -313,7 +313,12 @@ POST: /organization/put-organization-invitation/
 | ---- | ---- | -- | -------- | ----------- |
 | `organization_id` | number | body | yes | Organization ID |
 | `project_id` | number | body | yes | Project ID |
-| `status` | number | body | yes | Invitation status (`1`: PENDING, `2`: ACCEPTED, `3`: REJECTED) |
+| `status` | number | body | yes | Invitation status for the invitation record. Use `1` (`PENDING`) when sending an organization-side invitation. |
+
+???+ warning "Behavior note"
+    `PutOrganizationInvitation` only creates or updates the invitation record.
+    Setting `status` to `2` (`ACCEPTED`) or `3` (`REJECTED`) here does not create or remove the organization-project association.
+    Association changes are handled by the project-side reply flow or by `CreateProjectWithOrganization`.
 
 ### Code sample
 
@@ -350,6 +355,10 @@ Status: 200 OK
 ## DeleteOrganizationInvitation
 
 Delete an organization invitation. Requires organization-level authorization.
+
+???+ warning "Behavior note"
+    If the project is already associated with the organization, this endpoint also removes that organization-project association.
+    Use this endpoint only when you intend to delete the invitation and detach the project from the organization, not for invitation metadata cleanup alone.
 
 ### Endpoint
 
