@@ -27,3 +27,4 @@ https://{your-site}/api/v1/{service}/{API endpoints}
 - [Report API](/reference/api_report/)
 - [AI API](/reference/api_ai/)
 - [OSINT API](/reference/api_osint/)
+- [Organization API](/reference/api_organization/)

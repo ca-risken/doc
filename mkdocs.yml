@@ -137,6 +137,7 @@ nav:
       - Report API: reference/api_report.md
       - AI API: reference/api_ai.md
       - OSINT API: reference/api_osint.md
+      - Organization API: reference/api_organization.md
 
   - Contact us:
       - Contact: contact/contact.md
