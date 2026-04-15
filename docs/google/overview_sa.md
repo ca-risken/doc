@@ -58,6 +58,7 @@ title: "RISKEN"
 description: "RISKEN custom role."
 stage: "GA"
 includedPermissions:
+- apikeys.keys.list
 - cloudasset.assets.analyzeIamPolicy
 - cloudasset.assets.listResource
 - cloudasset.assets.searchAllIamPolicies
@@ -97,7 +98,6 @@ includedPermissions:
 - compute.globalAddresses.list
 - compute.globalForwardingRules.get
 - compute.globalForwardingRules.list
-- compute.globalForwardingRules.pscGet
 - compute.globalNetworkEndpointGroups.get
 - compute.globalNetworkEndpointGroups.list
 - compute.globalOperations.get
@@ -149,11 +149,7 @@ includedPermissions:
 - compute.machineImages.list
 - compute.machineTypes.get
 - compute.machineTypes.list
-- compute.maintenancePolicies.get
-- compute.maintenancePolicies.getIamPolicy
-- compute.maintenancePolicies.list
 - compute.networkEndpointGroups.get
-- compute.networkEndpointGroups.getIamPolicy
 - compute.networkEndpointGroups.list
 - compute.networks.get
 - compute.networks.getEffectiveFirewalls
@@ -205,7 +201,6 @@ includedPermissions:
 - compute.routes.get
 - compute.routes.list
 - compute.securityPolicies.get
-- compute.securityPolicies.getIamPolicy
 - compute.securityPolicies.list
 - compute.snapshots.get
 - compute.snapshots.getIamPolicy
@@ -349,7 +344,6 @@ includedPermissions:
 - networksecurity.locations.list
 - networksecurity.operations.list
 - networksecurity.serverTlsPolicies.list
-- networkservices.endpointConfigSelectors.list
 - networkservices.httpFilters.list
 - networkservices.httpfilters.list
 - networkservices.locations.list
