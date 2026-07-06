@@ -25,19 +25,14 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
     Organizationにインストールする場合は、対象OrganizationのOwner権限を持つユーザーでログインしてください。
 
-2. [インストールURL](#インストールurl)を開きます。
-
-    !!! note "スクリーンショット差し込み位置"
-        GitHub Appのインストール開始画面、またはインストール先アカウント選択画面のスクリーンショットを貼り付けてください。
-
-3. インストール先のOrganizationまたはUserを選択します。
+2. [インストールURL](#インストールurl)を開き、インストール先のOrganizationまたはUserを選択します。
 
     RISKENのGitHub設定で指定する`TargetResource`と同じOrganizationまたはUserを選択してください。
 
     !!! note "スクリーンショット差し込み位置"
-        インストール先のOrganizationまたはUserを選択する画面のスクリーンショットを貼り付けてください。
+        GitHub Appのインストール開始画面、またはインストール先のOrganization/Userを選択する画面のスクリーンショットを貼り付けてください。
 
-4. Repository accessを選択します。
+3. Repository accessを選択します。
 
     スキャン対象にしたいRepositoryだけを許可する場合は、`Only select repositories`を選択し、対象Repositoryを選択してください。
 
@@ -50,21 +45,21 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
     !!! note "スクリーンショット差し込み位置"
         Repository accessで`All repositories`または`Only select repositories`を選択する画面のスクリーンショットを貼り付けてください。
 
-5. GitHub Appに付与される権限を確認します。
+4. GitHub Appに付与される権限を確認します。
 
     表示される権限が、スキャン対象Repositoryの読み取りに必要な範囲であることを確認してください。
 
     !!! note "スクリーンショット差し込み位置"
         GitHub AppのPermissions確認画面のスクリーンショットを貼り付けてください。
 
-6. `Install`または`Update`をクリックします。
+5. `Install`または`Update`をクリックします。
 
     既にGitHub Appがインストール済みの場合は、Repository accessの更新画面として表示されることがあります。
 
     !!! note "スクリーンショット差し込み位置"
         `Install`または`Update`をクリックする直前の画面のスクリーンショットを貼り付けてください。
 
-7. RISKENでGitHub設定を作成します。
+6. RISKENでGitHub設定を作成します。
 
     `Code > GitHub`からGitHub設定を作成し、認証方式に`GitHub App`を選択してください。
 
@@ -73,7 +68,7 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
     !!! note "スクリーンショット差し込み位置"
         RISKENのGitHub設定画面で、認証方式に`GitHub App`を選択している画面のスクリーンショットを貼り付けてください。
 
-8. RISKENでGitHub連携を実行します。
+7. RISKENでGitHub連携を実行します。
 
     GitHub設定を作成したユーザーが、対象Repositoryを扱えるGitHubユーザーであることを確認するため、RISKEN画面上の`GitHub連携`を実行してください。
 
@@ -118,4 +113,3 @@ Organization ownerにインストールを依頼してください。
 
 GitHub AppのRepository accessに対象Repositoryが含まれていない可能性があります。
 GitHub側でRepository accessを更新した後、RISKEN側でRepository一覧を再同期してください。
-
