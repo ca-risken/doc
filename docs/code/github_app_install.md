@@ -29,8 +29,7 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
     RISKENのGitHub設定で指定する`TargetResource`と同じOrganizationまたはUserを選択してください。
 
-    !!! note "スクリーンショット差し込み位置"
-        GitHub Appのインストール開始画面、またはインストール先のOrganization/Userを選択する画面のスクリーンショットを貼り付けてください。
+    ![GitHub Appインストール先選択](/img/code/github_app_install_select_target.png){style="width:800px"}
 
 3. Repository accessを選択します。
 
@@ -42,22 +41,19 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
         `All repositories`を選択すると、将来作成されるRepositoryもGitHub Appのアクセス対象になります。
         最小権限で運用したい場合は、`Only select repositories`を選択してください。
 
-    !!! note "スクリーンショット差し込み位置"
-        Repository accessで`All repositories`または`Only select repositories`を選択する画面のスクリーンショットを貼り付けてください。
+    ![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:800px"}
 
 4. GitHub Appに付与される権限を確認します。
 
     表示される権限が、スキャン対象Repositoryの読み取りに必要な範囲であることを確認してください。
 
-    !!! note "スクリーンショット差し込み位置"
-        GitHub AppのPermissions確認画面のスクリーンショットを貼り付けてください。
+    ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:800px"}
 
 5. `Install`または`Update`をクリックします。
 
     既にGitHub Appがインストール済みの場合は、Repository accessの更新画面として表示されることがあります。
 
-    !!! note "スクリーンショット差し込み位置"
-        `Install`または`Update`をクリックする直前の画面のスクリーンショットを貼り付けてください。
+    ![GitHub Appインストール完了](/img/code/github_app_install_complete.png){style="width:800px"}
 
 6. RISKENでGitHub設定を作成します。
 
@@ -65,15 +61,13 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
     設定保存後、GitHub Appのインストール状態とRepository accessが確認されます。
 
-    !!! note "スクリーンショット差し込み位置"
-        RISKENのGitHub設定画面で、認証方式に`GitHub App`を選択している画面のスクリーンショットを貼り付けてください。
+    ![GitHub App認証方式のGitHub設定](/img/code/github_app_setting_github_app_mode.png){style="width:800px"}
 
 7. RISKENでGitHub連携を実行します。
 
     GitHub設定を作成したユーザーが、対象Repositoryを扱えるGitHubユーザーであることを確認するため、RISKEN画面上の`GitHub連携`を実行してください。
 
-    !!! note "スクリーンショット差し込み位置"
-        RISKENのGitHub設定画面で、`GitHub連携`を実行する画面と、連携完了後のステータス画面のスクリーンショットを貼り付けてください。
+    ![GitHub App GitHub連携ステータス](/img/code/github_app_integration_status.png){style="width:800px"}
 
 ## Repository accessを変更する
 
@@ -85,8 +79,7 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 4. `Only select repositories`の場合は、スキャン対象Repositoryを追加または削除します。
 5. RISKENのGitHub設定画面でRepository一覧を再同期します。
 
-!!! note "スクリーンショット差し込み位置"
-    GitHub側でInstalled GitHub Appsを開き、Repository accessを変更する画面のスクリーンショットを貼り付けてください。
+![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:800px"}
 
 ## トラブルシュート
 

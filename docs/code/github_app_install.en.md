@@ -29,8 +29,7 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     Select the same Organization or User that you will set as `TargetResource` in the RISKEN GitHub setting.
 
-    !!! note "Screenshot placeholder"
-        Add a screenshot of the GitHub App installation start page or the Organization/User account selection page.
+    ![GitHub App install target selection](/img/code/github_app_install_select_target.png){style="width:800px"}
 
 3. Select Repository access.
 
@@ -42,22 +41,19 @@ For personal repositories, the GitHub User should install the GitHub App on thei
         If you select `All repositories`, repositories created in the future will also be accessible by the GitHub App.
         Select `Only select repositories` if you want to operate with least privilege.
 
-    !!! note "Screenshot placeholder"
-        Add a screenshot of the Repository access selection page.
+    ![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:800px"}
 
 4. Review the permissions requested by the GitHub App.
 
     Confirm that the permissions are appropriate for reading the repositories to scan.
 
-    !!! note "Screenshot placeholder"
-        Add a screenshot of the permissions confirmation page.
+    ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:800px"}
 
 5. Click `Install` or `Update`.
 
     If the GitHub App has already been installed, GitHub may show the repository access update page.
 
-    !!! note "Screenshot placeholder"
-        Add a screenshot of the screen just before clicking `Install` or `Update`.
+    ![GitHub App installation complete](/img/code/github_app_install_complete.png){style="width:800px"}
 
 6. Create a GitHub setting in RISKEN.
 
@@ -65,15 +61,13 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     After saving the setting, RISKEN checks the GitHub App installation status and repository access.
 
-    !!! note "Screenshot placeholder"
-        Add a screenshot of the RISKEN GitHub setting page with `GitHub App` selected.
+    ![RISKEN GitHub setting with GitHub App authentication](/img/code/github_app_setting_github_app_mode.png){style="width:800px"}
 
 7. Run GitHub integration in RISKEN.
 
     Click `GitHub integration` in the RISKEN screen so that RISKEN can verify that the setting user can manage the target repositories on GitHub.
 
-    !!! note "Screenshot placeholder"
-        Add screenshots of the GitHub integration action and the completed status.
+    ![RISKEN GitHub App integration status](/img/code/github_app_integration_status.png){style="width:800px"}
 
 ## Changing repository access
 
@@ -85,8 +79,7 @@ To add or remove repositories to scan, update the Repository access settings on 
 4. If you select `Only select repositories`, add or remove the repositories to scan.
 5. Resync the repository list on the RISKEN GitHub setting page.
 
-!!! note "Screenshot placeholder"
-    Add a screenshot of the Installed GitHub Apps page and Repository access update screen.
+![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:800px"}
 
 ## Troubleshooting
 
