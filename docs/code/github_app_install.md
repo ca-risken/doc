@@ -29,6 +29,8 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
     RISKENのGitHub設定で指定する`TargetResource`と同じOrganizationまたはUserを選択してください。
 
+    選択後の画面上部に、インストール先として対象OrganizationまたはUserが表示されていることを確認してください。
+
     ![GitHub Appインストール先選択](/img/code/github_app_install_select_target.png){style="width:800px"}
 
 3. Repository accessを選択します。
@@ -49,25 +51,30 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
     ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:800px"}
 
-5. `Install`または`Update`をクリックします。
+5. `Install & Authorize`、`Install`、または`Update`をクリックします。
 
     既にGitHub Appがインストール済みの場合は、Repository accessの更新画面として表示されることがあります。
 
-    ![GitHub Appインストール完了](/img/code/github_app_install_complete.png){style="width:800px"}
+    上記のインストール画面では、Repository accessと権限を確認した後、`Install & Authorize`をクリックします。
 
 6. RISKENでGitHub設定を作成します。
 
     `Code > GitHub`からGitHub設定を作成し、認証方式に`GitHub App`を選択してください。
 
-    設定保存後、GitHub Appのインストール状態とRepository accessが確認されます。
+    `Type`と`TargetResource`がGitHub Appのインストール先と一致していることを確認し、`保存`をクリックします。
 
     ![GitHub App認証方式のGitHub設定](/img/code/github_app_setting_github_app_mode.png){style="width:800px"}
 
 7. RISKENでGitHub連携を実行します。
 
-    GitHub設定を作成したユーザーが、対象Repositoryを扱えるGitHubユーザーであることを確認するため、RISKEN画面上の`GitHub連携`を実行してください。
+    設定保存後、GitHub Appステータスが`GitHub連携待ち`になります。
+    GitHub設定を作成したユーザーが対象Repositoryを扱えるGitHubユーザーであることを確認するため、`GITHUB連携`をクリックしてください。
 
-    ![GitHub App GitHub連携ステータス](/img/code/github_app_integration_status.png){style="width:800px"}
+    ![GitHub AppのGitHub連携待ちステータス](/img/code/github_app_integration_status.png){style="width:800px"}
+
+    GitHubでの認証が完了してRISKENへ戻ると、GitHub設定一覧に`GitHub連携が完了しました。`と表示されます。
+
+    ![GitHub AppのGitHub連携完了](/img/code/github_app_integration_complete.png){style="width:800px"}
 
 ## Repository accessを変更する
 

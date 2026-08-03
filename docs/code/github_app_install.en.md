@@ -29,6 +29,8 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     Select the same Organization or User that you will set as `TargetResource` in the RISKEN GitHub setting.
 
+    On the next screen, confirm that the target Organization or User is displayed at the top as the installation target.
+
     ![GitHub App install target selection](/img/code/github_app_install_select_target.png){style="width:800px"}
 
 3. Select Repository access.
@@ -49,25 +51,30 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:800px"}
 
-5. Click `Install` or `Update`.
+5. Click `Install & Authorize`, `Install`, or `Update`.
 
     If the GitHub App has already been installed, GitHub may show the repository access update page.
 
-    ![GitHub App installation complete](/img/code/github_app_install_complete.png){style="width:800px"}
+    On the installation screen shown above, review the Repository access and permissions, then click `Install & Authorize`.
 
 6. Create a GitHub setting in RISKEN.
 
     Open `Code > GitHub`, create a GitHub setting, and select `GitHub App` as the authentication mode.
 
-    After saving the setting, RISKEN checks the GitHub App installation status and repository access.
+    Confirm that `Type` and `TargetResource` match the GitHub App installation target, then click `Save`.
 
     ![RISKEN GitHub setting with GitHub App authentication](/img/code/github_app_setting_github_app_mode.png){style="width:800px"}
 
 7. Run GitHub integration in RISKEN.
 
-    Click `GitHub integration` in the RISKEN screen so that RISKEN can verify that the setting user can manage the target repositories on GitHub.
+    After saving, the GitHub App status changes to `Waiting for GitHub integration`.
+    Click `GitHub integration` so RISKEN can verify that the user who created the setting can manage the target repositories on GitHub.
 
-    ![RISKEN GitHub App integration status](/img/code/github_app_integration_status.png){style="width:800px"}
+    ![RISKEN GitHub App waiting for GitHub integration](/img/code/github_app_integration_status.png){style="width:800px"}
+
+    After authentication on GitHub is complete and you return to RISKEN, the GitHub settings list displays a message confirming that GitHub integration is complete.
+
+    ![RISKEN GitHub App integration complete](/img/code/github_app_integration_complete.png){style="width:800px"}
 
 ## Changing repository access
 
