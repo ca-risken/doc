@@ -14,9 +14,6 @@ RISKEN Code用のGitHub Appは、以下のURLからインストールできま�
 
 GitHub Organizationにインストールする場合は、Organization ownerが実施してください。
 
-GitHubの仕様上、Repository adminがGitHub Appをインストールできるケースもありますが、Appが要求するOrganization権限やRepository administration権限によって制限されます。
-RISKENでOrganization配下のRepositoryを安定してスキャンする場合は、Organization ownerによるインストールを推奨します。
-
 個人アカウントのRepositoryをスキャンする場合は、そのGitHub Userが自身のアカウントにGitHub Appをインストールしてください。
 
 ## インストール手順

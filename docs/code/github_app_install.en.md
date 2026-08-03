@@ -14,9 +14,6 @@ Use the following URL to install the RISKEN Code GitHub App.
 
 For GitHub Organizations, the Organization owner should install the GitHub App.
 
-GitHub may allow repository admins to install a GitHub App in some cases, but this depends on the Organization permissions and repository administration permissions requested by the app.
-For stable scanning of repositories under an Organization, RISKEN recommends installation by an Organization owner.
-
 For personal repositories, the GitHub User should install the GitHub App on their own account.
 
 ## Installation steps
