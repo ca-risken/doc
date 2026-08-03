@@ -56,7 +56,11 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     ![GitHub App installation confirmation](/img/code/github_app_install_complete.png){style="width:800px"}
 
-6. Create a GitHub setting in RISKEN.
+## RISKEN configuration steps
+
+After installing the GitHub App, create a GitHub setting in RISKEN and run GitHub integration.
+
+1. Create a GitHub setting in RISKEN.
 
     Open `Code > GitHub`, create a GitHub setting, and select `GitHub App` as the authentication mode.
 
@@ -64,7 +68,7 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     ![RISKEN GitHub setting with GitHub App authentication](/img/code/github_app_setting_github_app_mode.png){style="width:800px"}
 
-7. Run GitHub integration in RISKEN.
+2. Run GitHub integration in RISKEN.
 
     After saving, the GitHub App status changes to `Waiting for GitHub integration`.
     Click `GitHub integration` so RISKEN can verify that the user who created the setting can manage the target repositories on GitHub.

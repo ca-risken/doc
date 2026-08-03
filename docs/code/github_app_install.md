@@ -56,7 +56,11 @@ GitHub Organizationにインストールする場合は、Organization ownerが�
 
     ![GitHub Appのインストール確認](/img/code/github_app_install_complete.png){style="width:800px"}
 
-6. RISKENでGitHub設定を作成します。
+## RISKENの設定手順
+
+GitHub Appのインストール完了後、RISKENでGitHub設定を作成し、GitHub連携を実行します。
+
+1. RISKENでGitHub設定を作成します。
 
     `データソース > ソースコード > GitHub`からGitHub設定を作成し、認証方式に`GitHub App`を選択してください。
 
@@ -64,7 +68,7 @@ GitHub Organizationにインストールする場合は、Organization ownerが�
 
     ![GitHub App認証方式のGitHub設定](/img/code/github_app_setting_github_app_mode.png){style="width:800px"}
 
-7. RISKENでGitHub連携を実行します。
+2. RISKENでGitHub連携を実行します。
 
     設定保存後、GitHub Appステータスが`GitHub連携待ち`になります。
     GitHub設定を作成したユーザーが対象Repositoryを扱えるGitHubユーザーであることを確認するため、`GITHUB連携`をクリックしてください。
