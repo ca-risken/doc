@@ -28,7 +28,7 @@ GitHub Organizationにインストールする場合は、Organization ownerが�
 
     選択後の画面上部に、インストール先として対象OrganizationまたはUserが表示されていることを確認してください。
 
-    ![GitHub Appインストール先選択](/img/code/github_app_install_select_target.png){style="width:800px"}
+    ![GitHub Appインストール先選択](/img/code/github_app_install_select_target.png){style="width:600px"}
 
 3. Repository accessを選択します。
 
@@ -40,13 +40,13 @@ GitHub Organizationにインストールする場合は、Organization ownerが�
         `All repositories`を選択すると、将来作成されるRepositoryもGitHub Appのアクセス対象になります。
         最小権限で運用したい場合は、`Only select repositories`を選択してください。
 
-    ![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:800px"}
+    ![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:600px"}
 
 4. GitHub Appに付与される権限を確認します。
 
     表示される権限が、スキャン対象Repositoryの読み取りに必要な範囲であることを確認してください。
 
-    ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:800px"}
+    ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:600px"}
 
 5. `Install & Authorize`、`Install`、または`Update`をクリックします。
 
@@ -54,7 +54,7 @@ GitHub Organizationにインストールする場合は、Organization ownerが�
 
     インストールを完了する前に、インストール先、Repository access、権限を確認し、画面に表示されるインストールボタンをクリックします。
 
-    ![GitHub Appのインストール確認](/img/code/github_app_install_complete.png){style="width:800px"}
+    ![GitHub Appのインストール確認](/img/code/github_app_install_complete.png){style="width:600px"}
 
 ## RISKENの設定手順
 
@@ -66,18 +66,18 @@ GitHub Appのインストール完了後、RISKENでGitHub設定を作成し、G
 
     `Type`と`TargetResource`がGitHub Appのインストール先と一致していることを確認し、`保存`をクリックします。
 
-    ![GitHub App認証方式のGitHub設定](/img/code/github_app_setting_github_app_mode.png){style="width:800px"}
+    ![GitHub App認証方式のGitHub設定](/img/code/github_app_setting_github_app_mode.png){style="width:600px"}
 
 2. RISKENでGitHub連携を実行します。
 
     設定保存後、GitHub Appステータスが`GitHub連携待ち`になります。
     GitHub設定を作成したユーザーが対象Repositoryを扱えるGitHubユーザーであることを確認するため、`GITHUB連携`をクリックしてください。
 
-    ![GitHub AppのGitHub連携待ちステータス](/img/code/github_app_integration_status.png){style="width:800px"}
+    ![GitHub AppのGitHub連携待ちステータス](/img/code/github_app_integration_status.png){style="width:600px"}
 
     GitHubでの認証が完了してRISKENへ戻ると、GitHub設定一覧に`GitHub連携が完了しました。`と表示されます。
 
-    ![GitHub AppのGitHub連携完了](/img/code/github_app_integration_complete.png){style="width:800px"}
+    ![GitHub AppのGitHub連携完了](/img/code/github_app_integration_complete.png){style="width:600px"}
 
 ## Repository accessを変更する
 
@@ -89,7 +89,7 @@ GitHub Appのインストール完了後、RISKENでGitHub設定を作成し、G
 4. `Only select repositories`の場合は、スキャン対象Repositoryを追加または削除します。
 5. RISKENのGitHub設定画面でRepository一覧を再同期します。
 
-![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:800px"}
+![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:600px"}
 
 ## トラブルシュート
 
