@@ -55,7 +55,9 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     If the GitHub App has already been installed, GitHub may show the repository access update page.
 
-    On the installation screen shown above, review the Repository access and permissions, then click `Install & Authorize`.
+    Before completing the installation, review the installation target, Repository access, and permissions, then click `Install & Authorize`.
+
+    ![GitHub App installation confirmation](/img/code/github_app_install_complete.png){style="width:800px"}
 
 6. Create a GitHub setting in RISKEN.
 

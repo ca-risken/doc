@@ -55,7 +55,9 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
     既にGitHub Appがインストール済みの場合は、Repository accessの更新画面として表示されることがあります。
 
-    上記のインストール画面では、Repository accessと権限を確認した後、`Install & Authorize`をクリックします。
+    インストールを完了する前に、インストール先、Repository access、権限を確認し、`Install & Authorize`をクリックします。
+
+    ![GitHub Appのインストール確認](/img/code/github_app_install_complete.png){style="width:800px"}
 
 6. RISKENでGitHub設定を作成します。
 
