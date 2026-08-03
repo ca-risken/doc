@@ -1,6 +1,6 @@
 # GitHub Appのインストール
 
-GitHub App認証でCodeスキャンを行う場合、スキャン対象のGitHub OrganizationまたはUserにRISKENのGitHub Appをインストールし、スキャン対象Repositoryへのアクセスを許可する必要があります。
+GitHub App認証でソースコードのスキャンを行う場合、スキャン対象のGitHub OrganizationまたはUserにRISKENのGitHub Appをインストールし、スキャン対象Repositoryへのアクセスを許可する必要があります。
 
 RISKENのGitHub設定を作成する前に、GitHub側でAppのインストールとRepository accessの設定を完了してください。
 
