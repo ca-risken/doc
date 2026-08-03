@@ -50,7 +50,7 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:600px"}
 
-5. Click `Install & Authorize`, `Install`, or `Update`.
+5. Click `Install`.
 
     If the GitHub App has already been installed, GitHub may show the repository access update page.
 

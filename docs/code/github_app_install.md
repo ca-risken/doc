@@ -50,7 +50,7 @@ GitHub Organizationにインストールする場合は、Organization ownerが�
 
     ![GitHub App Permissions](/img/code/github_app_install_permissions.png){style="width:600px"}
 
-5. `Install & Authorize`、`Install`、または`Update`をクリックします。
+5. `Install`をクリックします。
 
     既にGitHub Appがインストール済みの場合は、Repository accessの更新画面として表示されることがあります。
 
