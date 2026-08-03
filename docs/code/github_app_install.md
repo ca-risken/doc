@@ -25,7 +25,7 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
     Organizationにインストールする場合は、対象OrganizationのOwner権限を持つユーザーでログインしてください。
 
-2. [インストールURL](#インストールurl)を開き、インストール先のOrganizationまたはUserを選択します。
+2. [インストールURL](#インストールurl)または、`設定 > GitHub App`を開き、インストール先のOrganizationまたはUserを選択します。
 
     RISKENのGitHub設定で指定する`TargetResource`と同じOrganizationまたはUserを選択してください。
 
@@ -61,7 +61,7 @@ RISKENでOrganization配下のRepositoryを安定してスキャンする場合�
 
 6. RISKENでGitHub設定を作成します。
 
-    `Code > GitHub`からGitHub設定を作成し、認証方式に`GitHub App`を選択してください。
+    `データソース > ソースコード > GitHub`からGitHub設定を作成し、認証方式に`GitHub App`を選択してください。
 
     `Type`と`TargetResource`がGitHub Appのインストール先と一致していることを確認し、`保存`をクリックします。
 
