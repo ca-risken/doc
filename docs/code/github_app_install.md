@@ -66,7 +66,7 @@ GitHub Organizationにインストールする場合は、Organization ownerが�
 2. `GitHub Apps`または`Installed GitHub Apps`から`RISKEN Code App`を開きます。
 3. `Repository access`で`All repositories`または`Only select repositories`を選択します。
 4. `Only select repositories`の場合は、スキャン対象Repositoryを追加または削除します。
-5. [GitHub Appを使ったスキャン設定](github_app_scan_setting.md)を参照し、RISKENのGitHub設定画面でRepository一覧を再同期します。
+5. RISKENのGitHub設定画面でRepository一覧を再同期します。
 
 ![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:600px"}
 

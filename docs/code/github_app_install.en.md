@@ -66,7 +66,7 @@ To add or remove repositories to scan, update the Repository access settings on 
 2. Open `RISKEN Code App` from `GitHub Apps` or `Installed GitHub Apps`.
 3. Select `All repositories` or `Only select repositories` in `Repository access`.
 4. If you select `Only select repositories`, add or remove the repositories to scan.
-5. See [Configuring scans with the GitHub App](github_app_scan_setting.md), then resync the repository list on the RISKEN GitHub setting page.
+5. Resync the repository list on the RISKEN GitHub setting page.
 
 ![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:600px"}
 
