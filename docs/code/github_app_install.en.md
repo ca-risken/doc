@@ -4,6 +4,8 @@ To scan repositories with GitHub App authentication, install the RISKEN GitHub A
 
 Complete the GitHub App installation and repository access configuration before creating the GitHub setting in RISKEN.
 
+For the steps in RISKEN after installation, see [Configuring scans with the GitHub App](github_app_scan_setting.md).
+
 ## Installation URL
 
 Use the following URL to install the RISKEN Code GitHub App.
@@ -56,29 +58,6 @@ For personal repositories, the GitHub User should install the GitHub App on thei
 
     ![GitHub App installation confirmation](/img/code/github_app_install_complete.png){style="width:600px"}
 
-## RISKEN configuration steps
-
-After installing the GitHub App, create a GitHub setting in RISKEN and run GitHub integration.
-
-1. Create a GitHub setting in RISKEN.
-
-    Open `Code > GitHub`, create a GitHub setting, and select `GitHub App` as the authentication mode.
-
-    Confirm that `Type` and `TargetResource` match the GitHub App installation target, then click `Save`.
-
-    ![RISKEN GitHub setting with GitHub App authentication](/img/code/github_app_setting_github_app_mode.png){style="width:600px"}
-
-2. Run GitHub integration in RISKEN.
-
-    After saving, the GitHub App status changes to `Waiting for GitHub integration`.
-    Click `GitHub integration` so RISKEN can verify that the user who created the setting can manage the target repositories on GitHub.
-
-    ![RISKEN GitHub App waiting for GitHub integration](/img/code/github_app_integration_status.png){style="width:600px"}
-
-    After authentication on GitHub is complete and you return to RISKEN, the GitHub settings list displays a message confirming that GitHub integration is complete.
-
-    ![RISKEN GitHub App integration complete](/img/code/github_app_integration_complete.png){style="width:600px"}
-
 ## Changing repository access
 
 To add or remove repositories to scan, update the Repository access settings on GitHub.
@@ -87,7 +66,7 @@ To add or remove repositories to scan, update the Repository access settings on 
 2. Open `RISKEN Code App` from `GitHub Apps` or `Installed GitHub Apps`.
 3. Select `All repositories` or `Only select repositories` in `Repository access`.
 4. If you select `Only select repositories`, add or remove the repositories to scan.
-5. Resync the repository list on the RISKEN GitHub setting page.
+5. See [Configuring scans with the GitHub App](github_app_scan_setting.md), then resync the repository list on the RISKEN GitHub setting page.
 
 ![GitHub App Repository access](/img/code/github_app_install_repository_access.png){style="width:600px"}
 
@@ -102,17 +81,3 @@ Contact the Organization owner.
 
 The signed-in GitHub user may not have permission to install GitHub Apps on the target Organization.
 Ask the Organization owner to install the app.
-
-### GitHub App verification fails in RISKEN
-
-Check the following:
-
-- The GitHub App is installed on the target Organization or User account.
-- `Type` and `TargetResource` in the RISKEN GitHub setting match the GitHub App installation target.
-- Repository access includes the repositories to scan.
-- GitHub App settings in the RISKEN environment, such as Private Key and App ID, are correct.
-
-### Target repositories are not displayed
-
-The target repositories may not be included in the GitHub App repository access.
-Update Repository access on GitHub, then resync the repository list in RISKEN.
