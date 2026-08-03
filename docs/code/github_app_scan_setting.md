@@ -1,9 +1,6 @@
 # GitHub Appを使ったスキャン設定
 
-GitHub App認証でCodeスキャンを行うには、RISKENでGitHub設定を作成し、GitHub連携を実行します。
-
-事前に、スキャン対象のGitHub OrganizationまたはUserへGitHub Appをインストールしてください。
-インストール方法は、[GitHub Appのインストール](github_app_install.md)を参照してください。
+[GitHub Appのインストール](github_app_install.md)完了後、RISKENでGitHub設定を作成し、GitHub連携を実行します。
 
 ## 設定手順
 

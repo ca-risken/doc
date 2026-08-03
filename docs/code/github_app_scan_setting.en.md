@@ -1,9 +1,6 @@
 # Configuring scans with the GitHub App
 
-To scan repositories with GitHub App authentication, create a GitHub setting in RISKEN and run GitHub integration.
-
-Before continuing, install the GitHub App on the target GitHub Organization or User account.
-For installation instructions, see [Installing the GitHub App](github_app_install.md).
+After [installing the GitHub App](github_app_install.md), create a GitHub setting in RISKEN and run GitHub integration.
 
 ## Configuration steps
 
