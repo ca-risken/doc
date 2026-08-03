@@ -102,6 +102,11 @@ Organization ownerに確認してください。
 ログイン中のGitHubユーザーに、対象OrganizationへGitHub Appをインストールする権限がない可能性があります。
 Organization ownerにインストールを依頼してください。
 
+### GitHub Appのインストール状態を確認できない
+
+**GitHub Appのインストール状態を確認できませんでした。** と表示される場合、設定の入力値が不正である可能性があります。
+ベースURLなどの値が正しいか確認してください。GHESを使用していない場合、ベースURLの入力欄は空にしてください。
+
 ### RISKENでGitHub Appの検証に失敗する
 
 以下を確認してください。
